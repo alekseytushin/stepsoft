@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>python.stepsoft</title>
+    <link rel="stylesheet" href="{{css}}bootstrap.min.css">
+    <link rel="stylesheet" href="{{css}}style.css">
+    <script type="text/javascript" src="{{js}}brython.js"></script>
+    <script type="text/javascript" src="{{js}}brython_stdlib.js"></script>
+    {% block links %}
+    {% endblock %}
+</head>
+<body class="" style="background-color: #fcfcfc;" onload="brython();">
+    
+    <nav class="navbar navbar-expand sticky-top">
+    {% include "navbar.html" %}
+    </nav>
+
+    <main id="main" class="container-fluid p-0 pb-4" style="margin-left: 0; transition: width 0.3s;">
+    {% block content %}
+    {% endblock %}
+    {% if current_user.is_authenticated %}
+        {%block tempRiddles%}
+        {%endblock%}
+    {% endif %}
+    </main>
+    
+    <!--
+    Редактор
+    -->
+    {% if current_user.is_authenticated %}
+    <div class="ide bg-light">
+        <div class="container d-flex flex-column" id="inner-ide" style="">
+            <div class="my-3">
+                <span class="m-2 ml-4 font-weight-bold" id="">Код</span>
+            </div>
+            <script src='{{cm}}lib/codemirror.js'></script>
+            <link rel="stylesheet" href="{{cm}}lib/codemirror.css">
+            <script src='{{cm}}mode/python/python.js'></script>
+            <form action="" method="POST" class="d-flex flex-column" style="height: 100%;">
+                <div class="flex-grow-1">
+<textarea id="code" cols="30" rows="10">
+#Put your code here
+
+print('hello, world')</textarea>
+                </div>         
+                <div class="my-3">
+                    <span class="m-2 ml-4 font-weight-bold" id="">Результат</span>
+                </div>
+                <div id="brython-result" style="min-height: 5em; max-height: 15em; border-top: 1px solid black; border-bottom: 1px solid black; overflow-x: visible; overflow-y: auto;">
+                </div>
+                <div class="w-100 d-flex flex-row">
+                    <span class="btn btn-success m-2 ml-auto px-4 " id="brython-run">Запустить</span>
+                </div>
+                <div style="height: 5%;"></div>
+            </form>
+            <script>
+            var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+                lineNumbers: true,
+                mode: 'python',
+                matchBrackets: true
+            })
+            </script>
+            <script type="text/python">
+                from browser import document, bind, alert, window
+                import sys
+
+                class obj:
+                    def write(self, string):
+                        string = string.replace('\n', '<br>')
+                        document["brython-result"].html += string
+                
+                output = obj()
+                sys.stdout = output
+                sys.stderr = output
+                
+                @bind(document.getElementById('brython-run'), 'click')
+                def interpretate(e):
+                    document["brython-result"].html = ''
+                    try:
+                        exec(window.editor.getValue())
+                    except Exception as e:
+                        print(str(e).capitalize())
+
+            </script>
+        </div>
+    </div>
+    {% endif %}
+    <!--
+    Редактор
+    -->
+    {% if not current_user.is_authenticated %}
+    <div class="sign-block bg-light container">
+        <!--
+        Sign in Form
+        -->
+        <div class="signin-block w-100">
+            {% if message_log %}
+                <p class="alert alert-danger" role="alert">
+                    {{ message_log }}
+                </p>
+            {% endif %}
+            <form action="/" method="POST" class="px-4 py-3">
+                <div>
+                    {{formAuth.csrf_token}}
+                    {{formAuth.hidden_tag()}}
+                </div>
+                <div class="form-group">
+                    {{formAuth.email(placeholder="Ваш email")}}
+                </div>
+                <div class="form-group">
+                    {{formAuth.password(placeholder="Пароль", type="password")}}
+                </div>
+                <div class="form-group">
+                    {{formAuth.submit(value = "Войти", class = "w-100 btn btn-primary")}}
+                </div>
+            </form>
+            <div class="dropdown-divider"></div>
+            <a href="/changepassword">Забыли пароль?</a>
+        </div>
+        <!--
+        Sign in Form
+        -->
+        <!--
+        Sign up Form
+        -->
+        <div class="signup-block w-100">
+            {% if message_reg %}
+                <p class="alert alert-danger" role="alert">
+                    {{ message_reg }}
+                </p>
+            {% elif message_reg_success %}
+                <p class="alert alert-success" role="alert">
+                    {{ message_reg_success }}
+                </p>
+            {% endif %}
+            
+            <form action="/" method="POST" class="px-4 py-3">
+                <div>
+                    {{formRegistration.csrf_token}}
+                    {{formRegistration.hidden_tag()}}
+                </div>
+                <div class="form-group">
+                    {{formRegistration.email(placeholder="Ваш email")}}
+                </div>
+                <div class="form-group">
+                    {{formRegistration.name(placeholder="Имя")}}
+                </div>
+                <div class="form-group">
+                    {{formRegistration.password1(placeholder="Пароль", type="password")}}
+                </div>
+                <div class="form-group">
+                    {{formRegistration.password2(placeholder="Повторите пароль", type="password")}}
+                </div>
+                <div class="form-group">
+                    {{formRegistration.submit(value = "Зарегистрироваться", class = "w-100 btn btn-primary")}}
+                </div>
+            </form>
+        </div>
+        <!--
+        Sign up Form
+        -->
+    </div>
+    {% endif %}
+
+    
+    
+    <footer class="container-fluid bg-dark text-light">
+    {% include "footer.html" %}
+    </footer>
+
+    <script src="{{js}}toggleIDE.js"></script>
+    <script src="{{js}}toggleSignBtns.js"></script>
+
+    {% if message_reg or message_reg_success %}
+    <script>
+        openForm('reg');
+    </script>
+    {% elif message_log %}
+    <script>
+        openForm('auth');
+    </script>
+    {%endif%}
+    
+    <script>
+        cm = document.querySelector('.CodeMirror');
+        cm.style.maxHeight = document.documentElement.clientHeight * 0.6 + 'px';
+        window.addEventListener('resize', function(){
+            cm.style.maxHeight = document.documentElement.clientHeight * 0.6 + 'px';
+        });
+    </script>
+    
+    {%block scriptIDE%}
+    {%endblock%}
+
+    <script src="{{js}}index_animation.js"></script>
+    <script src="{{js}}jquery-3.3.1.slim.min.js"></script>
+    <script src="{{js}}popper.min.js"></script>
+    <script src="{{js}}bootstrap.min.js"></script>
+</body>
+</html>
