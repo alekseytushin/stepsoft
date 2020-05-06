@@ -1,0 +1,22 @@
+<ul class="navbar-nav mt-2">
+    <li class="nav-item dropdown">
+        <a href="" class="nav-link" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ current_user.name }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="userDropdown">
+            <div>
+                <a href="/profile" class="nav-link">Профиль</a>
+            </div>
+            <div>
+                <a href="/lesson" class="nav-link">Уроки</a>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div>
+                <a href="/logout" class="nav-link">Выход</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item tabcontent">
+        <span class="tablink nav-link btn btn-outline-success" onclick="toggleMainIDE();">Редактор</span>
+    </li>
+</ul>

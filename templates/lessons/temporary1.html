@@ -1,0 +1,38 @@
+{% extends 'lessons/lesson.html' %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <div class="container-fluid content-block content-block-1 px-0">
+            <div class="row container mx-auto px-0">
+                <div class="lesson-material__wrapper"><a class="p-2 mb-4 btn btn-link border border-round nav-tab nav-tab_back nav-tab_view_button" href="/lesson/"><span data-lego="react" class="icon icon_type_arrow-short icon_direction_left icon_size_s nav-tab__arrow-icon"></span><span class="nav-tab__inner">Вернуться</span></a>
+                {% block article %}
+                    <h1>Выберите материал для ознакомления</h1>
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container-fluid content-block content-block-1 px-0">
+            <div class="row container mx-auto px-0k">
+                <h1>Авторизуйтесь, чтобы начать</h1>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{%block tempRiddles%}
+    <div class="container-fluid p-0 pb-4">
+        <div class="container-fluid content-block content-block-1 px-0">
+            <div class="container">
+            {%block riddles%}
+            {%endblock%}
+            </div>
+        </div>
+    </div>
+{%endblock%}
+
+{%block scriptIDE%}
+<script>
+    openIDE();
+</script>
+{%endblock%}

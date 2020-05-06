@@ -1,0 +1,139 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Вложенные циклы</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Вложенные циклы. Принцип работы</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Графическое представление вложенных циклов</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Оператор break и continue во вложенных циклах</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;этому уроке мы&nbsp;рассмотрим вложенные циклы, позволяющие запустить цикл внутри циклического оператора. Приведем несколько примеров вложенности разных циклов, а&nbsp;также применение операторов break и&nbsp;continue со&nbsp;вложенными циклами</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Вложенные циклы. Принцип работы</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Часто бывают ситуации, когда один и&nbsp;тот&nbsp;же набор действий необходимо выполнить несколько раз для каждого повторяющегося действия. Например, мы&nbsp;уже несколько раз с&nbsp;вами сталкивались с&nbsp;задачами, когда программа получает от&nbsp;пользователя данные до&nbsp;сигнала остановки, для этого используется цикл. А&nbsp;теперь представьте, что после ввода данных или числа с&nbsp;ними надо сделать какие-либо действия, которые тоже требуют цикла (например, вычислить факториал), тогда нам нужен еще один цикл, внутри первого.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Вложенные циклы</strong></h4>
+<div>Циклы называются <strong>вложенными</strong> (т.е. один цикл находится внутри другого), если внутри одного цикла во&nbsp;время каждой итерации необходимо выполнить другой цикл. Так для каждого витка внешнего цикла выполняются все витки внутреннего цикла. Основное требование для таких циклов&nbsp;— чтобы <strong>все</strong> действия вложенного цикла располагались внутри внешнего.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>При использовании вложенных циклов стоит помнить, что изменения, внесенные внутренним циклом в&nbsp;какие-либо данные, могут повлиять и&nbsp;на&nbsp;внешний цикл.</p>
+<p>Давайте рассмотрим следующую задачу: необходимо вывести в&nbsp;строку таблицу умножения для заданного числа. Задача решается так:</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;">k <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>i<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'*'</span><span style="color: #66cc66;">,</span> k<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'='</span><span style="color: #66cc66;">,</span> k * i<span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">''</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\t</span>'</span><span style="color: black;">)</span></pre>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А&nbsp;если нам нужно вывести таблицу умножения для всех чисел от&nbsp;1&nbsp;до&nbsp;k?</p>
+<p>Очевидно, что в&nbsp;этом случае предыдущую программу нужно повторить k&nbsp;раз, где вместо k&nbsp;будут использоваться числа от&nbsp;1&nbsp;до&nbsp;k (включительно).</p>
+<p>Эту задачу можно записать двумя циклами, где для каждого значения внешнего цикла будут выполняться все значения внутреннего цикла.</p>
+<p>Программа будет выглядеть так:</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;">k <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> j <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> k + <span style="color: #ff4500;">1</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>i<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'*'</span><span style="color: #66cc66;">,</span> j<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'='</span><span style="color: #66cc66;">,</span> j * i<span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">''</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\t</span>'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Проанализируем работу данной программы. Выполнение программы начинается с&nbsp;внешнего цикла. Итератор j&nbsp;внешнего цикла for меняет свое значение от&nbsp;начального (1) до&nbsp;конечного (k). Обратите внимание, чтобы включить число k&nbsp;в&nbsp;рассматриваемый диапазон, в&nbsp;заголовке цикла указавается промежуток от&nbsp;1&nbsp;до&nbsp;k+1. Затем циклически выполняется следующее:</p>
+<p>1. Проверяется условие&nbsp;j &lt; k+1.</p>
+<p>2. Если оно соблюдается, то&nbsp;выполняется оператор в&nbsp;теле цикла, т.е. выполняется внутренний цикл.</p>
+<p style="padding-left: 60px;">— Итератор i&nbsp;внутреннего цикла for будет изменять свои значения от&nbsp;начального (1) до&nbsp;конечного (10), не&nbsp;включая&nbsp;10.</p>
+<p style="padding-left: 60px;">Затем циклически выполняется следующее:</p>
+<p style="padding-left: 60px;">— проверяется условие&nbsp;i &lt; 10;</p>
+<p style="padding-left: 60px;">— если оно удовлетворяется, то&nbsp;выполняется оператор в&nbsp;теле цикла, т.&nbsp;е. оператор print(i, ’*’, j, ’=’, j*i, sep=’’, end=’\t’) , выводящий на&nbsp;экран строку таблицы умножения в&nbsp;соответствии с&nbsp;текущими значениями переменных i&nbsp;и&nbsp;j;</p>
+<p style="padding-left: 60px;">— затем значение итератора i&nbsp;внутреннего цикла увеличивается на&nbsp;единицу, и&nbsp;оператор внутреннего цикла for проверяет условие&nbsp;i &lt; 10. Если условие соблюдается, то&nbsp;выполняется тело внутреннего цикла при неизменном значении итератора внешнего цикла до&nbsp;тех пор, пока выполняется условие&nbsp;i &lt; 10;</p>
+<p style="padding-left: 60px;">— если условие&nbsp;i &lt; 10&nbsp;не удовлетворяется, т.&nbsp;е. как только i&nbsp;станет равен или больше&nbsp;10, оператор тела цикла не&nbsp;выполняется, внутренний цикл завершается и&nbsp;управление в&nbsp;программе передается за&nbsp;пределы оператора for внутреннего цикла, т.&nbsp;е. выполняется перевод строки, вызванный использованием функции print() (строка&nbsp;5), а&nbsp;затем возвращается к&nbsp;оператору for внешнего цикла.</p>
+<p>3. Значение итератора внешнего цикла j&nbsp;увеличивается на&nbsp;единицу, и&nbsp;проверяется условие&nbsp;j &lt; k+1. Если условие не&nbsp;соблюдается, т.&nbsp;е. как только j&nbsp;станет больше&nbsp;k, оператор тела цикла не&nbsp;выполняется, внешний цикл завершается и&nbsp;управление в&nbsp;программе передается за&nbsp;пределы оператора for внешнего цикла, т.&nbsp;е.&nbsp;в&nbsp;данном случае программа завершает работу.</p>
+<p>Таким образом, на&nbsp;примере печати таблицы умножения показано, что при вложении циклов внутренний цикл выполняется полностью от&nbsp;начального до&nbsp;конечного значения параметра, при неизменном значении параметра внешнего цикла. Затем значение параметра внешнего цикла изменяется на&nbsp;единицу, и&nbsp;опять от&nbsp;начала и&nbsp;до&nbsp;конца выполняется вложенный цикл. И&nbsp;так до&nbsp;тех пор, пока значение параметра внешнего цикла не&nbsp;станет больше конечного значения, определенного в&nbsp;операторе for внешнего цикла.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Графическое представление вложенных циклов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Работу циклов также можно сравнить с&nbsp;вращением связанных шестерёнок разного размера:</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/gears.gif" width="150" height="auto"></p>
+<p>Внешний цикл&nbsp;— это как&nbsp;бы большая шестерёнка, за&nbsp;один свой оборот (виток цикла), внешний цикл заставляет вращаться вложенный цикл (меньшую шестерёнку) несколько раз.</p>
+<p>Обратите внимание, что такая иллюстрация точна в&nbsp;случае, если число повторов вложенного цикла не&nbsp;зависит от&nbsp;того какой именно (1-ый, n-ый или иной) виток делает внешний цикл, а&nbsp;так бывает не&nbsp;всегда.</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Оператор break и continue во вложенных циклах</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Рассмотрим другую задачу: представьте, что необходимо распечатать все строки таблицы умножения для чисел от&nbsp;1&nbsp;до&nbsp;10, кроме строки для числа&nbsp;k.</p>
+<p>Тогда нам нужно будет пропустить выполнение внутреннего цикла, когда придет k-ая строка.</p>
+<p>Это можно сделать через оператор continue, который просто прервет выполнение данного витка цикла и&nbsp;перейдет к&nbsp;следующей итерации цикла:</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;">k <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> j <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> j <span style="color: #66cc66;">==</span> k:
+        <span style="color: #ff7700; font-weight: bold;">continue</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>i<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'*'</span><span style="color: #66cc66;">,</span> j<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'='</span><span style="color: #66cc66;">,</span> j * i<span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">''</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\t</span>'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Обратите внимание, если оператор break или continue расположен внутри вложенного цикла, то&nbsp;он&nbsp;действует именно на&nbsp;вложенный цикл, а&nbsp;не&nbsp;на&nbsp;внешний. Нельзя выскочить из&nbsp;вложенного цикла сразу на&nbsp;самый верхний уровень.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>А&nbsp;теперь попробуйте вывести всю таблицу умножения кроме столбца&nbsp;k.</p>
+<p>Вот еще одна программа, которая использует вложенные циклы и&nbsp;оператор break. Она учит пользователя вводить числа палиндромы&nbsp;— программа выполняется до&nbsp;тех пор, пока не&nbsp;будет введено число палиндром:</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Тренажер по вводу палиндрома:'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> <span style="color: #008000;">True</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите число палиндром:'</span><span style="color: black;">)</span>
+    number <span style="color: #66cc66;">=</span> n <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+    reverse <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+    <span style="color: #ff7700; font-weight: bold;">while</span> n <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">0</span>:
+        reverse <span style="color: #66cc66;">=</span> reverse * <span style="color: #ff4500;">10</span> + n % <span style="color: #ff4500;">10</span>
+        n //<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">10</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> number <span style="color: #66cc66;">==</span> reverse:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Вы ввели палиндром! Программа остановлена.'</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">break</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введенное число не палиндром, попробуйте еще раз.'</span><span style="color: black;">)</span></pre>
+</div></article></section>
+{%endblock%}

@@ -1,0 +1,366 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>ООП. Наследование. Часть №&nbsp;2</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Расширение методов</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Использование методов наследников в&nbsp;базовом классе</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Переопределение методов</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Множественное наследование</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>Этот урок посвящён приёмам применения наследования: расширение и&nbsp;переопределение методов. Также обсуждается множественное наследование.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Расширение методов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Вернёмся к&nbsp;иерархии классов геометрических фигур. И&nbsp;заодно рассмотрим способ, как отразить эту иерархию, представленную в&nbsp;виде картинки, кодом на&nbsp;языке Python.</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/classes-2.png" width="212" height="auto"></p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">math</span> <span style="color: #ff7700; font-weight: bold;">import</span> pi
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> Shape:
+    <span style="color: #ff7700; font-weight: bold;">def</span> describe<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #808080; font-style: italic;"># Атрибут __class__ содержит класс или тип объекта self</span>
+        <span style="color: #808080; font-style: italic;"># Атрибут __name__ содержит строку,<br>        # в которой написано название класса или типа</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Класс: {}"</span>.<span style="color: black;">format</span><span style="color: black;">(</span><span style="color: #008000;">self</span>.__class__.__name__<span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> Circle<span style="color: black;">(</span>Shape<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> radius<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">r</span> <span style="color: #66cc66;">=</span> radius
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> area<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> pi * <span style="color: #008000;">self</span>.<span style="color: black;">r</span> ** <span style="color: #ff4500;">2</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> perimeter<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">2</span> * pi * <span style="color: #008000;">self</span>.<span style="color: black;">r</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> Rectangle<span style="color: black;">(</span>Shape<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> a<span style="color: #66cc66;">,</span> b<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">a</span> <span style="color: #66cc66;">=</span> a
+        <span style="color: #008000;">self</span>.<span style="color: black;">b</span> <span style="color: #66cc66;">=</span> b
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> area<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">a</span> * <span style="color: #008000;">self</span>.<span style="color: black;">b</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> perimeter<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">2</span> * <span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">a</span> + <span style="color: #008000;">self</span>.<span style="color: black;">b</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Давайте наследуем класс <strong>Square</strong> от&nbsp;класса <strong>Rectangle</strong>.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Square<span style="color: black;">(</span>Rectangle<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">pass</span>
+&nbsp;
+&nbsp;
+side <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">5</span>
+sq <span style="color: #66cc66;">=</span> Square<span style="color: black;">(</span>side<span style="color: #66cc66;">,</span> side<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>sq.<span style="color: black;">area</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>sq.<span style="color: black;">perimeter</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;
+------------------------------------------
+&nbsp;
+25
+20</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Поскольку мы&nbsp;никак не&nbsp;«заполнили» код класса <strong>Square</strong>, то&nbsp;он&nbsp;будет иметь те&nbsp;же самые методы, что были у&nbsp;класса <strong>Rectangle</strong>. Но&nbsp;это не&nbsp;очень удобно. Мы&nbsp;хотим, чтобы конструктор класса <strong>Square</strong> принимал на&nbsp;вход один аргумент (длину стороны). Однако конструктор класса <strong>Rectangle</strong> принимает на&nbsp;вход два аргумента (ширину и&nbsp;высоту). Как быть?</p>
+<p>Пока что мы&nbsp;сделали эту логику вручную, с&nbsp;помощью переменной <strong>side</strong>. Но&nbsp;коль скоро мы&nbsp;программируем в&nbsp;объектно-ориентированном стиле, то&nbsp;давайте «спрячем» (инкапсулируем) эту логику внутрь класса. А&nbsp;именно: мы&nbsp;немного модифицируем конструктор класса <strong>Square</strong> так, чтобы он&nbsp;принимал на&nbsp;вход только одно число, которое будет передаваться в&nbsp;качестве первого и&nbsp;второго аргумента конструктору базового класса.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Расширение метода</strong></h4>
+<div>
+<p>Такая процедура (когда метод производного класса дополняет аналогичный метод базового класса) называется <strong>расширением метода</strong>, а&nbsp;в&nbsp;коде это выглядит следующим образом:</p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Square<span style="color: black;">(</span>Rectangle<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> size<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Создаём квадрат'</span><span style="color: black;">)</span>
+        <span style="color: #008000;">super</span><span style="color: black;">(</span><span style="color: black;">)</span>.<span style="color: #0000cd;">__init__</span><span style="color: black;">(</span>size<span style="color: #66cc66;">,</span> size<span style="color: black;">)</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Функция <strong>super()</strong> возвращает специальный объект, который делегирует («передаёт») вызовы методов (в&nbsp;данном случае&nbsp;— метода <strong>__init__</strong>) от&nbsp;производного класса к&nbsp;базовому. Эту функцию можно вызывать в&nbsp;любом методе класса&nbsp;— в&nbsp;частности, в&nbsp;конструкторе.</p>
+<p>Фактически фраза super().__init__(size, size) звучит так: вызови метод <strong>__init__</strong> у&nbsp;моего базового (родительского) класса.</p>
+<p>Давайте проверим, что произойдёт, если мы&nbsp;создадим объект класса <strong>Square</strong> и&nbsp;вызовем методы <strong>area()</strong> и&nbsp;<strong>perimeter()</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">sq <span style="color: #66cc66;">=</span> Square<span style="color: black;">(</span><span style="color: #ff4500;">2</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>sq.<span style="color: black;">area</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>sq.<span style="color: black;">perimeter</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>sq.<span style="color: black;">a</span><span style="color: black;">)</span>
+&nbsp;
+------------------------------------------
+&nbsp;
+Создаём квадрат
+4
+8
+2</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Как видим, методы <strong>area()</strong> и&nbsp;<strong>perimeter()</strong> отработали корректно, и&nbsp;нам не&nbsp;пришлось переписывать эти методы заново&nbsp;— они были полностью наследованы от&nbsp;базового класса, а&nbsp;при создании экземпляра класса была выведена строка, которая при создании элементов базового класса не&nbsp;выводится.</p>
+<p>Кроме того, от&nbsp;базового класса унаследовались и&nbsp;поля <strong>a</strong>&nbsp;и&nbsp;<strong>b</strong>.</p>
+<p>Заметим, что расширение можно использовать для любого метода класса, а&nbsp;не&nbsp;только для конструктора <strong>__init__</strong>.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Использование методов наследников в&nbsp;базовом классе</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>На&nbsp;протяжении этого урока нам пару паз потребовалось вывести на&nbsp;экран небольшое «описание» фигуры&nbsp;— ее&nbsp;периметр и&nbsp;площадь. Поскольку все фигуры имеют для этого общий интерфейс (методы perimeter() и&nbsp;area() соответственно), то&nbsp;можно, например, написать универсальную (т.е. <strong>полиморфную</strong>) функцию для этого:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> describe_shape<span style="color: black;">(</span>shape<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Периметр: {}<span style="color: #000099; font-weight: bold;">\n</span>Площадь: {}"</span>.<span style="color: black;">format</span><span style="color: black;">(</span>shape.<span style="color: black;">perimeter</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,<br></span>                                             shape.<span style="color: black;">area</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+describe_shape<span style="color: black;">(</span>sq<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Но&nbsp;есть одно неудобство. Что, если на&nbsp;вход этой функции подать переменную неправильного типа? Программа завершится с&nbsp;ошибкой:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">describe_shape<span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: black;">)</span>
+&nbsp;
+------------------------------------------
+&nbsp;
+AttributeError             Traceback (most recent call last)
+&nbsp;
+&lt;ipython-input-12-398f18afe0b6&gt; in &lt;module&gt;()
+----&gt; 1 describe_shape(5)
+&nbsp;
+&nbsp;
+&lt;ipython-input-10-fafe33c63281&gt; in describe_shape(shape)
+      1 def describe_shape(shape):
+----&gt; 2     print("Периметр: {}\nПлощадь: {}".format(shape.perimeter(), <br>                                                     shape.area()))
+&nbsp;
+&nbsp;
+AttributeError: 'int' object has no attribute 'perimeter'</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Конечно, внутри <strong>describe_shape</strong> можно добавить необходимые проверки, но&nbsp;есть более правильное решение&nbsp;— нужно добавить соответствующий метод в&nbsp;базовый класс (вместо использования функции). В&nbsp;нашем случае можно просто немного дополнить метод <strong>describe</strong> класса <strong>Shape</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Shape:
+    <span style="color: #ff7700; font-weight: bold;">def</span> describe<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Класс: {}<span style="color: #000099; font-weight: bold;">\n</span>Периметр: {}<span style="color: #000099; font-weight: bold;">\n</span>Площадь: {}"</span>.<span style="color: black;">format</span><span style="color: black;">(</span>
+            <span style="color: #808080; font-style: italic;"># Добавим ещё и название класса</span>
+            <span style="color: #008000;">self</span>.__class__.__name__<span style="color: #66cc66;">,</span>
+            <span style="color: #008000;">self</span>.<span style="color: black;">perimeter</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span>
+            <span style="color: #008000;">self</span>.<span style="color: black;">area</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, что у&nbsp;класса <strong>Shape</strong> нет методов <strong>perimeter()</strong> и&nbsp;<strong>area()</strong>, поэтому метод <strong>describe()</strong> не&nbsp;будет работать для объектов этого класса. Но&nbsp;у&nbsp;всех производных классов эти методы есть, поэтому для них все сработает правильно:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">sq <span style="color: #66cc66;">=</span> Square<span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: black;">)</span>
+sq.<span style="color: black;">describe</span><span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+------------------------------------------
+&nbsp;
+Создаём квадрат
+Класс: Square
+Периметр: 12
+Площадь: 9</pre>
+</div>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Переопределение методов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте «починим» метод <strong>describe()</strong> для класса <strong>Shape</strong>. Будем считать, что у&nbsp;«абстрактной» фигуры площадь и&nbsp;периметр не&nbsp;определены (т.е. равны <strong>None</strong>):</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Shape:
+    <span style="color: #ff7700; font-weight: bold;">def</span> describe<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Класс: {}<span style="color: #000099; font-weight: bold;">\n</span>Периметр: {}<span style="color: #000099; font-weight: bold;">\n</span>Площадь: {}"</span>.<span style="color: black;">format</span><span style="color: black;">(</span>
+            <span style="color: #008000;">self</span>.__class__.__name__<span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">perimeter</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">area</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> area<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">None</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> perimeter<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">None</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А&nbsp;как теперь будет работать метод <strong>describe() </strong>для производных классов? У&nbsp;какого класса он&nbsp;будет вызывать методы <strong>area()</strong> и&nbsp;<strong>perimeter()</strong>&nbsp;– у&nbsp;производного или у&nbsp;базового?</p>
+<p>Давайте вспомним, что «по&nbsp;сути» представляет собой наследование классов в&nbsp;Python: если мы&nbsp;вызовем метод у&nbsp;производного класса, то&nbsp;сперва ищется метод этого класса, а&nbsp;если его там нет, то&nbsp;такой&nbsp;же поиск выполняется в&nbsp;его базовом классе. Значит, поведение производных классов измениться не&nbsp;должно.</p>
+<p>Давайте убедимся в&nbsp;этом:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">shape <span style="color: #66cc66;">=</span> Shape<span style="color: black;">(</span><span style="color: black;">)</span>
+circle <span style="color: #66cc66;">=</span> Circle<span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: black;">)</span>
+rectangle <span style="color: #66cc66;">=</span> Rectangle<span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: black;">)</span>
+square <span style="color: #66cc66;">=</span> Square<span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: black;">)</span>
+&nbsp;
+shape.<span style="color: black;">describe</span><span style="color: black;">(</span><span style="color: black;">)</span>
+circle.<span style="color: black;">describe</span><span style="color: black;">(</span><span style="color: black;">)</span>
+rectangle.<span style="color: black;">describe</span><span style="color: black;">(</span><span style="color: black;">)</span>
+square.<span style="color: black;">describe</span><span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+------------------------------------------
+&nbsp;
+Создаём квадрат
+Класс: Shape
+Периметр: None
+Площадь: None
+Класс: Circle
+Периметр: 31.41592653589793
+Площадь: 78.53981633974483
+Класс: Rectangle
+Периметр: 14
+Площадь: 12
+Класс: Square
+Периметр: 20
+Площадь: 25</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Итак, методы <strong>perimeter()</strong> и&nbsp;<strong>area()</strong> есть в&nbsp;базовом классе, но&nbsp;в&nbsp;производных классах они реализованы по-другому.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Переопределение методов</strong></h4>
+<div>Это называется <strong>переопределением методов</strong>. В&nbsp;отличие от&nbsp;расширения методов, в&nbsp;данном случае метод area() базового класса <strong>не&nbsp;используется</strong> при реализации метода area() производного класса; то&nbsp;же самое относится и&nbsp;к&nbsp;методу perimeter().</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Множественное наследование</h4>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Множественное наследование</strong></h4>
+<div>Python предоставляет возможность наследоваться сразу от&nbsp;нескольких классов. Такой механизм называется <strong>множественное наследование</strong>, и&nbsp;он&nbsp;позволяет вызывать в&nbsp;производном классе методы разных базовых классов.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Рассмотрим пример:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Base1:
+    <span style="color: #ff7700; font-weight: bold;">def</span> tic<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"tic"</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> Base2:
+    <span style="color: #ff7700; font-weight: bold;">def</span> tac<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"tac"</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> Derived<span style="color: black;">(</span>Base1<span style="color: #66cc66;">,</span> Base2<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">pass</span>
+&nbsp;
+&nbsp;
+d <span style="color: #66cc66;">=</span> Derived<span style="color: black;">(</span><span style="color: black;">)</span>
+d.<span style="color: black;">tic</span><span style="color: black;">(</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># метод, наследованный от Base1</span>
+d.<span style="color: black;">tac</span><span style="color: black;">(</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># метод, наследованный от Base2</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Множественное наследование на&nbsp;практике используется достаточно редко (хотя все&nbsp;же используется), поскольку при его использовании возникают закономерные вопросы:</p>
+<ul>
+<li>
+<p>Что, если названия каких-то методов в&nbsp;базовых классах совпадают?</p>
+</li>
+<li>
+<p>И&nbsp;какой из&nbsp;них будет вызван из&nbsp;производного класса?</p>
+</li>
+</ul>
+<p>Хотя в&nbsp;языке и&nbsp;зафиксирован порядок разрешения таких конфликтов (в&nbsp;общем случае классы просматриваются слева направо, подробнее в&nbsp;<a style="text-decoration: underline;" href="https://docs.python.org/3/tutorial/classes.html#multiple-inheritance" target="_blank" rel="noopener">документации</a>, эта особенность все равно может привести к&nbsp;ошибкам при использовании множественного наследования.</p>
+<p>В&nbsp;нашей иерархии классов геометрических фигур можно привести следующий пример множественного наследования. Мы&nbsp;знаем, что квадрат является не&nbsp;только прямоугольником, но&nbsp;еще и&nbsp;правильным многоугольником. В&nbsp;любой правильный многоугольник, например, можно вписать окружность, а&nbsp;в&nbsp;произвольный прямоугольник&nbsp;— нельзя. Давайте напишем отдельный класс <strong>RegularPolygon</strong> для правильных многоугольников:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">math</span> <span style="color: #ff7700; font-weight: bold;">import</span> tan<span style="color: #66cc66;">,</span> pi
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> RegularPolygon:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> side<span style="color: #66cc66;">,</span> n<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">side</span> <span style="color: #66cc66;">=</span> side  <span style="color: #808080; font-style: italic;"># длина стороны</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">n</span> <span style="color: #66cc66;">=</span> n  <span style="color: #808080; font-style: italic;"># число сторон</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> inscribed_circle_radius<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #483d8b;">'''Радиус вписанной окружности'''</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">side</span> / <span style="color: black;">(</span><span style="color: #ff4500;">2</span> * tan<span style="color: black;">(</span>pi / <span style="color: #008000;">self</span>.<span style="color: black;">n</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Квадрат можно отнаследовать от&nbsp;прямоугольника и&nbsp;правильного многоугольника. Обратите внимание на&nbsp;конструктор класса <strong>Square</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Square<span style="color: black;">(</span>Rectangle<span style="color: #66cc66;">,</span> RegularPolygon<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> a<span style="color: black;">)</span>:
+        <span style="color: #808080; font-style: italic;"># Приходится явно вызывать конструкторы базовых классов</span>
+        Rectangle.<span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> a<span style="color: #66cc66;">,</span> a<span style="color: black;">)</span>
+        RegularPolygon.<span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> a<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+s <span style="color: #66cc66;">=</span> Square<span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: black;">)</span>
+s.<span style="color: black;">describe</span><span style="color: black;">(</span><span style="color: black;">)</span>                        <span style="color: #808080; font-style: italic;"># метод класса Rectangle</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>s.<span style="color: black;">inscribed_circle_radius</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># метод класса RegularPolygon</span></pre>
+</div>
+</div></article></section>
+{%endblock%}

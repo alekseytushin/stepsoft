@@ -1,0 +1,449 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Функции как объект. Лямбда-функции</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Функция как объект</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Функции высшего порядка. Функция filter</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Лямбда-функции</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Функция map</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Еще немного о&nbsp;списочных выражениях</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">6</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#6">Комбинирование функций</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;языке Python всё является объектом, даже функция. Вы&nbsp;узнаете, как получить и&nbsp;использовать соответствующий объект. Кроме того, вы&nbsp;научитесь создавать и&nbsp;использовать крошечные функции буквально в&nbsp;полстроки, и&nbsp;передавать эти функции в&nbsp;качестве аргумента другой функции. Вы&nbsp;узнаете про две важные функции: <strong>filter</strong> и&nbsp;<strong>map</strong>, которые позволяют проводить множество преобразований над коллекциями и&nbsp;другими наборами объектов. Заодно мы&nbsp;вспомним списочные выражения и&nbsp;расширим знания о&nbsp;них.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Функция как объект</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>До&nbsp;сих пор мы&nbsp;рассматривали функции как совершенно отдельный элемент языка со&nbsp;своим синтаксисом и&nbsp;механизмами работы. Но&nbsp;оказывается, что функция&nbsp;— это что-то вроде особого типа объектов. Бывают числа, бывают строки, бывают списки. А&nbsp;бывают&nbsp;— функции. У&nbsp;каждого из&nbsp;этих типов есть свои операции, свой синтаксис, но&nbsp;все они являются объектами. Например, есть объект, который умеет печатать текст на&nbsp;экране. У&nbsp;него есть имя print. Можно считать, что print&nbsp;— это что-то вроде имени переменной, которая хранит объект функции. Давайте посмотрим, насколько далеко идет эта аналогия.</p>
+<p>Первым делом, давайте объект функции получим. Для этого достаточно написать имя функции без скобочек. Это абсолютно аналогично тому, как происходит со&nbsp;списками или строками: если вы&nbsp;пишете после имени списка квадратные скобочки c&nbsp;индексом&nbsp;— выполняется операция взятия элемента, не&nbsp;пишете скобочки&nbsp;— получаете сам список. Пишете после функции круглые скобочки с&nbsp;аргументами&nbsp;— она вызывается, не&nbsp;пишете&nbsp;— получаете саму функцию, как объект.</p>
+<p>input&nbsp;— объект функции чтения из&nbsp;стандартного ввода. Давайте мы&nbsp;этот объект напечатаем:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Python выдает нам, текстовое представление этой функции: строку <strong>&lt;built-in function input&gt;</strong>, которая поясняет, что input&nbsp;— встроенная функция языка.</p>
+<p><strong>Вопросы для самопроверки:</strong></p>
+<p>— Что сделает print(input()) и&nbsp;почему это отличается от&nbsp;print(input)?</p>
+<p>— Как вывести на&nbsp;экран функцию печати?</p>
+<p>Раз мы&nbsp;можем получить какой-то объект, мы&nbsp;его можем записать в&nbsp;переменную. Давайте попробуем!</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">vyvod <span style="color: #66cc66;">=</span> <span style="color: #ff7700; font-weight: bold;">print</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Это сработало. Теперь у&nbsp;функции print есть псевдоним на&nbsp;транслите. Эту новую переменную можно вызвать, как и&nbsp;обычную функцию, посредством круглых скобочек:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">vyvod<span style="color: black;">(</span><span style="color: #483d8b;">'Privet mir!'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Возможность записать функцию в&nbsp;переменную позволяет нам гибко управлять тем, какую функциональность мы&nbsp;хотим использовать. В&nbsp;одну и&nbsp;ту&nbsp;же переменную мы&nbsp;можем записать разные варианты поведения и&nbsp;менять их&nbsp;при необходимости. При этом нам не&nbsp;только не&nbsp;нужно будет менять код по&nbsp;всей программе, но&nbsp;не&nbsp;придется даже изменять код функций. Достаточно переменной присвоить вместо одной функции&nbsp;— другую.</p>
+<p>Напишем программу, которая печатает списки либо просто через запятую, либо в&nbsp;«коробочках», в&nbsp;зависимости от&nbsp;значения переменной formatting.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_boxed<span style="color: black;">(</span>arr<span style="color: black;">)</span>:
+    arr_stringified <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #008000;">str</span><span style="color: black;">(</span>element<span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">for</span> element <span style="color: #ff7700; font-weight: bold;">in</span> arr<span style="color: black;">]</span>
+    mid <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">' | '</span>.<span style="color: black;">join</span><span style="color: black;">(</span>arr_stringified<span style="color: black;">)</span>
+    bar <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'-'</span> * <span style="color: black;">(</span><span style="color: #ff4500;">2</span> + <span style="color: #008000;">len</span><span style="color: black;">(</span>mid<span style="color: black;">)</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">' '</span> + bar + <span style="color: #483d8b;">' '</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'| '</span> + mid + <span style="color: #483d8b;">' |'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">' '</span> + bar + <span style="color: #483d8b;">' '</span><span style="color: black;">)</span>
+&nbsp;<br>
+<span style="color: #ff7700; font-weight: bold;">def</span> print_simple<span style="color: black;">(</span>arr<span style="color: black;">)</span>:
+    arr_stringified <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #008000;">str</span><span style="color: black;">(</span>element<span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">for</span> element <span style="color: #ff7700; font-weight: bold;">in</span> arr<span style="color: black;">]</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">', '</span>.<span style="color: black;">join</span><span style="color: black;">(</span>arr_stringified<span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;<br>
+formatting <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'boxed'</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> formatting <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'boxed'</span>:
+    print_formatted <span style="color: #66cc66;">=</span> print_boxed
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    print_formatted <span style="color: #66cc66;">=</span> print_simple
+&nbsp;
+<span style="color: #808080; font-style: italic;"># Дальше в программе можно использовать print_formatted повсюду</span>
+print_formatted<span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">8</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">13</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">21</span><span style="color: black;">]</span><span style="color: black;">)</span>
+print_formatted<span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">8</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">16</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">32</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">64</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">128</span><span style="color: black;">]</span><span style="color: black;">)</span>
+print_formatted<span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #483d8b;">'abc'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'def'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'ghi'</span><span style="color: black;">]</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Вывод программы:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">--------------------------------- 
+| <span style="color: #ff4500;">1</span> | <span style="color: #ff4500;">1</span> | <span style="color: #ff4500;">2</span> | <span style="color: #ff4500;">3</span> | <span style="color: #ff4500;">5</span> | <span style="color: #ff4500;">8</span> | <span style="color: #ff4500;">13</span> | <span style="color: #ff4500;">21</span> |
+ --------------------------------- 
+ ------------------------------------ 
+| <span style="color: #ff4500;">1</span> | <span style="color: #ff4500;">2</span> | <span style="color: #ff4500;">4</span> | <span style="color: #ff4500;">8</span> | <span style="color: #ff4500;">16</span> | <span style="color: #ff4500;">32</span> | <span style="color: #ff4500;">64</span> | <span style="color: #ff4500;">128</span> |
+ ------------------------------------ 
+ ----------------- 
+| abc | <span style="color: #000000;">def</span> | ghi |
+ -----------------</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Мы&nbsp;один раз проверили условие, и&nbsp;указали, как должна вести себя функция <strong>print_formatted</strong> по&nbsp;всей программе.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Функции высшего порядка. Функция filter</h4>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Функции высшего порядка</strong></h4>
+<div>
+<p>Объект функции можно не&nbsp;только записать в&nbsp;переменную, но&nbsp;и&nbsp;передать в&nbsp;качестве аргумента в&nbsp;другую функцию и&nbsp;даже вернуть из&nbsp;функции.</p>
+<p>Функции, которые принимают или возвращают другие функции, называются <strong>функциями высшего порядка</strong>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Часто функции высшего порядка используются для обработки наборов данных. Например, из&nbsp;раза в&nbsp;раз встречается такая задача: взять список элементов и&nbsp;оставить среди них только небольшую часть, согласно какому-то критерию.</p>
+<p>Эту задачу можно встретить в&nbsp;самых разных формах. В&nbsp;списке товаров найти только дешевые. Отобрать все слова, в&nbsp;которых ровно три слога&nbsp;— для генератора рифм. Найти среди кораблей в&nbsp;игре в&nbsp;«морской бой» все подбитые.</p>
+<p>Это разные списки и&nbsp;разные критерии, а&nbsp;задача одна и&nbsp;та&nbsp;же: отфильтровать элементы списка. В&nbsp;языке Python для этой цели есть встроенная функция <strong>filter</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Функция filter</strong></h4>
+<div>Функция <strong>filter</strong> принимает список элементов и&nbsp;критерий отбора. Возвращает она список из&nbsp;элементов, удовлетворяющих критерию.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Чтобы этой функцией воспользоваться, нужно сообщить функции filter критерий, который говорит, брать&nbsp;ли элемент в&nbsp;результирующий список или нет. Давайте напишем простую функцию, которая проверяет, что слово длиннее шести букв, и&nbsp;затем отберем с&nbsp;её&nbsp;помощью длинные слова.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> is_word_long<span style="color: black;">(</span>word<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>word<span style="color: black;">)</span> <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">6</span>
+&nbsp;<br>
+words <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'В'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'новом'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'списке'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'останутся'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'только'</span><span style="color: #66cc66;">,<br></span><span style="color: #483d8b;">         'длинные'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'слова'</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> word <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">filter</span><span style="color: black;">(</span>is_word_long<span style="color: #66cc66;">,</span> words<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>word<span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; останутся</span>
+<span style="color: #808080; font-style: italic;"># =&gt; длинные</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>С&nbsp;функцией <strong>filter</strong> вам не&nbsp;нужно вручную создавать и&nbsp;заполнять список, достаточно указать условие отбора.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Если вы&nbsp;попробуете распечатать результат функции <strong>filter</strong> при помощи функции print (а&nbsp;не&nbsp;перебирая элементы по&nbsp;одному в&nbsp;цикле for), то&nbsp;будете удивлены: будет выведен не&nbsp;список, а&nbsp;специальный объект <strong>&lt;filter object at 0x...&gt;</strong>.</p>
+<p>Он&nbsp;похож на&nbsp;список тем, что его можно перебирать циклом for, т.е. итерировать. Такие объекты называют итераторами.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Чтобы получить из&nbsp;итератора список, можно воспользоваться функцией <strong>list</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">long_words <span style="color: #66cc66;">=</span> <span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">filter</span><span style="color: black;">(is_word_long</span><span style="color: #66cc66;">,</span> words<span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Описанный способ отфильтровать список пока далек от&nbsp;удобного, поскольку нам приходится заводить функцию для каждой проверки, что занимает две лишних строки кода. Для каждой такой маленькой функции приходится придумывать имя (и&nbsp;загромождать пространство имен).</p>
+<p>Для того чтобы создавать такие короткие функции «на&nbsp;один раз» в&nbsp;языке Python есть специальный синтаксис.</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Лямбда-функции</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Очень часто в&nbsp;качестве аргумента для функций высшего порядка часто мы&nbsp;хотим использовать совсем простую функцию. Причем нередко такая функция нужна в&nbsp;программе только в&nbsp;одном месте, поэтому ей&nbsp;необязательно даже иметь имя.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Лямбда-функции</strong></h4>
+<div>
+<p>Такие короткие безымянные (анонимные) функции можно создавать инструкцией <strong>lambda &lt;аргументы&gt;: &lt;выражение&gt;</strong></p>
+<p>Такая инструкция создаст функцию, принимающую указанный список аргументов и&nbsp;возвращающую результат вычисления выражения.</p>
+<p>В&nbsp;языке Python тело лямбда-функции имеет ровно одно выражение. Инструкция <strong>return</strong> подразумевается, писать её&nbsp;не&nbsp;требуется, да&nbsp;и&nbsp;нельзя. Скобочки вокруг аргументов не&nbsp;пишутся, аргументы от&nbsp;выражения отделяет двоеточие.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><br>Теперь мы&nbsp;можем записать функцию, проверяющую длину слова следующим образом:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">lambda</span> word: <span style="color: #008000;">len</span><span style="color: black;">(</span>word<span style="color: black;">)</span> <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">6</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>И&nbsp;список длинных слов теперь извлечь очень просто:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">long_words <span style="color: #66cc66;">=</span> <span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">filter</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> word: <span style="color: #008000;">len</span><span style="color: black;">(</span>word<span style="color: black;">)</span> <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">6</span><span style="color: #66cc66;">,</span> words<span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Лямбда-функция&nbsp;— полноценная функция. Её&nbsp;можно использовать в&nbsp;составе любых конструкций. Например, если вы&nbsp;хотите использовать её&nbsp;несколько раз, но&nbsp;не&nbsp;хотите определять функцию с&nbsp;помощью def, вы&nbsp;можете присвоить созданную лямбда-функцию какой-либо переменной.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">add <span style="color: #66cc66;">=</span> <span style="color: #ff7700; font-weight: bold;">lambda</span> x<span style="color: #66cc66;">,</span> y: x + y
+add<span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; 8</span>
+add<span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> add<span style="color: black;">(</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">)</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; 6</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А&nbsp;теперь рассмотрим вариант, что вам нужно взять все элементы списка, но&nbsp;в&nbsp;программе уже стоит <strong>filter</strong> и&nbsp;вам не&nbsp;хочется его удалять. В&nbsp;этой ситуации вам поможет функция с&nbsp;особенно простым выражением:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">lambda</span> x: <span style="color: #008000;">True</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Покажем:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_some_primes<span style="color: black;">(</span>criterion<span style="color: black;">)</span>:
+    primes <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">7</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">11</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">13</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">17</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">19</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">23</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">29</span><span style="color: black;">]</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> number <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">filter</span><span style="color: black;">(</span>criterion<span style="color: #66cc66;">,</span> primes<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>number<span style="color: black;">)</span>
+&nbsp;<br>
+print_some_primes<span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> x: <span style="color: #008000;">True</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Обратите внимание, что лямбда-функция принимает аргумент, хотя и&nbsp;не&nbsp;использует его. Функция <strong>filter</strong> всегда передает в&nbsp;критерий элемент, который проверяет. Если&nbsp;бы мы&nbsp;написали лямбда-функцию без аргументов <strong>lambda: Tru</strong>e, то&nbsp;функция <strong>filter</strong> вызвала&nbsp;бы ошибку, потому что передала&nbsp;бы аргумент в&nbsp;функцию, которая аргументов не&nbsp;принимает.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Чтобы функция <strong>filter</strong> не&nbsp;казалась магической, напишем свой упрощенный аналог. Наша функция <strong>simple_filter</strong> будет принимать критерий и&nbsp;список и&nbsp;возвращать новый список.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> simple_filter<span style="color: black;">(</span>criterion<span style="color: #66cc66;">,</span> arr<span style="color: black;">)</span>:
+    result <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> element <span style="color: #ff7700; font-weight: bold;">in</span> arr:
+        <span style="color: #ff7700; font-weight: bold;">if</span> criterion<span style="color: black;">(</span>element<span style="color: black;">)</span>:
+            result.<span style="color: black;">append</span><span style="color: black;">(</span>element<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">return</span> result</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Мы&nbsp;передали критерий как функцию, а&nbsp;потому можем его вызвать, что мы&nbsp;и&nbsp;сделали в&nbsp;условном операторе. Так как для перечисления элементов мы&nbsp;использовали конструкцию for, мы&nbsp;можем вместо списка в&nbsp;функцию передать любой итерируемый объект. Например строку (элементами будут отдельные символы) или интервал range.</p>
+<p>Например, найдем все числа от&nbsp;1&nbsp;до&nbsp;99, которые при делении на&nbsp;12&nbsp;дают 7&nbsp;в остатке.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">simple_filter<span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> x: x % <span style="color: #ff4500;">12</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">7</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">100</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; [7, 19, 31, 43, 55, 67, 79, 91]</span></pre>
+</div>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Функция map</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Другая популярная функция высшего порядка называется <strong>map</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Функция map</strong></h4>
+<div>Функция <strong>map</strong> преобразует каждый элемент списка по&nbsp;некоторому общему правилу и&nbsp;в&nbsp;результате создает список (вернее, как и&nbsp;filter, специальный итерируемый объект, похожий на&nbsp;список) из&nbsp;преобразованных значений.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Функция, которую <strong>map</strong> принимает&nbsp;— преобразование одного элемента. Зная как преобразуется один элемент, map выполняет превращение целых списков.</p>
+<p>Например, возьмем набор из&nbsp;чисел от&nbsp;1&nbsp;до&nbsp;10&nbsp;и&nbsp;применим к&nbsp;ним функцию возведения в&nbsp;квадрат.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">map</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> x: x ** <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">10</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; [1, 4, 9, 16, 25, 36, 49, 64, 81]</span></pre>
+</div>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Еще немного о&nbsp;списочных выражениях</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;уроке, посвященном списочным выражениям, вы&nbsp;разбирали конструкции, которые очень похожи на&nbsp;действие функции <strong>map</strong>. Например, список квадратов цифр можно посчитать так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: black;">[</span>x ** <span style="color: #ff4500;">2</span> <span style="color: #ff7700; font-weight: bold;">for</span> x <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span><span style="color: black;">]</span>
+<span style="color: #808080; font-style: italic;"># =&gt; [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Оказывается, что для фильтрации списка тоже есть специальный вид списочного выражения: достаточно приписать&nbsp;<strong>if &lt;условие&gt;</strong> в&nbsp;конце выражения. Такая конструкция отберет только те&nbsp;элементы, которые удовлетворяют условию.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Например, сгенерируем список чётных цифр, не&nbsp;делящихся на&nbsp;3:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: black;">[</span>x <span style="color: #ff7700; font-weight: bold;">for</span> x <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">if</span> x % <span style="color: #ff4500;">2</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">0</span> <span style="color: #ff7700; font-weight: bold;">and</span> x % <span style="color: #ff4500;">3</span> <span style="color: #66cc66;">!=</span> <span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+<span style="color: #808080; font-style: italic;"># =&gt; [2, 4, 8]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Списочное выражение можно рассматривать как комбинацию фильтрации и&nbsp;трансформации: сначала выполняется фильтрация, затем&nbsp;— трансформирование. Давайте, например, возьмем список слов, оставим только длинные слова и&nbsp;преобразуем их&nbsp;в&nbsp;слова, написанные большими буквами:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">words <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'В'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'новом'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'списке'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'останутся'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'только'</span><span style="color: #66cc66;">,<br></span><span style="color: #483d8b;">         'длинные'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'слова'</span><span style="color: black;">]</span>
+long_words <span style="color: #66cc66;">=</span> <span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">map</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> word: word.<span style="color: black;">upper</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span>
+                      <span style="color: #008000;">filter</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> word: <span style="color: #008000;">len</span><span style="color: black;">(</span>word<span style="color: black;">)</span> <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">6</span><span style="color: #66cc66;">,</span> words<span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; ['ОСТАНУТСЯ', 'ДЛИННЫЕ']</span>
+<span style="color: #808080; font-style: italic;"># или</span>
+long_words <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>word.<span style="color: black;">upper</span><span style="color: black;">(</span><span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">for</span> word <span style="color: #ff7700; font-weight: bold;">in</span> words <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>word<span style="color: black;">)</span> <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">6</span><span style="color: black;">]</span>
+<span style="color: #808080; font-style: italic;"># =&gt; ['ОСТАНУТСЯ', 'ДЛИННЫЕ']</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Как видите, оба способа позволяют добиться результата, но&nbsp;списочные выражения выглядят немного проще. В&nbsp;зависимости от&nbsp;ситуации, бывает удобно использовать либо одну форму, либо другую.</p>
+</div>
+<p><a name="6"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>6. Комбинирование функций</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Посмотрим, как функции высшего порядка комбинируются для решения более сложных задач. Разберем, как можно было&nbsp;бы при помощи этих функций решить задачу «Длинношеее» из&nbsp;дополнительных задач к&nbsp;уроку по&nbsp;теме «Функции».</p>
+<p>Напомним, что нам нужно найти слова, имеющие четыре и&nbsp;более слогов. Мы&nbsp;можем разбить эту задачу на&nbsp;такие этапы: выделить список слов, посчитать число гласных букв и&nbsp;в&nbsp;зависимости от&nbsp;их&nbsp;числа взять слово или отбросить. Перед тем как выделять слова мы&nbsp;еще дополнительно отбросим пунктуацию. Каждый этап обернем в&nbsp;одну небольшую функцию.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">EnglishAlphabet <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #008000;">chr</span><span style="color: black;">(</span>c<span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">for</span> c <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #008000;">ord</span><span style="color: black;">(</span><span style="color: #483d8b;">'a'</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">ord</span><span style="color: black;">(</span><span style="color: #483d8b;">'z'</span><span style="color: black;">)</span> + <span style="color: #ff4500;">1</span><span style="color: black;">)</span><span style="color: black;">]</span>
+RussianAlphabet <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #008000;">chr</span><span style="color: black;">(</span>c<span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">for</span> c <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #008000;">ord</span><span style="color: black;">(</span><span style="color: #483d8b;">'а'</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">ord</span><span style="color: black;">(</span><span style="color: #483d8b;">'я'</span><span style="color: black;">)</span> + <span style="color: #ff4500;">1</span><span style="color: black;">)</span><span style="color: black;">]</span> + <span style="color: black;">[</span><span style="color: #483d8b;">'ё'</span><span style="color: black;">]</span>
+Alphabet <span style="color: #66cc66;">=</span> EnglishAlphabet + RussianAlphabet
+&nbsp;
+EnglishVowels <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'e'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'i'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'o'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'u'</span><span style="color: black;">]</span>
+RussianVowels <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'а'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'о'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'э'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'и'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'у'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'ы'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'е'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'ё'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'ю'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'я'</span><span style="color: black;">]</span>
+Vowels <span style="color: #66cc66;">=</span> EnglishVowels + RussianVowels
+&nbsp;<br>
+<span style="color: #ff7700; font-weight: bold;">def</span> remove_punctuation<span style="color: black;">(</span>text<span style="color: black;">)</span>:
+  <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">''</span>.<span style="color: black;">join</span><span style="color: black;">(</span><span style="color: #008000;">filter</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> c: c <span style="color: #ff7700; font-weight: bold;">in</span> Alphabet + <span style="color: black;">[</span><span style="color: #483d8b;">' '</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> text<span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;<br>
+<span style="color: #ff7700; font-weight: bold;">def</span> get_words<span style="color: black;">(</span>text<span style="color: black;">)</span>:
+  <span style="color: #ff7700; font-weight: bold;">return</span> remove_punctuation<span style="color: black;">(</span>text<span style="color: black;">)</span>.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;<br>
+<span style="color: #ff7700; font-weight: bold;">def</span> number_of_vowels<span style="color: black;">(</span>word<span style="color: black;">)</span>:
+  <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">len</span><span style="color: black;">(</span><span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">filter</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> c: c <span style="color: #ff7700; font-weight: bold;">in</span> Vowels<span style="color: #66cc66;">,</span> word<span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;<br>
+<span style="color: #ff7700; font-weight: bold;">def</span> long_words<span style="color: black;">(</span>text<span style="color: black;">)</span>:
+  <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">filter</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> word: number_of_vowels<span style="color: black;">(</span>word<span style="color: black;">)</span> <span style="color: #66cc66;">&gt;=</span> <span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> get_words<span style="color: black;">(</span>text<span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;<br>
+<span style="color: #ff7700; font-weight: bold;">def</span> print_long_words<span style="color: black;">(</span>text<span style="color: black;">)</span>:
+  <span style="color: #ff7700; font-weight: bold;">for</span> word <span style="color: #ff7700; font-weight: bold;">in</span> long_words<span style="color: black;">(</span>text<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>word.<span style="color: black;">lower</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Функцию <strong>filter</strong> мы&nbsp;используем трижды:</p>
+<p>— чтобы оставить только буквы и&nbsp;пробелы;</p>
+<p>— чтобы выделить в&nbsp;строке только гласные;</p>
+<p>— чтобы из&nbsp;всех слов отобрать только нужные.</p>
+<p>Функции получились не&nbsp;очень сложные&nbsp;и, что важно, их&nbsp;легко комбинировать друг с&nbsp;другом.</p>
+<p>Обратите внимание, что не&nbsp;всегда требуется создавать лямбда-функцию при вызове, поскольку иногда нужная функция уже существует. Например, если мы&nbsp;хотим преобразовать список слов в&nbsp;список длин слов, мы&nbsp;можем использовать любой из&nbsp;двух вариантов (но, конечно, удобнее использовать более короткий):</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">words <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'the quick brown fox jumps over the lazy dog'</span>.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">map</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> word: <span style="color: #008000;">len</span><span style="color: black;">(</span>word<span style="color: black;">)</span><span style="color: #66cc66;">,</span> words<span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; [3, 5, 5, 3, 5, 4, 3, 4, 3]</span>
+<span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">map</span><span style="color: black;">(</span><span style="color: #008000;">len</span><span style="color: #66cc66;">,</span> words<span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; [3, 5, 5, 3, 5, 4, 3, 4, 3]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Еще один пример&nbsp;— считывание списка чисел с&nbsp;клавиатуры:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">numbers <span style="color: #66cc66;">=</span> <span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">map</span><span style="color: black;">(</span><span style="color: #008000;">float</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Аналогично можно использовать в&nbsp;качестве передаваемой функции методы объектов. Но&nbsp;при этом нужно указать не&nbsp;только название метода, но&nbsp;и&nbsp;название типа объекта, к&nbsp;которому эта функция относится. Т.е. для метода строк это будет str, для списков list и&nbsp;т.д. Про методы и&nbsp;типы вы&nbsp;еще будете много говорить в&nbsp;будущих уроках, пока что только простой пример&nbsp;— преобразовать каждое слово в&nbsp;списке к&nbsp;верхнему регистру:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">words <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'list'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'of'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'several'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'words'</span><span style="color: black;">]</span>
+<span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">map</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> word: word.<span style="color: black;">upper</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> words<span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; ['LIST', 'OF', 'SEVERAL', 'WORDS']</span>
+<span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">map</span><span style="color: black;">(</span><span style="color: #008000;">str</span>.<span style="color: black;">upper</span><span style="color: #66cc66;">,</span> words<span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; ['LIST', 'OF', 'SEVERAL', 'WORDS']</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Существует еще множество полезных функций, которые принимают функцию в&nbsp;качестве аргумента. Оказывается, что даже давно известные вам функции <strong>min</strong>, <strong>max</strong>, <strong>sort</strong> могут принимать функцию одним из&nbsp;аргументов, что изменяет их&nbsp;поведение.</p>
+</div></article></section>
+{%endblock%}

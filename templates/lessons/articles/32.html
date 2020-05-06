@@ -1,0 +1,487 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Введение в&nbsp;ООП</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Введение</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Основные понятия</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Создание классов</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Методы классов</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Инициализация экземпляров класса</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">6</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#6">Соглашения об&nbsp;именовании, вызов методов атрибутов</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>Одна из&nbsp;самых распространённых методик разработки программных продуктов&nbsp;— объектно-ориентированное программирование (ООП). При работе с&nbsp;функциями мы&nbsp;уже использовали принцип модульности (сокрытие сложного алгоритма за&nbsp;вызовом функций) и&nbsp;библиотеки (упаковка функций, решающих схожие задачи, в&nbsp;одно хранилище&nbsp;— библиотеку). В&nbsp;ООП появляется ещё один пример модульности&nbsp;— <strong>объект</strong>. Объекты хранят внутри себя и&nbsp;данные, и&nbsp;обрабатывающие их&nbsp;функции. Изучению парадигмы объектно-ориентированного программирования и&nbsp;посвящены следующие уроки.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Введение</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Язык программирования Python появился в&nbsp;1991&nbsp;году. К&nbsp;этому времени была разработана теоретическая база объектно-ориентированного программирования, появились исследовательские языки программирования, проверившие эти идеи на&nbsp;практике, и&nbsp;даже возникло первое поколение объектно-ориентированных языков для широкого круга программистов.</p>
+<p>Поэтому, ориентируясь на&nbsp;чужие успехи и&nbsp;неудачи, Гвидо ван Россум и&nbsp;его коллеги смогли спроектировать достаточно простую и&nbsp;мощную реализацию ООП. Python поддерживает ООП на&nbsp;сто процентов: все данные в&nbsp;нём являются объектами. Числа всех типов, строки, списки, словари, даже функции, модули, и&nbsp;наконец, сами типы данных&nbsp;— всё это объекты!</p>
+<p>Давайте для начала рассмотрим несколько предметов из&nbsp;реального мира. Вообще говоря, прямой аналогии между объектами материального мира и&nbsp;объектами из&nbsp;мира программирования нет. Ведь в&nbsp;программировании есть объекты, которые обозначают какой-то процесс (например, функции) или состояние процесса, или вообще произвольные абстрактные понятия. Например, массив или число с&nbsp;плавающей точкой сами по&nbsp;себе достаточно абстрактные понятия, которые имеют отдалённые аналоги в&nbsp;реальном мире. Но&nbsp;всё&nbsp;же давайте пока порассуждаем о&nbsp;реальных объектах.</p>
+<p>Представим себе комнату. В&nbsp;ней есть мебель: несколько столов, стулья, шкафы. Стулья могут отличаться цветом, формой, количеством ножек, но&nbsp;всё равно мы&nbsp;всегда сможем отличить стул от&nbsp;шкафа.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Если задуматься, у&nbsp;каждого <strong>объекта</strong> есть набор <strong>свойств</strong> и&nbsp;<strong>действия</strong>, в&nbsp;которых он&nbsp;может участвовать.</p>
+<p>Основываясь на&nbsp;этих <strong>свойствах</strong> (наличие сиденья) и&nbsp;<strong>действиях</strong> (на&nbsp;стуле можно сидеть), мы&nbsp;классифицируем объекты, то&nbsp;есть относим их&nbsp;к&nbsp;тому или иному <strong>классу</strong>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><img src="https://yastatic.net/s3/lyceum/content/image/classes-1.jpeg" width="600" height="auto"></p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Основные понятия</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте определим несколько терминов:</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Основные понятия</strong></h4>
+<div>
+<p><strong>Класс. </strong>Описывает модель объекта, его свойства и&nbsp;поведение. Говоря языком программиста, класс&nbsp;— это такой тип данных, который создается для описания сложных объектов.</p>
+<p><strong>Экземпляр. </strong>Для краткости вместо «Объект, порождённый классом „Стул“» говорят «экземпляр класса „Стул“».</p>
+<p><strong>Объект. </strong>Хранит конкретные значения свойств и&nbsp;информацию о&nbsp;принадлежности к&nbsp;классу. Может выполнять методы.</p>
+<p><strong>Атрибут. </strong>Свойство, присущее объекту. Класс объекта определяет, какие атрибуты есть у&nbsp;объекта. Конкретные значения атрибутов&nbsp;— характеристика уже не&nbsp;класса, а&nbsp;конкретного экземпляра этого класса, то&nbsp;есть объекта.</p>
+<p><strong>Метод. </strong>Действие, которое объект может выполнять над самим собой или другими объектами.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Чтобы стало чуть понятнее, давайте разберём на&nbsp;примере: 1, 2, 3, "abc", [10, 20, 30]&nbsp;— объекты. А&nbsp;int, str, list&nbsp;— классы. Да, все типы данных, которые мы&nbsp;изучали ранее, на&nbsp;самом деле&nbsp;— классы:</p>
+<ul>
+<li>
+<p>1, 2, 3&nbsp;— экземпляры класса int,</p>
+</li>
+<li>
+<p>"abc"&nbsp;— класса str,</p>
+</li>
+<li>
+<p>[10, 20, 30]&nbsp;— экземпляр класса list, в&nbsp;который вложены экземпляры int.</p>
+</li>
+</ul>
+<p>Чтобы узнать, к&nbsp;какому классу относится тот или иной объект, можно воспользоваться функцией <strong>type</strong>.</p>
+<p>Например,</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #008000;">type</span><span style="color: black;">(</span><span style="color: #ff4500;">123</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; '&lt;class 'int'&gt;'</span>
+&nbsp;
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #008000;">type</span><span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; '&lt;class 'list'&gt;'</span></pre>
+</div>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Создание классов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте создадим простейший класс, который будет моделировать обычный фрукт. На&nbsp;языке Python это будет выглядеть так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Fruit:
+    <span style="color: #ff7700; font-weight: bold;">pass</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP 8</strong></h4>
+<div>Имена классов по&nbsp;стандарту именования PEP8 должны начинаться с&nbsp;большой буквы. Встроенные классы (int, float, str, list и&nbsp;другие) этому правилу не&nbsp;следуют, однако в&nbsp;вашем коде его лучше придерживаться&nbsp;— так делает большинство программистов на&nbsp;Python.</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Определение этого класса состоит из&nbsp;зарезервированного слова <strong>class</strong>, имени класса и&nbsp;пустой инструкции после отступа.</p>
+<p>Внутри класса с&nbsp;дополнительным уровнем отступов должны определяться его методы, но&nbsp;сейчас их&nbsp;нет. Однако хотя&nbsp;бы одна инструкция должна быть, поэтому приходится использовать пустую инструкцию-заглушку <strong>pass</strong>. Она предназначена как раз для таких случаев.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Описав класс, мы&nbsp;создали модель фрукта.</p>
+<p>Теперь создадим два конкретных фрукта&nbsp;— <strong>экземпляра класса Fruit</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> Fruit<span style="color: black;">(</span><span style="color: black;">)</span>
+b <span style="color: #66cc66;">=</span> Fruit<span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Переменные a&nbsp;и&nbsp;b&nbsp;содержат ссылки на&nbsp;два разных объекта&nbsp;— экземпляра класса <strong>Fruit</strong>, которые можно наделить разными атрибутами:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a.<span style="color: black;">name</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'apple'</span>
+a.<span style="color: black;">weight</span> <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">120</span>
+<span style="color: #808080; font-style: italic;"># теперь a - это яблоко весом 120 грамм</span>
+b.<span style="color: black;">name</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'orange'</span>
+b.<span style="color: black;">weight</span> <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">150</span>
+<span style="color: #808080; font-style: italic;"># а b - это апельсин весом 150 грамм</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Атрибуты можно не&nbsp;только устанавливать, но&nbsp;и&nbsp;читать. При чтении ещё не&nbsp;созданного атрибута будет появляться ошибка <strong>AttributeError</strong>. Вы&nbsp;её&nbsp;часто увидите, допуская неточности в&nbsp;именах атрибутов и&nbsp;методов.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>a.<span style="color: black;">name</span><span style="color: #66cc66;">,</span> a.<span style="color: black;">weight</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># apple 120</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>b.<span style="color: black;">name</span><span style="color: #66cc66;">,</span> b.<span style="color: black;">weight</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># orange 150</span>
+b.<span style="color: black;">weight</span> -<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">10</span>  <span style="color: #808080; font-style: italic;"># Апельсин долго лежал на складе и усох</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>b.<span style="color: black;">name</span><span style="color: #66cc66;">,</span> b.<span style="color: black;">weight</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># orange 140</span>
+&nbsp;
+c <span style="color: #66cc66;">=</span> Fruit<span style="color: black;">(</span><span style="color: black;">)</span>
+c.<span style="color: black;">name</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'lemon'</span>
+c.<span style="color: black;">color</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'yellow'</span>
+<span style="color: #808080; font-style: italic;"># Атрибут color появился только в объекте c.</span>
+<span style="color: #808080; font-style: italic;"># Забыли добавить свойство weight и обращаемся к нему</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>c.<span style="color: black;">name</span><span style="color: #66cc66;">,</span> c.<span style="color: black;">weight</span><span style="color: black;">)</span>  
+<span style="color: #808080; font-style: italic;"># Ошибка AttributeError, нет атрибута weight</span></pre>
+</div>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Методы классов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>На&nbsp;данный момент мы&nbsp;пользуемся объектами только для хранения соответствий между именами атрибутов и&nbsp;их&nbsp;значениями. Но&nbsp;на&nbsp;самом деле возможности объектов значительно шире. Давайте рассмотрим, как можно запрограммировать объекты на&nbsp;выполнение определённых действий:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Greeter:
+    <span style="color: #ff7700; font-weight: bold;">def</span> hello_world<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Привет, Мир!"</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+greet <span style="color: #66cc66;">=</span> Greeter<span style="color: black;">(</span><span style="color: black;">)</span>
+greet.<span style="color: black;">hello_world</span><span style="color: black;">(</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># выведет "Привет, Мир!"</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>После беглого осмотра этого кода видно, что внутри класса <strong>Greeter</strong> находится определение чего-то, похожего на&nbsp;функцию, печатающую фразу «Привет, Мир!». На&nbsp;самом деле мы&nbsp;написали метод, с&nbsp;синтаксисом вызова которого вы&nbsp;хорошо знакомы по&nbsp;методу строк split или методу списков append. Теперь мы&nbsp;можем создавать такие методы самостоятельно.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>При создании собственных методов обратите внимание на&nbsp;два момента:</p>
+<ul>
+<li>
+<p>Метод должен быть определён внутри класса (добавляется уровень отступов);</p>
+</li>
+<li>
+<p>У&nbsp;методов всегда есть хотя&nbsp;бы один аргумент, и&nbsp;<strong>первый по&nbsp;счёту аргумент должен называться self</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Аргументу <strong>self</strong> следует уделить особое внимание. В&nbsp;него передается тот объект, который вызвал этот метод. Поэтому <strong>self</strong> ещё часто называют <strong>«контекстным объектом»</strong>. Рассмотрим чуть подробнее. Когда программа вызывает метод объекта, Python передает ему в&nbsp;первом аргументе экземпляр вызывающего объекта, который всегда связан с&nbsp;параметром <strong>self</strong>. Иными словами greet.hello_world() преобразуется в&nbsp;вызов hello_world(greet). Этот факт объясняет особую важность параметра <strong>self</strong> и&nbsp;то, почему он&nbsp;всегда должен быть первым в&nbsp;любом методе объекта, который вы&nbsp;пишете. Вызывая метод, вы&nbsp;не&nbsp;должны передавать значение для <strong>self</strong> явно&nbsp;— интерпретатор сделает это за&nbsp;вас.</p>
+<p>Вообще говоря, <strong>self</strong>&nbsp;— это обычная переменная, которая может называться по-другому. Но&nbsp;так категорически не&nbsp;рекомендуется делать: соглашение об&nbsp;имени контекстного объекта&nbsp;— самое строгое из&nbsp;всех соглашений в&nbsp;мире Python. Его выполняют 99,9% программистов. Если нарушить это соглашение, другие программисты просто не&nbsp;будут понимать ваш код. Кроме того, некоторые текстовые редакторы подсвечивают слово <strong>self</strong> цветом, и&nbsp;это удобно.</p>
+<p>В&nbsp;примере выше мы&nbsp;не&nbsp;передавали нашему методу никаких аргументов. Это довольно скучно, ведь мы&nbsp;уже умеем передавать аргументы функциям. Давайте расширим пример и&nbsp;добавим в&nbsp;наш класс два новых метода:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Greeter:
+    <span style="color: #ff7700; font-weight: bold;">def</span> hello_world<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Привет, Мир!"</span><span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> greeting<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>:
+        <span style="color: #483d8b;">'''Поприветствовать человека с именем name.'''</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Привет, {}!"</span>.<span style="color: black;">format</span><span style="color: black;">(</span>name<span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> start_talking<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> name<span style="color: #66cc66;">,</span> weather_is_good<span style="color: black;">)</span>:
+        <span style="color: #483d8b;">'''Поприветствовать и начать разговор с вопроса о погоде.'''</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Привет, {}!"</span>.<span style="color: black;">format</span><span style="color: black;">(</span>name<span style="color: black;">)</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> weather_is_good:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Хорошая погода, не так ли?"</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">else</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Отвратительная погода, не так ли?"</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+greet <span style="color: #66cc66;">=</span> Greeter<span style="color: black;">(</span><span style="color: black;">)</span>
+greet.<span style="color: black;">hello_world</span><span style="color: black;">(</span><span style="color: black;">)</span>     <span style="color: #808080; font-style: italic;"># Привет, Мир!</span>
+greet.<span style="color: black;">greeting</span><span style="color: black;">(</span><span style="color: #483d8b;">"Петя"</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># Привет, Петя!</span>
+&nbsp;
+greet.<span style="color: black;">start_talking</span><span style="color: black;">(</span><span style="color: #483d8b;">"Саша"</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">True</span><span style="color: black;">)</span>  
+<span style="color: #808080; font-style: italic;"># Привет, Саша!</span>
+<span style="color: #808080; font-style: italic;"># Хорошая погода, не так ли?</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Значение <strong>self</strong> автоматически получается из&nbsp;объекта, на&nbsp;котором сделан вызов метода, но&nbsp;мы&nbsp;его пока никак не&nbsp;используем.</p>
+<p>Давайте попробуем запоминать информацию из&nbsp;предыдущих вызовов методов. Напишем класс «Машина», которую, как известно, надо сначала завести, а&nbsp;потом уже ехать:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Car:
+    <span style="color: #ff7700; font-weight: bold;">def</span> start_engine<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        engine_on <span style="color: #66cc66;">=</span> <span style="color: #008000;">True</span>  <span style="color: #808080; font-style: italic;"># К сожалению, не сработает</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> drive_to<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> city<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">if</span> engine_on:  <span style="color: #808080; font-style: italic;"># Ошибка NameError</span>
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Едем в город {}."</span>.<span style="color: black;">format</span><span style="color: black;">(</span>city<span style="color: black;">)</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">else</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Машина не заведена, никуда не едем"</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+c <span style="color: #66cc66;">=</span> Car<span style="color: black;">(</span><span style="color: black;">)</span>
+c.<span style="color: black;">start_engine</span><span style="color: black;">(</span><span style="color: black;">)</span>
+c.<span style="color: black;">drive_to</span><span style="color: black;">(</span><span style="color: #483d8b;">'Владивосток'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Итак, первая версия класса «Машина» специально сделана нерабочей, чтобы показать, что переменные внутри методов ведут себя точно так&nbsp;же, как и&nbsp;переменные функций. То&nbsp;есть, если мы&nbsp;инициализируем переменную внутри метода, то&nbsp;после его завершения все созданные таким образом переменные уничтожаются и&nbsp;оказываются недоступны как следующему вызову этого&nbsp;же метода, так и&nbsp;другим методам. Под «уничтожением» мы&nbsp;понимаем исчезновение самих переменных, а&nbsp;не&nbsp;объектов, на&nbsp;которые они ссылаются. Если ссылка на&nbsp;объект сохранилась где-нибудь (например, мы&nbsp;вернули объект с&nbsp;помощью <strong>return</strong>), он&nbsp;всё ещё доступен. Если ссылок не&nbsp;осталось, объект будет скоро переработан сборщиком мусора.</p>
+<p>Напомним, что такие переменные называются <strong>локальными</strong>.</p>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Инициализация экземпляров класса</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Но&nbsp;вернёмся к&nbsp;методам. Пора нашей машине наконец поехать&nbsp;— и&nbsp;в&nbsp;этом нам поможет контекстный объект <strong>self</strong>. Он&nbsp;общий для всех методов класса, и&nbsp;именно в&nbsp;нём мы&nbsp;с&nbsp;помощью атрибутов сохраним информацию о&nbsp;состоянии двигателя:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Car:
+    <span style="color: #ff7700; font-weight: bold;">def</span> start_engine<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">engine_on</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">True</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> drive_to<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> city<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">self</span>.<span style="color: black;">engine_on</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Едем в город {}."</span>.<span style="color: black;">format</span><span style="color: black;">(</span>city<span style="color: black;">)</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">else</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Машина не заведена, никуда не едем."</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Теперь наша машина отлично заведётся и&nbsp;поедет:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">car1 <span style="color: #66cc66;">=</span> Car<span style="color: black;">(</span><span style="color: black;">)</span>
+car1.<span style="color: black;">start_engine</span><span style="color: black;">(</span><span style="color: black;">)</span>
+car1.<span style="color: black;">drive_to</span><span style="color: black;">(</span><span style="color: #483d8b;">'Владивосток'</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># Едем в город Владивосток.</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Однако одна проблема осталась. При попытке выехать на&nbsp;незаведённой машине</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">car2 <span style="color: #66cc66;">=</span> Car<span style="color: black;">(</span><span style="color: black;">)</span>
+car2.<span style="color: black;">drive_to</span><span style="color: black;">(</span><span style="color: #483d8b;">'Лиссабон'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Мы&nbsp;вместо красивого сообщения о&nbsp;том, что незаведённая машина не&nbsp;поедет, получим «падение» программы с&nbsp;ошибкой <strong>AttributeError</strong> (отсутствие атрибута или метода). Ещё&nbsp;бы, ведь атрибут создавался в&nbsp;методе start_engine, а&nbsp;мы&nbsp;не&nbsp;вызвали его для объекта car2.</p>
+<p>Кроме того, стоит добавить метод stop_engine, чтобы не&nbsp;только заводить машину, но&nbsp;и&nbsp;глушить двигатель. Этот метод помог&nbsp;бы нам избежать вышеуказанной ошибки, но&nbsp;странно «глушить» ещё не&nbsp;заведенную машину, чтобы избежать ошибки: ведь интуитивно мы&nbsp;понимаем, что машина должна создаваться с&nbsp;выключенным двигателем.</p>
+<p>Нет&nbsp;ли способа задать значение атрибута engine_on по&nbsp;умолчанию? Да. Есть метод <strong>__init__</strong>, который относится к&nbsp;группе так называемых <strong>специальных методов</strong>, которые имеют особое значение для интерпретатора Python.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Особое значение метода <strong>__init__</strong> заключается в&nbsp;том, что если такой метод в&nbsp;классе определён, то&nbsp;интерпретатор <strong>автоматически</strong> вызывает его при создании каждого экземпляра этого класса для инициализации экземпляра.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте воспользуемся этим, чтобы при создании объекта создать атрибут engine_on и&nbsp;записать в&nbsp;него <strong>False</strong>.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Car:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">engine_on</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">False</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> start_engine<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">engine_on</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">True</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> drive_to<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> city<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">self</span>.<span style="color: black;">engine_on</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Едем в город {}."</span>.<span style="color: black;">format</span><span style="color: black;">(</span>city<span style="color: black;">)</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">else</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Машина не заведена, никуда не едем."</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+car1 <span style="color: #66cc66;">=</span> Car<span style="color: black;">(</span><span style="color: black;">)</span>
+car1.<span style="color: black;">start_engine</span><span style="color: black;">(</span><span style="color: black;">)</span>
+car1.<span style="color: black;">drive_to</span><span style="color: black;">(</span><span style="color: #483d8b;">'Владивосток'</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># Едем в город Владивосток.</span>
+car2 <span style="color: #66cc66;">=</span> Car<span style="color: black;">(</span><span style="color: black;">)</span>
+car2.<span style="color: black;">drive_to</span><span style="color: black;">(</span><span style="color: #483d8b;">'Лиссабон'</span><span style="color: black;">)</span>     <span style="color: #808080; font-style: italic;"># Машина не заведена, никуда не едем.</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Метод <strong>__init__</strong> после <strong>self</strong> может получать параметры, передаваемые ему при создании экземпляра:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Car:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> color<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">engine_on</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">False</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">=</span> color
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> start_engine<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">engine_on</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">True</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> drive_to<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> city<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">self</span>.<span style="color: black;">engine_on</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"{} машина едет в город {}."</span>.<span style="color: black;">format</span><span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">color</span><span style="color: #66cc66;">,</span> city<span style="color: black;">)</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">else</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"{} машина не заведена, никуда не едем."</span>.<span style="color: black;">format</span><span style="color: black;">(<br></span><span style="color: #008000;">                self</span>.<span style="color: black;">color</span><span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+car1 <span style="color: #66cc66;">=</span> Car<span style="color: black;">(</span><span style="color: #483d8b;">'красная'</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># Создали машину красного цвета</span>
+&nbsp;
+car2 <span style="color: #66cc66;">=</span> Car<span style="color: black;">(</span><span style="color: #483d8b;">'синяя'</span><span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># И ещё одну синего</span>
+&nbsp;
+car1.<span style="color: black;">start_engine</span><span style="color: black;">(</span><span style="color: black;">)</span>    
+<span style="color: #808080; font-style: italic;"># Обратите внимание, что мы завели только одну машину,</span>
+<span style="color: #808080; font-style: italic;"># ту, на которую ссылается car1 (красную).</span>
+&nbsp;
+<span style="color: #808080; font-style: italic;"># car2 -- это другой объект, он не изменится.</span>
+&nbsp;
+car1.<span style="color: black;">drive_to</span><span style="color: black;">(</span><span style="color: #483d8b;">'Владивосток'</span><span style="color: black;">)</span>  
+<span style="color: #808080; font-style: italic;"># красная машина едет в город Владивосток.</span>
+&nbsp;
+car2.<span style="color: black;">drive_to</span><span style="color: black;">(</span><span style="color: #483d8b;">'Лиссабон'</span><span style="color: black;">)</span>  
+<span style="color: #808080; font-style: italic;"># синяя машина не заведена, никуда не едем.</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Ещё раз обратите внимание на&nbsp;комментарии в&nbsp;тексте. Они показывают, что при записи атрибутов в&nbsp;<strong>self</strong> метод изменяет только свой контекстный объект. Мы&nbsp;знаем что объекты класса совместно используют код методов класса (то&nbsp;есть поведение), но&nbsp;хранят свои собственные копии всех атрибутов данных (то&nbsp;есть состояние). Это достигается за&nbsp;счет связывания значений атрибутов с&nbsp;объектом&nbsp;— то&nbsp;есть с&nbsp;<strong>self</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Обсудим ещё один вопрос: зачем нам понадобился метод start_engine, ведь его можно было&nbsp;бы заменить строчкой car.engine_on = True? Казалось&nbsp;бы, это лишнее усложнение. На&nbsp;самом деле нет. При дальнейшей разработке нашей программы может оказаться, что завести двигатель можно только в&nbsp;машине, в&nbsp;которой есть бензин. Если&nbsp;бы мы&nbsp;в&nbsp;нескольких десятках мест программы написали car.engine_on = True, нам пришлось&nbsp;бы найти все эти места и&nbsp;вставить в&nbsp;них проверку на&nbsp;наличие бензина в&nbsp;баке. А&nbsp;с&nbsp;методом start_engine мы&nbsp;можем изменить только этот метод.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Такая технология сокрытия информации о&nbsp;внутреннем устройстве объекта за&nbsp;внешним интерфейсом из&nbsp;методов называется <strong>инкапсуляцией</strong>. Надо стараться делать интерфейс методов достаточно полным. Тогда&nbsp;вы, как и&nbsp;другие программисты, будете пользоваться этими методами, а&nbsp;изменения в&nbsp;атрибутах не&nbsp;будут расползаться по&nbsp;коду, использующему ваш класс. Кроме того, инкапсуляция позволяет шире использовать такое понятие, как полиморфизм. О&nbsp;нём мы&nbsp;поговорим на&nbsp;следующем уроке.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;некоторых языках программирования автор класса может закрыть доступ к&nbsp;атрибутам извне класса и&nbsp;заставить всех использующих его программистов работать только с&nbsp;методами. К&nbsp;сожалению, в&nbsp;Python так делать нельзя, однако стоит по&nbsp;возможности пользоваться только методами.</p>
+</div>
+<p><a name="6"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>6. Соглашения об&nbsp;именовании, вызов методов атрибутов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте разберёмся с&nbsp;ещё одним примером. Напишем класс робота-почтальона, который должен разносить письма в&nbsp;определённые дома и&nbsp;квартиры. (Для простоты, считаем, что робот обслуживает одну улицу, и&nbsp;не&nbsp;будем её&nbsp;указывать.) Класс назовём длинным именем <strong>RoboticMailDelivery</strong>, чтобы показать, как в&nbsp;Python принято называть классы с&nbsp;длинным составным именем.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP 8</strong></h4>
+<div>
+<p>Имя класса должно начинаться с&nbsp;большой буквы, между словами не&nbsp;должно быть прочерка, каждое слово внутри имени должно начинаться с&nbsp;большой буквы.</p>
+<p>Например, <strong>RoboticMailDelivery</strong></p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Текст примера:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> RoboticMailDelivery:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">house_flat_pairs</span> <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> add_mail<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> house_number<span style="color: #66cc66;">,</span> flat_number<span style="color: black;">)</span>:
+        <span style="color: #483d8b;">'''Добавить информацию о доставке письма по номеру дома
+        house_number, квартира flat_number.'''</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">house_flat_pairs</span>.<span style="color: black;">append</span><span style="color: black;">(</span><span style="color: black;">(</span>house_number<span style="color: #66cc66;">,</span> flat_number<span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> flat_numbers_for_house<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> house_number<span style="color: black;">)</span>:
+        <span style="color: #483d8b;">'''Вернуть список квартир в доме house_number,
+        в которые нужно доставить письма.'''</span>
+        flat_numbers <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+        <span style="color: #ff7700; font-weight: bold;">for</span> h<span style="color: #66cc66;">,</span> f <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">self</span>.<span style="color: black;">house_flat_pairs</span>:
+            <span style="color: #ff7700; font-weight: bold;">if</span> h <span style="color: #66cc66;">==</span> house_number:
+                flat_numbers.<span style="color: black;">append</span><span style="color: black;">(</span>f<span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> flat_numbers</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Метод add_mail добавляет кортеж (номер\_дома, номер\_квартиры) в&nbsp;список-атрибут с&nbsp;помощью метода append. Как видно, вызовы методов для объектов-атрибутов производят обычным образом, вызов метода дописывается справа от&nbsp;объекта: self.house_flat_pairs.append(...)</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP 8</strong></h4>
+<div>Для имён атрибутов и&nbsp;методов применяются те&nbsp;же правила, что и&nbsp;для имён переменных и&nbsp;функций. Имя должно быть записано в&nbsp;нижнем регистре, слова внутри имени разделяются подчёркиванием: <strong>flat_numbers_for_house</strong>, <strong>house_flat_pairs</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Документация с&nbsp;описанием методов записывается в <strong>'''многострочных строках'''</strong> перед первой инструкцией как в&nbsp;функциях, так и&nbsp;в&nbsp;методах.</div>
+</div>
+<p>&nbsp;</p></article></section>
+{%endblock%}

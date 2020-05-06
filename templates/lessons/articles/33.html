@@ -1,0 +1,224 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Введение в&nbsp;ООП. Полиморфизм</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Полиморфизм</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Проверка типа объекта</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;этом уроке мы&nbsp;рассмотрим возможности предоставление одинаковых средств взаимодействия с&nbsp;объектами разной природы.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Полиморфизм</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>После предыдущего занятия мы&nbsp;уже немного разбираемся в&nbsp;объектно-ориентированном программировании: освоили определение классов и&nbsp;методов, добавление атрибутов в&nbsp;объекты. Понятно, что классы, объекты, методы, атрибуты достаточно удобны и&nbsp;красивы, но&nbsp;в&nbsp;чём их&nbsp;преимущество перед функциями? Ведь некоторые объекты можно было&nbsp;бы передавать в&nbsp;функции и&nbsp;выполнять над ними те&nbsp;же действия, что и&nbsp;с&nbsp;помощью методов. Зачем вводить дополнительный синтаксис и&nbsp;правила? Основное преимущество в&nbsp;том, что объектно-ориентированный подход позволяет писать код, который будет работать с&nbsp;экземплярами различных классов. Иногда код может даже работать с&nbsp;классами, которые ещё не&nbsp;созданы.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Полиморфизм</strong></h4>
+<div>
+<p>Свойство кода работать с&nbsp;разными типами данных называют <strong>полиморфизмом</strong>.</p>
+<p>Мы&nbsp;уже неоднократно пользовались этим свойством многих функций и&nbsp;операторов, не&nbsp;задумываясь о&nbsp;нём. Например, оператор <strong>+</strong> является полиморфным:</p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span> + <span style="color: #ff4500;">2</span><span style="color: black;">)</span>          <span style="color: #808080; font-style: italic;"># 3</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">1.5</span> + <span style="color: #ff4500;">0.2</span><span style="color: black;">)</span>      <span style="color: #808080; font-style: italic;"># 1.7</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"abc"</span> + <span style="color: #483d8b;">"def"</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># abcdef</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Внутренняя реализация оператора <strong>+</strong> существенно отличается для целых чисел, чисел с&nbsp;плавающей точкой и&nbsp;строк. То&nbsp;есть, на&nbsp;самом деле, это три разные операции&nbsp;— интерпретатор Python выбирает одну из&nbsp;них при выполнении в&nbsp;зависимости от&nbsp;операндов. Впрочем, в&nbsp;нашем случае выбор очевиден, потому что операнды&nbsp;— это просто константы.</p>
+<p>Усложним задачу:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> f<span style="color: black;">(</span>x<span style="color: #66cc66;">,</span> y<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> x + y
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>f<span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span><span style="color: black;">)</span>          <span style="color: #808080; font-style: italic;"># 3</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>f<span style="color: black;">(</span><span style="color: #ff4500;">1.5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0.2</span><span style="color: black;">)</span><span style="color: black;">)</span>      <span style="color: #808080; font-style: italic;"># 1.7</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>f<span style="color: black;">(</span><span style="color: #483d8b;">"abc"</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">"def"</span><span style="color: black;">)</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># abcdef</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Перехитрить интерпретатор не&nbsp;удалось, ведь Python&nbsp;— язык с&nbsp;динамической типизацией. В&nbsp;таких языках любое значение несёт в&nbsp;себе информацию о&nbsp;типе&nbsp;— она и&nbsp;помогла интерпретатору выбрать правильную реализацию операции <strong>+</strong> (а&nbsp;заодно и&nbsp;правильное строковое представление для функции print). Но&nbsp;мы&nbsp;знаем, что тип данных в&nbsp;Python&nbsp;— это класс объекта, и&nbsp;именно эта информация о&nbsp;классе объекта используется при выборе операции. На&nbsp;следующем занятии мы&nbsp;вернёмся к&nbsp;оператору <strong>+</strong> и&nbsp;рассмотрим, как реализовать его для наших собственных классов.</p>
+<p>Давайте теперь вспомним про метод <strong>__init__</strong>. Он&nbsp;выполняется при создании каждого нового экземпляра класса и&nbsp;инициализирует свойства нового экземпляра. Первый аргумент, <strong>self</strong>, он&nbsp;получает от&nbsp;интерпретатора, остальные передаются классу в&nbsp;круглых скобках при создании экземпляра.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Book:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> name<span style="color: #66cc66;">,</span> author<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">name</span> <span style="color: #66cc66;">=</span> name
+        <span style="color: #008000;">self</span>.<span style="color: black;">author</span> <span style="color: #66cc66;">=</span> author
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> get_name<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">name</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> get_author<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">author</span>
+&nbsp;
+&nbsp;
+book <span style="color: #66cc66;">=</span> Book<span style="color: black;">(</span><span style="color: #483d8b;">'Война и мир'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Толстой Л. Н.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'{}, {}'</span>.<span style="color: black;">format</span><span style="color: black;">(</span>book.<span style="color: black;">get_name</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> book.<span style="color: black;">get_author</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># Война и мир, Толстой Л. Н.</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>При создании экземпляра кодом book = Book('Война и мир', 'Толстой Л. Н.') будет вызван метод <strong>__init__</strong>, который создаст атрибуты <strong>name</strong> и&nbsp;<strong>author</strong>. Читать свойства можно из&nbsp;объекта напрямую (например, book.name) или использовать определённые для этого методы. Второй способ лучше, так как позволяет оградить программистов&nbsp;— пользователей класса от&nbsp;возможных изменений в&nbsp;реализации класса.</p>
+<p>Теперь мы&nbsp;готовы определить свои собственные классы, с&nbsp;помощью которых будем разбираться с&nbsp;полиморфизмом.</p>
+<p>Посмотрим на&nbsp;реализацию классов «Круг» и&nbsp;«Квадрат» для подсчёта площади и&nbsp;периметра:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">math</span> <span style="color: #ff7700; font-weight: bold;">import</span> pi
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> Circle:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> radius<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">radius</span> <span style="color: #66cc66;">=</span> radius
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> area<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> pi * <span style="color: #008000;">self</span>.<span style="color: black;">radius</span> ** <span style="color: #ff4500;">2</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> perimeter<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">2</span> * pi * <span style="color: #008000;">self</span>.<span style="color: black;">radius</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> Square:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> side<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">side</span> <span style="color: #66cc66;">=</span> side
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> area<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">side</span> * <span style="color: #008000;">self</span>.<span style="color: black;">side</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> perimeter<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">4</span> * <span style="color: #008000;">self</span>.<span style="color: black;">side</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Мы&nbsp;определили классы <strong>Сircle</strong> и&nbsp;<strong>Square</strong>, экземпляры которых могут считать площадь и&nbsp;периметр окружностей и&nbsp;квадратов. Важно, что у&nbsp;обоих классов одинаковый интерфейс: методы для расчёта площади называются <strong>area</strong>, а&nbsp;для расчёта периметра&nbsp;— <strong>perimeter</strong>. Кроме того, у&nbsp;этих методов одинаковое количество параметров (в&nbsp;данном случае, только <strong>self</strong>), и&nbsp;они оба возвращают в&nbsp;результате работы число, хотя оно и&nbsp;может быть разного типа (целое и&nbsp;вещественное).</p>
+<p>Теперь мы&nbsp;можем определить полиморфную функцию <strong>print_shape_info</strong>, которая будет печатать данные о&nbsp;фигуре:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_shape_info<span style="color: black;">(</span>shape<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Area = {}, perimeter = {}."</span>.<span style="color: black;">format</span><span style="color: black;">(</span>shape.<span style="color: black;">area</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,<br></span>                                              shape.<span style="color: black;">perimeter</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+square <span style="color: #66cc66;">=</span> Square<span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span>  
+<span style="color: #808080; font-style: italic;"># Area = 100, perimeter = 40.</span>
+print_shape_info<span style="color: black;">(</span>square<span style="color: black;">)</span>
+circle <span style="color: #66cc66;">=</span> Circle<span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span>  
+<span style="color: #808080; font-style: italic;"># Area = 314.1592653589793, perimeter = 62.83185307179586.</span>
+print_shape_info<span style="color: black;">(</span>circle<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Если аргумент функции <strong>print_shape_info</strong>&nbsp;— экземпляр класса <strong>Square</strong>, то&nbsp;выполняются методы, определённые в&nbsp;этом классе, если экземпляр <strong>Circle</strong>, то&nbsp;выполняются методы <strong>Circle</strong>.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">dir</span><span style="color: black;">(</span>square<span style="color: black;">)</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># Свойства и спецметоды экземпляра.</span>
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">dir</span><span style="color: black;">(</span>Square<span style="color: black;">)</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># Свойства и спецметоды класса.</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Утиная типизация</strong></h4>
+<div>Данный код использует тот факт, что в&nbsp;Python принята так называемая <strong>«утиная типизация»</strong>. Название происходит от&nbsp;шутливого выражения «если нечто выглядит как утка, плавает как утка и&nbsp;крякает как утка, то&nbsp;это, вероятно, утка и&nbsp;есть».</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><img src="https://yastatic.net/s3/lyceum/content/image/duck.png" width="400" height="auto"></p>
+<p>В&nbsp;программах на&nbsp;Python это означает, что если какой-то объект поддерживает все требуемые от&nbsp;него операции, то&nbsp;с&nbsp;ним и&nbsp;будут работать с&nbsp;помощью этих операций, не&nbsp;заботясь о&nbsp;том, какого он&nbsp;на&nbsp;самом деле типа. Так и&nbsp;наша функция <strong>print_shape_info</strong> будет выводить информацию о&nbsp;любом объекте, у&nbsp;которого есть методы <strong>area</strong> и&nbsp;<strong>perimeter</strong> (и&nbsp;у&nbsp;которых в&nbsp;списке параметров также будет указан один параметр <strong>self</strong>).</p>
+<p>В&nbsp;языках без утиной типизации нам&nbsp;бы пришлось добавлять в&nbsp;программу интерфейс как отдельную сущность на&nbsp;уровне описания на&nbsp;языке программирования, а&nbsp;также указывать, что наши классы относятся к&nbsp;этому интерфейсу. В&nbsp;программах на&nbsp;Python этого делать не&nbsp;нужно, однако интерфейсы всё равно существуют.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Чтобы полиморфизм работал, за&nbsp;ними надо следить как <strong>на&nbsp;уровне синтаксиса</strong> (одинаковые имена методов и&nbsp;количество параметров), так и&nbsp;<strong>на&nbsp;уровне смысла</strong> (методы с&nbsp;одинаковыми именами делают похожие операции, параметры методов имеют тот&nbsp;же смысл).</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте определим ещё один класс с&nbsp;таким&nbsp;же интерфейсом, как у&nbsp;<strong>Circle</strong> и&nbsp;<strong>Square</strong>&nbsp;— например <strong>Rectangle</strong> (прямоугольник). Если мы&nbsp;всё сделаем правильно, функция <strong>print_shape_info</strong> сможет работать с&nbsp;его экземплярами:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Rectangle:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">,</span> height<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">width</span> <span style="color: #66cc66;">=</span> width
+        <span style="color: #008000;">self</span>.<span style="color: black;">height</span> <span style="color: #66cc66;">=</span> height
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> area<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">width</span> * <span style="color: #008000;">self</span>.<span style="color: black;">height</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> perimeter<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">2</span> * <span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">width</span> + <span style="color: #008000;">self</span>.<span style="color: black;">height</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+rect <span style="color: #66cc66;">=</span> Rectangle<span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">15</span><span style="color: black;">)</span>
+print_shape_info<span style="color: black;">(</span>rect<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># Area = 150, perimeter = 50.</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Ещё раз обратите внимание: утиная типизация позволяет заранее написать функцию, которая будет работать со&nbsp;всеми экземплярами любых классов&nbsp;— даже ещё не&nbsp;существующих. Важно лишь, чтобы эти классы поддерживали необходимый функции интерфейс.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>И&nbsp;небольшое замечание об&nbsp;инкапсуляции. Дело в&nbsp;том, что с&nbsp;самого начала обычно есть не&nbsp;два класса, как в&nbsp;нашем примере, а&nbsp;один. Пусть это будет <strong>Square</strong>. Если не&nbsp;инкапсулировать внутри него свойство <strong>side</strong> и&nbsp;не&nbsp;определить заранее интерфейс для расчёта площади и&nbsp;периметра, никакого полиморфизма не&nbsp;получится. Важно помнить о&nbsp;том, что инкапсуляция определяет понятие интерфейса класса и&nbsp;создаёт базу для полиморфизма.</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Проверка типа объекта</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>При работе с&nbsp;объектами бывает необходимо в&nbsp;зависимости от&nbsp;их&nbsp;типа выполнить те&nbsp;или иные операции. И&nbsp;с&nbsp;помощью встроенной функции <strong>isinstance()</strong> мы&nbsp;можем проверить тип объекта.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>isinstance</strong></h4>
+<div>
+<p>Эта функция принимает два параметра: <strong>isinstance(object, type)</strong></p>
+<p>Первый параметр представляет объект, а&nbsp;второй&nbsp;— тип, на&nbsp;принадлежность к&nbsp;которому выполняется проверка. Если объект представляет указанный тип, то&nbsp;функция возвращает <strong>True</strong>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">for</span> person <span style="color: #ff7700; font-weight: bold;">in</span> people:
+    <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">isinstance</span><span style="color: black;">(</span>person<span style="color: #66cc66;">,</span> Student<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>person.<span style="color: black;">university</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">elif</span> <span style="color: #008000;">isinstance</span><span style="color: black;">(</span>person<span style="color: #66cc66;">,</span> Employee<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>person.<span style="color: black;">company</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>person.<span style="color: black;">name</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div></article></section>
+{%endblock%}

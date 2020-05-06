@@ -1,0 +1,19 @@
+{% extends 'lessons/lesson.html' %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <div class="container-fluid content-block content-block-1 px-0">
+            <div class="row container mx-auto px-0">
+            {% block article %}
+                <h1>Выберите материал для ознакомления</h1>
+            {% endblock %}
+            </div>
+        </div>
+    {% else %}
+        <div class="container-fluid content-block content-block-1 px-0">
+            <div class="row container mx-auto px-0k">
+                <h1>sign in to start</h1>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

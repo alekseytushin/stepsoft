@@ -1,0 +1,248 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>True, False, break, continue</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Логический тип данных</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Флаги</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Оператор break</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Оператор continue</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Бесконечные циклы</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>Этот урок посвящен условиям выхода из&nbsp;циклов. Рассматривается булев тип, даются задачи на&nbsp;использование флагов. Затем рассматриваются операторы break и&nbsp;continue, позволяющие в&nbsp;некоторых случаях избавиться от&nbsp;флагов.&nbsp;</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Логический тип данных</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Если a&nbsp;и&nbsp;b&nbsp;— числа (допустим, действительные), то&nbsp;у&nbsp;выражения a+b есть какое-то значение (зависящее от&nbsp;значений a&nbsp;и&nbsp;b) и&nbsp;тип&nbsp;— тоже действительное число. Как вы&nbsp;думаете, можно&nbsp;ли сказать, что у&nbsp;выражения a==b есть значение и&nbsp;тип? Или это просто конструкция, которая всегда должна стоять в&nbsp;условии if&nbsp;или while?</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Тип bool</strong></h4>
+<div>На самом деле, такое выражение имеет и тип под названием bool, и значение: <strong>True</strong> (истина) или <strong>False</strong> (ложь). По-русски bool — это булев тип или булево значение (в честь математика Джона Буля), иногда его ещё называют «логический тип».</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Логический тип может иметь только два значения, а&nbsp;над переменными логического типа можно выполнять логические операции <strong>not</strong>, <strong>and</strong>, <strong>or</strong>.</p>
+<p>Также для приведения к логическому типу можно использовать функцию <strong>bool</strong>, которая для ненулевого значения вернет истину.</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;">k <span style="color: #66cc66;">=</span> <span style="color: #008000;">True</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>k<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># выведет True</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">not</span> k<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># выведет False</span>
+k <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">5</span> <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">2</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>k<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># выведет True</span>
+k <span style="color: #66cc66;">=</span> <span style="color: #008000;">bool</span><span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>k<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># выведет False</span>
+k <span style="color: #66cc66;">=</span> <span style="color: #008000;">bool</span><span style="color: black;">(</span><span style="color: #483d8b;">""</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>k<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># выведет False</span>
+k <span style="color: #66cc66;">=</span> <span style="color: #008000;">bool</span><span style="color: black;">(</span><span style="color: #ff4500;">13</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>k<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># выведет True, т.к. число не 0</span>
+k <span style="color: #66cc66;">=</span> <span style="color: #008000;">bool</span><span style="color: black;">(</span><span style="color: #483d8b;">"q"</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>k<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># выведет True, т.к. строка не пустая</span>
+k <span style="color: #66cc66;">=</span> <span style="color: #008000;">bool</span><span style="color: black;">(</span><span style="color: #483d8b;">"False"</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>k<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># выведет True, т.к. строка не пустая</span></pre>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Или вот еще пример:</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">True</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Эта строка будет выведена на экран.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Эта строка никогда не будет выведена на экран.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">2</span> * <span style="color: #ff4500;">2</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">4</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># выведет True</span>
+a <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+b <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># Теперь переменная equal равна True, если строки a и b равны,<br># и False в противном случае</span>
+equal <span style="color: #66cc66;">=</span> <span style="color: black;">(</span>a <span style="color: #66cc66;">==</span> b<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> equal <span style="color: #ff7700; font-weight: bold;">and</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>a<span style="color: black;">)</span> <span style="color: #66cc66;">&lt;</span> <span style="color: #ff4500;">6</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Вы ввели два коротких одинаковых слова.'</span><span style="color: black;">)</span></pre>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Флаги</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Обычно переменные с&nbsp;булевым значением используются в&nbsp;качестве <strong>флагов</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Изначально флаг устанавливается в&nbsp;<strong>False</strong>, потом программа как-то работает, а&nbsp;при наступлении определённого события флаг устанавливается в&nbsp;<strong>True</strong>. После идёт проверка, «поднят»&nbsp;ли флаг. В&nbsp;зависимости от&nbsp;её&nbsp;результата выполняется то&nbsp;или иное действие. Иными словами, флаг&nbsp;— это переменная с&nbsp;булевым значением, которая показывает, наступило&nbsp;ли некое событие.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;примере ниже (эта программа&nbsp;— терапевтический тренажёр для избавления физиков-экспериментаторов от&nbsp;синхрофазотронозависимости) имеется флаг said_forbidden_word, который означает «сказал&nbsp;ли пользователь запретное слово „синхрофазотрон“». Флаг равен True, если сказал, и&nbsp;False, если нет.</p>
+<p>В&nbsp;самом начале пользователь ещё ничего не&nbsp;успел сказать, поэтому флаг установлен в&nbsp;False. Далее на&nbsp;каждой итерации цикла, если пользователь сказал запретное слово, флаг устанавливается в&nbsp;True и&nbsp;остаётся в&nbsp;таком состоянии (при необходимости флаг можно и&nbsp;«опустить»). Как только флаг оказывается равен True, поведение программы меняется: перед каждым вводом выдаётся предупреждение, а&nbsp;в&nbsp;конце выдаётся другое сообщение.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Переменным-флагам особенно важно давать осмысленные имена (обычно&nbsp;— утверждения вроде said_forbidden_word, found_value, mission_accomplished, mission_failed), ведь флагов в&nbsp;программе бывает много.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;">forbidden_word <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'синхрофазотрон'</span>
+<span style="color: #808080; font-style: italic;"># можно было использовать и sep='', чтобы кавычки не отклеились от слова</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите десять слов, но постарайтесь случайно не ввести слово "'</span> + forbidden_word + <span style="color: #483d8b;">'"!'</span><span style="color: black;">)</span>
+said_forbidden_word <span style="color: #66cc66;">=</span> <span style="color: #008000;">False</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> said_forbidden_word:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Напоминаем, будьте осторожнее, не введите снова слово "'</span> + forbidden_word + <span style="color: #483d8b;">'"!'</span><span style="color: black;">)</span>
+    word <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> word <span style="color: #66cc66;">==</span> forbidden_word:
+        said_forbidden_word <span style="color: #66cc66;">=</span> <span style="color: #008000;">True</span>
+    <span style="color: #808080; font-style: italic;"># вместо предыдущих двух строк также можно написать:</span>
+    <span style="color: #808080; font-style: italic;"># said_forbidden_word = (said_forbidden_word or word == forbidden_word)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> said_forbidden_word:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Вы нарушили инструкции.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Спасибо, что ни разу не упомянули'</span><span style="color: #66cc66;">,</span> forbidden_word<span style="color: black;">)</span></pre>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Оператор break</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Если нужно прекратить работу цикла как только случится некое событие, то&nbsp;кроме флага есть и&nbsp;другой способ&nbsp;— оператор разрыва цикла <strong>break</strong> (он&nbsp;работает и&nbsp;для цикла for). Это не&nbsp;функция и&nbsp;не&nbsp;заголовок блока, а&nbsp;оператор, который состоит из&nbsp;одного слова. Он&nbsp;немедленно прерывает выполнение цикла for или while.</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Итерация номер'</span><span style="color: #66cc66;">,</span> i<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'начинается...'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> i <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">3</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ха! Внезапный выход из цикла!'</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">break</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Итерация номер'</span><span style="color: #66cc66;">,</span> i<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'успешно завершена.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Цикл завершён.'</span><span style="color: black;">)</span></pre>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;частности, нередко встречается такая конструкция: цикл, выход из&nbsp;которого происходит не&nbsp;по&nbsp;записанному в&nbsp;заголовке цикла условию (это условие делается всегда истинным&nbsp;— как правило, просто True), а&nbsp;по&nbsp;оператору break, который уже заключён в&nbsp;какой-то условный оператор:</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">while</span> <span style="color: #008000;">True</span>:
+    word <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> word <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'стоп'</span>:
+        <span style="color: #ff7700; font-weight: bold;">break</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Вы ввели:'</span><span style="color: #66cc66;">,</span> word<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Конец.'</span><span style="color: black;">)</span></pre>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Впрочем, злоупотреблять этой конструкцией и&nbsp;вообще оператором break не&nbsp;стоит. Когда программист читает ваш код, он&nbsp;обычно предполагает, что после окончания цикла while условие в&nbsp;заголовке этого цикла ложно. Если&nbsp;же из&nbsp;цикла можно выйти по&nbsp;команде break, то&nbsp;это уже не&nbsp;так. Логика кода становится менее ясной.</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Оператор continue</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Оператор <strong>continue</strong> немедленно завершает текущую итерацию цикла и&nbsp;переходит к&nbsp;следующей.</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Итерация номер'</span><span style="color: #66cc66;">,</span> i<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'начинается...'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> i <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">3</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'...но её окончание таинственно пропадает.'</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">continue</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Итерация номер'</span><span style="color: #66cc66;">,</span> i<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'успешно завершена.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Цикл завершён.'</span><span style="color: black;">)</span></pre>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Бесконечные циклы</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Рассмотрим еще один пример:</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;">count <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> count <span style="color: #66cc66;">&lt;</span> <span style="color: #ff4500;">100</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> count % <span style="color: #ff4500;">5</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">0</span>:
+            <span style="color: #ff7700; font-weight: bold;">continue</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>count<span style="color: black;">)</span>
+    count +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span></pre>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Что будет напечатано в&nbsp;процессе выполнения программы?</p>
+<p>Предполагается, что программа выведет все числа от&nbsp;1&nbsp;до&nbsp;100, не&nbsp;кратные 5. Но&nbsp;на&nbsp;самом деле, если вы&nbsp;запустите программу в&nbsp;режиме трассировки, на&nbsp;экран выведется 1 2 3&nbsp;4, а&nbsp;потом программа уйдет в&nbsp;бесконечный цикл. Почему это происходит?</p>
+<p>Когда переменная count станет равна&nbsp;5, записанное в&nbsp;операторе if&nbsp;условие станет истинным, и&nbsp;выполнится оператор continue. Т.е.&nbsp;мы&nbsp;немедленно перейдем к&nbsp;следующей итерации цикла, пропуская вывод числа и&nbsp;увеличение счетчика count.</p>
+<p>Переменная count так и&nbsp;не&nbsp;увеличится и&nbsp;по-прежнему останется со&nbsp;значением 5. Значит, условие в&nbsp;if&nbsp;будет все также равно True, и&nbsp;цикл станет бесконечным.</p>
+<p>Иными словами, часто использовать break и&nbsp;continue не&nbsp;рекомендуют, поскольку они приводят к&nbsp;произвольному перемещению точки выполнения программы по&nbsp;всему коду, что усложняет понимание и&nbsp;следование логике. Тем не&nbsp;менее, разумное использование этих операторов может улучшить читабельность циклов в&nbsp;программе, уменьшив при этом количество вложенных блоков и&nbsp;необходимость в&nbsp;сложной логике выполнения цикла.</p>
+<p>Например, рассмотрим следующую программу:</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;">count <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+exitLoop <span style="color: #66cc66;">=</span> <span style="color: #008000;">False</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> <span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">not</span> exitLoop<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Введите 'e' для выхода и любую другую клавишу для продолжения"</span><span style="color: black;">)</span>
+    sm <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span> 
+    <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: black;">(</span>sm <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'e'</span><span style="color: black;">)</span>:
+            exitLoop <span style="color: #66cc66;">=</span> <span style="color: #008000;">True</span>
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+            count +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Вы зашли в цикл "</span><span style="color: #66cc66;">,</span> count<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">" раз(а)"</span><span style="color: black;">)</span></pre>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А&nbsp;теперь ту&nbsp;же самую программу напишем с&nbsp;использованием оператора break:</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;">exitLoop <span style="color: #66cc66;">=</span> <span style="color: #008000;">False</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> <span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">not</span> exitLoop<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Введите 'e' для выхода и любую другую клавишу для продолжения"</span><span style="color: black;">)</span>
+    sm <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span> 
+    <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: black;">(</span>sm <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'e'</span><span style="color: black;">)</span>:
+            <span style="color: #ff7700; font-weight: bold;">break</span>
+    count +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Вы зашли в цикл "</span><span style="color: #66cc66;">,</span> count<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">" раз(а)"</span><span style="color: black;">)</span></pre>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Чего нам удалось добиться? Во-первых, мы&nbsp;избежали использования как логической переменной, так и&nbsp;оператора else. Уменьшение количества используемых переменных и&nbsp;вложенных блоков улучшают читабельность и&nbsp;понимание кода больше, чем break или continue могут нанести вред.</p>
+</div></article></section>
+{%endblock%}

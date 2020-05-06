@@ -1,0 +1,442 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Функции с&nbsp;переменным числом аргументов</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Распаковка и&nbsp;запаковка значений</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Аргументы по&nbsp;умолчанию</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Именованные аргументы</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Инструкция pass. Согласованность аргументов</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;этом уроке мы&nbsp;научимся писать сложные функции, принимающие неопределенное число аргументов, и&nbsp;передавать в&nbsp;функцию именованные параметры. Попутно мы&nbsp;немного поговорим о&nbsp;том, как работает множественное присваивание.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Распаковка и&nbsp;запаковка значений</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;конце урока про возврат значений из&nbsp;функции, мы&nbsp;коснулись темы возврата нескольких значений и&nbsp;множественного присваивания получившихся значений нескольким переменным.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> get_coordinates<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span>
+&nbsp;
+&nbsp;
+x<span style="color: #66cc66;">,</span> y <span style="color: #66cc66;">=</span> get_coordinates<span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>x<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; 1</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>y<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; 2</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Хотя этот прием с&nbsp;присваиванием результата нескольким значениям часто используется именно в&nbsp;применении к&nbsp;функциям, на&nbsp;самом деле, никакого отношения к&nbsp;механике работы функций он&nbsp;не&nbsp;имеет. В&nbsp;приведенном примере функция просто возвращает кортеж, а&nbsp;всю дальнейшую работу делает механизм множественного присваивания, а&nbsp;точнее процедура «распаковывания». Вы&nbsp;с&nbsp;ней уже сталкивались, когда обсуждали кортежи. Сейчас мы&nbsp;посмотрим на&nbsp;возможности множественного присваивания внимательнее.</p>
+<p>Итак, вы&nbsp;можете написать:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">x<span style="color: #66cc66;">,</span> y <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #ff4500;">1.5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2.5</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;момент присваивания кортеж будет распакован, его первый элемент будет записан в&nbsp;x, второй&nbsp;— в&nbsp;y. Распаковать можно не&nbsp;только кортежи, но&nbsp;и&nbsp;списки: x, y = [1.5, 2.5] будет работать точно так&nbsp;же.</p>
+<p>Если при множественном присваивании (когда слева больше одной переменной) число элементов слева и&nbsp;справа не&nbsp;совпадает, возникает ошибка времени исполнения. Вы&nbsp;это видели, когда разбирали запись трех координат в&nbsp;две переменные или двух&nbsp;— в&nbsp;три.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Есть способ собрать сразу <strong>несколько значений в&nbsp;одну переменную</strong>. Это делается при помощи звёздочки перед именем переменной:</p>
+<div>
+<pre class="python" style="font-family: monospace;">x<span style="color: #66cc66;">,</span> y<span style="color: #66cc66;">,</span> *rest <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">6</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;этом случае в&nbsp;x&nbsp;будет записана единица, в&nbsp;y&nbsp;— 2, а&nbsp;в&nbsp;rest&nbsp;— список, состоящий из&nbsp;всех аргументов, которые не&nbsp;попали в&nbsp;обычные переменные. В&nbsp;данном случае rest будет равен [3, 4, 5, 6].</p>
+<p>&nbsp;</p>
+</div>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Учтите, что rest всегда будет списком, даже когда в&nbsp;него попадает лишь один элемент или даже ноль:</p>
+<div>
+<pre class="python" style="font-family: monospace;">x<span style="color: #66cc66;">,</span> y<span style="color: #66cc66;">,</span> *rest <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>rest<span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; [3]</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">x<span style="color: #66cc66;">,</span> y<span style="color: #66cc66;">,</span> *rest <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>rest<span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; []</span>
+
+x<span style="color: #66cc66;">,</span> y<span style="color: #66cc66;">,</span> z<span style="color: #66cc66;">,</span> *rest <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span>
+<span style="color: #808080; font-style: italic;"># Ошибка выполнения</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Звездочка может быть только у&nbsp;одного аргумента, но&nbsp;не&nbsp;обязательно у&nbsp;последнего:</p>
+<div>
+<pre class="python" style="font-family: monospace;">*names<span style="color: #66cc66;">,</span> surname <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Анна Мария Луиза Медичи'</span>.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>names<span style="color: black;">)</span>   <span style="color: #808080; font-style: italic;"># =&gt; ['Анна', 'Мария', 'Луиза']</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>surname<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; Медичи</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Также есть возможность <strong>распаковывать вложенные списки</strong>. Например</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a<span style="color: #66cc66;">,</span> <span style="color: black;">(</span>b<span style="color: #66cc66;">,</span> c<span style="color: black;">)</span><span style="color: #66cc66;">,</span> d <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: black;">]</span> </pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>запишет в&nbsp;переменные&nbsp;a, b, c, d&nbsp;значения 1, 2, 3&nbsp;и&nbsp;4&nbsp;соответственно.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Если вы&nbsp;хотите <strong>распаковать единственное значение в&nbsp;кортеже</strong>, то&nbsp;после имени переменной должна идти запятая:</p>
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span><span style="color: black;">)</span>
+b<span style="color: #66cc66;">,</span> <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>a<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># =&gt; (1,)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>b<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># =&gt; 1</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Помимо распаковывания есть и&nbsp;операция <strong>запаковывания</strong>. Она выполняется всегда, когда справа от&nbsp;знака равенства стоит больше одного значения. Например, можно написать: values = 1, 2, 3. Тогда значения в&nbsp;правой части автоматически будут запакованы в&nbsp;кортеж (1, 2, 3).</p>
+<p>Запаковывание можно комбинировать с&nbsp;распаковыванием:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a<span style="color: #66cc66;">,</span> *b <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>a<span style="color: #66cc66;">,</span> b<span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; 1 [2, 3]</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Общее правило такое: при любых нестандартных присваиваниях <strong>сначала происходит запаковывание значений в&nbsp;правой части, а&nbsp;затем&nbsp;— распаковка их&nbsp;в&nbsp;переменные, стоящие в&nbsp;левой части</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Вообще, лучший способ понять операции с&nbsp;запаковыванием и&nbsp;распаковыванием значений&nbsp;— поэкспериментировать с&nbsp;ними.</p>
+<p>Техника запаковывания и&nbsp;распаковывания переменных со&nbsp;звездочкой используется не&nbsp;только в&nbsp;операциях присваивания. Похожий механизм применяется для написания функций, которые могут принимать переменное число аргументов. И&nbsp;синтаксис для этого используется похожий на&nbsp;тот, который используется в&nbsp;множественном присваивании. В&nbsp;списке аргументов функции, один из&nbsp;аргументов может быть помечен звездочкой&nbsp;— тогда в&nbsp;него попадут все значения на&nbsp;соответствующей позиции, которые еще не&nbsp;присвоены другим аргументам.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Но&nbsp;есть и&nbsp;отличие. При <strong>множественном присваивании</strong> переменная со&nbsp;звездочкой получает <strong>список</strong> значений. А&nbsp;когда <strong>аргумент функции</strong> указан со&nbsp;звездочкой, он&nbsp;получает <strong>кортеж</strong> значений.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Например, функция print принимает сколько угодно аргументов и&nbsp;даёт таким образом возможность выводить на&nbsp;экран неограниченное число значений.</p>
+<p>Разработчики языка Python могли поступить иначе и&nbsp;сделать функцию, принимающую всегда ровно один аргумент-список, и&nbsp;выводить на&nbsp;экран элементы этого списка. С&nbsp;точки зрения функциональности результат был&nbsp;бы аналогичным, но&nbsp;такую функцию было&nbsp;бы не&nbsp;так удобно использовать.</p>
+<p>Мы&nbsp;сделаем свою функцию для вычисления произведения всех аргументов.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> product<span style="color: black;">(</span>first<span style="color: #66cc66;">,</span> *rest<span style="color: black;">)</span>:
+    result <span style="color: #66cc66;">=</span> first
+    <span style="color: #ff7700; font-weight: bold;">for</span> value <span style="color: #ff7700; font-weight: bold;">in</span> rest:
+        result *<span style="color: #66cc66;">=</span> value
+    <span style="color: #ff7700; font-weight: bold;">return</span> result
+&nbsp;
+&nbsp;
+product<span style="color: black;">(</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">7</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; 210</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Эта функция принимает как минимум один аргумент&nbsp;— first. Это не&nbsp;позволяет вызвать функцию без аргументов, что было&nbsp;бы бессмысленно. Все аргументы, кроме первого, попадают в&nbsp;<strong>кортеж rest</strong>.</p>
+<p>Не&nbsp;всем функциям необходимо произвольное число элементов. Бывает так, что функции требуется просто разное число аргументов. В&nbsp;этом случае можно поступить следующим образом: поставить звездочку, которая формально позволяет использовать любое число аргументов, а&nbsp;внутри функции вручную проверять, что число переданных элементов&nbsp;— правильное.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Звёздочку можно использовать не&nbsp;только для того, чтобы запаковать аргументы. Распаковать их&nbsp;тоже можно. Если при вызове функции вы&nbsp;поставите звёздочку перед переданным аргументом-списком, то&nbsp;список раскроется и&nbsp;как&nbsp;бы «потеряет границы». Элементы списка станут аргументами функции.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">arr <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'cd'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'ef'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'gh'</span><span style="color: black;">]</span>
+<span style="color: #808080; font-style: italic;"># Здесь мы передаем просто список как один аргумент</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>arr<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; ['cd', 'ef', 'gh']</span>
+ 
+<span style="color: #808080; font-style: italic;"># А здесь мы раскрыли список и </span>
+<span style="color: #808080; font-style: italic;">#   функция print получила три отдельных аргумента</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>*arr<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; cd ef gh</span>
+<span style="color: #808080; font-style: italic;"># Это аналогично вызову</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'сd'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'ef'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'gh'</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; cd ef gh</span>
+ 
+<span style="color: #808080; font-style: italic;"># Раскрытие списка можно комбинировать с любыми аргументами</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'ab'</span><span style="color: #66cc66;">,</span> *arr<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'yz'</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; ab cd ef gh yz</span>
+<span style="color: #808080; font-style: italic;"># При раскрытии может быть несколько аргументов со звездочкой</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>*arr<span style="color: #66cc66;">,</span> *arr<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; cd ef gh cd ef gh</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Такую технику применяют, когда вам надо передать в&nbsp;функцию заранее неизвестное число аргументов. Вы&nbsp;делаете отдельную переменную, хранящую список аргументов, а&nbsp;затем просто раскрываете её&nbsp;при помощи звёздочки. На&nbsp;следующем уроке нам придется написать несколько таких функций.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Аргументы по&nbsp;умолчанию</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Бывает так, что какой-то параметр функции часто принимает одно и&nbsp;то&nbsp;же значение.</p>
+<p>Например, хорошо известная вам функция int принимает два параметра: строка, которую нужно преобразовать в&nbsp;число, а&nbsp;также основание системы счисления. Это позволяет ей&nbsp;считывать числа в&nbsp;различных системах счисления, например, двоичное число 101&nbsp;мы можем считать так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #483d8b;">'101'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; 5</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Но&nbsp;чаще всего эта функция используется для считывания из&nbsp;строки чисел, записанных в&nbsp;десятичной системе счисления. Было&nbsp;бы неудобно каждый раз писать 10&nbsp;вторым аргументом. На&nbsp;такой случай Python позволяет задавать некоторым аргументам значения по&nbsp;умолчанию. У&nbsp;функции int второй аргумент по&nbsp;умолчанию равен 10&nbsp;и&nbsp;потому можно вызывать эту функцию с&nbsp;одним аргументом. Значение второго подставится автоматически.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Для того, чтобы определить аргумент по&nbsp;умолчанию, в&nbsp;списке аргументов функции достаточно после имени переменной написать знак равенства и&nbsp;нужное значение. Аргументы, имеющие значение по&nbsp;умолчанию, должны идти в&nbsp;конце, ведь иначе интерпретатор не&nbsp;смог&nbsp;бы понять, какой из&nbsp;аргументов указан, а&nbsp;какой пропущен (и&nbsp;значит, для него нужно использовать значение по&nbsp;умолчанию).</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;качестве примера сделаем функцию, которая будет готовить бургеры с&nbsp;котлетами разного типа и&nbsp;по&nbsp;умолчанию добавлять туда помидоры, но&nbsp;не&nbsp;добавлять лук. Тогда функция приготовления будет выглядеть так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> make_burger<span style="color: black;">(</span>typeOfMeat<span style="color: #66cc66;">,</span> withOnion<span style="color: #66cc66;">=</span><span style="color: #008000;">False</span><span style="color: #66cc66;">,</span> withTomato<span style="color: #66cc66;">=</span><span style="color: #008000;">True</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Булочка'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> withOnion:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Луковые колечки'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> withTomato:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ломтик помидора'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Котлета из'</span><span style="color: #66cc66;">,</span> typeOfMeat<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Булочка'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Теперь команда make_burger("свинина") будет делать бургер из&nbsp;свинины, в&nbsp;котором нет колечек и&nbsp;есть помидоры. Но&nbsp;если вам хочется поменять состав бургера, вы&nbsp;легко можете это сделать: make_burger("свинина", True) сделает вам бургер и&nbsp;с&nbsp;луком, и&nbsp;с&nbsp;помидорами (они по-умолчанию включены), а&nbsp;make_burger("свинина", False, False) сделает вам бургер, в&nbsp;котором кроме булочки и&nbsp;котлеты ничего нет.</p>
+<p>Первыми стоит указывать более важные аргументы (в&nbsp;нашем примере мы&nbsp;считаем, что класть или не&nbsp;класть лук&nbsp;— более важное решение, чем класть или не&nbsp;класть помидор). Если вы&nbsp;укажете только одно дополнительное значение, то&nbsp;оно будет присвоено первому аргументу по&nbsp;умолчанию, а&nbsp;второй аргумент так и&nbsp;останется со&nbsp;значением по&nbsp;умолчанию. Если укажете два значения, то&nbsp;значения будут присвоены обеим переменным.</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Именованные аргументы</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><br>Еще одна проблема функций заключается в&nbsp;том, что программист вынужден помнить (или каждый раз узнавать в&nbsp;документации) порядок аргументов. В&nbsp;некоторых случаях тяжело угадать логичный порядок аргументов. Чтобы не&nbsp;запоминать эти малозначительные детали, можно передавать аргументы в&nbsp;функцию с&nbsp;указанием имени аргумента, в&nbsp;таком случае порядок аргументов не&nbsp;важен. Вы&nbsp;уже сталкивались с&nbsp;именованными аргументами. Встроенная функция <strong>print</strong> часто используется с&nbsp;несколькими такими параметрами: <strong>sep=" "</strong> - для разделения аргументов при выводе (по&nbsp;умолчанию&nbsp;— пробелами) и&nbsp;<strong>end="\n"</strong> для того, чтобы в&nbsp;конце добавлялся символ перевода строки. Так, нам не&nbsp;надо беспокоится о&nbsp;том, какой параметр sep или end указывать первым.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Позиционные и&nbsp;именованные аргументы</strong></h4>
+<div>Аргументы, которые передаются без указания имён, называются <strong>позиционными</strong>, потому что функция по&nbsp;положению аргумента понимает, какому параметру он&nbsp;соответствует. Аргументы, которые передаются с&nbsp;именами, называются <strong>именованными</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Чтобы вашу функцию можно было вызывать, используя именованные аргументы, буквально ничего не&nbsp;нужно делать. Все функции, которые вы&nbsp;писали на&nbsp;предыдущих уроках, уже можно вызывать, передавая им&nbsp;именованные аргументы.</p>
+<p>Если у&nbsp;функции есть аргументы, то&nbsp;при вызове можно использовать имена параметров, которые вы&nbsp;использовали в&nbsp;определении функции (исключение составляют списки аргументов неопределенной длины, в&nbsp;которых используются аргументы «со&nbsp;звездочкой»). Это ещё один повод давать аргументам значащие, а&nbsp;не&nbsp;однобуквенные имена. Можно вспомнить или догадаться, что функция <strong>matrix_has_value</strong> имеет параметры matrix и&nbsp;value, но&nbsp;совершенно невозможно будет вспомнить про имена параметров, такие как&nbsp;a, b&nbsp;или&nbsp;m, v.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Именованные аргументы можно использовать вместе со&nbsp;значениями по&nbsp;умолчанию. Например, мы&nbsp;можем вызвать нашу функцию для создания бургеров, передав ей&nbsp;нужные именованные аргументы, а&nbsp;остальные оставив значениями по&nbsp;умолчанию (так как мы&nbsp;используем именованные аргументы, нам теперь не&nbsp;важно, в&nbsp;каком порядке мы&nbsp;их&nbsp;определяли):</p>
+<div>
+<pre class="python" style="font-family: monospace;">make_burger<span style="color: black;">(</span>typeOfMeat<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'говядина'</span><span style="color: #66cc66;">,</span> withTomato<span style="color: #66cc66;">=</span><span style="color: #008000;">False</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Именованные и&nbsp;позиционные аргументы не&nbsp;всегда хорошо друг с&nbsp;другом «ладят». При вызове функции позиционные аргументы должны обязательно идти перед именованными аргументами. Достаточно сложно сформулировать точные правила поведения аргументов функции при использовании одновременно аргументов со&nbsp;звездочкой и&nbsp;именованных аргументов. Чем запоминать точные правила в&nbsp;таких случаях лучше пользоваться здравым смыслом.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Общие рекомендации:</strong></h4>
+<div>
+<p>— Если вам приходится долго думать о&nbsp;том, как записать список аргументов, чтобы он&nbsp;работал корректно, лучше использовать более простую версию. Ведь код, который тяжело писать, с&nbsp;большой вероятностью будет тяжело читать.</p>
+<p>— Если ваш вызов функции не&nbsp;работает, попробуйте прочитать его «глазами интерпретатора». Однозначно&nbsp;ли он&nbsp;читается или вы&nbsp;можете придумать несколько вариантов разложить переданные в&nbsp;вызове функции параметры по&nbsp;аргументам? Если вы&nbsp;можете трактовать код несколькими способами, то&nbsp;с&nbsp;большой вероятностью, интерпретатор столкнется с&nbsp;теми&nbsp;же трудностями. В&nbsp;ситуации, когда код неоднозначен, интерпретатор Python не&nbsp;пытается угадать, что программист имел ввиду, а&nbsp;сообщает об&nbsp;ошибке. Часто это считается синтаксической ошибкой, и&nbsp;ошибка возникает еще до&nbsp;того как программа начинает выполняться.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Инструкция pass. Согласованность аргументов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;языке Python есть эталонно бесполезная инструкция <strong>pass</strong>. Инструкция <strong>pass</strong>&nbsp;— это инструкция-заглушка, которая не&nbsp;делает ничего. Дело в&nbsp;том, что синтаксис языка Python не&nbsp;позволяет в&nbsp;некоторых местах обойтись без команд.</p>
+<p>Например, не&nbsp;может быть функции с&nbsp;пустым телом. Ветвь условного оператора или тело цикла тоже должны выполнять какие-либо действия, но&nbsp;иногда программист хочет отложить их&nbsp;написание и&nbsp;ставит такую заглушку.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">if</span> game_over:
+    <span style="color: #ff7700; font-weight: bold;">pass</span> <span style="color: #808080; font-style: italic;"># To Do: написать вывод итогового результата</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Давайте теперь напишем функцию, которая при вызове не&nbsp;делает ничего. Наша первая попытка будет такой:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> nop<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">pass</span>
+&nbsp;
+&nbsp;
+nop<span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Было&nbsp;бы удобно, если можно было&nbsp;бы завести функцию, которая принимает любые аргументы&nbsp;и, игнорируя их&nbsp;все, не&nbsp;делает ничего. Для захвата произвольного числа параметров, воспользуемся аргументом со&nbsp;звёздочкой:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> nop<span style="color: black;">(</span>*rest<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">pass</span>
+&nbsp;
+&nbsp;
+nop<span style="color: black;">(</span><span style="color: black;">)</span>
+nop<span style="color: black;">(</span><span style="color: #483d8b;">"Любое"</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">"сказанное"</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">"вами слово"</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">"будет проигнорировано"</span><span style="color: black;">)</span>
+nop<span style="color: black;">(</span><span style="color: #ff4500;">100500</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">None</span><span style="color: #66cc66;">,</span> <span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span><span style="color: black;">]</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br><strong>Задание</strong> (необязательное):</p>
+<p>Мы&nbsp;хотим, чтобы функция <strong>nop</strong> принимала такие&nbsp;же аргументы, как функция <strong>print</strong>. Тогда можно будет отключать вывод на&nbsp;экран, просто заменив <strong>print</strong> на&nbsp;<strong>nop</strong>.</p>
+<p>Попробуйте «сломать» нашу функцию <strong>nop</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> nop<span style="color: black;">(</span>*rest<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">pass</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>То&nbsp;есть придумайте такой набор аргументов, который работает, если использовать функцию <strong>print</strong>, но&nbsp;выдает ошибку, если использовать функцию <strong>nop</strong>.</p>
+<p>Объясните, почему эта команда ломает функцию <strong>nop</strong> и&nbsp;попробуйте поправить функцию <strong>nop</strong> известными вам средствами так, чтобы она не&nbsp;ломалась.</p>
+<p>Чтобы написать функцию, которая игнорирует любой список аргументов, необходимо разрешить ей&nbsp;принимать произвольное число позиционных аргументов и&nbsp;произвольное число именованных аргументов:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> nop<span style="color: black;">(</span>*rest<span style="color: #66cc66;">,</span> **kwargs<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">pass</span>
+    
+nop<span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> debug<span style="color: #66cc66;">=</span><span style="color: #008000;">True</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">file</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">"debug.log"</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Аргумент с&nbsp;двумя звёздочками, <strong>**kwargs</strong>&nbsp;— это специальный аргумент, который может перехватить все «лишние» именованные аргументы, переданные в&nbsp;функцию. Лишними аргументами будут все именованные аргументы в&nbsp;команде вызова функции, для которых нет соответствующего параметра в&nbsp;определении функции.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Этот аргумент, как и&nbsp;аргумент с&nbsp;одной звёздочкой, захватывающий «лишние» позиционные аргументы, можно использовать в&nbsp;комбинации с&nbsp;обычными аргументами. Например, сделаем и&nbsp;вызовем функцию, распечатывающую информацию о&nbsp;пользователе:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #dc143c;">profile</span><span style="color: black;">(</span>name<span style="color: #66cc66;">,</span> surname<span style="color: #66cc66;">,</span> city<span style="color: #66cc66;">,</span> *children<span style="color: #66cc66;">,</span> **additional_info<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Имя:"</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Фамилия:"</span><span style="color: #66cc66;">,</span> surname<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Город проживания:"</span><span style="color: #66cc66;">,</span> city<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>children<span style="color: black;">)</span> <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">0</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Дети:"</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">", "</span>.<span style="color: black;">join</span><span style="color: black;">(</span>children<span style="color: black;">)</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>additional_info<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #dc143c;">profile</span><span style="color: black;">(</span><span style="color: #483d8b;">"Сергей"</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">"Михалков"</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">"Москва"</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">"Никита Михалков"</span><span style="color: #66cc66;">,</span> 
+        <span style="color: #483d8b;">"Андрей Кончаловский"</span><span style="color: #66cc66;">,</span> occupation<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"writer"</span><span style="color: #66cc66;">,</span> diedIn<span style="color: #66cc66;">=</span><span style="color: #ff4500;">2009</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># Имя: Сергей</span>
+<span style="color: #808080; font-style: italic;"># Фамилия: Михалков</span>
+<span style="color: #808080; font-style: italic;"># Город проживания: Москва</span>
+<span style="color: #808080; font-style: italic;"># Дети: Никита Михалков, Андрей Кончаловский</span>
+<span style="color: #808080; font-style: italic;"># {'diedIn': 2009, 'occupation': 'writer'}</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Как вы&nbsp;уже знаете, параметр <strong>children</strong> будет списком лишних позиционных аргументов. А&nbsp;вот <strong>additional_info</strong> будет словарём лишних именованных аргументов. В&nbsp;последней строке мы&nbsp;распечатали переданный словарь, он&nbsp;выглядит так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: black;">{</span><span style="color: #483d8b;">'diedIn'</span>: <span style="color: #ff4500;">2009</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'occupation'</span>: <span style="color: #483d8b;">'writer'</span><span style="color: black;">}</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Вы&nbsp;уже знаете, что звёздочка может не&nbsp;только запаковывать аргументы, но&nbsp;и&nbsp;распаковывать&nbsp;их, если передать в&nbsp;функцию список со&nbsp;звёздочкой перед ним:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #483d8b;">'Массив'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'из'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'четырех'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'аргументов'</span><span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; ['Массив', 'из', 'четырех', 'аргументов']</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>*<span style="color: black;">[</span><span style="color: #483d8b;">'Просто'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'три'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'аргумента'</span><span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; Просто три аргумента</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Две звёздочки также позволяют не&nbsp;только запаковывать именованные аргументы в&nbsp;словарь, но&nbsp;и&nbsp;распаковывать словарь в&nbsp;набор именованных аргументов.</p>
+<p>Часто в&nbsp;функции используется запаковывание, а&nbsp;затем распаковывание. Например, сделаем собственную функцию <strong>perforated_print</strong>, которая будет делать всё то&nbsp;же самое, что функция <strong>print</strong>, но&nbsp;при этом будет печатать горизонтальную линию над и&nbsp;под распечатанным текстом. Мы&nbsp;хотим использовать все опции функции <strong>print</strong>, но&nbsp;не&nbsp;хотим их&nbsp;самостоятельно обрабатывать. Поэтому мы&nbsp;перехватываем все опции (sep, end и&nbsp;т.п.), переданные в&nbsp;нашу функцию <strong>perforated_print</strong>, а&nbsp;затем передаем их&nbsp;без изменений в&nbsp;функцию <strong>print</strong>. С&nbsp;позиционными аргументами поступаем так&nbsp;же:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> perforated_print<span style="color: black;">(</span>*args<span style="color: #66cc66;">,</span> **kwargs<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>*args<span style="color: #66cc66;">,</span>**kwargs<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'-'</span> * <span style="color: #ff4500;">20</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+perforated_print<span style="color: black;">(</span><span style="color: #483d8b;">'Теперь текст выводится с линией перфорации.'</span><span style="color: black;">)</span>
+perforated_print<span style="color: black;">(</span><span style="color: #483d8b;">'И'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'можно'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'использовать'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'опции'</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">':<span style="color: #000099; font-weight: bold;">\n</span>'</span><span style="color: black;">)</span>
+perforated_print<span style="color: black;">(</span><span style="color: #483d8b;">'end'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'sep'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'прочие'</span><span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">', '</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'!<span style="color: #000099; font-weight: bold;">\n</span>'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Вы&nbsp;можете использовать распаковывание только что запакованных аргументов для того, чтобы усложнять поведение функции, подобно тому, как мы&nbsp;добавили черту к&nbsp;функции <strong>print</strong>. В&nbsp;дополнительных материалах вы&nbsp;узнаете, как создавать декораторы и&nbsp;модифицировать поведение уже существующих функций.</p>
+</div></article></section>
+{%endblock%}

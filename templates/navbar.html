@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="d-flex flex-row w-100">
+        <div class=""><img src="{{img}}logotype.png" alt=""></div>
+        <div class="mr-4 ml-auto" style="padding-right: 5.5em;">
+        {% if current_user.is_authenticated %}
+            {% include 'navItems/user_buttons.html' %}
+        {% else %}
+            {% include 'navItems/sign_buttons.html' %}
+        {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,509 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Методы списков и строк</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<!-- План урока с якорными ссылками-->
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Как пользоваться таблицами</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Методы списков</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Методы строк</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Функции dir и help</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Форматированный вывод. f-строки</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">6</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#6">Цепочки вызовов</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">7</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#7">Использование методов списков. Структура данных «Стек»</a></span></div>
+</div>
+</div>
+<!-- Аннотация с отступом сверху -->
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div>
+<p><em>В&nbsp;материалах урока приводятся таблицы с&nbsp;почти полным перечнем методов списков и&nbsp;строк, которые можно использовать как справочный материал. Рассматривается неявное приведение объектов к&nbsp;булеву типу. Приводятся примеры цепочек вызова методов.</em></p>
+<p><em>Этот урок отличается от&nbsp;прочих: большую часть его материала не&nbsp;нужно запоминать, но&nbsp;можно использовать как справочный материал. С&nbsp;этой&nbsp;же целью вводятся функции <strong>dir</strong> и&nbsp;<strong>help</strong>.</em></p>
+</div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Как пользоваться таблицами</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;уже знакомы с&nbsp;некоторыми функциями для работы со&nbsp;списками, строками и&nbsp;множествами. Также мы&nbsp;знаем методы для работы с&nbsp;элементами множеств (add, remove, discard и&nbsp;т.д.), метод append, который позволяет добавлять элементы в&nbsp;список, метод split для разбиения строки на&nbsp;список «слов» и&nbsp;метод join для «сшивки» списка строк в&nbsp;одну. Однако мы&nbsp;не&nbsp;знаем, как делать со&nbsp;списками многие другие вещи (добавлять элементы в&nbsp;произвольное место, удалять элементы и&nbsp;т.&nbsp;д.). Такие задачи решаются с&nbsp;помощью других функций и&nbsp;методов.</p>
+<p>Далее приводится перечень основных методов списков и&nbsp;строк, а&nbsp;также функций и&nbsp;специальных синтаксических конструкций для работы с&nbsp;ними, включая уже знакомые нам. Если при написании программы вы&nbsp;забудете, как называется тот или иной метод или какие у&nbsp;него аргументы, смело заглядывайте в&nbsp;материалы этого урока, в&nbsp;<span style="text-decoration: underline;"><a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range" target="_blank" rel="noopener">документацию</a></span>, пользуйтесь поиском в&nbsp;интернете или описанными здесь функциями <strong>dir</strong> и&nbsp;<strong>help</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Главное&nbsp;— усвоить основные возможности методов для стандартных типов строки и&nbsp;списка, а&nbsp;детали (например, порядок аргументов в&nbsp;методе insert или название именованного аргумента в&nbsp;методе split) всегда можно посмотреть здесь или в&nbsp;документации.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;таблице предполагается, что <strong>a</strong>&nbsp;и&nbsp;<strong>a2</strong>&nbsp;— списки, <strong>x</strong>&nbsp;— элемент списка, <strong>s</strong>&nbsp;и&nbsp;<strong>s2</strong>&nbsp;— строки, <strong>c</strong>&nbsp;— символ (строка длины&nbsp;1), <strong>n</strong>&nbsp;— индекс элемента списка или строки, <strong>start</strong>, <strong>stop</strong>, <strong>step</strong>&nbsp;— границы среза (т.&nbsp;е. тоже индексы) и&nbsp;шаг среза, <strong>k</strong>&nbsp;— натуральное число.</p>
+<p>Также для методов и&nbsp;функций даны примеры выражений, которые будут истинными True и&nbsp;демонстрируют действие этого метода. Например, выражения 5&nbsp;in [2, 3, 5] и ’abc’.isalpha() равны True. Их&nbsp;можно подставить в&nbsp;оператор&nbsp;if (и&nbsp;соответствующий блок будет выполнен) или в&nbsp;функцию print (и&nbsp;тогда она выведет True).</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Методы списков</h4>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; height: 674px;" border="1" cellpadding="5px">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><strong>Операция</strong></td>
+<td style="width: 42.6684%; height: 18px;"><strong>Описание</strong></td>
+<td style="width: 38.3205%; height: 18px;"><strong>Пример</strong></td>
+</tr>
+<tr style="height: 19px;">
+<td style="width: 19.011%; height: 19px;"><code>x <strong>in</strong> a</code></td>
+<td style="width: 42.6684%; height: 19px;">Проверка, что <code>x</code> содержится в <code>а</code></td>
+<td style="width: 38.3205%; height: 19px;"><code>5 in [2, 3, 5]</code></td>
+</tr>
+<tr style="height: 38px;">
+<td style="width: 19.011%; height: 38px;"><code>x <strong>not in</strong> a</code></td>
+<td style="width: 42.6684%; height: 38px;">Проверка, что&nbsp;<code>x</code>&nbsp;не содержится в&nbsp;<code>а</code><br>То же, что и&nbsp;<code>not (x in a)</code></td>
+<td style="width: 38.3205%; height: 38px;"><code>5 not in [2, 3, 6]</code></td>
+</tr>
+<tr style="height: 19px;">
+<td style="width: 19.011%; height: 19px;"><code>a + a2</code></td>
+<td style="width: 42.6684%; height: 19px;">Конкатенация списков, то есть новый список, в котором сначала идут все элементы&nbsp;<code>a</code>,<br>а затем все элементы&nbsp;<code>a2</code></td>
+<td style="width: 38.3205%; height: 19px;"><code>[2, 4] + [5, 3] == [2, 4, 5, 3]</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>a * k</code></td>
+<td style="width: 42.6684%; height: 18px;">Список&nbsp;<code>a</code>, повторенный&nbsp;<code>k</code>&nbsp;раз</td>
+<td style="width: 38.3205%; height: 18px;"><code>[2, 3] * 3 == [2, 3, 2, 3, 2, 3]</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>a[n]</code></td>
+<td style="width: 42.6684%; height: 18px;"><code>n</code>-й элемент списка,<br>отрицательные&nbsp;<code>n</code>&nbsp;— для отсчёта с конца</td>
+<td style="width: 38.3205%; height: 18px;"><code>[2, 3, 7][0] == 2</code><br><code>[2, 3, 7][-1] == 7</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>a[start:stop:step]</code></td>
+<td style="width: 42.6684%; height: 18px;">Срез списка</td>
+<td style="width: 38.3205%; height: 18px;"><code>[2, 3, 7][:2] == [2, 3]</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>len(a)</code></td>
+<td style="width: 42.6684%; height: 18px;">Длина списка</td>
+<td style="width: 38.3205%; height: 18px;"><code>len([2, 3, 7]) == 3</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>max(a)</code></td>
+<td style="width: 42.6684%; height: 18px;">Максимальный элемент списка</td>
+<td style="width: 38.3205%; height: 18px;"><code>max([2, 3, 7]) == 7</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>min(a)</code></td>
+<td style="width: 42.6684%; height: 18px;">Минимальный элемент списка</td>
+<td style="width: 38.3205%; height: 18px;"><code>min([2, 3, 7]) == 2</code></td>
+</tr>
+<tr style="height: 19px;">
+<td style="width: 19.011%; height: 19px;"><code>sum(a)</code></td>
+<td style="width: 42.6684%; height: 19px;">Сумма элементов списка</td>
+<td style="width: 38.3205%; height: 19px;"><code>sum([2, 3, 7]) == 12</code></td>
+</tr>
+<tr style="height: 54px;">
+<td style="width: 19.011%; height: 54px;"><code>a.index(x)</code></td>
+<td style="width: 42.6684%; height: 54px;">Индекс первого вхождения&nbsp;<code>x</code>&nbsp;в&nbsp;<code>a</code><br>(вызовет ошибку, если&nbsp;<code>x not in a</code>, то есть если&nbsp;<code>х</code>&nbsp;отсутствует в&nbsp;<code>а</code>)</td>
+<td style="width: 38.3205%; height: 54px;"><code>[2, 3, 7].index(7) == 2</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>a.count(x)</code></td>
+<td style="width: 42.6684%; height: 18px;">Количество вхождений&nbsp;<code>x</code>&nbsp;в&nbsp;<code>a</code></td>
+<td style="width: 38.3205%; height: 18px;"><code>[2, 7, 3, 7].count(7) == 2</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>a.append(x)</code></td>
+<td style="width: 42.6684%; height: 18px;">Добавить&nbsp;x&nbsp;в конец&nbsp;a</td>
+<td style="width: 38.3205%; height: 18px;"><code>a = [2, 3, 7]</code><br><code>a.append(8)</code><br><code>a == [2, 3, 7, 8]</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>a.extend(a2)</code></td>
+<td style="width: 42.6684%; height: 18px;">Добавить элементы коллекции a2&nbsp;в конец&nbsp;a</td>
+<td style="width: 38.3205%; height: 18px;">
+<p><code>a = [2, 3, 7]</code><br><code>a.extend([8, 4, 5])</code><br><code>a == [2, 3, 7, 8, 4, 5]</code></p>
+</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code><strong>del</strong> a[n]</code></td>
+<td style="width: 42.6684%; height: 18px;">Удалить n-й элемент списка</td>
+<td style="width: 38.3205%; height: 18px;"><code>a = [2, 3, 7]</code><br><code>del a[1]</code><br><code>a == [2, 7]</code></td>
+</tr>
+<tr style="height: 54px;">
+<td style="width: 19.011%; height: 54px;"><code><strong>del</strong> a[start:stop:step]</code></td>
+<td style="width: 42.6684%; height: 54px;">Удалить из&nbsp;<code>a</code>&nbsp;все элементы, попавшие в срез</td>
+<td style="width: 38.3205%; height: 54px;"><code>a = [2, 3, 7]</code><br><code>del a[:2]</code><br><code>a == [7]</code></td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 19.011%; height: 36px;"><code>a.clear()</code></td>
+<td style="width: 42.6684%; height: 36px;">Удалить из&nbsp;<code>a</code>&nbsp;все элементы (то же, что&nbsp;<code>del a[:]</code>)</td>
+<td style="width: 38.3205%; height: 36px;"><code>a.clear()</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>a.copy()</code></td>
+<td style="width: 42.6684%; height: 18px;">Копия&nbsp;a&nbsp;(то же, что и полный срез <code>a[:]</code>)</td>
+<td style="width: 38.3205%; height: 18px;"><code>b = a.copy()</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;">
+<p><code>a += a2</code></p>
+<p><code>a *= k</code></p>
+</td>
+<td style="width: 42.6684%; height: 18px;">Заменить содержимое списка на<br><code>a+a2</code>&nbsp;и&nbsp;<code>a*k</code>&nbsp;соответственно</td>
+<td style="width: 38.3205%; height: 18px;">&nbsp;</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>a.insert(n, x)</code></td>
+<td style="width: 42.6684%; height: 18px;">Вставить&nbsp;<code>x</code>&nbsp;в&nbsp;<code>a</code>&nbsp;на позицию&nbsp;<code>n</code>, подвинув последующую часть дальше</td>
+<td style="width: 38.3205%; height: 18px;"><code>a = [2, 3, 7]</code><br><code>a.insert(0, 8)</code><br><code>a == [8, 2, 3, 7]</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>a.pop(n)</code></td>
+<td style="width: 42.6684%; height: 18px;">Получить n-й элемент списка и одновременно удалить его из списка<br>Вызов метода без аргументов равносилен удалению последнего элемента:<br><code>a.pop() == a.pop(-1)</code></td>
+<td style="width: 38.3205%; height: 18px;"><code>a = [2, 3, 7]</code><br><code>a.pop(1) == 3</code><br><code>a == [2, 7]</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>a.remove(x)</code></td>
+<td style="width: 42.6684%; height: 18px;">Удалить первое вхождение&nbsp;<code>x</code>&nbsp;в&nbsp;<code>a</code>, в случае&nbsp;<code>x not in a</code>&nbsp;— ошибка</td>
+<td style="width: 38.3205%; height: 18px;"><code>a = [2, 3, 7]</code><br><code>a.remove(3)</code><br><code>a == [2, 7]</code></td>
+</tr>
+<tr style="height: 15px;">
+<td style="width: 19.011%; height: 15px;"><code>a.reverse()</code></td>
+<td style="width: 42.6684%; height: 15px;">Изменить порядок элементов в&nbsp;<code>a</code>&nbsp;на обратный (перевернуть список)</td>
+<td style="width: 38.3205%; height: 15px;"><code>a = [2, 3, 7]</code><br><code>a.reverse()</code><br><code>a == [7, 3, 2]</code></td>
+</tr>
+<tr style="height: 57px;">
+<td style="width: 19.011%; height: 57px;"><code>a.sort()</code></td>
+<td style="width: 42.6684%; height: 57px;">Отсортировать список по возрастанию</td>
+<td style="width: 38.3205%; height: 57px;"><code>a = [3, 2, 7]</code><br><code>a.sort()</code><br><code>a == [2, 3, 7]</code></td>
+</tr>
+<tr style="height: 57px;">
+<td style="width: 19.011%; height: 57px;"><code>a.sort(reverse=<strong>True</strong>)</code></td>
+<td style="width: 42.6684%; height: 57px;">Отсортировать список по убыванию</td>
+<td style="width: 38.3205%; height: 57px;"><code>a = [3, 2, 7]</code><br><code>a.sort(reverse = True)</code><br><code>a == [7, 3, 2]</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.011%; height: 18px;"><code>bool(a)</code></td>
+<td style="width: 42.6684%; height: 18px;">Один из способов проверить список на пустоту (возвращает&nbsp;<code>True</code>, если список непустой,<br>и&nbsp;<code>False</code>&nbsp;в противном случае)</td>
+<td style="width: 38.3205%; height: 18px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Методы строк</h4>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; height: 180px;" border="1" cellpadding="5px">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 19.7783%; height: 18px;"><strong>Операция</strong></td>
+<td style="width: 38.1926%; height: 18px;"><strong>Описание</strong></td>
+<td style="width: 42.029%; height: 18px;"><strong>Пример</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.7783%; height: 18px;"><code>s2 <strong>in</strong> s</code></td>
+<td style="width: 38.1926%; height: 18px;">Проверка, что подстрока&nbsp;<code>s2</code>&nbsp;содержится в&nbsp;<code>s</code></td>
+<td style="width: 42.029%; height: 18px;"><code>'m' in 'team'</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.7783%; height: 18px;"><code>s2 <strong>not in</strong> s</code></td>
+<td style="width: 38.1926%; height: 18px;">Проверка, что подстрока&nbsp;<code>s2</code>&nbsp;не содержится в&nbsp;<code>s</code><br>то же, что&nbsp;<code>not (s2 in s)</code></td>
+<td style="width: 42.029%; height: 18px;"><code>'I' not in 'team'</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.7783%; height: 18px;"><code>s + s2</code></td>
+<td style="width: 38.1926%; height: 18px;">Конкатенация (склейка) строк, то есть строка,<br>в которой сначала идут все символы из&nbsp;<code>s</code>,<br>а затем все символы из&nbsp;<code>s2</code></td>
+<td style="width: 42.029%; height: 18px;"><code>'tea' + 'm' == 'team'</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.7783%; height: 18px;"><code>s * k</code></td>
+<td style="width: 38.1926%; height: 18px;">Строка&nbsp;<code>s</code>, повторенная&nbsp;<code>k</code>&nbsp;раз</td>
+<td style="width: 42.029%; height: 18px;"><code>'ha' * 3 == 'hahaha'</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.7783%; height: 18px;"><code>s[n]</code></td>
+<td style="width: 38.1926%; height: 18px;">n-й элемент строки,<br>отрицательные&nbsp;<code>n</code>&nbsp;— для отсчёта с конца</td>
+<td style="width: 42.029%; height: 18px;"><code>'team'[2] == 'a'</code><br><code>'team'[-1] == 'm'</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.7783%; height: 18px;"><code>s[start:stop:step]</code></td>
+<td style="width: 38.1926%; height: 18px;">Срез строки</td>
+<td style="width: 42.029%; height: 18px;"><code>'mama'[:2] == 'ma'</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.7783%; height: 18px;"><code>len(s)</code></td>
+<td style="width: 38.1926%; height: 18px;">Длина строки</td>
+<td style="width: 42.029%; height: 18px;"><code>len('abracadabra') == 11</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.7783%; height: 18px;"><code>s.find(s2)&nbsp;</code><br><code>s.rfind(s2)</code></td>
+<td style="width: 38.1926%; height: 18px;">Индекс начала первого или последнего<br>вхождения подстроки&nbsp;<code>s2</code>&nbsp;в&nbsp;<code>s</code>&nbsp;(вернёт -1, если&nbsp;<code>s2 not in s</code>)</td>
+<td style="width: 42.029%; height: 18px;"><code>s = 'abracadabra'</code><br><code>s.find('ab') == 0</code><br><code>s.rfind('ab') == 7</code><br><code>s.find('x') == -1</code></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 19.7783%; height: 18px;"><code>s.count(s2)</code></td>
+<td style="width: 38.1926%; height: 18px;">Количество неперекрывающихся вхождений&nbsp;<code>s2</code>&nbsp;в&nbsp;<code>s</code></td>
+<td style="width: 42.029%; height: 18px;"><code>'abracadabra'.count('a') == 5</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>s.startswith(s2)&nbsp;</code><br><code>s.endswith(s2)</code></td>
+<td style="width: 38.1926%;">Проверка, что&nbsp;<code>s</code>&nbsp;начинается с&nbsp;<code>s2</code>&nbsp;или оканчивается на&nbsp;<code>s2</code></td>
+<td style="width: 42.029%;"><code>'abracadabra'.startswith('abra')</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>s += s2&nbsp;</code><br><code>s *= k</code></td>
+<td style="width: 38.1926%;">Заменить содержимое строки на<br><code>s+s2</code>&nbsp;и&nbsp;<code>s*k</code>&nbsp;соответственно</td>
+<td style="width: 42.029%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>s.isdigit()&nbsp;</code><br><code>s.isalpha()&nbsp;</code><br><code>s.isalnum()</code></td>
+<td style="width: 38.1926%;">Проверка, что в строке&nbsp;<code>s</code>&nbsp;все символы — цифры,<br>буквы (включая кириллические),<br>цифры или буквы соответственно</td>
+<td style="width: 42.029%;"><code>'100'.isdigit()</code><br><code>'abc'.isalpha()</code><br><code>'E315'.isalnum()</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>s.lower()&nbsp;</code><br><code>s.upper()</code></td>
+<td style="width: 38.1926%;">Строка&nbsp;<code>s</code>, в которой все буквы (включая кириллические)<br>приведены к верхнему или нижнему регистру,<br>т.е. заменены на строчные (маленькие) или заглавные (большие)</td>
+<td style="width: 42.029%;"><code>'Привет!'.lower() == 'привет!'</code><br><code>'Привет!'.upper() == 'ПРИВЕТ!'</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>s.lstrip()&nbsp;</code><br><code>s.rstrip()&nbsp;</code><br><code>s.strip()</code></td>
+<td style="width: 38.1926%;">Строка&nbsp;<code>s</code>, у которой удалены символы пустого пространства<br>(пробелы, табуляции) в начале,<br>в конце или с обеих сторон</td>
+<td style="width: 42.029%;"><code>' Привет! '.strip() == 'Привет!'</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>s.ljust(k, c)&nbsp;</code><br><code>s.rjust(k, c)</code></td>
+<td style="width: 38.1926%;">Добавляет справа или слева нужное количество<br>символов&nbsp;<code>c</code>, чтобы длина&nbsp;<code>s</code>&nbsp;достигла&nbsp;<code>k</code></td>
+<td style="width: 42.029%;"><code>'Привет'.ljust(8, '!') == 'Привет !!</code><code>'</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>s.join(a)</code></td>
+<td style="width: 38.1926%;">Склеивает строки из списка&nbsp;<code>a</code>&nbsp;через символ&nbsp;<code>s</code></td>
+<td style="width: 42.029%;"><code>'+'.join(['Вася', 'Маша']) == 'Вася+Маша'</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>s.split(s2)</code></td>
+<td style="width: 38.1926%;">Список всех слов строки&nbsp;<code>s</code><br>(подстрок, разделённых строками&nbsp;<code>s2</code>)</td>
+<td style="width: 42.029%;"><code>'Раз два три!'.split('а') ==</code><br><code>['Р', 'з дв', ' три!']</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>s.replace(s2, s3)</code></td>
+<td style="width: 38.1926%;">Cтрока&nbsp;<code>s</code>, в которой все неперекрывающиеся<br>вхождения&nbsp;<code>s2</code>&nbsp;заменены на&nbsp;<code>s3</code></td>
+<td style="width: 42.029%;"><code>'Раз два три!'.replace('а', 'я') ==</code><code>'Ряз двя три!'</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>list(s)</code></td>
+<td style="width: 38.1926%;">Список символов из строки строки&nbsp;<code>s</code></td>
+<td style="width: 42.029%;"><code>list('Привет') ==</code><br><code>['П', 'р', 'и', 'в', 'е', 'т']</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>bool(s)</code></td>
+<td style="width: 38.1926%;">Проверка, что строка не пустая (возвращает&nbsp;<code>True</code>, если не пустая, и&nbsp;<code>False</code>&nbsp;в противном случае)</td>
+<td style="width: 42.029%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>int(s)&nbsp;</code><br><code>float(s)</code></td>
+<td style="width: 38.1926%;">Если в строке&nbsp;<code>s</code>&nbsp;записано целое (дробное) число,<br>получить это число, иначе - ошибка</td>
+<td style="width: 42.029%;"><code>int('25') == 25</code></td>
+</tr>
+<tr>
+<td style="width: 19.7783%;"><code>str(x)</code></td>
+<td style="width: 38.1926%;">Представить любой объект&nbsp;<code>x</code>&nbsp;в виде строки</td>
+<td style="width: 42.029%;"><code>str(25) == '25'</code></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Обратите внимание, что <strong>никакие</strong> методы строк, включая s.replace(...), не&nbsp;изменяют саму строку&nbsp;s. Все они лишь <strong>возвращают изменённую строку</strong>, в&nbsp;отличие от&nbsp;большинства методов списков.</p>
+<p>a.sort(), например, ничего не&nbsp;возвращает, а&nbsp;изменяет сам список&nbsp;a.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Функции dir и&nbsp;help</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Для получения информации о&nbsp;списке методов любого объекта (в&nbsp;том числе тех, о&nbsp;которых вы&nbsp;вряд&nbsp;ли хотели узнать) в&nbsp;Python существует специальная функция <strong>dir</strong>. Например, dir([]) вернёт все методы списков, и&nbsp;оператор <strong>print(dir([]))</strong> выведет длинный список, оканчивающийся так: ’index’, ’insert’, ’pop’, ’remove’, ’reverse’, ’sort’.</p>
+<p>Если&nbsp;же нам нужно узнать справочную информацию по&nbsp;конкретному методу или типу данных, то&nbsp;для этого существует функция <strong>help</strong>. help([]) выведет на&nbsp;экран много информации, большая часть которой пока лишняя. А&nbsp;вот <strong>help([].insert)</strong> выведет на&nbsp;экран краткую справку именно по&nbsp;методу insert, подсказывая, что первый аргумент этого метода&nbsp;— индекс, а&nbsp;второй&nbsp;— тот объект, который нужно вставить в&nbsp;список на&nbsp;этот индекс.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Заметьте, что при вызове справки по&nbsp;методу <strong>help([].insert)</strong> после insert нет скобок (...) — ведь мы&nbsp;не&nbsp;хотим вызвать этот метод, чтобы вставить что-то в&nbsp;какой-то список. Функции help в&nbsp;качестве аргумента передаётся сам метод insert.</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Форматированный вывод. f-строки</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Этот блок урока не&nbsp;имеет отношения к&nbsp;методам списков и&nbsp;строк, но&nbsp;позволит нам познакомиться с&nbsp;форматированным выводом на&nbsp;экран переменных и&nbsp;выражений.</p>
+<p>Начиная с&nbsp;версии 3.6&nbsp;в Python появился новый тип строк&nbsp;— f-строки, эти строки улучшают читаемость кода, а&nbsp;также работают быстрее, чем другие способы форматирования.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>F-строки</strong></h4>
+<div>
+<p>F-строки, которые буквально означают «formatted string», задаются с&nbsp;помощью литерала «f» перед кавычками:</p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #483d8b;">"обычная строка"</span>
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> f<span style="color: #483d8b;">"f-строка"</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>f-строки делают очень простую вещь&nbsp;— они берут значения переменных, которые есть в&nbsp;текущей области видимости, и&nbsp;подставляют их&nbsp;в&nbsp;строку. В&nbsp;самой строке вам лишь нужно указать имя этой переменной в&nbsp;фигурных скобках.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">name <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">"Аркадий"</span>
+age <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">14</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>f<span style="color: #483d8b;">"Меня зовут {name} Мне {age} лет."</span><span style="color: black;">)</span>
+------------------------------------------
+Меня зовут Аркадий. Мне <span style="color: #ff4500;">14</span> лет.</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;качестве подставляемого значения внутри круглых скобок может быть: имя переменной (f"Меня зовут {name}"), элемент списка(f"Третий месяц в&nbsp;году&nbsp;— {month[2]}") или словаря, методы объектов (f"Имя: {name.upper()}"), выполнять базовые арифметические операции (f"({x} + {y})&nbsp;/ 2 = {(x + y)&nbsp;/ 2}")и даже вызывать функции (f"13&nbsp;/ 7 = {round(13/7)}").</p>
+<p>Кроме того, вы&nbsp;можете задавать форматирование для чисел, например:</p>
+<p>— указать необходимое количество знаков после запятой, спецификатор <strong>f</strong>&nbsp;отвечает за&nbsp;вывод чисел с&nbsp;плавающей точкой (тип float):</p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>f<span style="color: #483d8b;">"Число Пи по Архимеду - {(22/7):.2f}"</span><span style="color: black;">)</span></pre>
+</div>
+<p>— представить результата в&nbsp;двоичной системе счисления, используя спецификатор&nbsp;<strong>b</strong>:</p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>f<span style="color: #483d8b;">"10 в двоичной системе счисления - {(10):b}"</span><span style="color: black;">)</span> </pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Аналогично для шестнадцатеричной системы счисления используется спецификатор&nbsp;<strong>x</strong>, а&nbsp;для восьмеричной&nbsp;— <strong>o</strong>.</p>
+<p>Подробнее о&nbsp;допустимых вариантах форматирования можно почитать в&nbsp;<span style="text-decoration: underline;"><a href="https://docs.python.org/3.6/library/string.html#format-examples" target="_blank" rel="noopener">документации</a></span>.</p>
+</div>
+<p><a name="6"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>6. Цепочки вызовов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Бывает удобно строить последовательные цепочки вызовов методов.</p>
+<p>Например, s.strip().lower().replace(’ё’, ’е’) выдаст строку&nbsp;s, в&nbsp;которой убраны начальные и&nbsp;конечные пробелы, все буквы сделаны маленькими, после чего убраны все точки над «ё». В&nbsp;результате этого преобразования строка ’ Зелёный клён ’ превратится в ’зеленый клен’.</p>
+<p>Другой пример:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #483d8b;">'мало Средне    МНОГО'</span>.<span style="color: black;">lower</span><span style="color: black;">(</span><span style="color: black;">)</span>.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: black;">)</span>.<span style="color: black;">index</span><span style="color: black;">(</span><span style="color: #483d8b;">'средне'</span><span style="color: black;">)</span> 
+------------------------------------------
+<span style="color: #ff4500;">1</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;данном примере строка сначала полностью приводится к&nbsp;нижнему регистру (все буквы&nbsp;— маленькие) при помощи метода lower(). Затем она превращается в&nbsp;список слов [’мало’, ’средне’, ’много’] при помощи split(). Далее метод index находит в&nbsp;этом списке слово «средне» на&nbsp;позиции номер&nbsp;1.</p>
+</div>
+<p><a name="7"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>7. Использование методов списков. Структура данных «Стек»</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Приведем пример использования методов списков <strong>append</strong> и&nbsp;<strong>pop</strong> для моделирования структуры данных «Стек». Эта структура данных часто используется при решении различных задач (например, при вычислении выражений).</p>
+<p>Представьте себе стопку сложенных футболок или любых других не&nbsp;одинаковых предметов, которые можно сложить в&nbsp;стопку. Из&nbsp;стопки удобно забрать самый верхний предмет&nbsp;— тот, который положили в&nbsp;неё последним. Если вы&nbsp;полностью разберёте стопку, то&nbsp;будете брать футболки в&nbsp;порядке, обратном тому, в&nbsp;котором их&nbsp;в&nbsp;неё клали.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Стек</strong></h4>
+<div>
+<p>Структура данных называется <strong>стек</strong> (<em>stack</em>, что и&nbsp;значит «стопка»). По-английски такую организацию данных называют <strong>LIFO&nbsp;— Last In&nbsp;First Out&nbsp;— Первым Пришел Последним Ушел!</strong>.</p>
+<p>Если пользоваться только методами append и&nbsp;pop без аргументов, то&nbsp;список оказывается как раз такой «стопкой».</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Так, в&nbsp;примере ниже порядок вывода будет обратным порядку ввода:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">stack <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Какую футболку вы кладёте сверху стопки?'</span><span style="color: black;">)</span>
+    stack.<span style="color: black;">append</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> stack:  <span style="color: #808080; font-style: italic;"># пока стопка не закончилась</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Сегодня вы надеваете футболку'</span><span style="color: #66cc66;">,</span> stack.<span style="color: black;">pop</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+------------------------------------------
+Какую футболку вы кладёте сверху стопки?
+белую
+Какую футболку вы кладёте сверху стопки?
+красную
+Какую футболку вы кладёте сверху стопки?
+синюю
+Какую футболку вы кладёте сверху стопки?
+зеленую
+Какую футболку вы кладёте сверху стопки?
+веселую
+Сегодня вы надеваете футболку веселую
+Сегодня вы надеваете футболку зеленую
+Сегодня вы надеваете футболку синюю
+Сегодня вы надеваете футболку красную
+Сегодня вы надеваете футболку белую</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Здесь использовалась конструкция <strong>while stack:</strong>. В&nbsp;условии оператора if&nbsp;или while любой объект интерпретируется как bool: либо как True, либо как False. В&nbsp;случае списков и&nbsp;строк в&nbsp;False превращаются только [] и ’’, соответственно (а&nbsp;в&nbsp;случае чисел&nbsp;— только ноль).</p>
+<p>Иными словами, можно было&nbsp;бы написать while bool(stack): или while stack != []: и&nbsp;получить тот&nbsp;же самый результат, но&nbsp;самый короткий и&nbsp;общепринятый вариант&nbsp;— просто <strong>while stack:</strong>.</p>
+</div></article></section>
+{%endblock%}

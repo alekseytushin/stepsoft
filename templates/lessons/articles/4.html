@@ -1,0 +1,250 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Знакомство с циклом while</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Цикл while</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Составной оператор присваивания</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Сигнал остановки</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Подсчет количества элементов, удовлетворяющих условию</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Поиск минимума и максимума</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;этом уроке мы&nbsp;познакомимся с&nbsp;оператором цикла while. Цикл позволяет организовывать многократное повторение одних и&nbsp;тех&nbsp;же действий. Мы&nbsp;также сакцентируем внимание на&nbsp;том, что в&nbsp;одной и&nbsp;той&nbsp;же строчке программы на&nbsp;разных итерациях цикла переменные могут иметь разное значение.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Цикл while</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Сегодня мы&nbsp;научимся повторять заданные действия несколько раз. Для этого существуют операторы циклов. Мы&nbsp;разберем оператор цикла while. Он&nbsp;выполняет блок кода, <strong>пока истинно</strong> какое-то условие.</p>
+<p>Напомним, условный оператор if&nbsp;проверяет условие&nbsp;и, в&nbsp;зависимости от&nbsp;того, истинно оно или ложно, выполняет либо не&nbsp;выполняет следующий записанный с&nbsp;отступом блок. После этого программа в&nbsp;любом случае выполняется дальше (там ещё может быть elif или else, но&nbsp;сути это не&nbsp;меняет).</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Оператор while («пока») тоже проверяет условие и&nbsp;тоже в&nbsp;случае его истинности выполняет следующий блок кода (<strong>«тело цикла»</strong>). Однако после выполнения этого блока кода выполняется не&nbsp;то, что идёт после него, а&nbsp;снова проверяется условие, записанное после while.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Ведь при выполнении тела цикла значения каких-то переменных могли измениться&nbsp;— в&nbsp;результате условие цикла может уже не&nbsp;быть истинным. Если условие всё ещё истинно, тело цикла выполняется снова. Как только условие цикла перестало выполняться (в&nbsp;том числе если оно с&nbsp;самого начала не&nbsp;было выполнено), программа идёт дальше&nbsp;— выполняются команды, записанные после тела цикла.</p>
+<p>Условие цикла записывается как и&nbsp;для if&nbsp;— с&nbsp;помощью операций отношения (&gt;, &gt;=, &lt;, &lt;=, !=, == ). Cложные условия можно составлять с&nbsp;помощью логических операций not, and, or.</p>
+<p>Действия, расположенные в&nbsp;теле цикла (блок кода) , записываются со&nbsp;смещением вправо на&nbsp;4&nbsp;пробела относительно начала слова while. Переменные, входящие в&nbsp;условие, должны на&nbsp;момент проверки условия цикла иметь значения.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">while</span> условие:
+    блок кода <span style="color: black;">(</span>тело цикла<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Один шаг цикла (выполнение тела цикла) ещё называют <strong>итерацией</strong>.</p>
+<p>Используйте цикл while всегда, когда какая-то часть кода должна выполниться несколько раз&nbsp;— причём невозможно заранее сказать, сколько именно.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><br>Давайте посмотрим программу, в&nbsp;которой цикл будет выполняться пока не&nbsp;введут число меньше&nbsp;0:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">number <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> number <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">0</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Вы ввели положительное число! Вводите дальше.'</span><span style="color: black;">)</span>
+    number <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Так-так, что тут у нас...'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Вы ввели отрицательное число или ноль. Всё.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Разберёмся, как будет работать эта программа.</p>
+<p>Сначала выполняется первая строчка: number = int(input()) — пользователь вводит целое число. (<em>Мы&nbsp;предполагаем, что пользователь действительно ввёл число, и&nbsp;программа не&nbsp;вылетела с&nbsp;ошибкой.</em>) Предположим, он&nbsp;ввёл число 10. Оно записано в&nbsp;переменной number.</p>
+<p>Выполняется вторая строчка: while number &gt; 0: —&nbsp;«пока number &gt; 0»&nbsp;— здесь проверяется, выполнено&nbsp;ли условие number &gt; 0. Поскольку мы&nbsp;предположили, что number в&nbsp;этот момент равно&nbsp;10, то&nbsp;да, условие выполнено, поэтому дальше выполняется блок, записанный с&nbsp;отступом&nbsp;— тело цикла.</p>
+<p>Третья строчка программы выводит на&nbsp;экран строку, тут всё понятно.</p>
+<p>Четвёртая строчка вновь считывает с&nbsp;клавиатуры число и&nbsp;сохраняет его в&nbsp;переменную number. Пусть пользователь ввёл&nbsp;2.</p>
+<p>Когда выполнение программы доходит до&nbsp;конца тела цикла, происходит возврат к&nbsp;заголовку цикла (второй строчке программы) и&nbsp;повторная проверка условия. Поскольку 2 &gt; 0, снова выполняется тело цикла.</p>
+<p>Третья строчка снова выводит на&nbsp;экран сообщение, четвёртая строчка снова считывает число (пусть это будет число&nbsp;3), пятая строчка снова выводит на&nbsp;экран сообщение...</p>
+<p>Закончив тело цикла, опять проверяем условие в&nbsp;заголовке. number равно 3, 3 &gt; 0, поэтому продолжаем.</p>
+<p>Третья строчка опять выводит на&nbsp;экран сообщение, четвёртая строчка опять считывает число. Пусть теперь это будет −1&nbsp;— обратите внимание, переменная number на&nbsp;каждой итерации цикла приобретает новое значение! Пятая строчка опять выводит на&nbsp;экран сообщение...</p>
+<p>Вновь вернувшись на&nbsp;вторую строчку, получаем, что −1 &gt; 0&nbsp;— ложно. Поэтому цикл завершается, тело цикла больше не&nbsp;выполняется, прыгаем сразу на&nbsp;следующую после цикла строчку программы&nbsp;— шестую. Она выводит последнее сообщение.</p>
+<p>Всё.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Составной оператор присваивания</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Напомним, что в&nbsp;операторе присваивания одно и&nbsp;то&nbsp;же имя переменной может стоять и&nbsp;справа (в&nbsp;составе какого-то выражения), и&nbsp;слева. В&nbsp;этом случае сначала вычисляется правая часть со&nbsp;старым значением переменной, после чего результат становится новым значением этой переменной. Ни&nbsp;в&nbsp;коем случае не&nbsp;воспринимайте такой оператор присваивания как уравнение!</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">number <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># например, 5</span>
+number <span style="color: #66cc66;">=</span> number + <span style="color: #ff4500;">1</span>  <span style="color: #808080; font-style: italic;"># тогда здесь number становится равным 6</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>number<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Для конструкций вида number = number + 1, также существует сокращённая форма записи оператора присваивания: number += 1. Аналогично оператор x = x + y&nbsp;можно записать как x += y, оператор x = x * y&nbsp;— как x *= y, и&nbsp;так для любого из&nbsp;семи арифметических действий.</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Сигнал остановки</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Рассмотрим такую задачу: пользователь вводит числа. Пусть это будут цены на&nbsp;купленные в&nbsp;магазине товары, а&nbsp;наша программа&nbsp;— часть программного обеспечения кассового аппарата. Ввод «−1»&nbsp;— сигнал остановки. Нужно сосчитать сумму всех введённых чисел (сумму чека).</p>
+<p>Поскольку требуется повторить нечто (ввод очередной цены) неизвестное количество раз, потребуется цикл while. Нам понадобится как минимум две переменные: price для цены очередного товара и&nbsp;total для общей суммы.</p>
+<p>Если&nbsp;бы мы&nbsp;знали точно, что пользователю надо купить ровно три товара, то&nbsp;цикл (и&nbsp;ввод «–1» как условие его прерывания) был&nbsp;бы не&nbsp;нужен. Тогда программа могла&nbsp;бы выглядеть так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">total <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+price <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+total <span style="color: #66cc66;">=</span> total + price 
+price <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+total <span style="color: #66cc66;">=</span> total + price 
+price <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+total <span style="color: #66cc66;">=</span> total + price
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Сумма введённых чисел равна'</span><span style="color: #66cc66;">,</span> total<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание: мы&nbsp;назвали переменные осмысленно. Это очень облегчит жизнь программисту, который будет читать наш код позже&nbsp;— даже если это будете вы&nbsp;сами неделю спустя. Однако интерпретатор Python к&nbsp;этому факту совершенно равнодушен. Чтобы значения переменных соответствовали названиям и&nbsp;тому смыслу, который мы&nbsp;в&nbsp;них закладываем, нужно поддерживать переменные в&nbsp;актуальном состоянии. И&nbsp;только&nbsp;вы, программист, можете это сделать. С&nbsp;переменной price всё более или менее понятно: её&nbsp;значение обновляется при считывании с&nbsp;клавиатуры на&nbsp;каждой итерации цикла, как это делалось во&nbsp;многих других задачах. total сначала равно нулю: до&nbsp;начала ввода цен их&nbsp;сумма, конечно, ноль. Однако значение переменной total устаревает каждый раз, когда пользователь вводит цену очередного товара. Поэтому нам нужно прибавить к&nbsp;значению total только что введённую цену, чтобы эта переменная по-прежнему обозначала сумму цен всех купленных товаров.</p>
+<p>Если&nbsp;бы мы&nbsp;хотели сократить запись, можно было&nbsp;бы организовать цикл, который выполнился&nbsp;бы ровно три раза. Для этого нам потребуется переменная счетчик, которая внутри цикла будет считать каждую итерацию цикла. А&nbsp;условием выхода&nbsp;— поставим выполнение нужного количества итераций:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">count <span style="color: #66cc66;">= </span><span style="color: #ff4500;">0</span>
+total <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> count <span style="color: #66cc66;">&lt; </span><span style="color: #ff4500;">3</span>:
+    price <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+    total <span style="color: #66cc66;">=</span> total + price
+    count <span style="color: #66cc66;">=</span> count + <span style="color: #ff4500;">1</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Сумма введённых чисел равна'</span><span style="color: #66cc66;">,</span> total<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, что total и&nbsp;count должны обнуляться до&nbsp;цикла.</p>
+<p>Однако у&nbsp;нас в&nbsp;задаче количество товаров неизвестно, поэтому понадобится цикл до&nbsp;ввода сигнала остановки («–1»). С&nbsp;учётом сказанного выше программа будет выглядеть так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">total <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Вводите цены; для остановки введите -1.'</span><span style="color: black;">)</span>
+price <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> price <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">0</span>:
+    total <span style="color: #66cc66;">=</span> total + price  <span style="color: #808080; font-style: italic;"># можно заменить на аналогичное  total += price</span>
+    price <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Общая стоимость равна'</span><span style="color: #66cc66;">,</span> total<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Подсчет количества элементов, удовлетворяющих условию</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>А&nbsp;теперь рассмотрим ещё одну задачу.</p>
+<p>Пользователь вводит целые числа. Ввод чисел прекращается, если введено число 0. Необходимо определить сколько чисел среди введенных оканчивались на&nbsp;2&nbsp;и&nbsp;были кратны числу 4. Теперь нам надо проверять последовательность чисел.</p>
+<p>Для каждого введенного числа надо делать проверку, соответствует&nbsp;ли оно условию. Если оно подходит под условие, то&nbsp;увеличиваем счётчик таких чисел.</p>
+<p>И&nbsp;уже после цикла, когда остановился ввод чисел&nbsp;— выводим результат&nbsp;— посчитанное количество нужных чисел.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">count <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+number <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> number <span style="color: #66cc66;">!=</span> <span style="color: #ff4500;">0</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> number % <span style="color: #ff4500;">10</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">2</span> <span style="color: #ff7700; font-weight: bold;">and</span> number % <span style="color: #ff4500;">4</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">0</span>:
+        count +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+    number <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Количество искомых чисел:'</span><span style="color: #66cc66;">,</span> count<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, до&nbsp;цикла необходимо задать начальное значение для переменной count. Ведь когда придет первое подходящее под условие число, у&nbsp;нас count будет увеличиваться на&nbsp;1, относительно предыдущего значения. А&nbsp;значит, это значение должно быть задано.</p>
+<p>Давайте посмотрим, как будет работать эта программа для последовательности чисел: 12, 3, 32, 14, 0.</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/while-table.png" width="600" height="auto"></p>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Поиск минимума и максимума</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Очень часто в&nbsp;задачах приходится использовать различные статистические алгоритмы: поиск максимума, минимума, среднего значения, медианы и&nbsp;моды чисел, главный из&nbsp;которых&nbsp;— определение максимального и&nbsp;минимального значений на&nbsp;множестве данных.</p>
+<p>Рассмотрим алгоритм в&nbsp;общем виде:</p>
+<p>1. заведем отдельную переменную для хранения максимума и&nbsp;минимума. В&nbsp;качестве начального значения можно задать:</p>
+<div style="padding-left: 60px;">
+<p>— заведомо малое для анализируемых данных значения, для максимума&nbsp;— это будет очень маленькое число, например, если мы&nbsp;вычисляем максимальный балл за&nbsp;экзамен, то&nbsp;можно взять maximum = 0, тогда гарантированно произойдет замена максимума. Минимуму&nbsp;же наоборот присваивается заведомо большое значение</p>
+<p>— первый элемент данных</p>
+</div>
+<p>2. в&nbsp;теле цикла каждый подходящий элемент данных обрабатывается операторами по&nbsp;принципу:</p>
+<div style="padding-left: 60px;">
+<p>— если текущий элемент больше максимума, меняем максимум</p>
+<p>— если текущий элемент меньше минимума, заменяем минимум</p>
+</div>
+<p>Рассмотрим пример. Витя анализировал список литературы и&nbsp;решил, что хочет начать с&nbsp;самой большой по&nbsp;количеству страниц книги. Напишем программу, которая поможет Вите определить сколько страниц ему предстоит прочитать. Витя последовательно вводит количество страниц каждой книги из&nbsp;списка, а&nbsp;окончанием ввода служит ввод любого отрицательного числа.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">biggest_book <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+n <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> n <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">0</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> n <span style="color: #66cc66;">&gt;</span> biggest_book:
+        biggest_book <span style="color: #66cc66;">=</span> n
+    n <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>biggest_book<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Так как книга не&nbsp;может содержать в&nbsp;себе 0&nbsp;страниц, для значения максимума мы&nbsp;можем взять&nbsp;0.</p>
+<p>После этого Витя начинает вводить количество страниц, например, он&nbsp;вводит 148. 148 &gt; 0&nbsp;— условие цикла выполняется и&nbsp;мы&nbsp;переходим к&nbsp;операции сравнения. На&nbsp;данном шаге 148 &gt; 0, значит biggest_book = 148. Снова считываем число.</p>
+<p>Предположим теперь введено 120. 120 &gt; 0&nbsp;— продолжаем работать в&nbsp;цикле.&nbsp;120 &gt; 148&nbsp;— условие не&nbsp;выполняется, переходим к&nbsp;вводу новых данных, biggest_book все еще равен 148.</p>
+<p>В&nbsp;этот раз Витя ввел 486, мы&nbsp;заходим в&nbsp;цикл 486 &gt; 148, производим замену biggest_book = 486. Продолжаем ввод. И&nbsp;так далее до&nbsp;тех пор, пока не&nbsp;будет введено отрицательное число.</p>
+</div></article></section>
+{% endblock %}

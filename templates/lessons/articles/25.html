@@ -1,0 +1,222 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Обработка коллекций. Потоковый ввод sys.stdin</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Итерируемые объекты. Почему filter и&nbsp;map возвращают не&nbsp;список</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Функции max/min/sorted и&nbsp;использование ключа сортировки</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Проверка коллекций: all, any</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Потоковый ввод stdin</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;Python встроено множество функций, которые помогают перебирать и&nbsp;комбинировать данные любыми способами. На&nbsp;прошлом уроке мы&nbsp;познакомились с&nbsp;функциями высшего порядка и&nbsp;даже попробовали их&nbsp;комбинировать. В&nbsp;Python правильно подобрав порядок преобразований ваших данных, нередко можно сложное вычисление свести к&nbsp;одной строке. В&nbsp;этом уроке мы&nbsp;будем изучать арсенал имеющихся инструментов и&nbsp;учиться их&nbsp;использовать.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Итерируемые объекты. Почему filter и&nbsp;map возвращают не&nbsp;список</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Прежде чем обсуждать новые функции, нужно немного поговорить про уже изученные функции map и&nbsp;filter. Вы, возможно, помните, что эти функции принимают любую коллекцию (список, кортеж, строку символов и&nbsp;т.&nbsp;д.). Возвращают эти функции уже не&nbsp;список, а&nbsp;специальный объект, который можно затем передать в&nbsp;список, в&nbsp;цикл for и&nbsp;в&nbsp;некоторые другие функции. Давайте разберемся, как это работает, и&nbsp;почему так сделано.</p>
+<p>Для начала поймём, почему эти функции возвращают не&nbsp;список. Представьте, что вы&nbsp;работаете с&nbsp;очень большим списком. Например, списком из&nbsp;миллиарда чисел (он&nbsp;занимает не&nbsp;меньше 4&nbsp;гигабайт памяти). Если вам требуется как-то обработать набор квадратов этих чисел, есть несколько вариантов.</p>
+<p>Первый&nbsp;— перебирать элементы обычным циклом for и&nbsp;отказаться от&nbsp;комбинирования операций, которое вы&nbsp;научились делать при помощи map и&nbsp;filter. Этот вариант, наверное, самый простой, но&nbsp;не&nbsp;слишком удобный. Особенно учитывая, что помимо map и&nbsp;filter, вы&nbsp;познакомитесь со&nbsp;множеством других удобных функций, работающих аналогично.</p>
+<p>Второй вариант&nbsp;— сделать список квадратов, затем работать уже с&nbsp;ним. Это удобно, но&nbsp;придется потратить ещё несколько гигабайт оперативной памяти. Даже если чисел меньше миллиарда, вы&nbsp;вряд&nbsp;ли захотите, чтобы программа тратила лишнюю память.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Итерируемые объекты</strong></h4>
+<div>Функция map использует гибридный метод. Её&nbsp;результат позволяет перебирать не&nbsp;числа, а&nbsp;их&nbsp;квадраты&nbsp;— как мы&nbsp;и&nbsp;хотели. При этом квадраты чисел нигде не&nbsp;хранятся и&nbsp;не&nbsp;занимают память! Объекты, которые возвращают функции map, filter и&nbsp;подобные называются <strong>итерируемыми объектами</strong>. Это означает, что они позволяют перебирать значения по&nbsp;очереди и&nbsp;последовательно.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;нашем примере функция map в&nbsp;любой момент времени хранит только то&nbsp;единственное число, с&nbsp;которым работает, а&nbsp;не&nbsp;весь миллиард квадратов исходных чисел. Вы&nbsp;не&nbsp;создаёте огромный промежуточный список и&nbsp;таким образом не&nbsp;тратите лишнюю память.</p>
+<p>Эффект легко увидеть своими глазами. Откройте диспетчер задач и&nbsp;следите за&nbsp;потреблением памяти интерпретатором Python при запуске двух разных команд:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #808080; font-style: italic;"># Версия, создающая промежуточный список.</span>
+<span style="color: #808080; font-style: italic;"># Осторожно: при запуске этой команды, Python сначала </span>
+<span style="color: #808080; font-style: italic;"># занимает несколько сотен мегабайт оперативной памяти,</span>
+<span style="color: #808080; font-style: italic;"># а затем, когда список становится не нужен – освобождает память.</span>
+&nbsp;
+<span style="color: #008000;">sum</span><span style="color: black;">(</span><span style="color: black;">[</span>x ** <span style="color: #ff4500;">2</span> <span style="color: #ff7700; font-weight: bold;">for</span> x <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">50</span> * <span style="color: #ff4500;">1000</span> * <span style="color: #ff4500;">1000</span><span style="color: black;">)</span><span style="color: black;">]</span><span style="color: black;">)<br></span><span style="color: #808080; font-style: italic;"># =&gt; 41666665416666675000000</span>
+&nbsp;
+<span style="color: #808080; font-style: italic;"># Версия, работающая при помощи итератора, который</span>
+<span style="color: #808080; font-style: italic;"># не хранит промежуточный список.</span>
+<span style="color: #808080; font-style: italic;"># Она занимает минимум дополнительной памяти.</span>
+&nbsp;
+<span style="color: #008000;">sum</span><span style="color: black;">(</span><span style="color: #008000;">map</span><span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">lambda</span> x: x ** <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">50</span> * <span style="color: #ff4500;">1000</span> * <span style="color: #ff4500;">1000</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)<br></span><span style="color: #808080; font-style: italic;"># =&gt; 41666665416666675000000</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Упрощённо говоря, есть два типа итерируемых объектов:
+<ul>
+<li>Итераторы, которые позволяют перебирать элементы. Они не&nbsp;хранят все значения элементов, им&nbsp;нужно помнить только начало промежутка, его конец и&nbsp;текущий элемент.</li>
+<li>Коллекции (списки, строки, словари и&nbsp;т.д.), которые позволяют создать итератор по&nbsp;своим элементам.</li>
+</ul>
+Подробнее об&nbsp;итераторах и&nbsp;их&nbsp;отличиях от&nbsp;коллекций вы&nbsp;можете прочитать в&nbsp;дополнительных материалах.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Большинство функций Python, которые работают с&nbsp;итераторами, умеют работать и&nbsp;с&nbsp;коллекциями. Поэтому слова «итерируемый объект» и&nbsp;«итератор» мы&nbsp;будем использовать как синонимы. Также, за&nbsp;неимением лучшего названия, мы&nbsp;часто будем называть итераторами функции, которые возвращают итератор (такие как range, map, filter и&nbsp;многие другие).</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Функции max/min/sorted и&nbsp;использование ключа сортировки</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Рассмотрим ещё один полезный специальный синтаксис в&nbsp;Python, позволяющий избавиться от&nbsp;промежуточных итераторов, которые исходно нам не&nbsp;даны и&nbsp;не&nbsp;нужны в&nbsp;итоговом результате. Так мы&nbsp;сможем сократить число неуклюжих конструкций, в&nbsp;которых сначала создаётся сложная структура, а&nbsp;потом эта структура упрощается обратно.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Параметр key</strong></h4>
+<div>У&nbsp;функций вроде min/max/sorted есть опциональный (необязательный) параметр key. Параметр key принимает функцию, по&nbsp;значению которой будут сравниваться элементы.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Например, пусть у&nbsp;нас есть набор слов, который мы&nbsp;хотим отсортировать:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">words <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'мир'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'и'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'война'</span><span style="color: black;">]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Отсортировать слова можно различными способами. Если мы&nbsp;применим функцию sorted без аргумента key, то&nbsp;слова будут отсортированы как в&nbsp;словаре (это называется «<strong>лексикографически</strong>»):</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #008000;">sorted</span><span style="color: black;">(</span>words<span style="color: black;">)<br></span><span style="color: #808080; font-style: italic;"># =&gt; ['война', 'и', 'мир']</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Теперь давайте вызовем функцию sorted следующим образом:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #008000;">sorted</span><span style="color: black;">(</span>words<span style="color: #66cc66;">,</span> key <span style="color: #66cc66;">=</span> <span style="color: #ff7700; font-weight: bold;">lambda</span> s: <span style="color: #008000;">len</span><span style="color: black;">(</span>s<span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; ['и', 'мир', 'война']</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;указали, что в&nbsp;качестве ключа для сортировки должны использоваться не&nbsp;сами строки (встроенное в&nbsp;Python сравнение строк&nbsp;— лексикографическое), а&nbsp;их&nbsp;длины. Таким образом, мы&nbsp;получаем список, отсортированный по&nbsp;возрастанию длины слова.</p>
+<p>Помимо функции sorted, параметр key принимают функции max и&nbsp;min. Вызов max(values, key) позволяет найти значение из&nbsp;набора values, наибольшее по&nbsp;ключу key.</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Проверка коллекций: all, any</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>При работе с&nbsp;коллекциями часто приходится определять, выполняется&nbsp;ли некоторое условие одновременно для всех элементов коллекции или хотя&nbsp;бы для одного.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>all и any</strong></h4>
+<div>Для этих целей существуют две функции: all и&nbsp;any. Первая проверяет, что все элементы переданного ей&nbsp;итерируемого набора значений истинны (приводятся к&nbsp;True). Вторая проверяет, что есть хотя&nbsp;бы один такой элемент.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Эти функции могут быть полезны в&nbsp;комбинации с&nbsp;функцией map, которая для каждого элемента коллекции проверит некоторое условие и&nbsp;вернёт итератор, в&nbsp;котором будут перечисляться результаты этих проверок.</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Потоковый ввод stdin</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Теперь поговорим о&nbsp;том, с&nbsp;какими итераторами работают стандартные объекты Python.</p>
+<p>Есть ещё один очень полезный встроенный объект: sys.stdin.</p>
+<p>Поток ввода (stdin)&nbsp;— это специальный объект в&nbsp;программе, куда попадает весь текст, который ввёл пользователь. Потоком его называют потому, что данные хранятся там до&nbsp;тех пор, пока программа их&nbsp;не&nbsp;считала. Данные поступают в&nbsp;программу и&nbsp;временно «складируются» в&nbsp;потоке ввода, а&nbsp;программа может «забрать» их&nbsp;оттуда, например, при помощи функции input(). В&nbsp;момент прочтения они пропадают из&nbsp;потока ввода: он&nbsp;хранит данные «до&nbsp;востребования».</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>sys.stdin</strong></h4>
+<div>sys.stdin&nbsp;— пример итератора, который невозможно перезапустить. Как и&nbsp;любой итератор, он&nbsp;может двигаться только вперёд. Но&nbsp;если для списка можно сделать второй итератор, который начнёт чтение с&nbsp;начала списка, то&nbsp;с&nbsp;потоком ввода такое не&nbsp;пройдёт. Как только данные прочитаны, они удаляются из&nbsp;потока ввода безвозвратно.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Элементы, которые выдает этот итератор&nbsp;— это строки, введённые пользователем. Если пользовательский ввод закончен, то&nbsp;итератор тоже прекращает работу. Пока пользователь не&nbsp;ввёл последнюю строку, мы&nbsp;не&nbsp;знаем, сколько элементов в&nbsp;итераторе.</p>
+<p>Хочется обратить ваше внимание на&nbsp;один интересный факт: допустим, вы&nbsp;написали программу, которая дважды вызывает функцию input() и&nbsp;отправили ее&nbsp;на&nbsp;проверку в&nbsp;тестовую систему. Но&nbsp;тестовая система передает лишь одну строку. В&nbsp;этом случае выполнение программы завершиться с&nbsp;ошибкой, поскольку функция input() не&nbsp;смогла ничего прочитать.</p>
+<p>Поэтому, если вы&nbsp;не&nbsp;знаете, в&nbsp;какой момент надо прекратить ввод, то&nbsp;воспользоваться функцией input() не&nbsp;удастся. В&nbsp;таких случаях остаётся только работать с&nbsp;sys.stdin.</p>
+<p>Чтобы работать с&nbsp;sys.stdin, прежде всего необходимо подключить модуль sys командой import sys. Напишем небольшую программу, которая дублирует каждую введённую пользователем строку:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> <span style="color: #dc143c;">sys</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> line <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #dc143c;">sys</span>.<span style="color: black;">stdin</span>:
+    <span style="color: #808080; font-style: italic;"># rstrip('\n') "отрезает" от строки line,<br>    # идущий справа символ перевода строки,</span>
+    <span style="color: #808080; font-style: italic;"># ведь print сам переводит строку</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>line.<span style="color: black;">rstrip</span><span style="color: black;">(</span><span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\n</span>'</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>Что происходит?</p>
+<p>Пока есть данные в&nbsp;потоке sys.stdin (то&nbsp;есть пока пользователь их&nbsp;вводит) программа будет получать вводимые строки в&nbsp;переменную line, убирать справа символы перевода строки и&nbsp;выводить их&nbsp;на&nbsp;печать.</p>
+<p>Но&nbsp;если вы&nbsp;запустите эту программу, то&nbsp;она будет работать вечно. Чтобы показать, что ввод закончен, пользователю недостаточно нажать Enter&nbsp;— компьютер не&nbsp;знает, завершил&nbsp;ли пользователь работу или будет ещё что-то вводить (при этом Enter превратится в&nbsp;пустую строку). Вместо этого вы&nbsp;должны нажать Ctrl+D(если работаете в&nbsp;консоли Linux или IDE PyCharm), либо Ctrl+Z, затем Enter (если работаете в&nbsp;консоли Windows).</p>
+<p>Если вы&nbsp;работаете в&nbsp;IDE Wing, кликните правой кнопкой мыши и&nbsp;выберите Send EOF, затем нажмите Enter. Это запишет в&nbsp;поток ввода специальный символ EOF (end of&nbsp;file), который отмечает конец ввода.</p>
+<p>Мы&nbsp;обещали показать, что функция input выдаёт ошибку, если не&nbsp;получает ввод. Напишите простую программу:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">x<span style="color: #66cc66;">,</span> y <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Ввод «в&nbsp;одну строку»</strong></h4>
+<div>С&nbsp;помощью sys.stdin можно «в&nbsp;одну строку» прочитать весь ввод (о&nbsp;количестве строк которого мы&nbsp;ничего не&nbsp;знаем) в&nbsp;список. Реализуется это, например, так:
+<pre class="python" style="font-family: monospace;">data <span style="color: #66cc66;">=</span> <span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">map</span><span style="color: black;">(</span><span style="color: #008000;">str</span>.<span style="color: black;">strip</span><span style="color: #66cc66;">,</span> <span style="color: #dc143c;">sys</span>.<span style="color: black;">stdin</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Кроме того, можно считать все строки (с&nbsp;сохранением символов перевода строки) в&nbsp;список вот таким образом:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">data <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">sys</span>.<span style="color: black;">stdin</span>.<span style="color: black;">readlines</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А&nbsp;считать многострочный текст из&nbsp;стандартного потока ввода в&nbsp;текстовую переменную можно вот так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">str_data <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">sys</span>.<span style="color: black;">stdin</span>.<span style="color: black;">read</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div></article></section>
+{%endblock%}

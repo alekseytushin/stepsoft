@@ -1,0 +1,269 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Строки. Индексация</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Строка как коллекция</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Что мы знаем о строках</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Индексация в строках</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Перебор элементов строки</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Хранение текстов в памяти компьютера</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>На&nbsp;этом занятии мы&nbsp;углубим свои знания о&nbsp;строках. Теперь мы&nbsp;сможем не&nbsp;только считывать строку, но&nbsp;и&nbsp;работать с&nbsp;ней, в&nbsp;том числе делать посимвольный перебор.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Строка как коллекция</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>На&nbsp;прошлом занятии мы&nbsp;познакомились с&nbsp;коллекцией, которая называется <strong>множество</strong>. Вспомним, что основная особенность коллекций&nbsp;— возможность хранить несколько значений под одним именем. Можно сказать, что коллекция является <strong>контейнером</strong> для этих значений.</p>
+<p>Но&nbsp;ещё до&nbsp;изучения множеств мы&nbsp;уже знали тип данных, который ведёт себя подобно коллекции. Этот тип данных&nbsp;— строка. Действительно, ведь строка фактически является последовательностью символов. В&nbsp;некоторых языках программирования есть специальный тип данных <strong>char</strong>, позволяющий хранить один символ. В&nbsp;Python такого типа данных нет, поэтому можно сказать, что строка&nbsp;— это <strong>последовательность односимвольных строк</strong>.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Что мы знаем о строках</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте вспомним, что мы&nbsp;уже знаем о&nbsp;работе со&nbsp;строками в&nbsp;языке Python. Мы&nbsp;умеем создавать строки четырьмя способами: задавать напрямую, считывать с&nbsp;клавиатуры функцией input(), преобразовывать число в&nbsp;строку функцией str и&nbsp;склеивать из&nbsp;двух других строк операцией +. Кроме того, мы&nbsp;умеем узнавать длину строки, используя функцию len, и&nbsp;проверять, является&nbsp;ли одна строка частью другой, используя операцию&nbsp;in:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">fixed_word <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'опять'</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>fixed_word<span style="color: black;">)</span>
+word <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>word<span style="color: black;">)</span>
+number <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">25</span>
+number_string <span style="color: #66cc66;">=</span> <span style="color: #008000;">str</span><span style="color: black;">(</span>number<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>number_string<span style="color: black;">)</span>
+word_plus_number <span style="color: #66cc66;">=</span> fixed_word + number_string
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>word_plus_number<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">len</span><span style="color: black;">(</span>word_plus_number<span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'оп'</span> <span style="color: #ff7700; font-weight: bold;">in</span> word_plus_number<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Индексация в строках</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;отличие от&nbsp;множеств, в&nbsp;строках важен порядок элементов (символов). Действительно, если множества {1, 2, 3} и&nbsp;{3, 2, 1}&nbsp;— это одинаковые множества, то&nbsp;строки «МИР» и&nbsp;«РИМ»&nbsp;— это две совершенно разные строки. Наличие порядка даёт нам возможность пронумеровать символы. Нумерация символов начинается с&nbsp;0:</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/string-1.png" width="600" height="auto"></p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>По&nbsp;индексу можно получить соответствующий ему символ строки. Для этого нужно после самой строки написать в&nbsp;квадратных скобках индекс символа.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">word <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'привет'</span>
+initial_letter <span style="color: #66cc66;">=</span> word<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>initial_letter<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># сделает то же, что print('п')</span>
+other_letter <span style="color: #66cc66;">=</span> word<span style="color: black;">[</span><span style="color: #ff4500;">3</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>other_letter<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># сделает то же, что print('в')</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Естественно, в&nbsp;этом примере word с&nbsp;тем&nbsp;же успехом можно было считать с&nbsp;клавиатуры через input(). Тогда мы&nbsp;не&nbsp;могли&nbsp;бы заранее сказать, чему равны переменные initial_letter и&nbsp;other_letter.</p>
+<p>А&nbsp;что будет, если попытаться получить букву, номер которой слишком велик? В&nbsp;этом случае Python выдаст ошибку:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">word <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'привет'</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>word<span style="color: black;">[</span><span style="color: #ff4500;">6</span><span style="color: black;">]</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># builtins.IndexError: string index out of range</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Конечно, номер в&nbsp;квадратных скобках&nbsp;— не&nbsp;обязательно фиксированное число, которое прописано в&nbsp;самой программе. Его тоже можно считать с&nbsp;клавиатуры или получить в&nbsp;результате арифметического действия.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">word <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'привет'</span>
+number_of_letter <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># предположим, пользователь ввёл 3</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>word<span style="color: black;">[</span>number_of_letter<span style="color: black;">]</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># тогда будет выведена буква 'в'</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Кроме «прямой» индексации (начинающейся с&nbsp;0), в&nbsp;Python разрешены отрицательные индексы: word[-1] означает последний символ строки word, word[-2]&nbsp;— предпоследний, и&nbsp;так далее.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><img src="https://yastatic.net/s3/lyceum/content/image/string-2.png" width="600" height="auto"></p>
+<p>&nbsp;</p>
+<p>А можно ли, используя индексацию, изменить какой-либо символ строки? Давайте проверим:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">word <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'карова'</span>  <span style="color: #808080; font-style: italic;"># Написали слово с ошибкой</span>
+word<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'о'</span>    <span style="color: #808080; font-style: italic;"># Пробуем исправить, но: <br># TypeError: 'str' object does not support item assignment</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Интерпретатор Python выдаёт ошибку&nbsp;— значит, изменить отдельный символ строки невозможно, т.е. строка относится к&nbsp;неизменяемым типам данных в&nbsp;Python.</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Перебор элементов строки</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;предыдущем уроке мы&nbsp;узнали, что цикл for можно использовать для перебора элементов множества. Таким&nbsp;же образом можно использовать цикл for, чтобы перебрать все буквы в&nbsp;слове:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">text <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'hello, my dear friends!'</span>
+vowels <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> letter <span style="color: #ff7700; font-weight: bold;">in</span> text:
+    <span style="color: #ff7700; font-weight: bold;">if</span> letter <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'e'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'i'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'o'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'u'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'y'</span><span style="color: black;">}</span>:
+        vowels +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>vowels<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Но, так как символы в&nbsp;строке пронумерованы, у&nbsp;нас есть ещё один способ перебрать все элементы в&nbsp;строке&nbsp;— перебрать все индексы, используя уже знакомую нам конструкцию for i&nbsp;in&nbsp;range(...).</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">text <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'hello, my dear friends!'</span>
+vowels <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #008000;">len</span><span style="color: black;">(</span>text<span style="color: black;">)</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> text<span style="color: black;">[</span>i<span style="color: black;">]</span> <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #483d8b;">'aeiouy'</span>:
+        vowels +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>vowels<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Хранение текстов в памяти компьютера</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте немного поговорим о&nbsp;том, как строки хранятся в&nbsp;памяти компьютера.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Поскольку компьютер «умеет» хранить только двоичные числа, для записи нечисловой информации (текстов, изображений, видео, документов) прибегают к&nbsp;<strong>кодированию</strong>.</p>
+<p>Самый простой случай кодирования&nbsp;— сопоставление кодов текстовым символам.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Один самых распространенных форматов такого кодирования&nbsp;— таблица ASCII (American standard code for information interchange).</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/ascii.png" width="423" height="auto"></p>
+<p>&nbsp;</p>
+<p>Изначально в&nbsp;этой таблице каждому символу был поставлен в&nbsp;соответствие 7-битный код, что позволяло идентифицировать 128 различных символов. В&nbsp;таблице вы&nbsp;не&nbsp;видите символы с&nbsp;кодами, меньшими&nbsp;32, так как они являются служебными и&nbsp;не&nbsp;предназначены для непосредственного вывода на&nbsp;экран (пробел, перевод строки, табуляция и&nbsp;т.д.).</p>
+<p>Этого хватало на&nbsp;латинские буквы обоих регистров, знаки препинания и&nbsp;спецсимволы&nbsp;— например перевод строки или разрыв страницы. Позже код расширили до&nbsp;1&nbsp;байта, что позволяло хранить уже 256 различных значений: в&nbsp;таблицу помещались буквы второго алфавита (например, кириллица) и&nbsp;дополнительные графические элементы (псевдографика).</p>
+<p>В&nbsp;некоторых относительно низкоуровневых языках (например в&nbsp;С) можно в&nbsp;любой момент перейти от&nbsp;представления строки в&nbsp;памяти к&nbsp;последовательности байтов, начинающейся по&nbsp;какому-либо адресу.</p>
+<p>Сейчас однобайтные кодировки отошли на&nbsp;второй план, уступив место Юникоду.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Юникод</strong></h4>
+<div>Юникод&nbsp;— это таблица, которая содержит соответствия между числом и&nbsp;каким-либо знаком, причем количество знаков может быть любым. Это позволяет одновременно использовать любые символы любых алфавитов, а&nbsp;также дополнительные графические элементы. Кроме того, в&nbsp;Юникоде каждый символ помимо кода имеет некоторые свойства: например, буква это или цифра. Это позволяет более гибко работать с&nbsp;текстами.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;Юникод все время добавляются новые элементы, а&nbsp;сам размер этой таблицы не&nbsp;ограничен и&nbsp;будет только расти, поэтому сейчас при хранении в&nbsp;памяти одного юникод-символа может потребоваться от&nbsp;1&nbsp;до&nbsp;8&nbsp;байт. Отсутствие ограничений привело к&nbsp;тому, что стали появляться символы на&nbsp;все случаи жизни. Например, есть несколько снеговиков.</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/unicode-snowman.png" width="201" height="auto"></p>
+<p>&nbsp;</p>
+<p>Этого вы&nbsp;можете увидеть, если наберете:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\u</span>2603'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В консоли увидим снеговика:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span>☃</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Важно понять, что все строки в&nbsp;Python хранятся именно как последовательность юникод-символов.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Для того, чтобы узнать код некоторого символа, существует функция <strong>ord</strong> (<em>от&nbsp;order&nbsp;— порядок</em>).</p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #008000;">ord</span><span style="color: black;">(</span><span style="color: #483d8b;">'Б'</span><span style="color: black;">)</span> 
+<span style="color: #66cc66;">&gt;&gt;&gt;</span><span style="color: #ff4500;">1041</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Зная код, всегда можно получить соответствующий ему символ. Для этого существует функция <strong>chr</strong> (<em>от&nbsp;character&nbsp;— символ</em>):</p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #008000;">chr</span><span style="color: black;">(</span><span style="color: #ff4500;">1041</span><span style="color: black;">)</span> 
+<span style="color: #66cc66;">&gt;&gt;&gt;</span><span style="color: #483d8b;">'Б'</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Функции ord и&nbsp;chr часто работают в&nbsp;паре. Попробуйте, например, предположить, что будет выведено на&nbsp;экран в&nbsp;результате работы следующей программы:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">26</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">chr</span><span style="color: black;">(</span><span style="color: #008000;">ord</span><span style="color: black;">(</span><span style="color: #483d8b;">'A'</span><span style="color: black;">)</span> + i<span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div></article></section>
+{%endblock%}

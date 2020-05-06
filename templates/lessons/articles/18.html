@@ -1,0 +1,765 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Практика по&nbsp;работе с&nbsp;графикой и&nbsp;tkinter</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Программирование в&nbsp;графическом интерфейсе</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Учимся рисовать</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Взаимодействие с&nbsp;пользователем</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Движение объектов</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Приступаем к&nbsp;игре</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;этом уроке мы&nbsp;научимся писать небольшие программы, которые работают не&nbsp;с&nbsp;консолью, а&nbsp;с&nbsp;окном приложения (графическим пользовательским интерфейсом, GUI). Для этого нам понадобится дополнительный функционал&nbsp;— библиотека <strong>tkinter</strong>. То, чем мы&nbsp;будем заниматься&nbsp;— только самое начало программирования GUI, поэтому не&nbsp;стоит ожидать того, что мы&nbsp;создадим Photoshop. Но&nbsp;всё впереди, и&nbsp;когда-нибудь мы&nbsp;сделаем и&nbsp;это.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Программирование в&nbsp;графическом интерфейсе</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Согласитесь, что скучно все время видеть перед собой черный экран, который мы&nbsp;называем консолью. На&nbsp;нем нельзя рисовать, пользоваться «мышкой» или джойстиком, организовывать привычный нам оконный интерфейс. Сегодня и&nbsp;на&nbsp;нескольких следующих занятиях мы&nbsp;познакомимся с&nbsp;функционалом языка Python, который позволит нам все&nbsp;же немного поработать в&nbsp;графическом режиме.</p>
+<p>Как вы&nbsp;уже догадываетесь, не&nbsp;весь функционал языка Python включен&nbsp;в, что называется, стандартную поставку. Какие-то вещи надо добавлять к&nbsp;этому коробочному решению. Эти «добавки» называются библиотеками. Скоро вы&nbsp;узнаете о&nbsp;них подробнее, а&nbsp;пока мы&nbsp;подключим лишь одну из&nbsp;них, которая называется <strong>tkinter</strong>, и&nbsp;которая поможет нам поработать с&nbsp;графикой.</p>
+<p>Попробуйте написать и&nbsp;выполнить следующий код:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>У&nbsp;вас должно открыться пустое окошко, как на&nbsp;рисунке:</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/tkinter/tkinter-1.png" height="auto"></p>
+<p>Если при запуске Python ответит <em>ImportError: No&nbsp;module named ’tkinter’</em>, то&nbsp;это означает, что библиотека <strong>tkinter</strong> на&nbsp;Вашем компьютере отсутствует и&nbsp;Вам нужно ее&nbsp;установить.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>pip</strong></h4>
+<div>
+<p>Установить стандартный пакет библиотек в&nbsp;Python очень просто, для этого есть специальный менеджер пакетов&nbsp;— <strong>pip</strong>. Чтобы воспользоваться&nbsp;им, запустите терминал (в&nbsp;Windows для этого нужно нажать Пуск, набрать cmd и&nbsp;нажать Enter). В&nbsp;терминале наберите:</p>
+<div>
+<pre class="python" style="font-family: monospace;">pip install tkinter</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>И&nbsp;следуйте указаниям. Обычно надо со&nbsp;всем согласиться.</p>
+<p>Но&nbsp;вернемся к&nbsp;нашему коду и&nbsp;поймем, что&nbsp;же делают написанные в&nbsp;нем строки.</p>
+<p>import tkinter&nbsp;— просто подключение пакета, с&nbsp;такими строчками мы&nbsp;уже встречались.</p>
+<p>Вторая строчка&nbsp;— master = tkinter.Tk() — создает основное окно и&nbsp;дает ему имя <strong>master</strong>. Дальше мы&nbsp;будем наполнять его содержимым.</p>
+<p>Третья строчка&nbsp;— master.mainloop() — самая необычная. Дело в&nbsp;том, что приложение с&nbsp;графическим интерфейсом работает не&nbsp;так, как консольные приложения, которые мы&nbsp;писали раньше. В&nbsp;консольных приложениях компьютер исполнял наши инструкции одну за&nbsp;другой. В&nbsp;программе с&nbsp;графическим интерфейсом такой подход работать не&nbsp;будет, потому что компьютер должен реагировать на&nbsp;действия пользователя. Поэтому вместо того, чтобы выполнять команды, он&nbsp;ждет сигналов от&nbsp;пользователя, которые нужно как-то обрабатывать.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Основной цикл</strong></h4>
+<div>Команда <strong>master.mainloop()</strong> запускает для нашего окна <strong>основной цикл</strong>. Он&nbsp;получает информацию о&nbsp;важных событиях (нажатии клавиш, движениях мышки и&nbsp;пр.), обрабатывает эти события и&nbsp;перерисовывает окно.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Так работают все приложения с&nbsp;графическим интерфейсом. Если вы&nbsp;пользуетесь ОС&nbsp;Windows, то&nbsp;наверняка встречали сообщение, что какая-то программа не&nbsp;отвечает. Обычно это означает, что внутри основного цикла что-то пошло не&nbsp;так (например, программа вошла в&nbsp;бесконечный цикл или зависла). Система продолжает посылать программе сообщения о&nbsp;событиях, но&nbsp;та&nbsp;перестала их&nbsp;принимать, потому что занята чем-то другим.</p>
+<p>Обратите внимание, что выполнение программы как&nbsp;бы приостанавливается, когда она доходит до&nbsp;команды master.mainloop(), и&nbsp;продолжается только после закрытия окна. Попробуйте предсказать, что произойдет со&nbsp;следующей программой (а&nbsp;потом проверьте свое предположение):</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span>
+x <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>x<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Учимся рисовать</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Прежде, чем писать программу, по-настоящему взаимодействующую с&nbsp;пользователем, мы&nbsp;научимся рисовать.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Холст</strong></h4>
+<div>
+<p>Для начала нужно создать холст (<strong>canvas</strong>), на&nbsp;котором потом будут располагаться картинки. Это действие делает строка:</p>
+<div>
+<pre class="python" style="font-family: monospace;">canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Попробуйте поменять параметры&nbsp;<strong>bg</strong> (сокращение для background), <strong>height</strong> и&nbsp;<strong>width</strong>. Цвет может быть либо фиксированным названием цвета (white, black, red, green, blue, cyan, yellow, magenta) либо строкой вида «#RRGGBB». <strong>RR</strong>, <strong>GG</strong>&nbsp;и&nbsp;<strong>BB</strong>&nbsp;— значения красной, синей и&nbsp;зелёной компоненты в&nbsp;диапазоне от&nbsp;0&nbsp;до&nbsp;255, записанные в&nbsp;шестнадцатеричной системе счисления.</p>
+<p>Поэкспериментируйте с&nbsp;этим.</p>
+<p><strong>Тренировочная задача #0</strong></p>
+<p><em>Напишите программу, которая считывает с&nbsp;клавиатуры три числа (красную, зеленую и&nbsp;синюю компоненту) и&nbsp;печатает цвет в&nbsp;описанном выше формате.</em></p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Добавление холста</strong></h4>
+<div>
+<p>Команда <strong>сanvas.pack()</strong> добавляет в&nbsp;окно master созданный нами холст&nbsp;— canvas. То&nbsp;же самое можно сделать командой <strong>canvas.grid()</strong>, но&nbsp;работают они немного по-разному:</p>
+<p>— <strong>grid()</strong> располагает объекты в&nbsp;ячейках виртуальной сетки, которую мы&nbsp;накладываем на&nbsp;наше окно,</p>
+<p>— <strong>pack()</strong>&nbsp;же пытается их&nbsp;разместить (упаковать) самостоятельно.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Посмотрите, что меняется, если заменить <strong>canvas.pack()</strong> на&nbsp;<strong>canvas.grid()</strong>.</p>
+<p>Ну&nbsp;давайте уже наконец что-то нарисуем:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'white'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">create_line</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">600</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'red'</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Линия</strong></h4>
+<div>
+<p>Мы&nbsp;нарисовали линию на&nbsp;холсте, передав команде <strong>create_line</strong> сначала 2&nbsp;пары&nbsp;— координаты точек, а&nbsp;затем параметр <strong>fill</strong>— цвет линии:</p>
+<div>
+<pre class="python" style="font-family: monospace;">canvas.<span style="color: black;">create_line</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">600</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'red'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;принципе команде <strong>create_line</strong> можно передать больше точек&nbsp;— тогда получится ломаная:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'white'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">create_line</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">200</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">600</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span>
+                   <span style="color: black;">(</span><span style="color: #ff4500;">200</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">300</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'red'</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Теперь научимся рисовать круг или эллипс:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'white'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">100</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">100</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'red'</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">200</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">200</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">400</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'green'</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Если нужно нарисовать много эллипсов, можно использовать цикл:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'white'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> x <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">20</span><span style="color: black;">)</span>:
+    canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span><span style="color: black;">(</span>x<span style="color: #66cc66;">, </span>x<span style="color: black;">)</span><span style="color: #66cc66;">, </span><span style="color: black;">(</span>x + <span style="color: #ff4500;">20</span><span style="color: #66cc66;">, </span>x + <span style="color: #ff4500;">20</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'red'</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;качестве практики найдите в&nbsp;интернете, какие еще команды рисования есть у&nbsp;холста (<strong>tkinter.Canvas</strong>) и&nbsp;поэкспериментируйте с&nbsp;ними.</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Взаимодействие с&nbsp;пользователем</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Теперь пришло время научить нашу программу взаимодействовать с&nbsp;пользователем. Для этого нужно связать каждое его действие с&nbsp;функцией, которая будет реагировать на&nbsp;действия. Это делается с&nbsp;помощью команды <strong>bind</strong>.</p>
+<p>Эта команда получает в&nbsp;качестве входных данных название произошедшего события и&nbsp;функцию, которую нужно выполнить, когда событие происходит:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> draw<span style="color: black;">(</span>event<span style="color: black;">)</span>:
+    canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">100</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">100</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">300</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'red'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">return</span>
+&nbsp;
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> draw<span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;приведенном примере мы&nbsp;обрабатываем событие <strong>&lt;KeyPress&gt;</strong>: нажатие любой клавиши. Tkinter знает много разных событий, вы&nbsp;можете самостоятельно прочитать про них в&nbsp;документации. Пока&nbsp;же прочие события нам не&nbsp;понадобятся.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Команда <strong>master.bind("&lt;KeyPress&gt;", draw)</strong> означает, что каждый раз, когда пользователь нажимает клавишу, вызывается функция <strong>draw</strong>. В&nbsp;качестве аргумента этой функции передается переменная <strong>event</strong>, в&nbsp;которой содержится описание события.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><em>(<strong>Вредный совет</strong>: теперь вы&nbsp;тоже можете сделать так, чтобы ваша программа <strong>зависла</strong> и&nbsp;не&nbsp;отвечала. Для этого нужно добавить в&nbsp;обработку события бесконечный цикл.)</em></p>
+<p>Обратите внимание, что функция получает на&nbsp;вход <strong>один</strong> аргумент&nbsp;— <strong>описание события</strong>, которое её&nbsp;вызывает. В&nbsp;этой переменной хранится вся возможная информация о&nbsp;событии.</p>
+<p>В&nbsp;частности, можно узнать, какая клавиша была нажата, и&nbsp;в&nbsp;зависимости от&nbsp;этого закрашивать круг нужным цветом:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> draw<span style="color: black;">(</span>event<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> event.<span style="color: black;">char</span> <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'r'</span>:
+        canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">100</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">100</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">300</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'red'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> event.<span style="color: black;">char</span> <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'g'</span>:
+        canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">100</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">100</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">300</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'green'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> event.<span style="color: black;">char</span> <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'b'</span>:
+        canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">100</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">100</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">300</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'blue'</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> draw<span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Нажатие клавиши</strong></h4>
+<div>
+<p>На&nbsp;самом деле, информация о&nbsp;том, какая клавиша нажата, хранится сразу в&nbsp;нескольких полях («составляющих» переменной <strong>event</strong>):</p>
+<p>— <strong>char</strong>&nbsp;— символ, который появляется при нажатии клавиши. Однако это поле определено не&nbsp;всегда: например, когда вы&nbsp;нажимаете Shift, никакого символа не&nbsp;появляется.</p>
+<p>— <strong>keysym</strong>&nbsp;— символическое описание нажатой клавиши (например, <strong>Return</strong>, <strong>Shift_L</strong> (левый шифт), <strong>Alt_R</strong> и&nbsp;т.п.).</p>
+<p>— <strong>keysym_num</strong>&nbsp;— число, соответствующее этому описанию.</p>
+<p>— <strong>keycode</strong>&nbsp;— код нажатой клавиши. Клавиши могут иметь одинаковый код, но&nbsp;разный keysym, мы&nbsp;встретимся с&nbsp;таким случаем чуть дальше.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Как узнать <strong>keysym</strong> нужной вам клавиши? Можно посмотреть в&nbsp;интернете, но&nbsp;интереснее написать программу, которая их&nbsp;выводит.</p>
+<p>Для этого нам понадобится новый инструмент&nbsp;— <strong>поле с&nbsp;текстом</strong>. Этот инструмент называется <strong>Label</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+label <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Label</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Hello world!"</span><span style="color: black;">)</span>
+label.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Label</strong></h4>
+<div>
+<p>Для того, чтобы поменять текст на&nbsp;уже существующем Label, надо воспользоваться функцией <strong>config</strong>, передав ей&nbsp;параметр <strong>text</strong>:</p>
+<div>
+<pre class="python" style="font-family: monospace;">label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Новый текст"</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте напишем программу, которая выводит значение <strong>keysym</strong> для нажатой клавиши:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> show_key<span style="color: black;">(</span>event<span style="color: black;">)</span>:
+    label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span>event.<span style="color: black;">keysym</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+label <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Label</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Hello world!"</span><span style="color: black;">)</span>
+label.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> show_key<span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Виджеты</strong></h4>
+<div><strong>Label</strong>&nbsp;— ещё один инструмент отображения данных в&nbsp;tkinter. В&nbsp;общем, такие инструменты принято называть <strong>виджетами</strong> (widgets). Их&nbsp;можно комбинировать в&nbsp;одном окне.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> key_pressed<span style="color: black;">(</span>event<span style="color: black;">)</span>:
+    label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span>event.<span style="color: black;">keysym</span><span style="color: black;">)</span>
+    canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">100</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">100</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">300</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'green'</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+label <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Label</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Hello world!"</span><span style="color: black;">)</span>
+label.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> key_pressed<span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Движение объектов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Теперь мы&nbsp;напишем простую игру. Для начала давайте научимся <strong>двигать</strong> объекты.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Важная особенность холста (<strong>Canvas</strong>) в&nbsp;tkinter заключается в&nbsp;том, что нарисованный объект всегда остается монолитным&nbsp;— с&nbsp;ним можно выполнять разные операции, не&nbsp;затрагивая при этом другие объекты.</p>
+<p>Все функции вида <strong>canvas.create_[что угодно]</strong> возвращают целое число&nbsp;— <strong>идентификатор</strong> объекта на&nbsp;холсте. Зная это число, можно, например, двигать объект.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;следующем примере при нажатии на&nbsp;любую клавишу кружочек сдвинет вправо и&nbsp;вниз на&nbsp;10&nbsp;позиций&nbsp;— пикселей.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> key_pressed<span style="color: black;">(</span>event<span style="color: black;">)</span>:
+    canvas.<span style="color: black;">move</span><span style="color: black;">(</span>oval<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span>
+oval <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">300</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">310</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">310</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'red'</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> key_pressed<span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Движение объекта</strong></h4>
+<div>
+<p>Чтобы передвинуть объект, нужно передать функции <strong>canvas.move</strong> идентификатор объекта и&nbsp;два числа: изменение координаты <strong>x</strong>&nbsp;и&nbsp;изменение координаты&nbsp;<strong>y</strong>.</p>
+<p>Обратите внимание на&nbsp;особенность координатной сетки экрана монитора: начало координат располагается в&nbsp;верхнем левом углу экрана. Ось Х&nbsp;направлена слева направо, ось Y&nbsp;— сверху вниз.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><img src="https://yastatic.net/s3/lyceum/content/image/tkinter/tkinter-2.jpeg" width="600" height="auto"></p>
+</div>
+<div style="padding-left: 60px;">
+<p>Объекты можно не&nbsp;только двигать, но&nbsp;и&nbsp;произвольно менять их&nbsp;положения и&nbsp;свойства. Для этого нам помогут следующие функции:</p>
+<div style="padding-left: 30px;">
+<p>— <strong>canvas.coords(object)</strong>&nbsp;— узнать координаты объекта (для овала это будет четверка координат, для линии&nbsp;— все координаты, с&nbsp;которыми она создавалась).</p>
+<p>— <strong>canvas.coords(object, new_coordinates)</strong>&nbsp;— задать объекту новые координаты.</p>
+<p>— <strong>canvas.itemconfig(object, ...)</strong>&nbsp;— задать любые свойства объекта. Например, <strong>canvas.itemconfig(object, fill=’red’)</strong>&nbsp;— изменить цвет объекта на&nbsp;красный.</p>
+</div>
+<p>Например:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> key_pressed<span style="color: black;">(</span>event<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> event.<span style="color: black;">keysym</span> <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'space'</span>:
+        canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>oval<span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">310</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">310</span><span style="color: black;">)</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> event.<span style="color: black;">keysym</span> <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Up'</span>:
+        canvas.<span style="color: black;">move</span><span style="color: black;">(</span>oval<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> -<span style="color: #ff4500;">10</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>oval<span style="color: black;">)</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> <span style="color: #66cc66;">&lt;</span> <span style="color: #ff4500;">50</span>:
+        canvas.<span style="color: black;">itemconfig</span><span style="color: black;">(</span>oval<span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'red'</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span><span style="color: #ff4500;">600</span><span style="color: black;">)</span>
+oval <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">300</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">300</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">310</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">310</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'green'</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> key_pressed<span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Приступаем к&nbsp;игре</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Теперь приступим к&nbsp;игре. Игрок в&nbsp;ней ходит по&nbsp;сетке размером <strong>N_X</strong>&nbsp;на <strong>N_Y</strong> с&nbsp;шагом <strong>step</strong>. Ему нужно добраться до&nbsp;выхода, причём начальное положение игрока и&nbsp;выхода определяется случайно.</p>
+<p>Шаблон программы у&nbsp;нас уже есть:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> tkinter
+<span style="color: #ff7700; font-weight: bold;">import</span> <span style="color: #dc143c;">random</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> move_wrap<span style="color: black;">(</span>canvas<span style="color: #66cc66;">,</span> obj<span style="color: #66cc66;">,</span> move<span style="color: black;">)</span>:
+    canvas.<span style="color: black;">move</span><span style="color: black;">(</span>obj<span style="color: #66cc66;">,</span> move<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> move<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span>
+    <span style="color: #808080; font-style: italic;"># Здесь нужно сделать так, чтобы ушедший "за экран" игрок <br>    # выходил с другой стороны</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> check_move<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>player<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>exit<span style="color: black;">)</span>:
+        label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Победа!"</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> key_pressed<span style="color: black;">(</span>event<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> event.<span style="color: black;">keysym</span> <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Up'</span>:
+        move_wrap<span style="color: black;">(</span>canvas<span style="color: #66cc66;">,</span> player<span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> -step<span style="color: black;">)</span><span style="color: black;">)</span>
+    <span style="color: #808080; font-style: italic;"># Здесь нужно дописать то, что нужно, чтобы все остальные <br>    # клавиши работали</span>
+    check_move<span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+step <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">60</span>
+N_X <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">10</span>
+N_Y <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">10</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(<br></span>    master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span>step * N_X<span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span>step * N_Y<span style="color: black;">)</span>
+&nbsp;
+player_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span>
+              <span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+exit_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span>
+            <span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+&nbsp;
+player <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span>
+    <span style="color: black;">(</span>player_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> player_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br><span style="color: black;">    (</span>player_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span> + step<span style="color: #66cc66;">,</span> player_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> + step<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br>    fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'green'<br></span><span style="color: black;">)</span>
+exit <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span>
+    <span style="color: black;">(</span>exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,<br></span><span style="color: black;">    (</span>exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span> + step<span style="color: #66cc66;">,</span> exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> + step<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br>    fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'yellow'<br></span><span style="color: black;">)</span>
+&nbsp;
+label <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Label</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Найди выход"</span><span style="color: black;">)</span>
+label.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> key_pressed<span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Пока есть одна проблема: когда игрок находит выход, ничего не&nbsp;происходит. Он&nbsp;может гулять и&nbsp;дальше. Чтобы исправить это, можно связать с&nbsp;событием какую-нибудь другую функцию. Пусть эта функция ничего не&nbsp;делает.</p>
+<p>Определим её&nbsp;и&nbsp;добавим в&nbsp;функцию <strong>check_move</strong> одну строчку:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> do_nothing<span style="color: black;">(</span>x<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> check_move<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>player<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>exit<span style="color: black;">)</span>:
+        label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Победа!"</span><span style="color: black;">)</span>
+        master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> do_nothing<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, что функция <strong>do_nothing</strong> принимает на&nbsp;вход один аргумент. Функции, которые используются в&nbsp;команде <strong>bind</strong>, тоже всегда получают на&nbsp;вход один аргумент&nbsp;— описание события. Если&nbsp;бы мы&nbsp;определили функцию <strong>do_nothing()</strong> без параметров, то&nbsp;в&nbsp;процессе выполнения программы получили&nbsp;бы ошибку.</p>
+<p>Теперь, попадая к&nbsp;выходу, игрок <strong>теряет управление</strong>, и&nbsp;нам остается только закрыть окно. Наверное, стоит добавить кнопку, которая позволит ему начать сначала.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Кнопка</strong></h4>
+<div>
+<p>Кнопка создается командой <strong>tkinter.Button(...)</strong></p>
+<p>В&nbsp;качестве параметров ей&nbsp;нужно передать <strong>окно</strong>, в&nbsp;котором будет создаваться кнопка; <strong>текст</strong>, который будет написан на&nbsp;кнопке и&nbsp;<strong>функцию</strong>, которая вызывается при её&nbsp;нажатии.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Например так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">restart <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Button</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Начать заново"</span><span style="color: #66cc66;">,</span>
+                         command<span style="color: #66cc66;">=</span>prepare_and_start<span style="color: black;">)</span>
+restart.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Теперь стоит перенести в&nbsp;отдельную функцию код, подготавливающий игровое поле:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> prepare_and_start<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">global</span> player<span style="color: #66cc66;">,</span> exit
+    player_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span>
+                  <span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+    exit_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span>
+                <span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+    player <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span>
+        <span style="color: black;">(</span>player_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> player_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br><span style="color: black;">        (</span>player_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span> + step<span style="color: #66cc66;">,</span> player_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> + step<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br>        fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'green'<br></span><span style="color: black;">    )</span>
+    exit <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span>
+        <span style="color: black;">(</span>exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br><span style="color: black;">        (</span>exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span> + step<span style="color: #66cc66;">,</span> exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> + step<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br>        fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'yellow'<br></span><span style="color: black;">    )</span>
+    label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Найди выход!"</span><span style="color: black;">)</span>
+    master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> key_pressed<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание на&nbsp;строчку <strong>global...</strong>. Вспомните, что это&nbsp;— глобальные переменные. Мы&nbsp;уже сталкивались с&nbsp;ними, и&nbsp;помним, что использовать их&nbsp;надо <em>c&nbsp;умом</em>.</p>
+<p>Однако в&nbsp;нашем случае без глобальных переменных трудно обойтись: информацию об&nbsp;игроке, выходе, холсте и&nbsp;т.д. пришлось&nbsp;бы передавать во&nbsp;все функции в&nbsp;качестве параметров. Это неудобно, а&nbsp;иногда и&nbsp;вовсе невозможно.</p>
+<p>Например, команда <strong>bind</strong> работает с&nbsp;функциями, получающими ровно один аргумент&nbsp;— событие.</p>
+<p>Поскольку наша программа невелика, мы&nbsp;решим эту проблему за&nbsp;счёт глобальных переменных.</p>
+<p>В&nbsp;реальных (больших) программах для этого используют классы, с&nbsp;которыми вы&nbsp;познакомитесь немного позже.</p>
+<p>Основной код нашей программы теперь выглядит так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">step <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">60</span>  <span style="color: #808080; font-style: italic;"># Размер клетки</span>
+N_X <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">10</span>
+N_Y <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">10</span>   <span style="color: #808080; font-style: italic;"># Размер сетки</span>
+master <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Tk</span><span style="color: black;">(</span><span style="color: black;">)</span>
+label <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Label</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Найди выход"</span><span style="color: black;">)</span>
+label.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+canvas <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Canvas</span><span style="color: black;">(<br></span>    master<span style="color: #66cc66;">,</span> bg<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">=</span>N_X * step<span style="color: #66cc66;">,</span> width<span style="color: #66cc66;">=</span>N_Y * step<span style="color: black;">)</span>
+canvas.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+restart <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">Button</span><span style="color: black;">(</span>master<span style="color: #66cc66;">,</span> text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Начать заново"</span><span style="color: #66cc66;">,</span>
+                         command<span style="color: #66cc66;">=</span>prepare_and_start<span style="color: black;">)</span>
+restart.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: black;">)</span>
+prepare_and_start<span style="color: black;">(</span><span style="color: black;">)</span>
+master.<span style="color: black;">mainloop</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>При попытке запустить новую программу вы&nbsp;сразу столкнетесь с&nbsp;новой проблемой: после нажатия <strong>Начать заново</strong> игрок и&nbsp;«выход» не&nbsp;исчезают. Нужно добавить в&nbsp;функцию <strong>prepare_and_start</strong> удаление всех старых объектов. К&nbsp;счастью, это можно сделать одной командой: <strong>canvas.delete("all")</strong>. Добавьте ее&nbsp;в&nbsp;вашу программу.</p>
+<p>В&nbsp;нашу игру уже можно играть, но&nbsp;игроку чересчур легко живется: он&nbsp;даже проиграть не&nbsp;может! Давайте добавим препятствия: например, огонь, в&nbsp;который нельзя наступать.</p>
+<p>Для этого придётся переписать функцию prepare_and_start:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> prepare_and_start<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">global</span> player<span style="color: #66cc66;">,</span> exit<span style="color: #66cc66;">,</span> fires
+    canvas.<span style="color: black;">delete</span><span style="color: black;">(</span><span style="color: #483d8b;">"all"</span><span style="color: black;">)</span>    
+    player_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span>
+                  <span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+    exit_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span>
+                <span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y<span style="color: black;">)</span> * step<span style="color: black;">)</span>
+    player <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span>
+        <span style="color: black;">(</span>player_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> player_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br><span style="color: black;">        (</span>player_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span> + step<span style="color: #66cc66;">,</span> player_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> + step<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br>        fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'green'<br></span><span style="color: black;">    )</span>
+    exit <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span>
+        <span style="color: black;">(</span>exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br><span style="color: black;">        (</span>exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span> + step<span style="color: #66cc66;">,</span> exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> + step<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br>        fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'yellow'<br></span><span style="color: black;">    )</span>
+    N_FIRES <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">6</span>  <span style="color: #808080; font-style: italic;"># Число клеток, заполненных огнем</span>
+    fires <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>N_FIRES<span style="color: black;">)</span>:
+        fire_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span>
+                    <span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+        fire <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_oval</span><span style="color: black;">(</span>
+            <span style="color: black;">(</span>fire_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> fire_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br><span style="color: black;">            (</span>fire_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span> + step<span style="color: #66cc66;">,</span> fire_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> + step<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <br>            fill<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'red'<br></span><span style="color: black;">        )</span>
+        fires.<span style="color: black;">append</span><span style="color: black;">(</span>fire<span style="color: black;">)</span>
+    label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Найди выход!"</span><span style="color: black;">)</span>
+    master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> key_pressed<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>И&nbsp;функцию, проверяющую результат хода:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> check_move<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>player<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>exit<span style="color: black;">)</span>:
+        label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Победа!"</span><span style="color: black;">)</span>
+        master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> do_nothing<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> f <span style="color: #ff7700; font-weight: bold;">in</span> fires:
+        <span style="color: #ff7700; font-weight: bold;">if</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>player<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>f<span style="color: black;">)</span>:
+            label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Ты проиграл!"</span><span style="color: black;">)</span>
+            master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> do_nothing<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Игра уже почти как настоящая. Осталось два штриха:</p>
+<div style="padding-left: 30px;">
+<p>1. улучшить графику&nbsp;и</p>
+<p>2. добавить еще врагов.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Добавление графики</strong></h4>
+<div>
+<p>На&nbsp;холст (Canvas) можно добавить <strong>любую</strong> картинку. Но&nbsp;сначала её&nbsp;нужно загрузить с&nbsp;помощью функции <strong>tkinter.PhotoImage</strong>, а&nbsp;затем создать на&nbsp;холсте:</p>
+<div>
+<pre class="python" style="font-family: monospace;">player_pic <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">PhotoImage</span><span style="color: black;">(</span><span style="color: #008000;">file</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">"doctor.png"</span><span style="color: black;">)</span>
+player <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_image</span><span style="color: black;">(<br></span><span style="color: black;">    (</span>player_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> player_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> image<span style="color: #66cc66;">=</span>player_pic<span style="color: #66cc66;">,</span> anchor<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'nw'</span><span style="color: black;">)</span></pre>
+</div>
+<p>Параметр <strong>anchor=’nw’</strong> означает, что картинка помещается в&nbsp;левый верхний (буквально&nbsp;— северо-западный, по-английски&nbsp;— north-west) угол холста. Можно добавить картинки для всех объектов в&nbsp;основную часть кода и&nbsp;в&nbsp;функцию prepare_and_start().</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;основную часть кода:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">player_pic <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">PhotoImage</span><span style="color: black;">(</span><span style="color: #008000;">file</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">"images/doctor.gif"</span><span style="color: black;">)</span>
+exit_pic <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">PhotoImage</span><span style="color: black;">(</span><span style="color: #008000;">file</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">"images/tardis.gif"</span><span style="color: black;">)</span>
+fire_pic <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">PhotoImage</span><span style="color: black;">(</span><span style="color: #008000;">file</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">"images/fire.gif"</span><span style="color: black;">)</span>
+enemy_pic <span style="color: #66cc66;">=</span> tkinter.<span style="color: black;">PhotoImage</span><span style="color: black;">(</span><span style="color: #008000;">file</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">"images/dalek.gif"</span><span style="color: black;">)</span>
+И в функцию prepare_and_start:
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> prepare_and_start<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">global</span> player<span style="color: #66cc66;">,</span> exit<span style="color: #66cc66;">,</span> fires
+    canvas.<span style="color: black;">delete</span><span style="color: black;">(</span><span style="color: #483d8b;">"all"</span><span style="color: black;">)</span>
+    player_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span>
+                  <span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+    player <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_image</span><span style="color: black;">(</span>
+        <span style="color: black;">(</span>player_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> player_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> image<span style="color: #66cc66;">=</span>player_pic<span style="color: #66cc66;">,</span> anchor<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'nw'</span><span style="color: black;">)</span>
+    exit_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span>
+                <span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+    exit <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_image</span><span style="color: black;">(</span>
+        <span style="color: black;">(</span>exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> image<span style="color: #66cc66;">=</span>exit_pic<span style="color: #66cc66;">,</span> anchor<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'nw'</span><span style="color: black;">)</span>
+    N_FIRES <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">6</span>  <span style="color: #808080; font-style: italic;"># Число клеток, заполненных огнем</span>
+    fires <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>N_FIRES<span style="color: black;">)</span>:
+        fire_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span>
+                    <span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+        <span style="color: #808080; font-style: italic;"># fire = canvas.create_oval((fire_pos[0],fire_pos[1]),</span>
+        <span style="color: #808080; font-style: italic;"># (fire_pos[0] + step, fire_pos[1] + step), fill='red')</span>
+        fire <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_image</span><span style="color: black;">(</span>
+            <span style="color: black;">(</span>fire_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> fire_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> image<span style="color: #66cc66;">=</span>fire_pic<span style="color: #66cc66;">,</span> anchor<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'nw'</span><span style="color: black;">)</span>
+        fires.<span style="color: black;">append</span><span style="color: black;">(</span>fire<span style="color: black;">)</span>
+    label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Найди выход!"</span><span style="color: black;">)</span>
+    master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> key_pressed<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Картинки можно выбрать свои&nbsp;— они должны быть в&nbsp;формате <strong>gif</strong> и&nbsp;иметь размер <strong>step*step</strong> пикселей. Желательно так&nbsp;же делать их&nbsp;на&nbsp;прозрачном фоне.</p>
+<p>Ну&nbsp;и&nbsp;последний штрих. Добавим настоящих врагов, которые тоже могут двигаться. Создадим их&nbsp;в&nbsp;функции prepare_and_start(), немного модифицировав последнюю:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> prepare_and_start<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">global</span> player<span style="color: #66cc66;">,</span> exit<span style="color: #66cc66;">,</span> fires<span style="color: #66cc66;">,</span> enemies
+    canvas.<span style="color: black;">delete</span><span style="color: black;">(</span><span style="color: #483d8b;">"all"</span><span style="color: black;">)</span>
+    player_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span> <br><span style="color: #dc143c;">                  random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+    player <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_image</span><span style="color: black;">(<br></span><span style="color: black;">       (</span>player_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span>player_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> image<span style="color: #66cc66;">=</span>player_pic<span style="color: #66cc66;">,</span> anchor<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'nw'</span><span style="color: black;">)</span>
+    exit_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span> <br><span style="color: #dc143c;">                random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+    exit <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_image</span><span style="color: black;">(<br></span><span style="color: black;">       (</span>exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span>exit_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> image<span style="color: #66cc66;">=</span>exit_pic<span style="color: #66cc66;">,</span> anchor<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'nw'</span><span style="color: black;">)</span>
+    N_FIRES <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">6</span> <span style="color: #808080; font-style: italic;"># Число клеток, заполненных огнем</span>
+    fires <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>N_FIRES<span style="color: black;">)</span>:
+        fire_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span> <br><span style="color: #dc143c;">                    random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+        fire <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_image</span><span style="color: black;">(<br></span><span style="color: black;">            (</span>fire_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span>fire_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> image<span style="color: #66cc66;">=</span>fire_pic<span style="color: #66cc66;">,</span> anchor<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'nw'</span><span style="color: black;">)</span>
+        fires.<span style="color: black;">append</span><span style="color: black;">(</span>fire<span style="color: black;">)</span>
+        N_ENEMIES <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">4</span> <span style="color: #808080; font-style: italic;"># Число врагов</span>
+    enemies <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>N_ENEMIES<span style="color: black;">)</span>:
+        enemy_pos <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #dc143c;">random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_X - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: #66cc66;">,</span> <br><span style="color: #dc143c;">                     random</span>.<span style="color: black;">randint</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> N_Y - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> * step<span style="color: black;">)</span>
+        enemy <span style="color: #66cc66;">=</span> canvas.<span style="color: black;">create_image</span><span style="color: black;">(<br></span><span style="color: black;">            (</span>enemy_pos<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span>enemy_pos<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> image<span style="color: #66cc66;">=</span>enemy_pic<span style="color: #66cc66;">,</span> anchor<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'nw'</span><span style="color: black;">)</span>
+        enemies.<span style="color: black;">append</span><span style="color: black;">(</span><span style="color: black;">(</span>enemy<span style="color: #66cc66;">,</span> <br><span style="color: #dc143c;">                        random</span>.<span style="color: black;">choice</span><span style="color: black;">(</span><span style="color: black;">[</span>always_right<span style="color: #66cc66;">,</span> random_move<span style="color: black;">]</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+    label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Найди выход!"</span><span style="color: black;">)</span>
+    master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> key_pressed<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Каждый враг в&nbsp;нашей программе будет представлен парой (объект на&nbsp;<strong>Canvas</strong> + функция движения). Определим для начала две таких функции:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> always_right<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: black;">(</span>step<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> random_move<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #dc143c;">random</span>.<span style="color: black;">choice</span><span style="color: black;">(</span><span style="color: black;">[</span><span style="color: black;">(</span>step<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span>-step<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> step<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> -step<span style="color: black;">)</span><span style="color: black;">]</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Модифицируем функцию key_pressed нужно дополнить перемещением врагов&nbsp;— вот таким фрагментом кода:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">for</span> enemy <span style="color: #ff7700; font-weight: bold;">in</span> enemies:
+    direction <span style="color: #66cc66;">=</span> enemy<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">(</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;">#вызвать функцию перемещения у "врага"</span>
+    move_wrap<span style="color: black;">(</span>canvas<span style="color: #66cc66;">,</span> enemy<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> direction<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;">#произвести  перемещение.</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Кроме того, нужно переписать функцию check_move:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> check_move<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>player<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>exit<span style="color: black;">)</span>:
+        label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Победа!"</span><span style="color: black;">)</span>
+        master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> do_nothing<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> f <span style="color: #ff7700; font-weight: bold;">in</span> fires:
+        <span style="color: #ff7700; font-weight: bold;">if</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>player<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>f<span style="color: black;">)</span>:
+            label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Ты проиграл!"</span><span style="color: black;">)</span>
+            master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> do_nothing<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> e <span style="color: #ff7700; font-weight: bold;">in</span> enemies:
+        <span style="color: #ff7700; font-weight: bold;">if</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>player<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> canvas.<span style="color: black;">coords</span><span style="color: black;">(</span>e<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: black;">)</span>:
+            label.<span style="color: black;">config</span><span style="color: black;">(</span>text<span style="color: #66cc66;">=</span><span style="color: #483d8b;">"Ты проиграл!"</span><span style="color: black;">)</span>
+            master.<span style="color: black;">bind</span><span style="color: black;">(</span><span style="color: #483d8b;">"&lt;KeyPress&gt;"</span><span style="color: #66cc66;">,</span> do_nothing<span style="color: black;">)</span></pre>
+</div>
+</div></article></section>
+{%endblock%}

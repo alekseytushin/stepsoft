@@ -1,0 +1,351 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Определение операторов</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Специальные методы</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Переопределение функции print()</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Метод __repr__</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Класс «Вектор на&nbsp;плоскости»</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Другие специальные методы</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>Почти любой оператор Python можно определить и&nbsp;для типов данных, которые мы&nbsp;сами создаём с&nbsp;помощью классов. Это делается с&nbsp;помощью специальных методов. О&nbsp;них и&nbsp;пойдет речь в&nbsp;этом уроке.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Специальные методы</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>На&nbsp;предыдущем занятии мы&nbsp;обсудили полиморфизм на&nbsp;примере оператора <strong>+</strong>. Оператор <strong>+</strong> работает для многих встроенных типов данных: чисел, строк, списков, кортежей. Однако возможность определять операторы есть не&nbsp;только у&nbsp;встроенных типов данных.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Специальные методы имеют для интерпретатора особое значение. Имена специальных методов и&nbsp;их&nbsp;смысл определены создателями языка: создавать новые нельзя, можно только реализовывать существующие. Названия всех специальных методов начинаются и&nbsp;заканчиваются на&nbsp;два подчёркивания.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Пример такого метода&nbsp;— уже знакомый нам __init__. Он&nbsp;предназначен для инициализации экземпляров и&nbsp;автоматически вызывается интерпретатором после создания экземпляра объекта.</p>
+<p>Остальные специальные методы также вызываются в&nbsp;строго определённых ситуациях. Большинство из&nbsp;них отвечает за&nbsp;реализацию операторов. Так, например, всякий раз, когда интерпретатор встречает запись вида x + y, он&nbsp;заменяет её&nbsp;на&nbsp;x.__add__(y), и&nbsp;для реализации сложения нам достаточно определить в&nbsp;классе экземпляра <strong>x</strong>&nbsp;метод <strong>__add__</strong>.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Time:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> minutes<span style="color: #66cc66;">,</span> seconds<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">minutes</span> <span style="color: #66cc66;">=</span> minutes
+        <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span> <span style="color: #66cc66;">=</span> seconds
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__add__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        m <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">minutes</span> + other.<span style="color: black;">minutes</span>
+        s <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span> + other.<span style="color: black;">seconds</span>
+        m +<span style="color: #66cc66;">=</span> s // <span style="color: #ff4500;">60</span>
+        s <span style="color: #66cc66;">=</span> s % <span style="color: #ff4500;">60</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> Time<span style="color: black;">(</span>m<span style="color: #66cc66;">,</span> s<span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> info<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'{}:{}'</span>.<span style="color: black;">format</span><span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">minutes</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+t1 <span style="color: #66cc66;">=</span> Time<span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">50</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>t1.<span style="color: black;">info</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># 5:50</span>
+t2 <span style="color: #66cc66;">=</span> Time<span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">20</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>t2.<span style="color: black;">info</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># 3:20</span>
+t3 <span style="color: #66cc66;">=</span> t1 + t2
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>t3.<span style="color: black;">info</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># 9:10</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, что в&nbsp;методе <strong>__add__</strong> мы&nbsp;создаём новый экземпляр с&nbsp;результатом сложения, а&nbsp;не&nbsp;изменяем уже существующий. Для арифметических операторов мы&nbsp;будем поступать так почти всегда, ведь при выполнении z = x + y&nbsp;ни&nbsp;x, ни&nbsp;y&nbsp;изменяться не&nbsp;должны. Должен создаваться новый объект z&nbsp;с&nbsp;результатом операции.</p>
+<p>Кстати, именно поэтому в&nbsp;некоторых случаях запись a = a + b&nbsp;отличается от&nbsp;a += b. В&nbsp;первом случае вызывается метод <strong>__add__</strong>, а&nbsp;во&nbsp;втором <strong>__iadd__</strong>, для чисел эти методы работают одинаково, а&nbsp;для списков&nbsp;— нет.</p>
+<p>Так как объекты класса <strong>Time</strong> относятся к&nbsp;изменяемым, при вызове <strong>__iadd__</strong> должен изменяться сам объект. Давайте добавим этот метод в&nbsp;наш класс и&nbsp;посмотрим, как он&nbsp;работает.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Time:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> minutes<span style="color: #66cc66;">,</span> seconds<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">minutes</span> <span style="color: #66cc66;">=</span> minutes
+        <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span> <span style="color: #66cc66;">=</span> seconds
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__add__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        m <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">minutes</span> + other.<span style="color: black;">minutes</span>
+        s <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span> + other.<span style="color: black;">seconds</span>
+        m +<span style="color: #66cc66;">=</span> s // <span style="color: #ff4500;">60</span>
+        s <span style="color: #66cc66;">=</span> s % <span style="color: #ff4500;">60</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> Time<span style="color: black;">(</span>m<span style="color: #66cc66;">,</span> s<span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__iadd__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        m <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">minutes</span> + other.<span style="color: black;">minutes</span>
+        s <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span> + other.<span style="color: black;">seconds</span>
+        m +<span style="color: #66cc66;">=</span> s // <span style="color: #ff4500;">60</span>
+        s <span style="color: #66cc66;">=</span> s % <span style="color: #ff4500;">60</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">minutes</span> <span style="color: #66cc66;">=</span> m
+        <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span> <span style="color: #66cc66;">=</span> s
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> info<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'{}:{}'</span>.<span style="color: black;">format</span><span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">minutes</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+t1 <span style="color: #66cc66;">=</span> Time<span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">50</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>t1.<span style="color: black;">info</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># 5:50</span>
+t2 <span style="color: #66cc66;">=</span> Time<span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">20</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>t2.<span style="color: black;">info</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># 3:20</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">id</span><span style="color: black;">(</span>t1<span style="color: black;">)</span><span style="color: black;">)</span>
+t1 +<span style="color: #66cc66;">=</span> t2
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>t1.<span style="color: black;">info</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># 9:10</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">id</span><span style="color: black;">(</span>t1<span style="color: black;">)</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># id объекта не поменяется</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, что мы&nbsp;не&nbsp;просто изменяем атрибуты объекта в&nbsp;методе <strong>__iadd__</strong>, но&nbsp;и&nbsp;после всех преобразований возвращаем self&nbsp;— сам объект (если мы&nbsp;ничего не&nbsp;вернём, то&nbsp;в&nbsp;переменной окажется None).</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Переопределение функции print()</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Другой специальный метод позволяет избавиться от&nbsp;вызовов метода <strong>info</strong> перед передачей данных в&nbsp;print.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>__str__</strong></h4>
+<div>Перед выводом аргументов на&nbsp;печать функция print преобразует их&nbsp;в&nbsp;строки с&nbsp;помощью функции <strong>str</strong>. Но&nbsp;функция str делает это не&nbsp;сама, а&nbsp;вызывает метод <strong>__str__</strong> своего аргумента. Так что вызов str(x) эквивалентен x.__str__().</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Если мы&nbsp;сейчас попытаемся распечатать экземпляры <strong>Time</strong> просто с&nbsp;помощью print(t1), то&nbsp;получим что-то вроде:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&lt;</span><span style="color: #dc143c;">__main__</span>.<span style="color: black;">Time</span> <span style="color: #008000;">object</span> at <span style="color: #ff4500;">0x7fa021586f98</span><span style="color: #66cc66;">&gt;</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Это сработала реализация метода <strong>__str__</strong> по&nbsp;умолчанию из&nbsp;класса <strong>object</strong>. Дело в&nbsp;том, что при создании класса можно указать так называемый суперкласс, от&nbsp;которого наш класс получит всю функциональность. Такой процесс называется <strong>наследованием</strong>. Об&nbsp;этом механизме мы&nbsp;поговорим на&nbsp;следующем уроке.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Если суперкласс не&nbsp;указать, то&nbsp;по&nbsp;умолчанию наследуется класс <strong>object</strong>, содержащий некоторую базовую функциональность, в&nbsp;том числе метод <strong>__str__</strong>.</p>
+<p>Если мы&nbsp;определим в&nbsp;своём классе собственный метод <strong>__str__</strong>, он&nbsp;заменит тот, что был унаследован от&nbsp;<strong>object</strong>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте это сделаем:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Time:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> minutes<span style="color: #66cc66;">,</span> seconds<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">minutes</span> <span style="color: #66cc66;">=</span> minutes
+        <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span> <span style="color: #66cc66;">=</span> seconds
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__add__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        m <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">minutes</span> + other.<span style="color: black;">minutes</span>
+        s <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span> + other.<span style="color: black;">seconds</span>
+        m +<span style="color: #66cc66;">=</span> s // <span style="color: #ff4500;">60</span>
+        s <span style="color: #66cc66;">=</span> s % <span style="color: #ff4500;">60</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> Time<span style="color: black;">(</span>m<span style="color: #66cc66;">,</span> s<span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__str__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'{}:{}'</span>.<span style="color: black;">format</span><span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">minutes</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+t1 <span style="color: #66cc66;">=</span> Time<span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">50</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>t1<span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># 5:50</span>
+t2 <span style="color: #66cc66;">=</span> Time<span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">20</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>t2<span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># 3:20</span>
+t3 <span style="color: #66cc66;">=</span> t1 + t2
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>t3<span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># 9:10</span></pre>
+</div>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Метод __repr__</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Кроме метода <strong>__str__</strong>, который предназначен для выдачи информации об&nbsp;экземпляре для пользователей в&nbsp;«человеческом» виде, часто определяется метод <strong>__repr__</strong>. Метод <strong>__repr__</strong> внутри себя вызывает функцию <strong>repr</strong>, предназначенную для выдачи полной информации об&nbsp;объекте для программиста. Она часто применяется при отладке. Для нашего класса <strong>Time</strong> этот метод мог&nbsp;бы выглядеть так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> Time:
+&nbsp;
+    ... методы <span style="color: #0000cd;">__init__</span><span style="color: #66cc66;">,</span> <span style="color: #0000cd;">__add__</span><span style="color: #66cc66;">,</span> <span style="color: #0000cd;">__str__</span> ...
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__repr__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'Time({}, {})'</span>.<span style="color: black;">format</span><span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">minutes</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">seconds</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+t1 <span style="color: #66cc66;">=</span> Time<span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">50</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>t1<span style="color: black;">)</span>          <span style="color: #808080; font-style: italic;"># 5:50</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #dc143c;">repr</span><span style="color: black;">(</span>t1<span style="color: black;">)</span><span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># Time(5, 50)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Как видно, здесь метод <strong>__repr__</strong> выдаёт строку, которую можно скопировать и&nbsp;вставить в&nbsp;исходный код на&nbsp;Python, чтобы получить выражение, которое заново сконструирует такой&nbsp;же объект.</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Класс «Вектор на&nbsp;плоскости»</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><img src="https://yastatic.net/s3/lyceum/content/image/vector.png" width="400" height="auto"></p>
+<p>Двумерные векторы&nbsp;— очень полезный и&nbsp;важный геометрический объект. Векторы любой нужной размерности уже есть в&nbsp;библиотеке <strong>Numpy</strong>, которую вы&nbsp;могли изучить в&nbsp;дополнительных материалах курса, но&nbsp;если&nbsp;бы мы&nbsp;захотели реализовать двумерный вектор самостоятельно, то&nbsp;можно было&nbsp;бы сделать это, например, так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">class</span> MyVector:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> x<span style="color: #66cc66;">,</span> y<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">x</span> <span style="color: #66cc66;">=</span> x
+        <span style="color: #008000;">self</span>.<span style="color: black;">y</span> <span style="color: #66cc66;">=</span> y
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__add__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> MyVector<span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">x</span> + other.<span style="color: black;">x</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">y</span> + other.<span style="color: black;">y</span><span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__sub__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> MyVector<span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">x</span> - other.<span style="color: black;">x</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">y</span> - other.<span style="color: black;">y</span><span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__mul__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> MyVector<span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">x</span> * other<span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">y</span> * other<span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__rmul__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> MyVector<span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">x</span> * other<span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">y</span> * other<span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__str__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'MyVector({}, {})'</span>.<span style="color: black;">format</span><span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">x</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span>.<span style="color: black;">y</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+v1 <span style="color: #66cc66;">=</span> MyVector<span style="color: black;">(</span>-<span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span><span style="color: black;">)</span>
+v2 <span style="color: #66cc66;">=</span> MyVector<span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> -<span style="color: #ff4500;">4</span><span style="color: black;">)</span>
+v_sum <span style="color: #66cc66;">=</span> v1 + v2
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>v_sum<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># MyVector(1, 1)</span>
+v_mul <span style="color: #66cc66;">=</span> v1 * <span style="color: #ff4500;">1.5</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>v_mul<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># MyVector(-3.0, 7.5)</span>
+v_rmul <span style="color: #66cc66;">=</span> -<span style="color: #ff4500;">2</span> * v1
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>v_rmul<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># MyVector(4, -10)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;этом примере определены методы <strong>__add__</strong> и <strong>__sub__</strong> для реализации классических операций сложения и&nbsp;вычитания векторов. Метод <strong>__mul__</strong> реализует операцию умножения вектора на&nbsp;число, а&nbsp;метод <strong>__rmul__</strong> — операцию умножения числа на&nbsp;вектор. Для преобразования в&nbsp;строку используется уже знакомый нам метод <strong>__str__</strong>.</p>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Другие специальные методы</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Специальных методов слишком много, чтобы рассмотреть их&nbsp;все на&nbsp;этом уроке. Мы&nbsp;приведем лишь небольшой их&nbsp;список.</p>
+<table style="border-collapse: collapse; width: 100%;" border="1" cellpadding="5px">
+<tbody>
+<tr>
+<td><strong>Метод</strong></td>
+<td><strong>Описание</strong></td>
+</tr>
+<tr>
+<td><code>__add__(self, other)</code></td>
+<td>Сложение (x + y). Будет вызвано: x.__add__(y)</td>
+</tr>
+<tr>
+<td><code>__sub__(self, other)</code></td>
+<td>Вычитание (x - y)</td>
+</tr>
+<tr>
+<td><code>__mul__(self, other)</code></td>
+<td>Умножение (x * y)</td>
+</tr>
+<tr>
+<td><code>__truediv__(self, other)</code></td>
+<td>Деление (x / y)</td>
+</tr>
+<tr>
+<td><code>__floordiv__(self, other)</code></td>
+<td>Целочисленное деление (x // y)</td>
+</tr>
+<tr>
+<td><code>__mod__(self, other)</code></td>
+<td>Остаток от деления (x % y)</td>
+</tr>
+<tr>
+<td><code>__divmod__(self, other)</code></td>
+<td>Частное и остаток (divmod(x, y))</td>
+</tr>
+<tr>
+<td><code>__radd__(self, other)</code></td>
+<td>Сложение (y + x). Будет вызвано: y.__radd__(x)</td>
+</tr>
+<tr>
+<td><code>__rsub__(self, other)</code></td>
+<td>Вычитание (y - x)</td>
+</tr>
+<tr>
+<td><code>__lt__(self, other)</code></td>
+<td>Сравнение (x &lt; y). Будет вызвано: x.__lt__(y)</td>
+</tr>
+<tr>
+<td><code>__eq__(self, other)</code></td>
+<td>Сравнение (x == y). Будет вызвано: x.__eq__(y)</td>
+</tr>
+<tr>
+<td><code>__len__(self)</code></td>
+<td>Возвращение длины объекта</td>
+</tr>
+<tr>
+<td><code>__getitem__(self, key)</code></td>
+<td>Доступ по индексу (или ключу)</td>
+</tr>
+<tr>
+<td><code>__call__(self[, args...])</code></td>
+<td>Вызов экземпляра класса как функции</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Однако, найти полную документацию по&nbsp;специальным методам в&nbsp;Интернете сравнительно легко. Если вам нужно реализовать тот или иной оператор, то&nbsp;для начала поищите соответствующий ему специальный метод на&nbsp;<strong>втором листе</strong> вот этой <a style="text-decoration: underline;" href="https://yastatic.net/s3/lyceum/content/resources/abregepython-english.pdf" target="_blank" rel="noopener">шпаргалки</a>.</p>
+<p>Если вы&nbsp;не&nbsp;нашли необходимой информации, то&nbsp;мы&nbsp;рекомендуем очень подробную статью с&nbsp;<a style="text-decoration: underline;" href="https://habr.com/post/186608/" target="_blank" rel="noopener">длинным и&nbsp;обстоятельным описанием</a>.</p>
+<p>Ну&nbsp;и&nbsp;конечно&nbsp;же, никто не&nbsp;должен забывать про официальную документацию на&nbsp;сайте <a style="text-decoration: underline;" href="https://docs.python.org/3/reference/datamodel.html#special-method-names" target="_blank" rel="noopener">python.org</a>.</p>
+</div></article></section>
+{%endblock%}

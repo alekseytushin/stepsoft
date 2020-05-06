@@ -1,0 +1,280 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Знакомство с циклом for</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Именованные аргументы функции print</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Специальные символы в строках</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Цикл for</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Соглашения об именовании переменных</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Начальное значение и шаг итератора в range</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">6</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#6">Когда какой цикл использовать</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;уроке рассматриваются именованные аргументы функции print, специальные символы в&nbsp;строке и&nbsp;конструкция «for ... in&nbsp;range(...):».</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Именованные аргументы функции print</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;уже пользовались тем, что функция print при выводе разделяет аргументы пробелами, а&nbsp;в&nbsp;конце переходит на&nbsp;новую строчку.</p>
+<p>Часто это удобно. Но&nbsp;что, если от&nbsp;этого нужно избавиться? В&nbsp;примере ниже пробелы появляются не&nbsp;только после двоеточий (что хорошо), но&nbsp;и&nbsp;перед запятой (что плохо).</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">measures <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">7</span>
+cuts <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Количество отмеров:'</span><span style="color: #66cc66;">,</span> measures<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">', количество отрезов:'</span><span style="color: #66cc66;">,</span> cuts<span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># выведет: "Количество отмеров: 7 , количество отрезов: 1"</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Для такой тонкой настройки вывода у&nbsp;функции print существуют <strong>необязательные именованные аргументы.</strong></p>
+<p>(Такие удобные инструменты бывают и&nbsp;у&nbsp;других функций, мы&nbsp;познакомимся с&nbsp;ними позже).</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Обычно при вызове функции мы&nbsp;пишем имя функции, а&nbsp;затем в&nbsp;скобках её&nbsp;аргументы через запятую. Стандартный способ сообщить функции, что и&nbsp;с&nbsp;какими аргументами делать (например, какой из&nbsp;аргументов функции print вывести первым, какой вторым и&nbsp;т.&nbsp;д.),&nbsp;— это передать аргументы в&nbsp;нужном порядке. Например, функция print выводит аргументы именно в&nbsp;том порядке, в&nbsp;котором их&nbsp;ей&nbsp;передали. Однако есть и&nbsp;другой способ&nbsp;— именованные аргументы. Чтобы при вызове функции передать ей&nbsp;именованный аргумент, нужно после обычных аргументов написать через запятую имя аргумента, знак «=» и&nbsp;значение аргумента.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Функция print наряду с&nbsp;другими аргументами может (вместе или по&nbsp;отдельности) принимать вот таких два аргумента: <strong>sep</strong>&nbsp;— разделитель аргументов (по&nbsp;умолчанию пробел) и&nbsp;<strong>end</strong>&nbsp;— то, что выводится после вывода всех аргументов (по&nbsp;умолчанию&nbsp;— символ начала новой строки).</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;частности, если end сделать пустой строкой, то&nbsp;print не&nbsp;перейдёт на&nbsp;новую строчку, и&nbsp;следующий print продолжит вывод прямо на&nbsp;этой&nbsp;же строке.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'При'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'вет!'</span><span style="color: black;">)</span>  <br><span style="color: #808080; font-style: italic;"># эти две строки кода выведут "При" и "вет!" на отдельных строках</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'При'</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">''</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'вет!'</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># эти две строки кода выведут "Привет!"</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Раз'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'два'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'три'</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># выведет "Раз два три"</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Раз'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'два'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'три'</span><span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'--'</span><span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># выведет "Раз--два--три"</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание: знак «=» здесь не&nbsp;выполняет никакого присваивания, переменных end и&nbsp;sep не&nbsp;появляется.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP 8</strong></h4>
+<div>
+<p>Не&nbsp;используйте пробелы вокруг знака «=», если он&nbsp;используется для обозначения именованного аргумента.</p>
+<strong>Правильно:</strong>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'При'</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">''</span><span style="color: black;">)</span> </pre>
+<strong><del>Неправильно:</del></strong>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'При'</span><span style="color: #66cc66;">,</span> end <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">''</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Специальные символы в строках</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Можно задаться вопросом: как указать значение end по&nbsp;умолчанию&nbsp;— символ начала новой строчки? Ведь это специальный символ, который нельзя сделать частью строки, просто поместив его между кавычек&nbsp;— это вызовет ошибку.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Экранирующая последовательность</strong></h4>
+<div>Если внутри кавычек встречается символ «\» (обратная косая черта, обратный слэш, бэкслэш), то&nbsp;он&nbsp;вместе со&nbsp;следующим после него символом образует <strong>экранирующую последовательность</strong> (escape sequence) и&nbsp;воспринимается интерпретатором как <strong>единый специальный символ</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;частности, «\n»&nbsp;— это символ начала новой строки. Кроме того: «\t»&nbsp;— табуляция, «\’» — кавычка, «\\» — просто бэкслэш. Использование экранирующих последовательностей вместо специальных символов называется их&nbsp;экранированием.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'восход<span style="color: #000099; font-weight: bold;">\t</span>07:15<span style="color: #000099; font-weight: bold;">\n</span>закат<span style="color: #000099; font-weight: bold;">\t</span>22:03'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Предыдущая строка этой программы выглядит так: <br>       print(<span style="color: #000099; font-weight: bold;">\'</span>восход<span style="color: #000099; font-weight: bold;">\\</span>t07:15<span style="color: #000099; font-weight: bold;">\\</span>nзакат<span style="color: #000099; font-weight: bold;">\\</span>t22:03<span style="color: #000099; font-weight: bold;">\'</span>)'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Таким образом, значения именованных аргументов функции print по&nbsp;умолчанию такие: print(..., sep=’ ’, end=’\n’).</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>При этом, если приписать букву <strong>r</strong>&nbsp;перед открывающей строку кавычкой, то&nbsp;бэкслэши будут считаться обычными символами. А&nbsp;если открывать и&nbsp;закрывать строку не&nbsp;одной, а&nbsp;тремя кавычками подряд, то&nbsp;внутри можно делать обычные переводы строки (внутри одинарных кавычек так делать нельзя).</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>r<span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\\</span><span style="color: #000099; font-weight: bold;">\\</span><span style="color: #000099; font-weight: bold;">\\</span><span style="color: #000099; font-weight: bold;">\n</span>nnnn &lt;- забор, переходящий в низкую изгородь'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'''Нужно сказать много важного.
+Одной строки для этого мало.
+Зато три - в самый раз.'''</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Цикл for</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Сегодня мы&nbsp;изучим еще один оператор цикла. Цикл for выполняет блок кода заданное количество раз.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Синтаксис</strong></h4>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">for</span> ... <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>...<span style="color: black;">)</span>:
+    блок кода <span style="color: black;">(</span>тело цикла<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Как и&nbsp;у&nbsp;while, у&nbsp;цикла for есть заголовок, заканчивающийся двоеточием, и&nbsp;тело цикла, которое записывается с&nbsp;отступом в&nbsp;4&nbsp;пробела. В&nbsp;цикле вида «for ... in&nbsp;range(...):» вместо первого двоеточия указывается какая-то переменная, которая на&nbsp;начальной итерации принимает значение&nbsp;0, на&nbsp;следующей&nbsp;— 1, и&nbsp;так далее, до&nbsp;значения указанного в&nbsp;range(...) — само это значение переменная не&nbsp;принимает. Диапазон значений переменной-итератора от&nbsp;0&nbsp;включая и&nbsp;до&nbsp;значения, указанного в&nbsp;range(...), не&nbsp;включая его.</p>
+<p>Вот программа, которая выводит на&nbsp;экран подряд (на&nbsp;отдельных строчках) целые числа от&nbsp;0 (включительно) до&nbsp;n (не&nbsp;включительно).</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">n <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>n<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>i<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>range</strong></h4>
+<div>range означает «диапазон», то&nbsp;есть for i&nbsp;in&nbsp;range(n) читается как «для (всех) i&nbsp;в&nbsp;диапазоне (от&nbsp;0&nbsp;включительно) до&nbsp;n (не&nbsp;включительно)...». Цикл выполняется n&nbsp;раз.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте вспомним задачу, где мы&nbsp;три раза получали цены на&nbsp;товар и&nbsp;вычисляли общую цену товара.</p>
+<p>Вот так мы&nbsp;её&nbsp;записали через цикл while:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">count <span style="color: #66cc66;">= </span><span style="color: #ff4500;">0</span>
+total <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> count <span style="color: #66cc66;">&lt; </span><span style="color: #ff4500;">3</span>:
+    price <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+    total <span style="color: #66cc66;">=</span> total + price
+    count <span style="color: #66cc66;">=</span> count + <span style="color: #ff4500;">1</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Сумма введённых чисел равна'</span><span style="color: #66cc66;">,</span> total<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Теперь мы&nbsp;её&nbsp;можем записать через цикл for, который будет выполняться 3&nbsp;раза:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">total <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: black;">)</span>:
+    price <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+    total <span style="color: #66cc66;">=</span> total + price
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Сумма введённых чисел равна'</span><span style="color: #66cc66;">,</span> total<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;данном случае переменная счётчик изменяется сама в&nbsp;рамках заданных значений.</p>
+<p>Запустите эту программу с&nbsp;отладчиком и&nbsp;пройдите её&nbsp;пошагово. Можно поставить breakpoint на&nbsp;первую&nbsp;же строчку или начать выполнение программы кнопкой <strong>F7</strong>. Следите за&nbsp;тем, как меняется значение переменной&nbsp;i. Обратите внимание, что цикл for присваивает переменной&nbsp;i (она называется итератором цикла) значения (0, потом&nbsp;1...), хотя нигде нет оператора присваивания «=» или его родственников типа «+=».</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Соглашения об именовании переменных</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;программах, решающих абстрактные, математические задачи, допустимо называть переменные короткими и&nbsp;непонятными именами типа n&nbsp;и&nbsp;i. Однако этого лучше избегать. Кроме того, стоит соблюдать общепринятые договорённости: буквой n&nbsp;обычно обозначают количество чего-либо (например, итераций цикла). При этом, если есть хоть какая-то определённость (например, речь идёт о&nbsp;количестве автомобилей), то&nbsp;стоит и&nbsp;переменную назвать более понятно (например, cars). Буквами i&nbsp;и&nbsp;j (по-русски они традиционно читаются как «и» и&nbsp;«жи») обычно обозначают итераторы цикла for.</p>
+<p>Ещё один пример: программа, подсчитывающая сумму всех целых чисел, которые меньше данного.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">n <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+total <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>n<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Рассматриваем число'</span><span style="color: #66cc66;">,</span> i<span style="color: black;">)</span>
+    total +<span style="color: #66cc66;">=</span> i
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Промежуточная сумма равна'</span><span style="color: #66cc66;">,</span> total<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Итоговая сумма всех этих чисел равна'</span><span style="color: #66cc66;">,</span> total<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Начальное значение и шаг итератора в range</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Однако это не&nbsp;все возможности цикла for.</p>
+<p>Предположим, вам нужен цикл, выполняющийся 10&nbsp;итераций. При этом нужно, чтобы итератор пробегал значения не&nbsp;подряд (0, 1, ..., 9), а, скажем, 10, 20, ..., 100. Конечно, с&nbsp;помощью уже известной нам конструкции for можно организовать цикл, в&nbsp;котором некая дополнительная переменная будет последовательно принимать именно такие значения (проверьте себя: как?). Однако для этого есть и&nbsp;специальная, встроенная в&nbsp;язык конструкция. В&nbsp;скобках после слова range можно записать не&nbsp;одно, а&nbsp;два или три числа. (Правда очень похоже на&nbsp;функцию? Это не&nbsp;случайность, range&nbsp;— тоже функция, но&nbsp;об&nbsp;этом позже). Эти числа будут интерпретироваться как начальное значение итератора, конечное и&nbsp;его шаг (может быть отрицательным).</p>
+<p>Если для range задано одно число, то&nbsp;итератор идет от&nbsp;0&nbsp;до&nbsp;заданного значения (не&nbsp;включая его).</p>
+<p>Если задано два числа, то&nbsp;это начальное значение итератора и&nbsp;конечное.</p>
+<p>Если задано три числа, то&nbsp;это не&nbsp;только начальное и&nbsp;конечное значение итератора, но&nbsp;и&nbsp;шаг итератора.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">11</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>i<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># выведет на отдельных строчках числа</span>
+              <span style="color: #808080; font-style: italic;"># от 1 (включительно) до 11 (не включительно)</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">11</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>i<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># выведет (на отдельных строчках) 1, 3, 5, 7, 9</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> -<span style="color: #ff4500;">1</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>i<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># выведет 10, 9, ..., 1</span></pre>
+</div>
+</div>
+<p><a name="6"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>6. Когда какой цикл использовать</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>— Цикл <strong>while</strong> нужен, когда какой-то кусок кода должен выполниться несколько раз, причём заранее неизвестно, сколько именно.</p>
+<p>— Цикл <strong>for</strong> нужен, когда какой-то кусок кода должен выполниться несколько раз, при этом известно сколько раз ещё до&nbsp;начала цикла.</p>
+</div></article></section>
+{% endblock %}

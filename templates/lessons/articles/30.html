@@ -1,0 +1,197 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Библиотеки Python. Часть №&nbsp;5&nbsp;(документы)</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Работа с&nbsp;документами</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Создание текстового документа</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Создание презентаций</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Создание таблиц Excel</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;этом уроке мы&nbsp;поговорим о&nbsp;библиотеках по&nbsp;работе с&nbsp;документами (тексты, презентации, таблицы). Эти библиотеки можно использовать для автоматизации документооборота. Например, можно формировать документы: макеты презентаций, налоговую отчётность, открытки с&nbsp;поздравлениями.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Работа с&nbsp;документами</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Работая с&nbsp;текстами разной направленности в&nbsp;программах, нужно принять во&nbsp;внимание, что тексты иногда хранятся в&nbsp;более сложных форматах, чем .txt. Они могут содержать встроенное форматирование, быть разделенными на&nbsp;страницы, перемежаться с&nbsp;медиаконтентом (графиками, рисунками).</p>
+<p>Python умеет работать со&nbsp;многими такими документами. Давайте посмотрим, что можно сделать, чтобы создавать документы в&nbsp;формате Word, Excel или PowerPoint прямо из&nbsp;Python.</p>
+<p>Стоит отметить, что форматы <strong>docx</strong>, <strong>xlsx</strong> и&nbsp;<strong>pptx</strong>&nbsp;— открытые, что позволяет разработчикам довольно просто писать библиотеки для работы с&nbsp;ними.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Создание текстового документа</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте воспользуемся модулем <strong>python-docx</strong> для создания docx-документа:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">from</span> docx <span style="color: #ff7700; font-weight: bold;">import</span> Document
+&nbsp;
+document <span style="color: #66cc66;">=</span> Document<span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+document.<span style="color: black;">add_heading</span><span style="color: black;">(</span><span style="color: #483d8b;">'Заголовок документа'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: black;">)</span>
+&nbsp;
+p <span style="color: #66cc66;">=</span> document.<span style="color: black;">add_paragraph</span><span style="color: black;">(</span><span style="color: #483d8b;">'Абзац обычного текста этого документа, '</span><span style="color: black;">)</span>
+p.<span style="color: black;">add_run</span><span style="color: black;">(</span><span style="color: #483d8b;">'часть жирным шрифтом, '</span><span style="color: black;">)</span>.<span style="color: black;">bold</span><span style="color: #66cc66;">=</span><span style="color: #008000;">True</span>
+p.<span style="color: black;">add_run</span><span style="color: black;">(</span><span style="color: #483d8b;">' а часть '</span><span style="color: black;">)</span>
+p.<span style="color: black;">add_run</span><span style="color: black;">(</span><span style="color: #483d8b;">'курсивом.'</span><span style="color: black;">)</span>.<span style="color: black;">italic</span><span style="color: #66cc66;">=</span><span style="color: #008000;">True</span>
+&nbsp;
+document.<span style="color: black;">add_heading</span><span style="color: black;">(</span><span style="color: #483d8b;">'Заголовок первого уровня'</span><span style="color: #66cc66;">,</span> level<span style="color: #66cc66;">=</span><span style="color: #ff4500;">1</span><span style="color: black;">)</span>
+document.<span style="color: black;">add_paragraph</span><span style="color: black;">(</span><span style="color: #483d8b;">'Некоторая цитата'</span><span style="color: #66cc66;">,</span> style<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'Intense Quote'</span><span style="color: black;">)</span>
+&nbsp;
+document.<span style="color: black;">add_paragraph</span><span style="color: black;">(</span><span style="color: #483d8b;">'Элемент ненумерованного списка'</span><span style="color: #66cc66;">,<br></span>                       style<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'List Bullet'</span><span style="color: black;">)</span>
+document.<span style="color: black;">add_paragraph</span><span style="color: black;">(</span><span style="color: #483d8b;">'Элемент нумерованного списка'</span><span style="color: #66cc66;">,<br></span>                       style<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'List Number'</span><span style="color: black;">)</span>
+&nbsp;
+table <span style="color: #66cc66;">=</span> document.<span style="color: black;">add_table</span><span style="color: black;">(</span>rows<span style="color: #66cc66;">=</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> cols<span style="color: #66cc66;">=</span><span style="color: #ff4500;">3</span><span style="color: black;">)</span>
+hdr_cells <span style="color: #66cc66;">=</span> table.<span style="color: black;">rows</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>.<span style="color: black;">cells</span>
+hdr_cells<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>.<span style="color: black;">text</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Номер'</span>
+hdr_cells<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span>.<span style="color: black;">text</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Название'</span>
+hdr_cells<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span>.<span style="color: black;">text</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Количество'</span>
+&nbsp;
+document.<span style="color: black;">save</span><span style="color: black;">(</span><span style="color: #483d8b;">'test.docx'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Установите при необходимости библиотеку <strong>python-docx</strong> и&nbsp;выполните приведённый код. Затем откройте созданный файл <strong>test.docx</strong>. Вы&nbsp;должны увидеть что-то такое:</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/docx-1.png" width="600" height="auto"></p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/image-test/Screenshot_2.png" width="600" height="auto"></p>
+<p><img style="box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.3);" src="https://yastatic.net/s3/lyceum/content/image/image-test/Screenshot_2.png" width="600" height="auto"></p>
+<p>Как мы&nbsp;увидим дальше, работа с&nbsp;подобными модулями примерно одинакова. Все элементы управления и&nbsp;форматирования:</p>
+<ul>
+<li>
+<p>списки,</p>
+</li>
+<li>
+<p>абзацы,</p>
+</li>
+<li>
+<p>таблицы,</p>
+</li>
+<li>
+<p>ячейки</p>
+</li>
+</ul>
+<p>есть в&nbsp;наличии в&nbsp;том или ином виде, их&nbsp;можно изменять и&nbsp;комбинировать.</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Создание презентаций</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте посмотрим, как&nbsp;же создавать презентации. Для начала установим библиотеку <strong>python-pptx</strong>. Затем напишем следующий код:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">from</span> pptx <span style="color: #ff7700; font-weight: bold;">import</span> Presentation
+&nbsp;
+prs <span style="color: #66cc66;">=</span> Presentation<span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+title_slide_layout <span style="color: #66cc66;">=</span> prs.<span style="color: black;">slide_layouts</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+slide <span style="color: #66cc66;">=</span> prs.<span style="color: black;">slides</span>.<span style="color: black;">add_slide</span><span style="color: black;">(</span>title_slide_layout<span style="color: black;">)</span>
+title <span style="color: #66cc66;">=</span> slide.<span style="color: black;">shapes</span>.<span style="color: black;">title</span>
+subtitle <span style="color: #66cc66;">=</span> slide.<span style="color: black;">placeholders</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span>
+&nbsp;
+title.<span style="color: black;">text</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">"Привет!"</span>
+subtitle.<span style="color: black;">text</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">"Я -- презентация!"</span>
+&nbsp;
+prs.<span style="color: black;">save</span><span style="color: black;">(</span><span style="color: #483d8b;">'test.pptx'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>И&nbsp;получится:</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/pptx-1.png" width="600" height="auto"></p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Создание таблиц Excel</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Для Excel-файлов все аналогично. Используется модуль <strong>xlsxwriter</strong>.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> xlsxwriter
+&nbsp;
+workbook <span style="color: #66cc66;">=</span> xlsxwriter.<span style="color: black;">Workbook</span><span style="color: black;">(</span><span style="color: #483d8b;">'Суммы.xlsx'</span><span style="color: black;">)</span>
+worksheet <span style="color: #66cc66;">=</span> workbook.<span style="color: black;">add_worksheet</span><span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+data <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">(</span><span style="color: #483d8b;">'Развлечения'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">6800</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #483d8b;">'Продукты'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">25670</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #483d8b;">'Транспорт'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3450</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span><span style="color: black;">]</span>
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">for</span> row<span style="color: #66cc66;">,</span> <span style="color: black;">(</span>item<span style="color: #66cc66;">,</span> price<span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">enumerate</span><span style="color: black;">(</span>data<span style="color: black;">)</span>:
+    worksheet.<span style="color: black;">write</span><span style="color: black;">(</span>row<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> item<span style="color: black;">)</span>
+    worksheet.<span style="color: black;">write</span><span style="color: black;">(</span>row<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> price<span style="color: black;">)</span>
+&nbsp;
+row +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+worksheet.<span style="color: black;">write</span><span style="color: black;">(</span>row<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Всего'</span><span style="color: black;">)</span>
+worksheet.<span style="color: black;">write</span><span style="color: black;">(</span>row<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'=SUM(B1:B3)'</span><span style="color: black;">)</span>
+&nbsp;
+workbook.<span style="color: black;">close</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br><img src="https://yastatic.net/s3/lyceum/content/image/xlsxwriter-1.png" width="499" height="auto"></p>
+<p>Мы&nbsp;можем построить, например, диаграмму:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> xlsxwriter
+&nbsp;
+workbook <span style="color: #66cc66;">=</span> xlsxwriter.<span style="color: black;">Workbook</span><span style="color: black;">(</span><span style="color: #483d8b;">'диаграммы.xlsx'</span><span style="color: black;">)</span>
+worksheet <span style="color: #66cc66;">=</span> workbook.<span style="color: black;">add_worksheet</span><span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+<span style="color: #808080; font-style: italic;"># Данные</span>
+data <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">10</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">40</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">50</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">20</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">50</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">20</span><span style="color: black;">]</span>
+worksheet.<span style="color: black;">write_column</span><span style="color: black;">(</span><span style="color: #483d8b;">'A1'</span><span style="color: #66cc66;">,</span> data<span style="color: black;">)</span>
+&nbsp;
+<span style="color: #808080; font-style: italic;"># Тип диаграммы</span>
+chart <span style="color: #66cc66;">=</span> workbook.<span style="color: black;">add_chart</span><span style="color: black;">(</span><span style="color: black;">{</span><span style="color: #483d8b;">'type'</span>: <span style="color: #483d8b;">'line'</span><span style="color: black;">}</span><span style="color: black;">)</span>
+&nbsp;
+<span style="color: #808080; font-style: italic;"># Строим по нашим данным</span>
+chart.<span style="color: black;">add_series</span><span style="color: black;">(</span><span style="color: black;">{</span><span style="color: #483d8b;">'values'</span>: <span style="color: #483d8b;">'=Sheet1!A1:A7'</span><span style="color: black;">}</span><span style="color: black;">)</span>
+&nbsp;
+worksheet.<span style="color: black;">insert_chart</span><span style="color: black;">(</span><span style="color: #483d8b;">'C1'</span><span style="color: #66cc66;">,</span> chart<span style="color: black;">)</span>
+workbook.<span style="color: black;">close</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br><img src="https://yastatic.net/s3/lyceum/content/image/xlsxwriter-2.png" width="600" height="auto"></p>
+</div></article></section>
+{%endblock%}

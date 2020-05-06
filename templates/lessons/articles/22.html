@@ -1,0 +1,397 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Функции: передача параметров</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Функции (повторение)</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Отличие между переменной и&nbsp;значением</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Функции, изменяющие значение аргумента</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Объекты: одни и&nbsp;те&nbsp;же или одинаковые?</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Изменяемость и&nbsp;неизменяемость объектов</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>Нам необходимо разобраться, чем отличаются понятия «переменная» и&nbsp;«значение», ведь при вызове функций одно постоянно превращается в&nbsp;другое. Мы&nbsp;обсудим, почему аргумент переданный в&nbsp;функцию нельзя перезаписать, но&nbsp;иногда можно изменить его содержимое. Обсудим, какие объекты изменить можно, а&nbsp;какие не&nbsp;получится. Разберемся, почему равенство объектов не&nbsp;эквивалентно их&nbsp;идентичности.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Функции (повторение)</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>На&nbsp;прошлых занятиях мы&nbsp;начали разбирать, как работают функции, и&nbsp;как с&nbsp;их&nbsp;помощью структурировать код. Напомним, как определяется функция:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #66cc66;">&lt;</span>имя функции<span style="color: #66cc66;">&gt;</span><span style="color: black;">(</span><span style="color: black;">[</span>названия аргументов<span style="color: black;">]</span><span style="color: black;">)</span>:
+    <span style="color: #66cc66;">&lt;</span>тело функции<span style="color: #66cc66;">&gt;</span>
+    <span style="color: #66cc66;">&lt;</span>...<span style="color: #66cc66;">&gt;</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>и&nbsp;как она вызывается:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&lt;</span>имя функции<span style="color: #66cc66;">&gt;</span><span style="color: black;">(</span><span style="color: black;">[</span>значения аргументов<span style="color: black;">]</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Мы&nbsp;успели рассмотреть неочевидный вопрос о&nbsp;том, какими переменными функция может оперировать, а&nbsp;какие переменные ей&nbsp;недоступны. Как вы&nbsp;уже знаете, для того чтобы эту границу провести, в&nbsp;языке Python существует понятие об&nbsp;областях видимости, которые делят переменные на&nbsp;внешние и&nbsp;локальные. Они позволяют переменным с&nbsp;одинаковыми именами не&nbsp;мешать друг другу, а&nbsp;главное, разделяют программу на&nbsp;независимые друг от&nbsp;друга блоки. Вы&nbsp;узнали, что внутренние переменные функции недоступны снаружи, а&nbsp;внешние переменные, наоборот, можно беспрепятственно читать.</p>
+<p>Когда вы&nbsp;внутри функции выполняете присваивание, появляется новая внутренняя (локальная) переменная и&nbsp;если её&nbsp;имя совпадает с&nbsp;именем внешней, то&nbsp;она перекрывает переменную из&nbsp;внешней (глобальной) области видимости&nbsp;— и&nbsp;внешняя переменная остается неизменной, таким образом внешние переменные защищены от&nbsp;случайной порчи. Если вы&nbsp;всё&nbsp;же хотите изменить внешнюю переменную, вы&nbsp;должны описать переменную внутри функцию ключевым словом <strong>global</strong>. Но&nbsp;злоупотреблять этим не&nbsp;рекомендуется, поскольку отдельные части программы начинают зависеть друг от&nbsp;друга, что может привести ко&nbsp;множеству ошибок.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Отличие между переменной и&nbsp;значением</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Хотя мы&nbsp;много времени уделили изучению работы переменных с&nbsp;функциями, это еще не&nbsp;все, что нужно про переменные знать. На&nbsp;этом занятии вы&nbsp;узнаете, чем <strong>переменная</strong> отличается от&nbsp;<strong>значения переменной</strong>.</p>
+<p>Ранее мы&nbsp;рассмотрели такую программу:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">name <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Петя'<br></span><br>
+<span style="color: #ff7700; font-weight: bold;">def</span> greet<span style="color: black;">(</span>name<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Привет,"</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)<br><br></span>
+greet<span style="color: black;">(</span><span style="color: #483d8b;">'Вася'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>которая выдает «Привет, Вася».</p>
+<p>Как мы&nbsp;выяснили, аргумент функции name является локальной переменной и&nbsp;перекрывает переменную name из&nbsp;внешней области видимости.</p>
+<p>А&nbsp;теперь давайте разберем такую программу:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">name <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Петя'<br><br></span>
+<span style="color: #ff7700; font-weight: bold;">def</span> greet<span style="color: black;">(</span>name<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Привет,"</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+    name <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'товарищ'</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Здравствуй,"</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+<br><br>greet<span style="color: black;">(</span>name<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Name:"</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Чему, по&nbsp;вашему мнению, будет равно имя в&nbsp;конце программы и&nbsp;почему?</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Внешняя переменная name, конечно, не&nbsp;изменится. <strong>В&nbsp;функцию вообще не&nbsp;передается переменная!</strong> Туда передается значение, которое хранила эта переменная.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;языке Python имя переменной связывается со&nbsp;значением. В&nbsp;тот момент, когда мы&nbsp;присваиваем переменной новое значение, старое значение никуда не&nbsp;исчезает. Оно просто теряет связь с&nbsp;прежним именем. В&nbsp;нашем примере на&nbsp;старое значение всё ещё указывает имя внешней переменной. Это имя недоступно изнутри функции (поскольку внутренняя переменная называется так&nbsp;же, как внешняя), но, выйдя из&nbsp;функции, мы&nbsp;снова получаем возможность пользоваться этим именем.</p>
+<p>Имена локальных переменных и&nbsp;имена аргументов можно менять как угодно, это не&nbsp;влияет на&nbsp;работу программы. Например, приведенную выше программу совершенно безопасно можно было&nbsp;бы переписать так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">name <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Петя'<br><br></span>
+<span style="color: #ff7700; font-weight: bold;">def</span> greet<span style="color: black;">(</span>person<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Привет,"</span><span style="color: #66cc66;">,</span> person<span style="color: black;">)</span>
+    person <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'товарищ'</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Здравствуй,"</span><span style="color: #66cc66;">,</span> person<span style="color: black;">)</span>
+<br><br>greet<span style="color: black;">(</span>name<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Name:"</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Схема ниже демонстрирует как изменяется <strong>связь «имя переменной&nbsp;— значение»</strong> во&nbsp;время выполнения программы.</p>
+<div class="material__content-positioner"><img class="material__illustration" src="https://yastatic.net/s3/lyceum/content/image/functions-1.svg" width="600" height="auto"></div>
+<div class="material__content-positioner"><img class="material__illustration" src="https://yastatic.net/s3/lyceum/content/images/first-year/lesson-21/functions-var.svg" width="680" height="auto"></div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Стоит отметить, что <strong>прежде, чем функция будет вызвана, все её&nbsp;аргументы должны быть вычислены</strong>.</p>
+<p>Таким образом сначала выполняются инструкции, которые вычисляют значение переменной (аргументы вычисляются всегда слева-направо), и&nbsp;лишь затем полученные значения передаются в&nbsp;функцию, только после этого начинает выполняться код функции.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<h4><strong>Задача:</strong></h4>
+<p>Вам даны функции print_goodbye(arg), print_cruel(arg) и&nbsp;print_world(arg), выводящие «Goodbye», «cruel» и&nbsp;«world». Каждая из&nbsp;этих функций просто игнорирует аргумент. Скомбинируйте эти три функции в&nbsp;одну команду так, чтобы она выводила «Goodbye cruel world».</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_goodbye<span style="color: black;">(</span>arg<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Goodbye'</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">' '</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> print_cruel<span style="color: black;">(</span>arg<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'cruel'</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">' '</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> print_world<span style="color: black;">(</span>arg<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'world'</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">' '</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Функции, изменяющие значение аргумента</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Как&nbsp;же быть, если вам хочется изменить значение объекта? Один из&nbsp;способов&nbsp;— использовать глобальные переменные, но&nbsp;мы&nbsp;уже объяснили, чем он&nbsp;плох.</p>
+<p>Оказывается, есть еще несколько способов. Вариант, который мы&nbsp;рассмотрим сейчас, тоже неидеален, но&nbsp;всё&nbsp;же гораздо лучше, чем использование глобальных переменных.</p>
+<p>Давайте напишем функцию, которая принимает список чисел и&nbsp;возводит каждое число в&nbsp;квадрат.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> convert_to_squares<span style="color: black;">(</span><span style="color: #dc143c;">array</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #008000;">len</span><span style="color: black;">(</span><span style="color: #dc143c;">array</span><span style="color: black;">)</span><span style="color: black;">)</span>:
+        <span style="color: #dc143c;">array</span><span style="color: black;">[</span>i<span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">array</span><span style="color: black;">[</span>i<span style="color: black;">]</span> ** <span style="color: #ff4500;">2</span>
+&nbsp;
+&nbsp;
+<span style="color: #008000;">list</span> <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">4</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">5</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">6</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">7</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">8</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">9</span><span style="color: black;">]</span>
+convert_to_squares<span style="color: black;">(</span><span style="color: #008000;">list</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">list</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Эта программа выведет список квадратов чисел от&nbsp;1&nbsp;до&nbsp;9. Заметьте, мы&nbsp;не&nbsp;присваивали ничего переменной array, это всё тот&nbsp;же объект, что был. Но&nbsp;его содержимое поменялось. Ключевой момент: объект тот&nbsp;же, а&nbsp;его наполнение другое.</p>
+<h4><strong>Вопрос на&nbsp;понимание:</strong></h4>
+<p>Если мы&nbsp;напишем такую функцию:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> list_of_squares<span style="color: black;">(</span><span style="color: #dc143c;">array</span><span style="color: black;">)</span>:
+    new_array <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #008000;">len</span><span style="color: black;">(</span><span style="color: #dc143c;">array</span><span style="color: black;">)</span><span style="color: black;">)</span>:
+        new_array.<span style="color: black;">append</span><span style="color: black;">(</span><span style="color: #dc143c;">array</span><span style="color: black;">[</span>i<span style="color: black;">]</span> ** <span style="color: #ff4500;">2</span><span style="color: black;">)</span>
+    <span style="color: #dc143c;">array</span> <span style="color: #66cc66;">=</span> new_array
+&nbsp;
+&nbsp;
+<span style="color: #008000;">list</span> <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">4</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">5</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">6</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">7</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">8</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">9</span><span style="color: black;">]</span>
+list_of_squares<span style="color: black;">(</span><span style="color: #008000;">list</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">list</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>То&nbsp;она будет выводить на&nbsp;экран не&nbsp;квадраты чисел, а&nbsp;просто числа от&nbsp;одного до&nbsp;девяти. Объясните, почему это так.</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Объекты: одни и&nbsp;те&nbsp;же или одинаковые?</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Представьте теперь, что у&nbsp;вас есть задача заполнить холодильник едой. В&nbsp;первом случае вы&nbsp;покупаете еду и&nbsp;кладете её&nbsp;в&nbsp;свой холодильник. Холодильник с&nbsp;едой&nbsp;— это тот&nbsp;же холодильник, что у&nbsp;вас был. Это ровно тот&nbsp;же объект.</p>
+<p>Другой способ решения проблемы&nbsp;— купить новый холодильник, уже заполненный едой. Но&nbsp;первый холодильник при этом так и&nbsp;остался незаполненным. Внешняя программа ничего не&nbsp;знает про новый холодильник, но&nbsp;знает, что старый вы&nbsp;не&nbsp;заполняли и&nbsp;выводит вам пустое содержимое.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Итак, мы&nbsp;обнаружили, что есть два способа изменить значение переменной: присвоить переменной новый объект или оставить старый объект, но&nbsp;поменять его содержимое. Однако оказывается, что <strong>не&nbsp;у&nbsp;любого объекта можно поменять содержимое</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Когда вам кажется, что вы&nbsp;изменяете, например, число или строку, на&nbsp;самом деле вы&nbsp;создаете новое число или строку и&nbsp;связываете её&nbsp;с&nbsp;переменной со&nbsp;старым именем.</p>
+<p>Это легко проверить.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Оператор is</strong></h4>
+<div>
+<p>Проверить, связаны&nbsp;ли две переменные с&nbsp;одним и&nbsp;тем&nbsp;же объектом, можно с&nbsp;помощью оператора&nbsp;<strong>is</strong>.</p>
+<p><strong>a&nbsp;is&nbsp;b</strong>&nbsp;возвращает True, когда объект a&nbsp;и&nbsp;объект b&nbsp;— это один и&nbsp;тот&nbsp;же объект. Кроме того в&nbsp;Python есть встроенная функция&nbsp;id, которая выдает уникальный номер объекта. У&nbsp;двух разных объектов id&nbsp;разный, а&nbsp;у&nbsp;одного и&nbsp;того&nbsp;же объекта&nbsp;— одинаковый.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте посмотрим, что происходит с&nbsp;переменными при попытке их&nbsp;изменить.</p>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Изменяемость и&nbsp;неизменяемость объектов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>На&nbsp;самом деле, в&nbsp;языке Python не&nbsp;так много встроенных объектов, которые можно поменять. Сейчас из&nbsp;<strong>изменяемых объектов</strong>&nbsp;вы знаете&nbsp;<strong>списки</strong>, <strong>множества</strong> и <strong>словари</strong>.</p>
+<p>А&nbsp;<strong>числа, булевы значения, строки</strong> и&nbsp;даже <strong>кортежи</strong> менять нельзя. Их&nbsp;содержимое всегда неизменно с&nbsp;момента создания. Такие объекты называются <strong>иммутабельными</strong>, то&nbsp;есть <strong>неизменяемыми</strong>.</p>
+<p><strong>Числа:</strong></p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">id</span><span style="color: black;">(</span>a<span style="color: black;">)</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># id объекта "число 1"</span>
+a +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">id</span><span style="color: black;">(</span>a<span style="color: black;">)</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># id изменился, a - это объект другого числа</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br><img src="https://yastatic.net/s3/lyceum/content/image/functions-2.svg" width="600" height="auto"></p>
+<p><strong>Строки:</strong></p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">s <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Hello'</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">id</span><span style="color: black;">(</span>s<span style="color: black;">)</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># id строки "Hello"</span>
+s +<span style="color: #66cc66;">=</span> <span style="color: #483d8b;">' world'</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">id</span><span style="color: black;">(</span>s<span style="color: black;">)</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># id другого объекта - строки "Hello world"</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br><img src="https://yastatic.net/s3/lyceum/content/image/functions-3.svg" width="600" height="auto"></p>
+<p><strong>Списки:</strong></p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">s <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">id</span><span style="color: black;">(</span>s<span style="color: black;">)</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># id списка</span>
+s +<span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">9</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">8</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">7</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">id</span><span style="color: black;">(</span>s<span style="color: black;">)</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># тот же id для того же списка, но с измененным содержимым</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div class="material__content-positioner"><img class="material__illustration" src="https://yastatic.net/s3/lyceum/content/image/functions-4.svg" width="600" height="auto"></div>
+<div class="material__content-positioner"><img class="material__illustration" src="https://yastatic.net/s3/lyceum/content/images/first-year/lesson-21/functions-list.svg" width="680" height="auto"></div>
+<p>Следует отметить еще один важный момент. Равенство объектов не&nbsp;означает, что это один и&nbsp;тот&nbsp;же объект (или как еще говорят, что «объекты идентичны»). Это особенно важно для изменяемых объектов-контейнеров, таких как списки. Но&nbsp;и&nbsp;с&nbsp;неизменяемыми кортежами, и&nbsp;со&nbsp;строками бывают ситуации, когда отличие между равенством и&nbsp;идентичностью оказывается важным.</p>
+<p>Вернемся к&nbsp;аналогии с&nbsp;холодильниками. Если у&nbsp;вас в&nbsp;холодильнике те&nbsp;же продукты, что у&nbsp;вашего друга, это не&nbsp;значит, что у&nbsp;вас с&nbsp;ним один и&nbsp;тот&nbsp;же холодильник. Если вы&nbsp;что-нибудь добавите в&nbsp;свой холодильник, то&nbsp;холодильник вашего друга автоматически никак не&nbsp;изменится.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">my_fridge <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'молоко'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'яйца'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'овощи'</span><span style="color: black;">]</span>
+my_friends_fridge <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'молоко'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'яйца'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'овощи'</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>my_fridge <span style="color: #66cc66;">==</span> my_friends_fridge<span style="color: black;">)</span> 
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">id</span><span style="color: black;">(</span>my_fridge<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: #008000;">id</span><span style="color: black;">(</span>my_friends_fridge<span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Содержимое холодильников одинаковое, что показывает сравнение списков при помощи оператора ==. Но&nbsp;их&nbsp;уникальные <strong>id</strong>&nbsp;— разные.</p>
+<p>Совсем другая ситуация&nbsp;— когда у&nbsp;вас есть две переменные, ссылающиеся на&nbsp;один и&nbsp;тот&nbsp;же холодильник. Например, ваш холодильник является одновременно холодильником ваших родителей.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">my_fridge <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'молоко'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'яйца'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'овощи'</span><span style="color: black;">]</span>
+my_parents_fridge <span style="color: #66cc66;">=</span> my_fridge
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>my_fridge <span style="color: #66cc66;">==</span> my_parents_fridge<span style="color: black;">)</span> 
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">id</span><span style="color: black;">(</span>my_fridge<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: #008000;">id</span><span style="color: black;">(</span>my_parents_fridge<span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Строка my_parents_fridge = my_fridge сделала холодильник ваших родителей не&nbsp;просто таким&nbsp;же как ваш, а&nbsp;ровно тем&nbsp;же. Их&nbsp;<strong>id</strong>&nbsp;равны.</p>
+<p>Теперь если ваши родители положат что-то в&nbsp;свой холодильник, ваш холодильник тоже изменится, так как это тот&nbsp;же самый холодильник.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">my_parents_fridge +<span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'мясо'</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>my_fridge<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Если вы&nbsp;раньше программировали на&nbsp;Паскале или&nbsp;СИ, обратите особое внимание на&nbsp;этот пример. Хотя вы&nbsp;никак не&nbsp;меняли переменную my_fridge, она изменилась. Вернее, изменился объект, на&nbsp;который она ссылается.</p>
+<p>Бывают ситуации, когда такое поведение неудобно. Иногда нам хочется получить копию объекта, а&nbsp;не&nbsp;просто вторую ссылку на&nbsp;тот&nbsp;же объект. В&nbsp;общем случае это не&nbsp;так просто сделать, ведь объект (например, список) может содержать в&nbsp;себе другие объекты, которые тоже нужно скопировать. Если вы&nbsp;хотите узнать про это подробно, вам лучше обратиться к&nbsp;<span style="text-decoration: underline;"><a href="https://docs.python.org/3/library/copy.html" target="_blank" rel="noopener">документации</a></span>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Копирование списка</strong></h4>
+<div>
+<p>Мы&nbsp;же напомним, про самый распространенный случай. Для того чтобы сделать копию <strong>одномерного списка</strong> arr можно сделать срез, содержащий все элементы:</p>
+<div>
+<pre class="python" style="font-family: monospace;">arr <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">]</span>
+arrCopy <span style="color: #66cc66;">=</span> arr<span style="color: black;">[</span>:<span style="color: black;">]</span>
+arrCopy<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">42</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>arr<span style="color: black;">)</span>     <span style="color: #808080; font-style: italic;"># =&gt; [1, 2, 3]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>arrCopy<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; [42, 2, 3]</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Но&nbsp;будьте аккуратны, ведь если список содержал вложенные списки, то&nbsp;копия внешнего списка содержит те&nbsp;же самые вложенные списки, а&nbsp;не&nbsp;их&nbsp;копии. А&nbsp;значит, изменения одного списка отразятся на&nbsp;другом. Проще всего это увидеть на&nbsp;примере:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">arr <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> <span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> <span style="color: black;">[</span><span style="color: #ff4500;">3</span><span style="color: black;">]</span><span style="color: black;">]</span>
+arrCopy <span style="color: #66cc66;">=</span> arr<span style="color: black;">[</span>:<span style="color: black;">]</span>
+arrCopy<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>.<span style="color: black;">append</span><span style="color: black;">(</span><span style="color: #ff4500;">42</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>arr<span style="color: black;">)</span>     <span style="color: #808080; font-style: italic;"># =&gt; [[1, 42], [2], [3]]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>arrCopy<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; [[1, 42], [2], [3]]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>С&nbsp;кортежами дело обстоит аналогично.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Кортежи</strong></h4>
+<div>Кортеж&nbsp;— объект неизменяемый. В&nbsp;него нельзя, например, добавить элемент или заменить существующий элемент новым объектом. Но&nbsp;его элементы вполне могут быть изменяемыми; если среди элементов кортежа есть изменяемые элементы, то&nbsp;поменяв их&nbsp;содержимое&nbsp;вы, фактически, измените содержимое кортежа.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>По&nbsp;этой причине иногда бывает недостаточно следить за&nbsp;типом переменной. Всегда думайте заодно о&nbsp;типах содержимого контейнеров (контейнер&nbsp;— объект, содержащий другие объекты).</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Также напомним, что в&nbsp;случае списков оператор <strong>a1 += a2</strong>&nbsp;ведёт себя не&nbsp;совсем как <strong>a1 = a1 + a2</strong>. В&nbsp;первом случае изменяется сам список&nbsp;a1 (к&nbsp;его концу дописываются все элементы списка&nbsp;a2), во&nbsp;втором&nbsp;— создаётся новый. В&nbsp;случае чисел, строк и&nbsp;кортежей, которые изменяться не&nbsp;могут, две эти формы записи полностью эквивалентны.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><strong>Вопрос для самопроверки №&nbsp;1</strong>: Что выведет на&nbsp;экран следующая программа и&nbsp;почему?</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">arr <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">90</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>arr<span style="color: #66cc66;">,</span> arr.<span style="color: black;">sort</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> arr<span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\n</span>'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Напоминаем, что метод <strong>sort</strong> сортирует элементы в&nbsp;списке (и&nbsp;ничего не&nbsp;возвращает).</p>
+<p><strong>Вопрос для самопроверки №&nbsp;2</strong>: Что выведет на&nbsp;экран следующая программа и&nbsp;почему?</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">x <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1<br><br></span>
+<span style="color: #ff7700; font-weight: bold;">def</span> double_x<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">global</span> x
+    x *<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">2</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>x<span style="color: #66cc66;">,</span> double_x<span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> x<span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\n</span>'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br><strong>Вопрос для самопроверки №&nbsp;3</strong>: Можете&nbsp;ли вы&nbsp;придумать три различных примера, которые продемонстрируют, что список и&nbsp;его полный срез&nbsp;— различные объекты.</p>
+</div></article></section>
+{%endblock%}

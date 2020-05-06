@@ -1,0 +1,421 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Библиотеки Python. Часть №&nbsp;1 (random)</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Библиотеки как наследие</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Репозиторий PyPI</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Встроенные модули</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Модуль random</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>Python&nbsp;— это высокоуровневый язык программирования, объектно-ориентированный, модульный и&nbsp;подчеркнуто легкочитаемый, что делает его очень простым в&nbsp;изучении. Python широко применяется в&nbsp;образовательной сфере, для научных вычислений, больших данных и&nbsp;машинного обучения, в&nbsp;веб-разработке, графике, GUI, играх и&nbsp;других направлениях. В&nbsp;связи с&nbsp;огромной сферой применения, уже существуют бесчисленное количество библиотек, упрощающие программирование на&nbsp;этом языке без необходимости написания излишнего кода. На&nbsp;этом уроке мы&nbsp;начнём знакомство со&nbsp;стандартными библиотеками языка Python.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Библиотеки как наследие</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>У&nbsp;каждого языка программирования есть свои особенности&nbsp;— в&nbsp;том числе и&nbsp;у&nbsp;Python. Есть сферы деятельности, где он&nbsp;любим, а&nbsp;есть области, в&nbsp;которых он&nbsp;не&nbsp;очень силен и&nbsp;не&nbsp;пользуется популярностью.</p>
+<p>Сначала поговорим про сильные стороны.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Сильные стороны Python</strong></h4>
+<div>
+<ul>
+<li>На&nbsp;Python легко научиться программировать (именно поэтому вы&nbsp;его и&nbsp;изучаете).</li>
+<li>Благодаря строению языка и&nbsp;его динамической, скриптовой природе, разрабатывать на&nbsp;Python можно очень быстро.</li>
+</ul>
+Принцип прост: <strong>быстро изучить, быстро программировать</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;результате Python заинтересовались люди, которым нужно писать программы, что-то автоматизировать или «склеивать» несколько взаимосвязанных программ в&nbsp;комплексы. Обычно эти люди не&nbsp;программисты по&nbsp;специальности. Это инженеры, преподаватели, математики, физики, биологи, лингвисты&nbsp;— все они часто применяют Python в&nbsp;своей практике.</p>
+<p>Вторая причина популярности Python связана с&nbsp;тем, что он&nbsp;очень быстро стал интегрироваться с&nbsp;огромным количеством библиотек, написанных на&nbsp;других языках программирования. Что-то очень похожее было когда-то с&nbsp;языком программирования Perl и&nbsp;его платформой <span style="text-decoration: underline;"><a href="http://www.cpan.org/" target="_blank" rel="noopener">CPAN</a></span>.</p>
+<p>Теперь пришел черед познакомиться с&nbsp;термином библиотека в&nbsp;контексте программирования.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Как говорит Википедия,</strong></h4>
+<div>
+<p><strong>Библиоте́ка</strong> (от&nbsp;англ. library) в&nbsp;программировании&nbsp;— сборник подпрограмм или объектов, используемых для разработки программного обеспечения (ПО).</p>
+<p>Давайте немного поясним. Правила структурного программирования гласят, что любая программа должна иметь структуру, а&nbsp;именно делиться на&nbsp;взаимодействующие компоненты (блоки): файлы, функции, классы.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Это можно сравнить с&nbsp;разделением книг на&nbsp;главы, абзацы, слова&nbsp;— без такого деления трудно понять смысл. Этот принцип&nbsp;— первый важный этап для понимания сущности библиотеки.</p>
+<p>Следующий этап&nbsp;— это возможность использовать часть кода одной программы из&nbsp;другой программы. Обычно это нужно для того, чтобы повторно использовать код: не&nbsp;писать одно и&nbsp;то&nbsp;же два раза, а&nbsp;также не&nbsp;переписывать код, написанный на&nbsp;другом языке программирования. Такое свойство часто называют модульностью.</p>
+<p>Кстати, если&nbsp;бы все зарядки от&nbsp;сотовых телефонов были одинаковыми, вы&nbsp;бы могли насладиться модульностью в&nbsp;мире смартфонов. Был такой проект <span style="text-decoration: underline;"><a href="https://ru.wikipedia.org/wiki/Project_Ara" target="_blank" rel="noopener">Ara</a></span>&nbsp;— модульный смартфон, в&nbsp;который можно было ставить дополнительную память, элементы питания, фотокамеру.</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/ara.jpeg" width="600" height="auto"></p>
+<p>Самый простой контейнер для кода&nbsp;— функция. Часто используемые функции объединяются в&nbsp;библиотеки по&nbsp;своему типу. Например, функции по&nbsp;работе с&nbsp;видео-файлами, функции, отвечающие за&nbsp;соединение и&nbsp;получение информации из&nbsp;интернета и&nbsp;т.&nbsp;д. Библиотеки могут объединяться в&nbsp;более крупные библиотеки&nbsp;— иногда в&nbsp;итоге получаются настоящие монстры, относящиеся к&nbsp;какой-то широкой области. Например, OpenCV&nbsp;— это библиотека для компьютерного зрения, Django&nbsp;— для веб-программирования, Scipy&nbsp;— для научных вычислений.</p>
+<p>В&nbsp;Python библиотеки называются <strong>модулями</strong>.</p>
+<p>Итак, современный язык программирования напоминает наборы конструкторов, которые совместимы друг с&nbsp;другом.</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/meccano2.jpeg" width="600" height="auto"></p>
+<p>Если вы&nbsp;программируете на&nbsp;Python&nbsp;— представьте себя ребёнком, попавшим на&nbsp;огромный склад с&nbsp;конструкторами, где можно взять любой конструктор и&nbsp;делать с&nbsp;ним что угодно.</p>
+<p>Именно так. Очень многие библиотеки абсолютно свободны (на&nbsp;их&nbsp;использование нет никаких ограничений), бесплатны, а&nbsp;их&nbsp;исходные коды доступны.</p>
+<p>Некоторые библиотеки, например, связанные с&nbsp;математическими вычислениями, очень старые и&nbsp;написаны ещё на&nbsp;Fortran. При этом они используются в&nbsp;современных проектах, поскольку созданы профессиональными математиками и&nbsp;инженерами, многократно проверены и&nbsp;оптимизированы.</p>
+<p>В&nbsp;этом смысле <strong>библиотеки</strong>&nbsp;— такое&nbsp;же наследие человечества, как литература, музыка и&nbsp;архитектура.</p>
+<p>Интересный факт: с&nbsp;точки зрения закона, программы являются литературными произведениями.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Репозиторий PyPI</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><a href="https://pypi.python.org/pypi" target="_blank" rel="noopener"><span style="text-decoration: underline;">PyPI</span></a>&nbsp;— это центральный репозиторий (хранилище) модулей для языка программирования Python. Он&nbsp;как PlayMarket для Android, AppStore для iPhone или CPAN для Perl.</p>
+<p>Пройдите по&nbsp;ссылке. Вы&nbsp;увидите страницу, которая начинается со&nbsp;следующих слов:</p>
+<p>The Python Package Index (PyPI) is&nbsp;a&nbsp;repository of&nbsp;software for the Python programming language.</p>
+<p>PyPI helps you find and install software developed and shared by&nbsp;the Python community.</p>
+<p>Обратите внимание, что количество модулей уже превысило <strong>150&nbsp;000</strong>!</p>
+<p>Наверное, можно в&nbsp;шутку говорить, что у&nbsp;Python на&nbsp;все случаи жизни есть нужная библиотека.</p>
+<p>Допустим, вы&nbsp;хотите написать программу-бота для ВКонтакте, чтобы она делала за&nbsp;вас репосты, ставила лайки, переписывалась с&nbsp;друзьями, предлагала подружиться... Так вот, для этого тоже есть библиотека!</p>
+<p>Как работать с&nbsp;PyPI, мы&nbsp;изучим на&nbsp;следующем уроке, а&nbsp;пока разберёмся со&nbsp;встроенными модулями.</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Встроенные модули</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Говорят, что Python поставляется «с&nbsp;батарейками в&nbsp;комплекте»&nbsp;— даже стандартной библиотеки, входящей в&nbsp;комплект поставки, уже достаточно для многих вещей.</p>
+<p>Стандартной библиотеке посвящен <span style="text-decoration: underline;"><a href="https://docs.python.org/3/library/" target="_blank" rel="noopener">целый раздел документации</a></span>. Советуем вам хотя&nbsp;бы раз просмотреть его, чтобы примерно знать, какие вообще библиотеки бывают.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Модули в Python</strong></h4>
+<div>Модули в&nbsp;Python устроены по&nbsp;иерархическому принципу&nbsp;— как каталоги в&nbsp;файловой системе. Один модуль может быть вложен в&nbsp;другой, причем вложенность не&nbsp;ограничена (хотя на&nbsp;практике редко бывает больше 4). Чтобы пользоваться функциями, объектами и&nbsp;классами из&nbsp;модуля, весь этот модуль или его часть нужно подключить к&nbsp;программе&nbsp;— <strong>импортировать</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Возникает вопрос: а&nbsp;почему&nbsp;бы не&nbsp;подключить все библиотеки сразу?</p>
+<p>Можно, но&nbsp;это привело&nbsp;бы к&nbsp;нерациональному использованию оперативной памяти и&nbsp;очень долгой загрузке вашей программы.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Поэтому есть правило: не&nbsp;импортируйте&nbsp;то, чем не&nbsp;пользуетесь. За&nbsp;импорт в&nbsp;Python отвечает директива import.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте посмотрим на&nbsp;примерах, как это происходит.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">math</span> <span style="color: #ff7700; font-weight: bold;">import</span> pi <span style="color: #808080; font-style: italic;"># Возьмем число Пи из библиотеки math </span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Теперь вам доступна переменная&nbsp;pi. (В&nbsp;Python это значение приближенно равно 3,141592653589793)</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Ключевое слово as</strong></h4>
+<div>Модуль, переменную, класс или функцию можно при импорте назвать своим именем&nbsp;— для этого служит ключевое слово&nbsp;as, например:</div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">math</span> <span style="color: #ff7700; font-weight: bold;">import</span> pi <span style="color: #ff7700; font-weight: bold;">as</span> число_пи
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> число_пи</pre>
+<pre class="python" style="font-family: monospace;">3.141592653589793</pre>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Более того, поскольку в&nbsp;программе на&nbsp;языке Python в&nbsp;именах допустимы буквенные символы любых алфавитов, можно использовать даже греческие буквы (впрочем, это неудобно, если у&nbsp;вас кириллическо-латинская клавиатура).</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">math</span> <span style="color: #ff7700; font-weight: bold;">import</span> pi <span style="color: #ff7700; font-weight: bold;">as</span> π
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>π<span style="color: black;">)</span></pre>
+<pre class="python" style="font-family: monospace;">3.141592653589793</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Если нужно импортировать что-то с&nbsp;большей степенью вложенности, то&nbsp;вам поможет символ «.», он&nbsp;выполняет ту&nbsp;же функцию, что и&nbsp;разные виды слэшей в&nbsp;путях до&nbsp;файлов.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #808080; font-style: italic;"># мне нужна функция urlopen из request, </span>
+<span style="color: #808080; font-style: italic;"># который находится внутри urllib</span>
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">urllib</span>.<span style="color: black;">request</span> <span style="color: #ff7700; font-weight: bold;">import</span> urlopen</pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Мы&nbsp;можем импортировать всю библиотеку, но&nbsp;тогда для доступа к&nbsp;ее&nbsp;содержимому нужно снова использовать точку:</div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">import</span> <span style="color: #dc143c;">math</span>
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #dc143c;">math</span>.<span style="color: black;">pi</span><span style="color: black;">)</span></pre>
+<pre class="python" style="font-family: monospace;">3.141592653589793</pre>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Или несколько точек. В&nbsp;любом случае, аналогия с&nbsp;файловой структурой почти полная (объекты, функции и&nbsp;классы лежат в&nbsp;файлах, которые группируются в&nbsp;папки, которые тоже могут лежать в&nbsp;папках и&nbsp;т.&nbsp;д.).</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">import</span> <span style="color: #dc143c;">urllib</span>
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #dc143c;">urllib</span>.<span style="color: black;">request</span>.<span style="color: black;">urlopen</span><span style="color: black;">(</span>...<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Значения после директивы import можно писать через запятую:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">math</span> <span style="color: #ff7700; font-weight: bold;">import</span> sin<span style="color: #66cc66;">,</span> cos<span style="color: #66cc66;">,</span> tan</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Значок «*» означает, что из&nbsp;библиотеки нужно импортировать всё, что доступно.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">math</span> <span style="color: #ff7700; font-weight: bold;">import</span> *</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Впрочем, так делать не рекомендуется, поскольку при таком подходе засоряется пространство имен.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">import</span> <span style="color: #dc143c;">math</span>
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #008000;">dir</span><span style="color: black;">(</span><span style="color: #dc143c;">math</span><span style="color: black;">)</span></pre>
+<pre class="python" style="font-family: monospace;">['__doc__', '__loader__', '__name__', '__package__', '__spec__', 'acos',<br> 'acosh','asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign',<br> 'cos', 'cosh','degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs',
+ 'factorial', 'floor','fmod', 'frexp', 'fsum', 'gamma', 'hypot',<br> 'isfinite', 'isinf', 'isnan', 'ldexp','lgamma', 'log', 'log10',<br> 'log1p', 'log2', 'modf', 'pi', 'pow', 'radians', 'sin','sinh', 'sqrt',<br> 'tan', 'tanh', 'trunc']</pre>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #008000;">help</span><span style="color: black;">(</span><span style="color: #dc143c;">math</span>.<span style="color: black;">sin</span><span style="color: black;">)</span></pre>
+<pre class="python" style="font-family: monospace;">Help on built-in function sin in module math:
+&nbsp;
+sin(...)
+    sin(x)
+&nbsp;
+    Return the sine of x (measured in radians).</pre>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #008000;">help</span><span style="color: black;">(</span><span style="color: #dc143c;">math</span>.<span style="color: black;">radians</span><span style="color: black;">)</span></pre>
+<pre class="python" style="font-family: monospace;">Help on built-in function radians in module math:
+&nbsp;
+radians(...)
+    radians(x)
+&nbsp;
+    Convert angle x from degrees to radians.</pre>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> sin<span style="color: black;">(</span>radians<span style="color: black;">(</span><span style="color: #ff4500;">30</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+<pre class="python" style="font-family: monospace;">0.49999999999999994</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, что часть имен начинается с&nbsp;символа «_». Это служебные имена&nbsp;— мы&nbsp;их&nbsp;пока рассматривать не&nbsp;будем, да&nbsp;и&nbsp;программисты ими пользуются редко.</p>
+<p>Говоря про встроенную библиотеку, нельзя не&nbsp;сказать о&nbsp;«пасхальных яйцах» в&nbsp;Python. При импорте модуля this вы&nbsp;познакомитесь с&nbsp;дзеном Python.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">import</span> this</pre>
+<pre class="python" style="font-family: monospace;">The Zen of Python, by Tim Peters
+&nbsp;
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А&nbsp;импорт модуля с&nbsp;антигравитацией откроет в&nbsp;браузере комикс о&nbsp;том, что в&nbsp;Python действительно есть модули на&nbsp;все случаи жизни.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">import</span> antigravity</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>&nbsp;</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/antigravity.png" width="600" height="auto"></p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Модуль random</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><img src="https://yastatic.net/s3/lyceum/content/image/random.jpeg" width="600" height="auto"></p>
+<p>Этот модуль предназначен для работы с&nbsp;псевдослучайными последовательностями. Такие последовательности важны в&nbsp;математическом моделировании, в&nbsp;криптографии, а&nbsp;также в&nbsp;различных играх.</p>
+<p>Давайте посмотрим структуру модуля.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">import</span> <span style="color: #dc143c;">random</span>
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #008000;">dir</span><span style="color: black;">(</span><span style="color: #dc143c;">random</span><span style="color: black;">)</span></pre>
+<pre class="python" style="font-family: monospace;">['BPF', 'LOG4', 'NV_MAGICCONST', 'RECIP_BPF', 'Random', 'SG_MAGICCONST',
+ 'SystemRandom', 'TWOPI', '_BuiltinMethodType', '_MethodType', '_Sequence', 
+ '_Set','__all__', '__builtins__', '__cached__', '__doc__', '__file__', 
+ '__loader__','__name__', '__package__', '__spec__', '_acos', '_ceil', 
+ '_cos', '_e', '_exp','_inst', '_log', '_pi', '_random', '_sha512', '_sin', 
+ '_sqrt', '_test','_test_generator', '_urandom', '_warn', 'betavariate', 
+ 'choice', 'expovariate','gammavariate', 'gauss', 'getrandbits',<br> 'getstate', 'lognormvariate','normalvariate', 'paretovariate', 'randint',<br> 'random', 'randrange', 'sample','seed', 'setstate', 'shuffle',<br> 'triangular', 'uniform', 'vonmisesvariate','weibullvariate']</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>&nbsp;</p>
+<p>Как видим, довольно много функций.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Функция choice</strong></h4>
+<div>Одна из&nbsp;самых популярных&nbsp;— функция choice. С&nbsp;её&nbsp;помощью можно выбрать один вариант из&nbsp;нескольких альтернатив, заданных в&nbsp;списке, кортеже, строке или любом другом итерируемом типе.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Например, вот так можно моделировать подкидывание монетки:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">random</span> <span style="color: #ff7700; font-weight: bold;">import</span> choice
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> choice<span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span><span style="color: black;">)</span>
+2
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> choice<span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #483d8b;">"орел"</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">"решка"</span><span style="color: black;">]</span><span style="color: black;">)</span>
+'орел'
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> choice<span style="color: black;">(</span><span style="color: #483d8b;">"ab"</span><span style="color: black;">)</span>
+'a'
+</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А&nbsp;так&nbsp;— сымитировать несколько бросков игральных кубиков:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">random</span> <span style="color: #ff7700; font-weight: bold;">import</span> choice
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> 
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> dashes <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">6</span><span style="color: black;">]</span>
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>choice<span style="color: black;">(</span>dashes<span style="color: black;">)</span><span style="color: #66cc66;">,</span> choice<span style="color: black;">(</span>dashes<span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;
+2 5
+6 5
+6 1
+1 2
+5 6
+6 1
+4 2
+4 2
+2 3</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Если задать символы на&nbsp;сторонах кубика с&nbsp;использованием кодировки Юникод, всё будет ещё реалистичнее.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">random</span> <span style="color: #ff7700; font-weight: bold;">import</span> choice
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> 
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> dashes <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\u</span>2680'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\u</span>2681'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\u</span>2682'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\u</span>2683'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\u</span>2684'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\u</span>2685'</span><span style="color: black;">]</span>
+<span style="color: #66cc66;">&gt;&gt;&gt;</span> <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>choice<span style="color: black;">(</span>dashes<span style="color: black;">)</span><span style="color: #66cc66;">,</span> choice<span style="color: black;">(</span>dashes<span style="color: black;">)</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+⚄ ⚄
+⚀ ⚂
+⚄ ⚃
+⚄ ⚂
+⚃ ⚁
+⚀ ⚂
+⚀ ⚄
+⚃ ⚁
+⚄ ⚂</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Можно сделать симуляцию магического шара с&nbsp;ответами <span style="text-decoration: underline;"><a href="https://ru.wikipedia.org/wiki/Magic_8_ball" target="_blank" rel="noopener">magic 8&nbsp;ball</a></span>.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">from</span> <span style="color: #dc143c;">random</span> <span style="color: #ff7700; font-weight: bold;">import</span> choice
+&nbsp;
+choices <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>
+    <span style="color: #483d8b;">'It is certain (Бесспорно)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'It is decidedly so (Предрешено)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Without a doubt (Никаких сомнений)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Yes — definitely (Определённо да)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'You may rely on it (Можешь быть уверен в этом)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'As I see it, yes (Мне кажется — «да»)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Most likely (Вероятнее всего)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Outlook good (Хорошие перспективы)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Signs point to yes (Знаки говорят — «да»)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Yes (Да)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Reply hazy, try again (Пока не ясно, попробуй снова)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Ask again later (Спроси позже)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Better not tell you now (Лучше не рассказывать)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Cannot predict now (Сейчас нельзя предсказать)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Concentrate and ask again (Соберись и спроси опять)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Don’t count on it (Даже не думай)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'My reply is no (Мой ответ — «нет»)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'My sources say no (По моим данным — «нет»)'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'Outlook not so good (Перспективы не очень хорошие)'</span><span style="color: #66cc66;">,</span>        
+    <span style="color: #483d8b;">'Very doubtful (Весьма сомнительно)'</span><span style="color: #66cc66;">,</span>
+<span style="color: black;">]</span>
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: black;">)</span>:
+    <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: #483d8b;">"Ваш вопрос: "</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>choice<span style="color: black;">(</span>choices<span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Вот как может выглядеть работа этой программы:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Ваш вопрос: Программировать хорошо?
+Yes — definitely (Определённо да)
+Ваш вопрос: Есть ли перспективы у Python?
+You may rely on it (Можешь быть уверен в этом)
+Ваш вопрос: Нет ли тайного заговора против школьников?
+Signs point to yes (Знаки говорят — «да»)
+Ваш вопрос: Может быть правительство?
+Without a doubt (Никаких сомнений)
+Ваш вопрос: Со мной будет что-то плохое из-за того, что я это узнал?
+It is decidedly so (Предрешено)</pre>
+</div>
+</div></article></section>
+{%endblock%}

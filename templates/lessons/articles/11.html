@@ -1,0 +1,125 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Строки. Срезы</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Работа со строками (повторение)</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Срезы строк</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>На&nbsp;этом занятии мы&nbsp;продолжим отрабатывать навыки работы со&nbsp;строкой. А&nbsp;также познакомимся с&nbsp;новым методом извлечения подстроки&nbsp;— срезами.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Работа со строками (повторение)</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Рассмотрим еще одну задачу. Билет называют счастливым по-питерски, если сумма цифр его номера, стоящих на&nbsp;чётных местах, равна сумме цифр, стоящих на&nbsp;нечётных местах. Нам необходимо написать программу, которая определяет является&nbsp;ли билет счастливым по-питерски.</p>
+<p>Если рассматривать номер билета как строку, состоящую из&nbsp;цифр, то&nbsp;задача сводится к&nbsp;подсчёту суммы цифр, стоящих на&nbsp;позициях 0, 2, 4,... и&nbsp;суммы цифр, стоящих на&nbsp;позициях 1, 3, 5,... Чтобы перебрать элементы, мы&nbsp;можем воспользоваться конструкцией for i&nbsp;in&nbsp;range(...), указав шаг 2. Тогда соответствующий фрагмент программы может выглядеть следующим образом:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">number <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+odd <span style="color: #66cc66;">=</span> even <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>number<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span>:
+    odd +<span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>number<span style="color: black;">[</span>i<span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>number<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span>:
+    even +<span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>number<span style="color: black;">[</span>i<span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> odd <span style="color: #66cc66;">==</span> even:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Счастливый по-питерски!'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Подумайте, как можно решить данную задачу за&nbsp;один цикл.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Срезы строк</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>На&nbsp;примере разобранной задачи мы&nbsp;увидели, что перебор элементов строки с&nbsp;помощью конструкции for i&nbsp;in&nbsp;range(...) является достаточно гибким: можно перебрать не&nbsp;все индексы, можно идти с&nbsp;шагом, скажем, 2&nbsp;или даже −1, то&nbsp;есть в&nbsp;обратном порядке. Но&nbsp;существует способ без всякого цикла преобразовать строку нужным образом: взять отдельный её&nbsp;кусок, символы с&nbsp;нечетными номерами и&nbsp;т.&nbsp;д. Этот способ&nbsp;— <strong>срез (slice)</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Срез строки</strong></h4>
+<div>
+<p>В&nbsp;самом простом варианте <strong>срез строки</strong>&nbsp;— это её&nbsp;кусок от&nbsp;одного индекса включительно и&nbsp;до&nbsp;другого&nbsp;— не&nbsp;включительно (как для range). То&nbsp;есть это новая, более короткая строка.</p>
+<p>Срез записывается с&nbsp;помощью квадратных скобок, в&nbsp;которых указывается начальный и&nbsp;конечный индекс, разделённые двоеточием.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">text <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Hello, world!'</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>text<span style="color: black;">[</span><span style="color: #ff4500;">0</span>:<span style="color: #ff4500;">5</span><span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>text<span style="color: black;">[</span><span style="color: #ff4500;">7</span>:<span style="color: #ff4500;">12</span><span style="color: black;">]</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Если не&nbsp;указан <strong>начальный индекс</strong>, срез берётся от&nbsp;начала (от&nbsp;0). Если не&nbsp;указан <strong>конечный индекс</strong>, срез берётся до&nbsp;конца строки. Попробуйте предположить, что будет выведено на&nbsp;экран, если в&nbsp;предыдущей программе записать срезы следующим образом:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">text <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Hello, world!'</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>text<span style="color: black;">[</span>:<span style="color: #ff4500;">5</span><span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>text<span style="color: black;">[</span><span style="color: #ff4500;">7</span>:<span style="color: black;">]</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br><strong>Разрешены отрицательные индексы</strong> для отсчёта с&nbsp;конца списка. В&nbsp;следующем примере из&nbsp;строки, содержащей фамилию, имя и&nbsp;отчество, будет извлекаться фамилия.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">full_name <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Иванов И. И.'</span>
+surname <span style="color: #66cc66;">=</span> full_name<span style="color: black;">[</span>:-<span style="color: #ff4500;">6</span><span style="color: black;">]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Как и&nbsp;для range, в&nbsp;параметры среза можно добавить третье число&nbsp;— <strong>шаг обхода</strong>. Этот параметр не&nbsp;является обязательным и&nbsp;записывается через второе двоеточие. Вот как может выглядеть программа «счастливый билет», если решать её&nbsp;с&nbsp;помощью срезов:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">number <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+odd <span style="color: #66cc66;">=</span> even <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+<span style="color: #808080; font-style: italic;"># срез будет от начала строки до конца с шагом два: 0, 2, 4,... </span>
+<span style="color: #ff7700; font-weight: bold;">for</span> n <span style="color: #ff7700; font-weight: bold;">in</span> number<span style="color: black;">[</span>::<span style="color: #ff4500;">2</span><span style="color: black;">]</span>:  
+    odd +<span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>n<span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># срез от второго элемента строки до конца с шагом два: 1, 3, 5,...</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> n <span style="color: #ff7700; font-weight: bold;">in</span> number<span style="color: black;">[</span><span style="color: #ff4500;">1</span>::<span style="color: #ff4500;">2</span><span style="color: black;">]</span>: 
+    even +<span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>n<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> odd <span style="color: #66cc66;">==</span> even:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Счастливый по-питерски!'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br><strong>Шаг может быть и&nbsp;отрицательным</strong>&nbsp;— для прохода по&nbsp;строке в&nbsp;обратном порядке. Если в&nbsp;этом случае не&nbsp;указать начальный и&nbsp;конечный индекс среза, ими станут последний и&nbsp;первый индексы строки, соответственно (а&nbsp;не&nbsp;наоборот, как при положительном шаге):</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">text <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'СЕЛ В ОЗЕРЕ БЕРЕЗОВ ЛЕС'</span>
+text_reversed <span style="color: #66cc66;">=</span> text<span style="color: black;">[</span>::-<span style="color: #ff4500;">1</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>text <span style="color: #66cc66;">==</span> text_reversed<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Итак, с&nbsp;помощью квадратных скобок можно получить доступ как к&nbsp;одному символу строки, так и&nbsp;к&nbsp;некоторой последовательности символов (причём совсем не&nbsp;обязательно идущих подряд!).</p>
+</div></article></section>
+{%endblock%}

@@ -1,0 +1,424 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Функции</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Среда разработки PyCharm</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Функция как способ группировать команды и&nbsp;именовать участки кода. Функция как инструмент для повторного использования</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Определение простейших функций</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Начальные знания о&nbsp;локальных переменных</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Аргументы функций</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div>
+<p><em>Второе полугодие мы&nbsp;начнем с&nbsp;перехода на&nbsp;новую интегрированную среду разработку PyCharm&nbsp;— это среда динамично развивается, постоянно обновляется и&nbsp;предоставляет расширенный функционал, который нам потребуется при решении задач в&nbsp;дальнейшем.</em></p>
+<p><em>В&nbsp;этом уроке мы&nbsp;поговорим о&nbsp;том, как группировать команды в&nbsp;функции&nbsp;— участки кода, которые можно использовать многократно. Обсудим, как можно сделать так, чтобы код функции работал по-разному в&nbsp;зависимости от&nbsp;параметров. Наконец, коснёмся вопроса о&nbsp;том, что из&nbsp;себя представляют локальные переменные.</em></p>
+</div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Среда разработки PyCharm</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Для программирования на&nbsp;Python можно использовать различные среды разработки, так в&nbsp;первом полугодии мы&nbsp;работали в&nbsp;Wings, которая очень хороша для старта. В&nbsp;этом полугодии мы&nbsp;познакомимся с&nbsp;другой средой, которая наиболее распространена в&nbsp;профессиональном сообществе&nbsp;— это среда PyCharm, созданная компанией JetBrains. Это среда динамично развивается, постоянно обновляется и&nbsp;доступна для наиболее распространенных операционных систем&nbsp;— Windows, MacOS, Linux.</p>
+<p>PyCharm доступна в&nbsp;двух основных вариантах: платный выпуск Professional и&nbsp;бесплатный Community. Мы&nbsp;будем использовать бесплатную версию, в&nbsp;которой доступны все необходимые в&nbsp;рамках нашего курса возможности.</p>
+<p>Для этого перейдем на&nbsp;<span style="text-decoration: underline;"><a href="https://www.jetbrains.com/pycharm/download/#section=windows" target="_blank" rel="noopener">страницу загрузки</a></span> и&nbsp;загрузим установочный файл PyCharm Community. После загрузки выполним его установку.</p>
+<p>После завершения установки запустим программу. При первом запуске открывается начальное окно:</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/pycharm-1.png" width="500" height="auto"></p>
+<p><strong>Шаг&nbsp;1.</strong> Откройте&nbsp;/ создайте проект в&nbsp;PyCharm</p>
+<p>А&nbsp;зачем вообще нужны проекты? Дело в&nbsp;том, что всё, что вы&nbsp;делаете в&nbsp;PyCharm, выполняется в&nbsp;контексте проекта. Он&nbsp;служит основой для поддержки кодирования, переработки кода, согласованности стиля кодирования и&nbsp;т.д. Кроме того, вы&nbsp;уже знаете, что в&nbsp;сложные проекты могут делиться на&nbsp;модули реализовываться разными разработчиками. Концепция организации программного кода в&nbsp;проекты позволяет сделать такое взаимодействие более удобным.</p>
+<p>У&nbsp;вас есть два варианта начать работу над проектом внутри среды IDE:</p>
+<div style="padding-left: 30px;">
+<p>1. Открыть существующий проект</p>
+</div>
+<p>Начните с&nbsp;открыв один из&nbsp;ваших существующих проектов, хранящихся на&nbsp;вашем компьютере. Вы&nbsp;можете сделать, нажав <strong>Открыть проект (Open)</strong> на&nbsp;экране приветствия (или <strong>File&nbsp;→ Open</strong>).</p>
+<div style="padding-left: 30px;">
+<p>2. Создать проект с&nbsp;нуля</p>
+</div>
+<p>Если вы&nbsp;предпочитаете начинать с&nbsp;нуля, нажмите New Project и&nbsp;на&nbsp;открывшемся экране введите имя проекта в&nbsp;диалоговом окне и&nbsp;будет создан проект Python.</p>
+<p><strong>Шаг&nbsp;2.</strong> Знакомство с&nbsp;интерфейсом</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/pycharm-2.png" width="600" height="auto"></p>
+<ol>
+<li><strong>Project Tool Window.</strong> Панель инструментов проекта. В&nbsp;этом окне отображаются файлы вашего проекта.</li>
+<li><strong>PyCharm Editor.</strong> Редактор PyCharm. Находится с&nbsp;правой стороны, где вы&nbsp;пишете свой код. В&nbsp;нем есть вкладки для удобной навигации между открытыми файлами.</li>
+<li><strong>Navigation Bar.</strong> Панель навигации. Находится над редактором, позволяет быстро запускать и&nbsp;отлаживать ваше приложение.</li>
+<li><strong>Left gutter.</strong> Левый столбец, вертикальная полоса рядом с&nbsp;редактором, показывает точки остановки и&nbsp;обеспечивает удобный способ перехода по&nbsp;иерархии кода.</li>
+<li><strong>Right gutter.</strong> Правый столбец, справа от&nbsp;редактора. PyCharm постоянно контролирует качество вашего кода и&nbsp;постоянно показывает результаты проверки в&nbsp;правом столбце: ошибки, предупреждения и&nbsp;т.д. Тут&nbsp;же вы&nbsp;можете отслеживать соответствие вашего кода стандарту PEP-8. Индикатор в&nbsp;правом верхнем углу показывает общий статус проверки кода для всего файла.</li>
+<li><strong>PyCharm Tool Windows.</strong> Панель инструментов PyCharm. Это специальные окна, прикрепленные к&nbsp;низу и&nbsp;сторонам рабочей области, которые обеспечивают доступ к&nbsp;типичным задачам, таким как управление проектами, поиск и&nbsp;навигация по&nbsp;исходному коду, интеграция с&nbsp;системами контроля версий и&nbsp;т.д.</li>
+<li><strong>Status Bar.</strong> Строка состояния. Указывает состояние вашего проекта и&nbsp;показывает различные предупреждения и&nbsp;информационные сообщения.</li>
+</ol>
+<p>У&nbsp;PyCharm есть гибкая система настройки интерфейса и&nbsp;даже возможность задания собственного стиля кода. Но&nbsp;сейчас мы&nbsp;не&nbsp;будем останавливаться на&nbsp;этом, а&nbsp;перейдем непосредственно к&nbsp;написанию программ.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Функция как способ группировать команды и&nbsp;именовать участки кода</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Работа любой компьютерной программы&nbsp;— это выполнение процессором большого набора элементарных инструкций. В&nbsp;машинном коде, с&nbsp;которым работает процессор, все команды очень простые:</p>
+<ul>
+<li>считать из&nbsp;оперативной памяти одно целое число в&nbsp;специальную ячейку,</li>
+<li>прибавить к&nbsp;одному числу значение другой ячейки,</li>
+<li>сравнить ячейку с&nbsp;нулём,</li>
+<li>вернуться на&nbsp;пару команд назад и&nbsp;пр.</li>
+</ul>
+<p>Команды машинного кода не&nbsp;могут вывести окошко программы или проиграть аудиофайл, не&nbsp;могут посчитать среднюю оценку в&nbsp;классе или загрузить страничку из&nbsp;интернета. Машинный код не&nbsp;умеет полноценно работать даже с&nbsp;обычными строками или списками и&nbsp;не&nbsp;может выполнять сложные математические расчеты. Однако программа целиком всё это делает, потому что состоит из&nbsp;множества команд, которые в&nbsp;комбинации дают нужный эффект.</p>
+<p>Многие из&nbsp;команд Python, которые вы&nbsp;уже знаете, требуют от&nbsp;процессора выполнения десятков команд. Если&nbsp;бы программист писал их&nbsp;вручную, то&nbsp;даже простейшие программы&nbsp;— вроде наших учебных заданий&nbsp;— создавались&nbsp;бы несколько дней. При этом даже опытному программисту было&nbsp;бы очень легко допустить ошибку.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Функция</strong></h4>
+<div>
+<p>Чтобы упростить разработку программ, наборы команд принято группировать в&nbsp;<strong>функции</strong> (их&nbsp;иногда называют <strong>подпрограммами</strong>).</p>
+<p><strong>Функция</strong>&nbsp;— это особым образом сгруппированный набор команд, которые выполняются последовательно, но&nbsp;воспринимаются как единое целое. При этом функция может возвращать (или не&nbsp;возвращать) свой результат.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Например, чтобы получить сумму элементов списка, мы&nbsp;обычно выполняем такой набор операций:</p>
+<ol>
+<li>Записать в&nbsp;ячейку результата ноль.</li>
+<li>Пройти в&nbsp;цикле по&nbsp;всем элементам списка и&nbsp;прибавить к&nbsp;результату каждый из&nbsp;этих элементов.</li>
+</ol>
+<p>Чтобы не&nbsp;писать такой цикл каждый раз, когда вам нужно получить сумму элементов, можно завести специальную функцию. Она принимает на&nbsp;вход список и&nbsp;возвращает подсчитанный результат:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> my_sum<span style="color: black;">(</span>arr<span style="color: black;">)</span>:
+    result <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> element <span style="color: #ff7700; font-weight: bold;">in</span> arr:
+        result +<span style="color: #66cc66;">=</span> element
+    <span style="color: #ff7700; font-weight: bold;">return</span> result</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Теперь, чтобы вычислить сумму списка чисел, нам достаточно написать в&nbsp;программе что-то вроде my_sum([5,10,7,8]).</p>
+<p>Мы&nbsp;написали функцию my_sum исключительно для демонстрации. Вы&nbsp;уже знаете по&nbsp;материалам прошлого урока, что в&nbsp;Python есть встроенная функция для вычисления суммы. Она называется sum. А&nbsp;какие еще встроенные функции вы&nbsp;уже знаете?</p>
+<p>На&nbsp;самом деле, в&nbsp;любой современный язык программирования встроены сотни функций. Много, но&nbsp;всё равно недостаточно, поэтому в&nbsp;любой серьезной программе приходится писать множество собственных функций.</p>
+<p>Итак, мы&nbsp;уже выяснили, что функции нужны, чтобы группировать команды, а&nbsp;заодно, чтобы не&nbsp;писать один и&nbsp;тот&nbsp;же код несколько раз. Например, достаточно один раз написать функцию суммы и&nbsp;потом пользоваться ей&nbsp;постоянно. Польза от&nbsp;этого особенно очевидна, когда функция действительно сложная и&nbsp;используется много раз в&nbsp;разных местах программы. Например, загрузить данные из&nbsp;интернета или нарисовать персонажа компьютерной игры.</p>
+<p>Ещё одна важная вещь&nbsp;— функции имеют <strong>имена</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP 8</strong></h4>
+<div>Имена функций должны состоять из&nbsp;маленьких букв, а&nbsp;слова разделяться символами подчеркивания&nbsp;— это необходимо, чтобы увеличить читабельность. Стиль mixedCase допускается в&nbsp;тех местах, где уже преобладает такой стиль, для сохранения обратной совместимости.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Благодаря им&nbsp;программу можно сделать понятной не&nbsp;только компьютеру, но&nbsp;и&nbsp;человеку. Тут все так&nbsp;же, как с&nbsp;именами переменных: если переменная имеет ничего не&nbsp;говорящее название, то&nbsp;сложно угадать, что в&nbsp;ней хранится. Если участок кода не&nbsp;сгруппирован в&nbsp;функцию, то&nbsp;приходится буквально дешифрировать, для чего он&nbsp;нужен в&nbsp;программе. А&nbsp;если он&nbsp;оформлен в&nbsp;виде функции, то&nbsp;название функции само подскажет, что делает этот код.</p>
+<p>Попробуйте угадать, что делает такой код:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">t <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>-<span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> -<span style="color: #ff4500;">10</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">11</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">20</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">25</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">27</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">23</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">18</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">8</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> -<span style="color: #ff4500;">3</span><span style="color: black;">]</span>
+s <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+mm <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1000</span>
+mx <span style="color: #66cc66;">=</span> -<span style="color: #ff4500;">1000</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> e <span style="color: #ff7700; font-weight: bold;">in</span> t:
+    s +<span style="color: #66cc66;">=</span> e
+    <span style="color: #ff7700; font-weight: bold;">if</span> e <span style="color: #66cc66;">&lt;</span> mm:
+        mm <span style="color: #66cc66;">=</span> e
+    <span style="color: #ff7700; font-weight: bold;">if</span> e <span style="color: #66cc66;">&gt;</span> mx:
+        mx <span style="color: #66cc66;">=</span> e
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>s / <span style="color: #008000;">len</span><span style="color: black;">(</span>t<span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>mm<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>mx<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">9.75
+-10
+27</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>На&nbsp;самом деле, когда программист думает о&nbsp;том, что должна делать программа, он&nbsp;обычно представляет её&nbsp;как раз в&nbsp;форме функций. Мы&nbsp;обычно не&nbsp;говорим, какие действия должен выполнить алгоритм, а&nbsp;описываем, что мы&nbsp;хотим получить. Например, мы&nbsp;хотим посчитать среднегодовую температуру&nbsp;— значит, нам нужна функция вычисления среднего значения из&nbsp;набора чисел.</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Определение простейших функций</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Теперь давайте научимся писать простые функции.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Заголовок и тело функции</strong></h4>
+<div>У&nbsp;каждой функции есть <strong>заголовок</strong> (его обычно называют сигнатурой) и&nbsp;<strong>тело функции</strong>. Сигнатура описывает, как функцию вызывать, а&nbsp;тело описывает, что эта функция делает. Сигнатура содержит имя функции, а&nbsp;также аргументы (то&nbsp;есть параметры), которые передаются в&nbsp;функцию.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Записывается это так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #66cc66;">&lt;</span>имя функции<span style="color: #66cc66;">&gt;</span><span style="color: black;">(</span><span style="color: black;">[</span>аргументы<span style="color: black;">]</span><span style="color: black;">)</span>:
+    <span style="color: #66cc66;">&lt;</span>тело функции<span style="color: #66cc66;">&gt;</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Тело функции, как и&nbsp;в&nbsp;операторе if&nbsp;или в&nbsp;операторе цикла, обязательно идёт с&nbsp;отступом. Это нужно, чтобы интерпретатор Python знал, где заканчивается код функции. Заодно это здорово помогает структурировать программу. Даже в&nbsp;языках, где отступы не&nbsp;требуются, их&nbsp;всё равно принято писать, чтобы упростить чтение программы.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте теперь напишем совсем простую функцию из&nbsp;одной единственной команды, которая просто выводит на&nbsp;экран приветствие.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> simple_greetings<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет!'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Вызов фукнции</strong></h4>
+<div>Теперь, чтобы поприветствовать пользователя, вам достаточно в&nbsp;основной программе написать: simple_greetings(). Это называется <strong>вызвать функцию</strong>. Обратите внимание, что у&nbsp;этой функции нет аргументов ни&nbsp;в&nbsp;определении, ни&nbsp;при вызове. Однако пустые скобочки после названия функции писать всё равно нужно.a</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Функцию, как и&nbsp;переменную, необходимо сначала объявить, а&nbsp;только потом использовать. Поэтому следующая программа выдаст вам ошибку name ’simple_greetings2′ is&nbsp;not defined.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">simple_greetings2<span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> simple_greetings2<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет, username!'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">---------------------------------------------------
+NameError              Traceback (most recent call last)
+&lt;ipython-input-12-4f64c3fab903&gt; in &lt;module&gt;()
+----&gt; 1 simple_greetings2()
+      2 
+      3 
+      4 def simple_greetings2():
+      5     print('Привет, username!')
+&nbsp;
+NameError: name 'simple_greetings2' is not defined</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>Впрочем, от&nbsp;такой функции проку не&nbsp;очень много: она не&nbsp;сокращает количество кода и&nbsp;не&nbsp;сильно упрощает понимание происходящего в&nbsp;программе. Давайте теперь немного усложним программу. Пусть она спрашивает имя и&nbsp;здоровается по&nbsp;имени с&nbsp;тремя людьми. Давайте для начала напишем такую программу без собственных функций:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Как тебя зовут?'</span><span style="color: black;">)</span>
+name_1 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет'</span><span style="color: #66cc66;">,</span> name_1<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'А тебя?'</span><span style="color: black;">)</span>
+name_2 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет'</span><span style="color: #66cc66;">,</span> name_2<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'А твоего пса?'</span><span style="color: black;">)</span>
+name_3 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет'</span><span style="color: #66cc66;">,</span> name_3<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Как тебя зовут?
+Вася
+Привет Вася
+А тебя?
+Коля
+Привет Коля
+А твоего пса?
+Шарик
+Привет Шарик</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Программа небольшая, но&nbsp;в&nbsp;ней уже видно много проблем.</p>
+<p>Во-первых, три раза приходится повторять фактически одно и&nbsp;то&nbsp;же.</p>
+<p>Во-вторых, приходится вводить разные имена переменных, чтобы не&nbsp;записывать в&nbsp;одну переменную три разных имени. При этом нельзя перепутать имена переменных, иначе вы&nbsp;поприветствуете кого-нибудь неправильным именем.</p>
+<p>В-третьих, если вы&nbsp;захотите исправить приветствие на&nbsp;более официальное «Здравствуйте», вам придется внести одинаковые исправления сразу в&nbsp;трёх разных местах. Даже в&nbsp;такой маленькой программе можно при исправлении допустить опечатку. А&nbsp;представьте, что приветствие используется десять раз в&nbsp;разных местах большой программы&nbsp;— тогда придется искать каждое приветствие и&nbsp;исправлять его.</p>
+<p>Чтобы избежать всех этих проблем, мы&nbsp;сгруппируем одинаковые действия в&nbsp;функцию.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> greet<span style="color: black;">(</span><span style="color: black;">)</span>:
+    name <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет,'</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Как тебя зовут?'</span><span style="color: black;">)</span>
+greet<span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'А тебя?'</span><span style="color: black;">)</span>
+greet<span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'А твоего пса?'</span><span style="color: black;">)</span>
+greet<span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Как тебя зовут?
+Как тебя зовут?
+Иван
+Привет, Иван
+А тебя?
+Мария
+Привет, Мария
+А твоего пса?
+Бобик
+Привет, Бобик</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Посмотрите: код программы сократился и&nbsp;стал еще понятнее. Теперь вам не&nbsp;нужно выискивать, где какая переменная заводится, где и&nbsp;для чего она используется. Программа сама говорит вам, что она делает: greet&nbsp;— здороваться. Не&nbsp;приходится заводить несколько разных переменных. Чтобы поменять приветствие во&nbsp;всей программе, достаточно изменить одну строчку. Словом, одни плюсы.</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Начальные знания о&nbsp;локальных переменных</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;тот момент, когда вы&nbsp;вызываете функцию greet, начинают выполняться команды, написанные в&nbsp;теле функции. Когда работа функции доходит до&nbsp;конца, исполнение программы продолжается со&nbsp;строки, которая вызывала функцию. Мы&nbsp;ещё посмотрим на&nbsp;этот процесс подробнее с&nbsp;помощью отладчика. Обратите внимание, теперь в&nbsp;программе используется только одна переменная: name. Как&nbsp;же так? Ведь мы&nbsp;договорились, что не&nbsp;будем использовать одну и&nbsp;ту&nbsp;же переменную для разных имен? На&nbsp;самом деле мы&nbsp;не&nbsp;используем одну и&nbsp;ту&nbsp;же переменную. При каждом вызове функции эта переменная создается заново, а&nbsp;в&nbsp;конце работы функции&nbsp;— прекращает своё существование. Это очень важный момент:</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Область видимости функции</strong></h4>
+<div>Снаружи функции greet переменная name вообще не&nbsp;существует. Таким образом, функция очерчивает тот участок программы, где переменная нужна и&nbsp;используется. Этот участок, в&nbsp;котором переменная живёт, называется <strong>областью видимости переменной</strong> (по-английски&nbsp;— scope).</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Благодаря ограничению области видимости переменной, программисту не&nbsp;нужно беспокоиться, не&nbsp;«всплывёт»&nbsp;ли эта переменная в&nbsp;другом месте программы. Изменяя переменную внутри функции, программист понимает, что он&nbsp;может что-то испортить только внутри функции, но&nbsp;не&nbsp;поломает работу остальной программы. Можно сказать, что вся работа с&nbsp;переменной локализована, т.е. сосредоточена внутри функции.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Локальные и глобальные переменные</strong></h4>
+<div>Переменные, создаваемые внутри функций, недоступны извне и&nbsp;существуют только внутри функции, они называются <strong>локальными</strong>. Создаваемые вне функции переменные могут быть доступны из&nbsp;функций в&nbsp;то&nbsp;числе&nbsp;— они являются <strong>глобальными</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>По&nbsp;возможности избегайте использования глобальных переменных для предотвращения конфликтов. Про локальные переменные и&nbsp;области видимости мы&nbsp;поговорим намного подробнее на&nbsp;следующих уроках.</p>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Аргументы функций</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;рассмотрели функции, которые выполняют всякий раз одни и&nbsp;те&nbsp;же действия. Это бывает полезно, но&nbsp;всё&nbsp;же большая часть программ требует выполнения немного разных действий. Например, функция print (а&nbsp;это именно функция) должна каждый раз выводить на&nbsp;экран разные сообщения&nbsp;— в&nbsp;зависимости от&nbsp;переданных аргументов.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Аргументы</strong></h4>
+<div>Аргументы (параметры) могут изменять поведение функции. Например, функция len принимает строки или списки (и&nbsp;другие коллекции). В&nbsp;зависимости от&nbsp;конкретного аргумента она возвращает разный результат, а&nbsp;значит, выполняет внутри немного различные действия.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Рассмотрим функцию, которая должна выводить на&nbsp;экран содержимое списка, печатая каждый элемент на&nbsp;своей строчке. Вряд&nbsp;ли нам захочется заводить функцию, которая раз за&nbsp;разом выводит содержимое одного и&nbsp;того&nbsp;же списка. Скорее нужна функция, которая может распечатать любой список. Конкретный список мы&nbsp;передаем функции в&nbsp;качестве параметра при её&nbsp;вызове. Функция&nbsp;же работает с&nbsp;тем, что ей&nbsp;передали. Выглядит это так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_array<span style="color: black;">(</span><span style="color: #dc143c;">array</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">for</span> element <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #dc143c;">array</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>element<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+print_array<span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #483d8b;">'Hello'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'world'</span><span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: black;">)</span>
+print_array<span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #ff4500;">123</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">456</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">789</span><span style="color: black;">]</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Hello
+world
+123
+456
+789</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>При первом вызове функции print_array переменная array будет равна [’Hello’, ’world’]. При втором вызове переменная array будет равна [123, 456, 789] . Разберемся, в&nbsp;каком порядке выполняется код при вызове функций. В&nbsp;примере: print_array([’Hello’] + [’world’]) ничего удивительного не&nbsp;происходит: списки складываются, а&nbsp;затем передаются в&nbsp;функцию. Давайте рассмотрим более сложный пример:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_hello<span style="color: black;">(</span>arg_1<span style="color: #66cc66;">,</span> arg_2<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'hello'</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> print_comrade<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'comrade'</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> print_petrov<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Petrov'</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+print_hello<span style="color: black;">(</span>print_comrade<span style="color: black;">(</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> print_petrov<span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">comrade
+Petrov
+hello</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Аргументы в&nbsp;функции print_hello никак не&nbsp;используются, но&nbsp;сейчас это не&nbsp;важно. Рассмотрим, в&nbsp;каком порядке выполняются функции.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>В&nbsp;момент вызова функции ей&nbsp;необходимо передать вычисленные аргументы. Если аргументы не&nbsp;вычислены, то&nbsp;они вычисляются слева направо.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;данном случае функция print_hello принимает аргумент arg_1, который является значением функции print_comrade (по-умолчанию&nbsp;— None), и&nbsp;аргумент arg_2, который является значением функции print_petrov. Таким образом, сначала выполнится функция print_comrade, затем print_petrov и&nbsp;лишь в&nbsp;самом конце print_hello. Результатом работы программы будет напечатанный текст</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">comrade
+Petrov
+hello</pre>
+</div>
+</div></article></section>
+{%endblock%}

@@ -1,0 +1,493 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Переопределение функций и&nbsp;декораторы</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Переопределение функций</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Инструкция pass. Согласованность аргументов</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Инструкция def</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Предосторожности при переопределении функций</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Функция внутри функции</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">6</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#6">Декораторы</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">7</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#7">Нелокальные переменные</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">8</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#8">Небольшие, но&nbsp;типичные детали реализации декоратора</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">9</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#9">Захват значения из&nbsp;аргумента</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">10</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#10">Немного о&nbsp;терминологии</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>Этот урок содержит дополнительный материал, связанный с&nbsp;функциями в&nbsp;Python.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Переопределение функций</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Как вы&nbsp;уже знаете, функцию можно записать в&nbsp;переменную. Но&nbsp;оказывается, что помимо этого с&nbsp;именем функции можно работать как с&nbsp;самой обыкновенную переменной. В&nbsp;том числе значение, на&nbsp;которое <strong>указывает</strong> переменная с&nbsp;именем функции, можно изменить.</p>
+<p>Рассмотрим пример. У&nbsp;нас есть функция <strong>input()</strong>, которая читает данные из&nbsp;стандартного потока ввода. Давайте сделаем так, чтобы она не&nbsp;беспокоила пользователя и&nbsp;всегда давала один и&nbsp;тот&nbsp;же ввод. Для начала создадим свою функцию, которая будет работать вместо <strong>input()</strong>, а&nbsp;затем подменим значение <strong>input</strong> этой функцией.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> main_answer_in_the_universe<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">42</span>
+&nbsp;
+&nbsp;
+<span style="color: #008000;">input</span> <span style="color: #66cc66;">=</span> main_answer_in_the_universe
+x <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>x<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># 42</span></pre>
+</div>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Инструкция pass. Согласованность аргументов</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте теперь, чтобы совсем не&nbsp;отвлекать пользователя работой программы, подменим еще и&nbsp;функцию <strong>print()</strong> так, чтобы она ничего не&nbsp;печатала на&nbsp;экран. На&nbsp;одном из&nbsp;прошлых занятий мы&nbsp;писали функцию <strong>nop()</strong>, которая не&nbsp;делала ничего, но&nbsp;принимала в&nbsp;себя любой набор аргументов. Ей&nbsp;и&nbsp;воспользуемся.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> nop<span style="color: black;">(</span>*rest<span style="color: #66cc66;">,</span> **kwargs<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">pass</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">print</span> <span style="color: #66cc66;">=</span> nop
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"(шепотом) Потише, пожалуйста!"</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">''</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Теперь функция <strong>print()</strong> связана с&nbsp;объектом функции, которая при вызове не&nbsp;делает ничего. Привычная команда <strong>print()</strong> изменила поведение.</p>
+<p>Снова обращаем ваше внимание на&nbsp;то, что в&nbsp;аргументах функции <strong>nop()</strong> указано произвольное число аргументов (и&nbsp;произвольное число именованных аргументов). Благодаря этому, мы&nbsp;можем передавать ей&nbsp;разное число аргументов, как и&nbsp;в&nbsp;старую функцию <strong>print()</strong> и&nbsp;разные наборы опций, описываемые именованными аргументами (sep, end и&nbsp;т.п.). На&nbsp;самом деле, теперь не&nbsp;вызывают ошибки даже те&nbsp;наборы аргументов, которые не&nbsp;работают со&nbsp;встроенной функцией <strong>print()</strong>: функция <strong>print()</strong> принимает не&nbsp;любые именованные параметры, а&nbsp;только небольшой список, а&nbsp;функция <strong>nop()</strong> (а&nbsp;значит, и&nbsp;переопределенный <strong>print()</strong>) — абсолютно любые.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Подменяя функцию приходится заботиться о&nbsp;том, чтобы её&nbsp;аргументы соответствовали аргументам исходной функции. Иначе придется переписывать не&nbsp;только функцию, но&nbsp;и&nbsp;её&nbsp;вызовы, а&nbsp;в&nbsp;таком случае гораздо лучше просто завести новую функцию.</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Инструкция def</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Есть и&nbsp;более простой (но&nbsp;немного менее гибкий) способ заменить существующую функцию на&nbsp;другую. Для этого достаточно определить функцию с&nbsp;тем&nbsp;же именем&nbsp;— и&nbsp;она заменит существующую:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">4</span>
+&nbsp;<br>
+x <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>x<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># 4</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Интересно, что инструкцию <strong>def</strong> можно использовать в разных сложных конструкциях, словно это абсолютно обычная команда вроде присваивания или вызова функции.</p>
+<p>Например, можно определять функцию по-разному в&nbsp;зависимости от&nbsp;некоторого условия:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">language <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'fr'</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> language <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'ru'</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> hello<span style="color: black;">(</span>name<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет, '</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> hello<span style="color: black;">(</span>name<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Hi, '</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+&nbsp;
+hello<span style="color: black;">(</span><span style="color: #483d8b;">'Joe'</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; Hi, Joe</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Дальше мы&nbsp;будем использовать более многословный способ.</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Предосторожности при переопределении функций</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Теперь, когда вы&nbsp;научились использовать такой сильный инструмент, как переопределение функций, давайте обсудим предосторожности, которые надо соблюдать при подобном занятии.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Стоит понимать, что <strong>изменять существующие функции очень опасно</strong>.</p>
+<p>Почти всегда есть способ обойтись без этого, и&nbsp;этот способ стоит предпочесть. Переопределение функций делает программу плохо предсказуемой.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Когда вы&nbsp;пишете функцию, часто бывает, что ее&nbsp;поведение зависит от&nbsp;поведения других функций. И&nbsp;если в&nbsp;дальнейшем вы&nbsp;поменяете поведение какой-то из&nbsp;этих функций, то&nbsp;сломаются многие из&nbsp;функций, которые опирались на&nbsp;измененную.</p>
+<p>Еще хуже&nbsp;— почти <strong>недопустимо&nbsp;— изменять встроенные функции</strong>, как мы&nbsp;недавно делали.</p>
+<p>Во-первых, в&nbsp;программе они используются настолько часто, что очень тяжело отследить все места, на&nbsp;которые они влияют. Например, представьте, что вы&nbsp;изменили функцию вычисления квадратного корня так, чтобы она не&nbsp;только считала его значение, но&nbsp;еще и&nbsp;печатала результат. Теперь, если вы&nbsp;попробуете вызвать функцию, решающую квадратные уравнения, вам не&nbsp;избежать вывода на&nbsp;экран корня из&nbsp;дискриминанта, даже если вы&nbsp;этого не&nbsp;хотели.</p>
+<p>Во-вторых, встроенные функции и&nbsp;функции стандартной библиотеки вполне могут зависеть друг от&nbsp;друга, а&nbsp;вы&nbsp;об&nbsp;этом даже не&nbsp;знаете. Вам будем казаться, что изменилось поведение одной функции, когда на&nbsp;самом деле это далеко не&nbsp;так.</p>
+<p>Теперь, после предупреждения о&nbsp;том, что подменять функции опасно, мы&nbsp;поговорим о&nbsp;том, когда и&nbsp;как это можно делать с&nbsp;пользой (и&nbsp;как при этом ничего не&nbsp;испортить).</p>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Функция внутри функции</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Аналогия функций с&nbsp;переменными имеет продолжение. Бывают функции, которые определены глобально, а&nbsp;бывают функции, определенные локально. Если внутри функции переопределить <strong>print()</strong>, то&nbsp;это будет локальная функция <strong>print()</strong>, а&nbsp;глобальная не&nbsp;изменится. Когда мы&nbsp;выйдем из&nbsp;области видимости, в&nbsp;которой был объявлен локальный <strong>print()</strong>, слово <strong>print</strong> вновь будет ссылаться на&nbsp;функцию в&nbsp;глобальной области видимости и&nbsp;будет работать как прежде.</p>
+<p>Модификатор видимости <strong>global</strong>, кстати, с&nbsp;именами функций тоже работает (и&nbsp;им&nbsp;точно также не&nbsp;рекомендуется пользоваться).</p>
+<p>Подменять существующую функцию локально, в&nbsp;пределах другой функции обычно безопасно.</p>
+<p>Давайте сделаем функцию, которая разыгрывает короткий диалог с&nbsp;пользователем, но&nbsp;чтобы программа казалась умнее, пока настоящий искусственный интеллект только разрабатывается, мы&nbsp;подменим функцию <strong>answer()</strong>, которая дает ответы на&nbsp;вопросы.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> answer<span style="color: black;">(</span>question<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'В разработке'</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> dialog<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> answer<span style="color: black;">(</span>question<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">if</span> question.<span style="color: black;">lower</span><span style="color: black;">(</span><span style="color: black;">)</span>.<span style="color: black;">startswith</span><span style="color: black;">(</span><span style="color: #483d8b;">'когда'</span><span style="color: black;">)</span> :
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'Никогда!'</span>
+        <span style="color: #ff7700; font-weight: bold;">else</span>:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'Разоблачили.'</span>
+    question <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">while</span> question <span style="color: #66cc66;">!=</span> <span style="color: #483d8b;">''</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>answer<span style="color: black;">(</span>question<span style="color: black;">)</span><span style="color: black;">)</span>
+        question <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+dialog<span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+<span style="color: #808080; font-style: italic;"># &lt;= Когда станет тепло?</span>
+<span style="color: #808080; font-style: italic;"># =&gt; Никогда!</span>
+<span style="color: #808080; font-style: italic;"># &lt;= Когда смогу найти богатство?</span>
+<span style="color: #808080; font-style: italic;"># =&gt; Никогда!</span>
+<span style="color: #808080; font-style: italic;"># &lt;= Какие в Чили существуют города?</span>
+<span style="color: #808080; font-style: italic;"># =&gt; Разоблачили</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Этот пример служит исключительно иллюстрацией, ни&nbsp;в&nbsp;коем случае не&nbsp;рекомендацией. Ведь мы&nbsp;могли не&nbsp;переименовывать функцию, а&nbsp;просто определить новую функцию.</p>
+<p><strong>Задача: </strong></p>
+<p><em>Подмените функцию <strong>print()</strong> так, чтобы она ПЕЧАТАЛА ВЕСЬ ТЕКСТ В&nbsp;ВЕРХНЕМ РЕГИСТРЕ. Реализовывать работу с&nbsp;именованными аргументами (sep, end, ...) не&nbsp;нужно.</em></p>
+</div>
+<p><a name="6"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>6. Декораторы</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">old_print <span style="color: #66cc66;">=</span> <span style="color: #ff7700; font-weight: bold;">print</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> print_upper_case<span style="color: black;">(</span>*args<span style="color: black;">)</span>:
+    argsUpcased <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #008000;">str</span><span style="color: black;">(</span>arg<span style="color: black;">)</span>.<span style="color: black;">upper</span><span style="color: black;">(</span><span style="color: black;">)</span>  <span style="color: #ff7700; font-weight: bold;">for</span> arg <span style="color: #ff7700; font-weight: bold;">in</span> args<span style="color: black;">]</span>
+    oldPrint<span style="color: black;">(</span>*argsUpcased<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">print</span> <span style="color: #66cc66;">=</span> print_upper_case
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Нельзя ли потише?'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Вы&nbsp;научились переопределять функцию так, чтобы новая функция использовала старую. Такой процесс называется декорированием функции. Но&nbsp;мы&nbsp;это сделали не&nbsp;слишком удачно: у&nbsp;нас появилась лишняя переменная и&nbsp;функция <strong>old_print()</strong>. Чтобы не&nbsp;вводить лишнюю переменную в&nbsp;глобальной области видимости, мы&nbsp;определим функцию в&nbsp;локальной области видимости, т.е. внутри другой функции. Внутреннюю функцию мы&nbsp;вернем как результат выполнения внешней функции:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> use_uppercased_arguments<span style="color: black;">(</span>old_func<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> new_func<span style="color: black;">(</span>*args<span style="color: #66cc66;">,</span> **kwargs<span style="color: black;">)</span>:
+        argsUpcased <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #008000;">str</span><span style="color: black;">(</span>arg<span style="color: black;">)</span>.<span style="color: black;">upper</span><span style="color: black;">(</span><span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">for</span> arg <span style="color: #ff7700; font-weight: bold;">in</span> args<span style="color: black;">]</span>
+        old_func<span style="color: black;">(</span>*argsUpcased<span style="color: #66cc66;">,</span> **kwargs<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">return</span> new_func
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">print</span> <span style="color: #66cc66;">=</span> use_uppercased_arguments<span style="color: black;">(</span><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;коде выше произошло следующее: мы&nbsp;определили функцию <strong>use_uppercased_arguments()</strong>, которая принимает одну функцию как аргумент и&nbsp;возвращает новую функцию, сделанную на&nbsp;основе старой. Функция, которая занимается этими превращениями, называется <strong>декоратором</strong>. Имя <strong>new_func</strong>, которое мы&nbsp;определили внутри декоратора&nbsp;— локальное. Как только мы&nbsp;выполним <strong>return new_func</strong>, это будет просто функция без имени.</p>
+<p>Этой новой функции мы&nbsp;даем имя, которое было у&nbsp;старой функции.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Декораторы</strong></h4>
+<div><strong>Декораторами</strong> такие функции как use_uppercased_arguments() называются потому, что обычно они добавляют какие-то штрихи (декор) к&nbsp;уже существующему поведению, не&nbsp;изменяя её&nbsp;код.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Бывает так, что функцию (или, скорее, несколько функций) сразу пишут в&nbsp;расчёте на&nbsp;то, что она будет декорирована определенным образом. Обычно так поступают, когда функции хотят добавить некоторое типичное поведение.</p>
+<p>Например:</p>
+<div style="padding-left: 30px;">
+<p>— Когда каждый вызов функции нужно залоггировать, т.е. вывести при вызове сообщение о&nbsp;том, как и&nbsp;когда функция была вызвана.</p>
+<p>— Когда результат функции должен быть закэширован (т.е. после вычисления сохранен на&nbsp;будущее, чтобы не&nbsp;считать его повторно).</p>
+<p>— Чтобы функция использовалась для ответа на&nbsp;запросы к&nbsp;веб-серверу.</p>
+<p>— Чтобы перед запуском проверялось какое-то условие (например, что пользователь имеет право доступа к&nbsp;выполнению функции).</p>
+</div>
+<p>Мы&nbsp;напишем функцию, которая будет выводить журнал запусков и&nbsp;результатов декорированной функции. При каждом вызове функции мы&nbsp;перед вызовом будем писать номер вызова, аргументы и&nbsp;значение, которое функция вернула. Мы&nbsp;хотим вести такой отчет для функции приготовления бургеров из&nbsp;прошлого занятия, а&nbsp;также для функции наливания, возвращающей тип напитка.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> logged<span style="color: black;">(</span>func<span style="color: black;">)</span>:
+    count <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+    <span style="color: #ff7700; font-weight: bold;">def</span> decorated_func<span style="color: black;">(</span>*args<span style="color: #66cc66;">,</span> **kwargs<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">nonlocal</span> count
+        count +<span style="color: #66cc66;">=</span><span style="color: #ff4500;">1</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>count<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'&gt;&gt;'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Arguments:'</span><span style="color: #66cc66;">,</span> args<span style="color: #66cc66;">,<br></span><span style="color: #483d8b;">              'Named arguments:'</span><span style="color: #66cc66;">,</span> kwargs<span style="color: black;">)</span>
+        result <span style="color: #66cc66;">=</span> func<span style="color: black;">(</span>*args<span style="color: #66cc66;">,</span> **kwargs<span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'--'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Result:'</span><span style="color: #66cc66;">,</span> result<span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> result
+    <span style="color: #ff7700; font-weight: bold;">return</span> decorated_func
+&nbsp;
+&nbsp;
+<span style="color: #66cc66;">@</span>logged
+<span style="color: #ff7700; font-weight: bold;">def</span> make_burger<span style="color: black;">(</span>typeOfMeat<span style="color: #66cc66;">,</span> withOnion<span style="color: #66cc66;">=</span><span style="color: #008000;">False</span><span style="color: #66cc66;">,</span> withTomato<span style="color: #66cc66;">=</span><span style="color: #008000;">True</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Булочка'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> withOnion:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Луковые колечки'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> withTomato:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ломтик помидора'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Котлета из'</span><span style="color: #66cc66;">,</span> typeOfMeat<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Булочка'</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #66cc66;">@</span>logged
+<span style="color: #ff7700; font-weight: bold;">def</span> drinking_type<span style="color: black;">(</span><span style="color: #008000;">type</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'У нас есть только чай'</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Сначала посмотрите на&nbsp;определения функций <strong>make_burger()</strong> и&nbsp;<strong>drinking_type()</strong>.</p>
+<p>Тело функций представляет мало интереса, это&nbsp;— очень простые функции.</p>
+<p>А&nbsp;вот <strong>@logged</strong> перед определением функции&nbsp;— это новый для вас объект. Эта строчка говорит, что функция, которая идет дальше, будет задекорирована с&nbsp;помощью декоратора <strong>logged</strong>. Обратите внимание, что задекорированы обе функции одним декоратором. И&nbsp;никаких промежуточных функций и&nbsp;вспомогательных переменных мы&nbsp;не&nbsp;использовали.</p>
+</div>
+<p><a name="7"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>7. Нелокальные переменные</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Теперь обратимся к&nbsp;декоратору. В&nbsp;нем есть моменты, которых вы&nbsp;раньше не&nbsp;встречали. По&nbsp;условию, мы&nbsp;должны посчитать каждый вызов функции. На&nbsp;одном из&nbsp;прошлых уроков мы&nbsp;делали функцию <strong>ask_again()</strong>, которая тоже считала вызовы. В&nbsp;тот раз мы&nbsp;использовали глобальную переменную-счетчик, чтобы хранить, сколько раз мы&nbsp;уже вызывали функцию.</p>
+<p>В&nbsp;этот раз мы&nbsp;используем похожую технику и&nbsp;определяем переменную <strong>count</strong>, но&nbsp;не&nbsp;глобальную, а&nbsp;локальную для функции-декоратора. Затем мы&nbsp;создаем новую локальную функцию <strong>decorated_func()</strong>, которую позднее вернём в&nbsp;качестве результата. Эта функция должна иметь доступ к&nbsp;счётчику, который снаружи, но&nbsp;все-таки не&nbsp;в&nbsp;глобальной области видимости.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Нелокальные переменные</strong></h4>
+<div>Эта промежуточная область видимости называется <strong>нелокальной</strong>. Внутренняя функция видит переменные в&nbsp;объемлющей функции, но&nbsp;если она хочет такую переменную изменить, то&nbsp;должна объявить её&nbsp;<strong>nonlocal</strong>.В область поиска не&nbsp;входят глобальная и&nbsp;встроенная области видимости.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>При поиске переменной или функции с&nbsp;указанными именем приоритет (или как говорят, правило разрешения имен) следующий:</p>
+<ol>
+<li>сначала ищем локальную переменную (функцию),</li>
+<li>если не&nbsp;нашли локальную&nbsp;— ищем нелокальную,</li>
+<li>затем&nbsp;— глобальную,</li>
+<li>и&nbsp;в&nbsp;самом конце&nbsp;— встроенную в&nbsp;язык.</li>
+</ol>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Если вложенность функций больше двух уровней, то&nbsp;нелокальная переменная ищет в&nbsp;«ближайшей» области видимости, т.е.&nbsp;в&nbsp;функции вложенностью на&nbsp;один меньше. Если не&nbsp;находит, то&nbsp;поиск переходит в&nbsp;самую ближнюю из&nbsp;внешних областей видимости, затем в&nbsp;чуть более далекую&nbsp;— и&nbsp;так пока не&nbsp;найдется нужное имя. Фактически, интерпретатор ищет «где поближе».</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Такая техника позволяет сделать внешнюю для функции переменную, но&nbsp;при этом спрятанную от&nbsp;посторонних глаз (в&nbsp;отличие от&nbsp;глобальной). Такие переменные нужны в&nbsp;первую очередь для того, чтобы хранить какие-то данные, относящиеся к&nbsp;функции, между вызовами функции. Локальные переменные стираются при выходе из&nbsp;функции, глобальные&nbsp;— сохраняются, но&nbsp;видны всему свету, а&nbsp;нелокальные&nbsp;— это идеальное сочетание закрытости и&nbsp;«сохраняемости».</p>
+<p>В&nbsp;некоторых языках программирования принято называть такие переменные <strong>статическими</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Если вы&nbsp;попробуете запустить две получившиеся функции, то&nbsp;увидите, что их&nbsp;счётчики независимы. Это совершенно логично, поскольку эти переменные локальны для запусков самого декоратора <strong>logged</strong>. Когда мы&nbsp;оборачивали одну функцию, был создан один счётчик; когда оборачивали вторую&nbsp;— другой.</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="8"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>8. Небольшие, но&nbsp;типичные детали реализации декоратора</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Также стоит обратить внимание на&nbsp;список аргументов функции. Наша декорированная функция в&nbsp;отличие от&nbsp;исходной принимает любой набор аргументов, а&nbsp;когда вызывает исходную функцию, передает их&nbsp;в&nbsp;неизменном виде с&nbsp;помощью звездочек, раскрывающих список позиционных параметров и&nbsp;словарь именованных параметров.</p>
+<p>Это стандартный паттерн (то&nbsp;есть шаблон) для вызова функции, которую мы&nbsp;решили обернуть. Но&nbsp;не&nbsp;всегда список переданных аргументов бывает корректен, в&nbsp;этом случае обернутая функция просто завершится с&nbsp;ошибкой. Наконец, обратите внимание на&nbsp;ещё одну стандартную конструкцию: мы&nbsp;сначала сохранили значение, которое вернула обернутая функция, а&nbsp;затем его&nbsp;же и&nbsp;вернули.</p>
+<p>Теперь мы&nbsp;пронумеруем и&nbsp;напечатанную строку с&nbsp;аргументами, и&nbsp;строку с&nbsp;результатом функции одним и&nbsp;тем&nbsp;же номером. Благодаря этому мы&nbsp;можем пронаблюдать дерево вызовов рекурсивной функции, т.е. такой функции, которая вызывает сама себя. Вы, возможно помните, что мы&nbsp;делали однажды функцию такую рекурсивную функцию для вычисления n-го числа Фибоначчи.</p>
+<p>Теперь обернём с&nbsp;помощью нашего декоратора её&nbsp;и&nbsp;вызовем:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> logged<span style="color: black;">(</span>func<span style="color: black;">)</span>:
+    count <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+    <span style="color: #ff7700; font-weight: bold;">def</span> decorated_func<span style="color: black;">(</span>*args<span style="color: #66cc66;">,</span> **kwargs<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">nonlocal</span> count
+        count +<span style="color: #66cc66;">=</span><span style="color: #ff4500;">1</span>
+        current_index <span style="color: #66cc66;">=</span> count
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>current_index<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'&gt;&gt;'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Arguments:'</span><span style="color: #66cc66;">,</span> args<span style="color: #66cc66;">,<br></span><span style="color: #483d8b;">              'Named arguments:'</span><span style="color: #66cc66;">,</span> kwargs<span style="color: black;">)</span>
+        result <span style="color: #66cc66;">=</span> func<span style="color: black;">(</span>*args<span style="color: #66cc66;">,</span> **kwargs<span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>current_index<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'--'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Result:'</span><span style="color: #66cc66;">,</span> result<span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> result
+    <span style="color: #ff7700; font-weight: bold;">return</span> decorated_func
+&nbsp;
+&nbsp;
+<span style="color: #66cc66;">@</span>logged
+<span style="color: #ff7700; font-weight: bold;">def</span> fib<span style="color: black;">(</span>n<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> n <span style="color: #66cc66;">&lt;=</span> <span style="color: #ff4500;">2</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">1</span>
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> fib<span style="color: black;">(</span>n - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> + fib<span style="color: black;">(</span>n - <span style="color: #ff4500;">2</span><span style="color: black;">)</span>
+&nbsp;<br>
+fib<span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Почему мы&nbsp;сделали current_index = count, а&nbsp;не&nbsp;использовали сам count, ведь count нигде в&nbsp;этой функции не&nbsp;изменяется? Но&nbsp;это иллюзия. count&nbsp;— нелокальная переменная, поэтому её&nbsp;может изменить вызов другой функции, имеющей доступ к&nbsp;этой переменной. У&nbsp;нас как раз такая ситуация: функция вызывает саму себя и&nbsp;в&nbsp;процессе этого вызова переменная count изменяется. Чтобы такого не&nbsp;было, мы&nbsp;заранее сохраняем значение счетчика в&nbsp;отдельную переменную, которую не&nbsp;меняют вызовы других функций. А&nbsp;так как числа неизменяемы, то&nbsp;«изменение» (присваивание нового значения) значения переменной count никак не&nbsp;повлияет на&nbsp;current_index.</p>
+</div>
+<p><a name="9"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>9. Захват значения из&nbsp;аргумента</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Иногда бывает удобно сделать функцию, которая создает другие функции на&nbsp;основе аргументов. Например, мы&nbsp;хотим создать функции квадрата и&nbsp;куба числа.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> power<span style="color: black;">(</span>degree<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> func<span style="color: black;">(</span>x<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> x ** degree
+    <span style="color: #ff7700; font-weight: bold;">return</span> func
+<br><br>square <span style="color: #66cc66;">=</span> power<span style="color: black;">(</span><span style="color: #ff4500;">2</span><span style="color: black;">)</span>
+cube <span style="color: #66cc66;">=</span> power<span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: black;">)</span>
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>square<span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: black;">)</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># --&gt; 25</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Внутренняя функция взяла параметр <strong>degree</strong> из&nbsp;аргумента функции <strong>power()</strong>. Этот прием часто используется для того, чтобы зафиксировать какой-то набор параметров и&nbsp;сделать функцию с&nbsp;более коротким списком аргументов. Рассмотрим еще один пример. Пусть у&nbsp;нас есть функция <strong>send_invitation(email, name, text, date, city)</strong> и&nbsp;мы&nbsp;хотим использовать&nbsp;её, не&nbsp;перечисляя всякий раз весь этот внушительный список параметров.</p>
+<p>Например, вы&nbsp;знаете, что меняется только текст и&nbsp;адресат (имя и&nbsp;адрес), а&nbsp;город и&nbsp;дата мероприятия зафиксированы. Часть параметров будет браться из&nbsp;аргументов новой функции, часть&nbsp;— из&nbsp;аргументов старой.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> invitation_sender<span style="color: black;">(</span>city<span style="color: #66cc66;">,</span> date<span style="color: #66cc66;">,</span> text<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> sender<span style="color: black;">(</span><span style="color: #dc143c;">email</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> send_invitation<span style="color: black;">(</span><span style="color: #dc143c;">email</span><span style="color: #66cc66;">,</span> name<span style="color: #66cc66;">,</span> text<span style="color: #66cc66;">,</span> date<span style="color: #66cc66;">,</span> city<span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">return</span> sender
+&nbsp;
+&nbsp;
+sendmail <span style="color: #66cc66;">=</span> invitation_sender<span style="color: black;">(</span><span style="color: #483d8b;">'Москва'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'1 апреля 2017 г'</span><span style="color: #66cc66;">,<br></span><span style="color: #483d8b;">                             'Приглашаем вас на встречу'</span><span style="color: black;">)</span>
+sendmail<span style="color: black;">(</span><span style="color: #483d8b;">'vasiliy-petrov@yandex.ru'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Василий Петров'</span><span style="color: black;">)</span>
+sendmail<span style="color: black;">(</span><span style="color: #483d8b;">'petr-alekseev@yandex.ru'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Петр Алексеев'</span><span style="color: black;">)</span>
+sendmail<span style="color: black;">(</span><span style="color: #483d8b;">'vasiliy-vasilyev@yandex.ru'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Василий Васильев'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Функция, которая захватила объект из&nbsp;внешнего контекста, этот объект удерживает вечно. Хотя degree в&nbsp;функции power является локальной переменной, эта переменная не&nbsp;исчезнет бесследно после завершения работы функции power. Функция, которая будет возвращена несет значение этой переменной degree с&nbsp;собой.</p>
+</div>
+<p><a name="10"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>10. Немного о&nbsp;терминологии</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Программисты, как и&nbsp;любые другие специалисты, любят давать понятиям названия. Давайте дадим названия тем понятиям, которые вы&nbsp;уже узнали.</p>
+<p>Функция, которая использует внешние переменные, не&nbsp;являющиеся её&nbsp;аргументами, называется <strong>замыканием</strong>. Если использует нелокальные переменные&nbsp;— она является замыканием (независимо от&nbsp;того, были&nbsp;ли они определены во&nbsp;внешней функции или пришли из&nbsp;аргументов внешней функции). Если функция использует глобальные переменные&nbsp;— это тоже замыкание. Но&nbsp;чаще всего замыканием называют все-таки функцию, которая использует нелокальные переменные. Такая функция как&nbsp;бы «таскает за&nbsp;собой» свои внешние переменные, но&nbsp;никому их&nbsp;не&nbsp;показывает.</p>
+<p>Функция, которая принимает функцию в&nbsp;качестве аргумента или&nbsp;же возвращает функцию, называется <strong>функцией высшего порядка</strong>.</p>
+<p>Функция, которая принимает функцию и&nbsp;возвращает функцию называется <strong>декоратором</strong>. Но&nbsp;при этом предполагается, что возвращенная функция должна быть обёрткой над переданной функцией.</p>
+</div>
+<div style="padding-left: 60px;">
+<p><strong>Задача «Декоратор для кэширования»:</strong></p>
+<p><em>Напишите декоратор <strong>cached</strong>, который будет кэшировать результат вызова функции.</em></p>
+<p>Когда задекорированная функция впервые вызывается с&nbsp;некоторым аргументом, необходимо выполнить исходную функцию и&nbsp;сохранить посчитанный результат. При последующих вызовах не&nbsp;надо вызывать исходную функцию, а&nbsp;следует найти сохранённое значение и&nbsp;вернуть его. Этот декоратор будет очень полезен для <strong>чистых вычислений</strong> (т.е. вычислений, зависящих только от&nbsp;переданных аргументов), которые занимают продолжительное время.</p>
+<p>Вы&nbsp;уже видели подобное использование функций в&nbsp;уроке про рекурсию. В&nbsp;примере оттуда рекурсивное вычисление числа Фибоначчи при помощи функции fib() занимает очень много времени.</p>
+<p>В&nbsp;этот раз задача сложнее: во-первых, задекорированная функция должна самостоятельно осуществлять кэширование. Во-вторых, кэширование должно зависеть от&nbsp;переданных параметров, т.е. вам следует сохранять не&nbsp;один результат, а&nbsp;список посчитанных уже пар значений вида (набор параметров, результат).</p>
+<p>Мы&nbsp;предлагаем использовать словарь для решения данной задачи.</p>
+<p>Пример того, как можно будет использовать ваш декоратор:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">@</span>cached
+<span style="color: #ff7700; font-weight: bold;">def</span> fib<span style="color: black;">(</span>n<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> n <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">1</span> <span style="color: #ff7700; font-weight: bold;">or</span> n <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">2</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">1</span>
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> fib<span style="color: black;">(</span>n - <span style="color: #ff4500;">1</span><span style="color: black;">)</span> + fib<span style="color: black;">(</span>n - <span style="color: #ff4500;">2</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>fib<span style="color: black;">(</span><span style="color: #ff4500;">60</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Если рекурсивное вычисление числа Фибоначчи не&nbsp;закэшировать, вы&nbsp;едва&nbsp;ли дождётесь того, что шестидесятое число последовательности посчитается. Версия&nbsp;же с&nbsp;кэшированием сделает это очень быстро.</p>
+<p>Есть множество менее искусственных примеров, где такое кэширование может быть полезно: хотя в&nbsp;примере с&nbsp;числами Фибоначчи есть эффективный алгоритм их&nbsp;вычисления, вы&nbsp;не&nbsp;всегда знаете быстрый способ. А&nbsp;даже если знаете, иногда его слишком тяжело реализовать, тогда как сделать кэширование при помощи вашего декоратора займёт у&nbsp;вас всего лишь одну строчку.</p>
+<p>Кроме математических вычислений бывают и&nbsp;другие долгие операции. Например, так можно сохранять результаты интернет-запросов (интернет-запрос&nbsp;— это очень долгая операция по&nbsp;меркам компьютера).</p>
+</div></article></section>
+{%endblock%}

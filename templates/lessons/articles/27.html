@@ -1,0 +1,234 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Библиотеки Python. Часть №&nbsp;2&nbsp;(графика)</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Обработка изображений</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Растровые изображения</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">PIL. Установка библиотек</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Модельный пример</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;первом уроке, посвящённом модулям в&nbsp;Python, мы&nbsp;упоминали PyPI&nbsp;— настоящий кладезь библиотек для задач из&nbsp;разных областей. Обработка изображений&nbsp;— одна из&nbsp;таких областей, причём очень обширная. С&nbsp;ней мы&nbsp;сегодня и&nbsp;познакомимся&nbsp;— у&nbsp;такого выбора есть целых три причины.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Обработка изображений</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Во-первых, люди, увлекающиеся фотографией&nbsp;— едва&nbsp;ли не&nbsp;самое многочисленное полупрофессиональное сообщество в&nbsp;мире. Его популярности очень способствует распространение смартфонов и&nbsp;сервисов по&nbsp;работе с&nbsp;фотографиями&nbsp;— таких как Instagram и&nbsp;Pinterest.</p>
+<p>Во-вторых, работа с&nbsp;видео сводится к&nbsp;работе с&nbsp;отдельными изображениями. Это относится и&nbsp;к&nbsp;профессиональным техникам наложения фильтров, и&nbsp;даже к&nbsp;работе с&nbsp;<span style="text-decoration: underline;"><a href="https://ru.wikipedia.org/wiki/Хромакей" target="_blank" rel="noopener">хромакеем</a></span>, без которой не&nbsp;обходится практически ни&nbsp;один современный фильм.</p>
+<p>В-третьих, модель представления изображения в&nbsp;памяти компьютера довольно проста. Почти всегда это многомерный массив целых чисел. Даже на&nbsp;начальном этапе изучения программирования эта область интересна как для обучения, так и&nbsp;для применения на&nbsp;практике.</p>
+<p>Пока мы&nbsp;оставим за&nbsp;кадром вопросы скорости обработки изображений. С&nbsp;ними можно поэкспериментировать самостоятельно&nbsp;— это позволит обсудить скорость выполнения компилируемого и&nbsp;интерпретируемого кода. Кстати, для замеров времени тоже есть модуль&nbsp;— timeit.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Растровые изображения</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;будем работать с&nbsp;растровыми изображениями, представляющими собой массив (таблицу) пикселей разных цветов.</p>
+<p>Давайте посмотрим вот на&nbsp;это изображение.</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/owl.jpeg" width="600" height="auto"></p>
+<p>Если мы&nbsp;приблизим его, то&nbsp;увидим пиксели. Давайте увеличим глаз совы (кстати, её&nbsp;зовут Риана).</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/pixels.jpeg" width="600" height="auto"></p>
+<p>Итак, изображение можно моделировать списком списков (двумерной таблицей, в&nbsp;которой лежат цвета). Осталось только подумать, как именно кодировать цвета.</p>
+<p>Опыт работы со&nbsp;строками, где каждому символу соответствует свой код, должен подсказывать вам, что и&nbsp;с&nbsp;изображениями должно быть так&nbsp;же. Мы&nbsp;можем пронумеровать некоторое количество цветов и&nbsp;указывать их&nbsp;номера в&nbsp;нашем списке списков. Совокупность выбранных цветов будет называться <strong>палитрой</strong>.</p>
+<p>В&nbsp;итоге, нам нужен способ преобразования цветов в&nbsp;целые числа. Мы&nbsp;воспользуемся одной из&nbsp;самых популярных моделей представления цвета&nbsp;— RGB (Red, Green, Blue).</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>RGB</strong></h4>
+<div>В&nbsp;модели RGB каждый из&nbsp;цветов представляется совокупность трёх компонентов: красного, синего и&nbsp;зелёного. Значение каждого компонента лежит в&nbsp;диапазоне от&nbsp;0 (минимум) до&nbsp;255 (максимум), занимая таким образом 1&nbsp;байт в&nbsp;памяти.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>На&nbsp;самом деле модели хранения этих байтов в&nbsp;памяти Python и&nbsp;файле с&nbsp;картинкой бывают очень сложными&nbsp;— например, со&nbsp;сжатием. Однако мы&nbsp;будем работать с&nbsp;исходными, «чистыми» данными.</p>
+<p>Итак, каждый цвет&nbsp;— это совокупность трёх целых чисел (в&nbsp;Python её&nbsp;можно представить кортежем или списком). Кстати, сумма этих трёх чисел говорит о&nbsp;яркости пикселя: чем сумма больше, тем пиксель кажется ярче. На&nbsp;самом деле и&nbsp;тут всё сложнее, чем кажется: яркость каждого компонента для глаза не&nbsp;одинакова, однако примем это упрощение.</p>
+<p>Например, (0, 0, 0)&nbsp;— это чёрный цвет. Его яркость минимальна, оттенков нет.</p>
+<ul>
+<li>(255, 255, 255)&nbsp;— белый, максимальная яркость.</li>
+<li>(255, 0, 255)&nbsp;— очень насыщенный пурпурный (красный + синий).</li>
+<li>(255, 255, 0)&nbsp;— ярко-жёлтый (красный + зеленый).</li>
+<li>(100, 100, 100)&nbsp;— серый.</li>
+</ul>
+<p>Красный, зелёный и&nbsp;синий выбраны в&nbsp;качестве основных цветов из-за особенностей цветовой чувствительности рецепторов нашего глаза. Кстати, если мы&nbsp;сильно увеличим матрицу смартфона или монитора, который светит чистым белым светом, то&nbsp;увидим что-то вроде этого:</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/rgb.jpeg" width="600" height="auto"></p>
+<p>Да-да, это (255, 255, 255).</p>
+<p>Итак, для нас изображение&nbsp;— это список списков, элементами которого будут кортежи цвета.</p>
+<p>Кстати, легко заметить, что в&nbsp;нашей модели всего 256×256×256 = <strong>16 777 216</strong> разных цветов. Этого вполне достаточно, чтобы человеческий глаз не&nbsp;замечал дискретности (конечного числа оттенков) цветовой модели.</p>
+<p>У&nbsp;Яндекса есть специальный барабан, который позволяет знакомиться и&nbsp;подбирать цвета и&nbsp;их&nbsp;коды:</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/yandex.jpeg" width="600" height="auto"></p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. PIL. Установка библиотек</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Для работы с&nbsp;изображениями мы&nbsp;будем использовать библиотеку PIL (Python image library), а&nbsp;точнее её&nbsp;модификацию под названием <strong>Pillow</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PIP</strong></h4>
+<div>Для установки пакетов в&nbsp;Python служит специальная утилита командной строки pip, которая является еще и&nbsp;модулем.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Чтобы установить пакет, нужно выполнить команду pip install &lt;Имя модуля&gt;. Пакет будет скачан с&nbsp;PyPI и&nbsp;установлен, вы&nbsp;увидите примерно следующее:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="text" style="font-family: monospace;">c:\Python34\Scripts&gt;pip install pillow
+Collecting pillow
+  Downloading Pillow-4.0.0-cp34-cp34m-win32.whl (1.2MB)
+    100% |################################| 1.2MB 485kB/s
+Collecting olefile (from pillow)
+  Downloading olefile-0.44.zip (74kB)
+    100% |################################| 81kB 1.7MB/s
+Installing collected packages: olefile, pillow
+  Running setup.py install for olefile ... done
+Successfully installed olefile-0.44 pillow-4.0.0
+&nbsp;
+c:\Python34\Scripts&gt;</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Кроме опции install в&nbsp;pip доступны команды:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="text" style="font-family: monospace;">Usage:
+  pip &lt;command&gt; [options]
+&nbsp;
+Commands:
+  install          Install packages.
+  download         Download packages.
+  uninstall        Uninstall packages.
+  freeze           Output installed packages in requirements format.
+  list             List installed packages.
+  show             Show information about installed packages.
+  check            Verify installed packages have compatible dependencies.
+  search           Search PyPI for packages.
+  wheel            Build wheels from your requirements.
+  hash             Compute hashes of package archives.
+  completion       A helper command used for command completion.
+  help             Show help for commands.</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Pillow не&nbsp;чисто питоновская библиотека, она написана частично на&nbsp;языке С.&nbsp;Поэтому для некоторых версий Python может потребоваться компиляция кода доступным в&nbsp;системе С-компилятором, потому что pip сможет скачать только исходные коды библиотеки. Если такого компилятора нет (такое обычно бывает в&nbsp;windows-системах), стоит поискать скомпилированные версии в&nbsp;интернете (готовые к&nbsp;установке файлы имеют расширение .whl). Например, множество популярных библиотек можно найти на&nbsp;<span style="text-decoration: underline;"><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="noopener">странице</a></span> сайта лаборатории флуоресцентной динамики Калифорнийского университета.</p>
+<p>Также чтобы не&nbsp;задумываться о&nbsp;сложностях при установке библиотек, можно установить дистрибутив <span style="text-decoration: underline;"><a href="https://www.continuum.io/downloads" target="_blank" rel="noopener">Anaconda</a></span>. В&nbsp;нём есть все необходимые библиотеки Python и&nbsp;не&nbsp;только они.</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Модельный пример</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Рассмотрим пример работы с&nbsp;изображением, в&nbsp;котором&nbsp;мы:</p>
+<ol>
+<li>Пройдём по&nbsp;каждому пикселю в&nbsp;изображении.</li>
+<li>Получим для него значение цвета в&nbsp;RGB-нотации.</li>
+<li>Присвоим этому пикселю новое значение цвета (поменяем составляющие).</li>
+<li>В&nbsp;конце сохраним получившееся изображение с&nbsp;новым именем.</li>
+</ol>
+<p>Начальное изображение в&nbsp;этом примере никак не&nbsp;меняется, но&nbsp;от&nbsp;него можно отталкиваться в&nbsp;дальнейшей работе.</p>
+<p>Итак, приступим.</p>
+<p>Для работы нам потребуется файл с&nbsp;изображением&nbsp;— Риана.jpg, который нужно сохранить в&nbsp;тот&nbsp;же каталог, где будут лежать программы по&nbsp;его обработке.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">from</span> PIL <span style="color: #ff7700; font-weight: bold;">import</span> Image
+&nbsp;
+im <span style="color: #66cc66;">=</span> Image.<span style="color: #008000;">open</span><span style="color: black;">(</span><span style="color: #483d8b;">"Риана.jpg"</span><span style="color: black;">)</span>
+pixels <span style="color: #66cc66;">=</span> im.<span style="color: black;">load</span><span style="color: black;">(</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># список с пикселями</span>
+x<span style="color: #66cc66;">,</span> y <span style="color: #66cc66;">=</span> im.<span style="color: black;">size</span> <span style="color: #808080; font-style: italic;"># ширина (x) и высота (y) изображения</span>
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>x<span style="color: black;">)</span>:  
+    <span style="color: #ff7700; font-weight: bold;">for</span> j <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>y<span style="color: black;">)</span>:
+        r<span style="color: #66cc66;">,</span> g<span style="color: #66cc66;">,</span> b <span style="color: #66cc66;">=</span> pixels<span style="color: black;">[</span>i<span style="color: #66cc66;">,</span> j<span style="color: black;">]</span>
+        pixels<span style="color: black;">[</span>i<span style="color: #66cc66;">,</span> j<span style="color: black;">]</span> <span style="color: #66cc66;">=</span> g<span style="color: #66cc66;">,</span> b<span style="color: #66cc66;">,</span> r
+&nbsp;
+im.<span style="color: black;">save</span><span style="color: black;">(</span><span style="color: #483d8b;">"Риана2.jpg"</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Для работы с&nbsp;изображением нам нужен объект <strong>Image</strong>, который находится в&nbsp;библиотеке PIL (пишется большими буквами).</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Функция open</strong></h4>
+<div>Мы&nbsp;открываем изображение с&nbsp;диска функцией open. В&nbsp;функции open в&nbsp;скобках указывается или абсолютный путь к&nbsp;файлу или просто имя файла, если файл размещён в&nbsp;том&nbsp;же каталоге, где и&nbsp;сама программа.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Потом получаем список пикселей этого изображения, используя функцию <strong>load</strong>. Функцию применяем к&nbsp;объекту, загруженному в&nbsp;переменную&nbsp;<strong>im</strong>. После применения функции&nbsp;— получаем двумерный список, где для каждого пикселя хранится кортеж&nbsp;— цвет пикселя в&nbsp;палитре RGB.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>pixels</strong></h4>
+<div>Обратите внимание: pixels устроен так, что индексация в&nbsp;нём идёт кортежами, поэтому есть запись pixels[i, j], а&nbsp;не&nbsp;pixels[i][j], что, возможно, было&nbsp;бы удобней и&nbsp;привычней. Это особенность библиотеки: создателям показалось, что так будет архитектурно уместнее.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Функцией <strong>size</strong>, применённой к&nbsp;объекту&nbsp;im, мы&nbsp;получаем размер изображения: сначала ширину, потом высоту изображения в&nbsp;пикселях, что соответствует размерности pixels.</p>
+<p>Далее переберем все элементы pixels (двумя циклами for) и&nbsp;для каждого элемента получим значение трёх компонент цвета и&nbsp;запишем в&nbsp;массив pixels эти значения, но&nbsp;изменив порядок значений.</p>
+<p>Для получения трёх компонентов цвета каждого пикселя мы&nbsp;используем множественное присваивание, поэтому пишем</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">r<span style="color: #66cc66;">,</span> g<span style="color: #66cc66;">,</span> b <span style="color: #66cc66;">=</span> pixels<span style="color: black;">[</span>i<span style="color: #66cc66;">,</span> j<span style="color: black;">]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>вместо</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;">pixel <span style="color: #66cc66;">=</span> pixels<span style="color: black;">[</span>i<span style="color: #66cc66;">,</span> j<span style="color: black;">]</span>
+r <span style="color: #66cc66;">=</span> pixel<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+g <span style="color: #66cc66;">=</span> pixel<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span>
+b <span style="color: #66cc66;">=</span> pixel<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span></pre>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Множественное присваивание позволяет писать более простой и&nbsp;лаконичный код. Именно так мы&nbsp;поступили и&nbsp;в&nbsp;случае с&nbsp;вычислением x&nbsp;и&nbsp;у.</p>
+<p>Затем при помощи функции <strong>save</strong> сохраняем изменённый список пикселей в&nbsp;изображение с&nbsp;именем Риана2.jpg.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Обратите внимание, что в&nbsp;данном случае появляется новая картинка, в&nbsp;том&nbsp;же месте, где находилась начальная. Начальное изображение осталось без изменений, а&nbsp;новое изображение получено из&nbsp;начального путём изменения значений цветовых компонент для каждого пикселя.</div>
+</div>
+<p>&nbsp;</p></article></section>
+{%endblock%}

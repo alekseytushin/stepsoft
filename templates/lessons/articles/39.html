@@ -1,0 +1,386 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Проектирование и разработка классов. Часть №1</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Подготовительный этап</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Движение фигуры по пустой доске</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>На&nbsp;этом занятии мы&nbsp;коснёмся обширной темы проектирования программ. Чем больше и&nbsp;сложнее программа, тем важнее ещё до&nbsp;написания кода понять, что она должна делать и&nbsp;какова будет её&nbsp;внутренняя структура.</em></div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Проектирование</strong></h4>
+<div>Этап определения внутренней структуры программы, разнесения функциональности между модулями (а&nbsp;затем и&nbsp;внутри модулей&nbsp;— между функциями, классами и&nbsp;методами) называется проектированием. Чем сложнее программа, тем больше возможностей придётся рассмотреть при проектировании, и&nbsp;тем важнее выбрать подходящий вариант. Результат проектирования должен быть внутренне непротиворечив, хорошо отражать логику предметной области и&nbsp;допускать дальнейшее развитие программы без перепроектирования.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;разберём проектирование программы для игры в&nbsp;шахматы. Программа предназначена для двух игроков, которые за&nbsp;одним компьютером будут по&nbsp;очереди делать ходы. Программа должна принимать только допустимые ходы и&nbsp;отображать на&nbsp;экране положение фигур после каждого хода с&nbsp;помощью псевдографики. Никакого искусственного интеллекта и&nbsp;возможности самостоятельно делать ходы от&nbsp;программы не&nbsp;требуется.</p>
+<p>Можно было&nbsp;бы просто выбрать готовый вариант проектирования и&nbsp;приступить к&nbsp;поэтапной реализации каждого класса и&nbsp;метода. Однако в&nbsp;этом случае мы&nbsp;не&nbsp;смогли&nbsp;бы рассмотреть варианты и&nbsp;увидеть, что бывает, когда программа спроектирована некорректно и&nbsp;её&nbsp;приходится перепроектировать на&nbsp;лету. Такое случается, когда требования к&nbsp;программе изменяются и&nbsp;уточняются в&nbsp;ходе её&nbsp;написания.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Этапы проектирования программы</strong></h4>
+<div>Поэтому мы будем проектировать программу и сразу писать код, делая это в несколько этапов:
+<ul>
+<li>подготовительный этап: цвет фигур, доска;</li>
+<li>движение фигуры по пустой доске: реализация класса доски и классов пешки и ладьи;</li>
+<li>движение фигуры по доске с другими фигурами: ферзь, ладья, слон и пешка (при ходе на две клетки) не должны иметь препятствий на пути; взятие фигуры другой фигурой.</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;не&nbsp;будем реализовывать взятие на&nbsp;проходе, рокировку, превращение пешки, запрет хода королём под шах и&nbsp;прочие сложные правила.</p>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Подготовительный этап</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Для начала опишем цвет фигуры. От&nbsp;цвета нам нужно три операции: задание цвета фигуры, проверка цвета (чёрный или белый) и&nbsp;получение противоположного цвета.</p>
+<p>Простейший способ описать цвет&nbsp;— это определить две константы WHITE и&nbsp;BLACK и&nbsp;функцию, которая будет возвращать цвет, противоположный переданному.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">WHITE <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+BLACK <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">2</span>
+&nbsp;
+&nbsp;
+<span style="color: #808080; font-style: italic;"># Удобная функция для вычисления цвета противника</span>
+<span style="color: #ff7700; font-weight: bold;">def</span> opponent<span style="color: black;">(</span>color<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> color <span style="color: #66cc66;">==</span> WHITE:
+        <span style="color: #ff7700; font-weight: bold;">return</span> BLACK
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> WHITE
+&nbsp;
+&nbsp;
+<span style="color: #808080; font-style: italic;"># Инициализация цвета</span>
+color <span style="color: #66cc66;">=</span> WHITE
+<span style="color: #808080; font-style: italic;"># Проверка цвета</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> color <span style="color: #66cc66;">==</span> BLACK:
+    do_something<span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># сравнение цветов</span>
+color <span style="color: #66cc66;">==</span> other_color
+<span style="color: #808080; font-style: italic;"># Цвет противника</span>
+opponent_color <span style="color: #66cc66;">=</span> opponent<span style="color: black;">(</span>color<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, что используются именно константы, а&nbsp;не&nbsp;строки «white» и&nbsp;«black». Если допустить в&nbsp;такой строке опечатку (например, whte вместо white), то&nbsp;выражение всегда будет ложным. Однако в&nbsp;случае color == «whte» программа просто будет тихонько работать неправильно, и&nbsp;ошибку придётся поискать. Если&nbsp;же написать color == WHTE, то&nbsp;интерпретатор прекратит работу, встретив неизвестное имя WHTE, и&nbsp;сразу укажет, в&nbsp;какой строке ошибка.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Обозначение констант в Python</strong></h4>
+<div>Переменные BLACK и&nbsp;WHITE названы в&nbsp;верхнем регистре, чтобы показать, что они фактически будут константами, то&nbsp;есть мы&nbsp;не&nbsp;собираемся их&nbsp;изменять. Настоящих констант в&nbsp;Python нет, и&nbsp;WHITE&nbsp;— такая&nbsp;же переменная, как и&nbsp;любая другая, однако такие стандартные обозначения помогают писать и&nbsp;читать программы.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><br>На&nbsp;этом варианте кода с&nbsp;константами WHITE и&nbsp;BLACK мы&nbsp;и&nbsp;остановимся в&nbsp;итоге. Но&nbsp;давайте попробуем ещё пару вариантов.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #808080; font-style: italic;"># Не здравый пример лишнего класса для цвета:</span>
+WHITE <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+BLACK <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">2</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> PieceColor<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> color<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">=</span> color
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> opponent<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">==</span> WHITE:
+            <span style="color: #ff7700; font-weight: bold;">return</span> PieceColor<span style="color: black;">(</span>BLACK<span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">else</span>:
+            <span style="color: #ff7700; font-weight: bold;">return</span> PieceColor<span style="color: black;">(</span>WHITE<span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> is_black<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">==</span> BLACK
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> is_white<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">==</span> WHITE
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__eq__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">==</span> other.<span style="color: black;">color</span>
+&nbsp;
+&nbsp;
+<span style="color: #808080; font-style: italic;"># Инициализация цвета</span>
+color <span style="color: #66cc66;">=</span> PieceColor<span style="color: black;">(</span>WHITE<span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># Проверка цвета</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> color.<span style="color: black;">is_black</span><span style="color: black;">(</span><span style="color: black;">)</span>:
+    do_something<span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># сравнение цветов</span>
+color <span style="color: #66cc66;">==</span> other_color
+<span style="color: #808080; font-style: italic;"># Цвет противника</span>
+opponent_color <span style="color: #66cc66;">=</span> color.<span style="color: black;">opponent</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #808080; font-style: italic;"># Пример с отдельным классом для каждого цвета</span>
+<span style="color: #ff7700; font-weight: bold;">class</span> Black<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__eq__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        <span style="color: #808080; font-style: italic;"># истина, если другой операнд оператора ==</span>
+        <span style="color: #808080; font-style: italic;"># тоже является экземпляром (англ. instance) класса Black</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">isinstance</span><span style="color: black;">(</span>other<span style="color: #66cc66;">,</span> Black<span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> opponent<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> White<span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> is_black<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">True</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> is_white<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> White<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__eq__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> other<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">isinstance</span><span style="color: black;">(</span>other<span style="color: #66cc66;">,</span> White<span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> opponent<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> Black<span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> is_black<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> is_white<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">True</span>
+&nbsp;
+&nbsp;
+<span style="color: #808080; font-style: italic;"># Инициализация цвета</span>
+color <span style="color: #66cc66;">=</span> White<span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># Проверка цвета</span>
+color.<span style="color: black;">is_black</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># сравнение цветов</span>
+color <span style="color: #66cc66;">==</span> other_color
+<span style="color: #808080; font-style: italic;"># Цвет противника</span>
+opponent_color <span style="color: #66cc66;">=</span> color.<span style="color: black;">opponent</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Видно, что во&nbsp;втором варианте реализации цветов мы&nbsp;не&nbsp;смогли избавиться от&nbsp;констант WHITE и&nbsp;BLACK. В&nbsp;третьем вместо двух констант получились два класса, а&nbsp;код их&nbsp;использования прост и&nbsp;близок к&nbsp;человеческому языку. Однако всё портит излишняя сложность классов White и&nbsp;Black. Возможно, в&nbsp;какой-то другой программе это было&nbsp;бы оправдано, однако здесь мы&nbsp;точно знаем постановку задачи и&nbsp;не&nbsp;будем «навешивать» на&nbsp;цвета фигур дополнительной функциональности. Поэтому остановимся на&nbsp;самом первом варианте с&nbsp;двумя константами и&nbsp;функцией.</p>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Движение фигуры по пустой доске</h4>
+<p>&nbsp;</p>
+<div class="material__content-positioner"><img src="https://yastatic.net/s3/lyceum/content/image/chess.png" width="600" height="auto"></div>
+<div class="material__content-positioner"><img class="material__illustration" src="https://yastatic.net/s3/lyceum/content/images/first-year/lesson-35/chess.svg" width="680" height="auto"></div>
+<p>На&nbsp;картинке серым цветом показаны обозначения клеток, принятые в&nbsp;шахматах, а&nbsp;чёрным&nbsp;— индексы, которые будем использовать&nbsp;мы.</p>
+<p>Давайте спроектируем шахматную доску и&nbsp;позволим одной фигуре ходить по&nbsp;ней. Пока будем считать, что других фигур нет, и&nbsp;взаимодействия с&nbsp;ними учитывать не&nbsp;будем.</p>
+<p>Пока не&nbsp;очень понятно, какие у&nbsp;нас будут классы и&nbsp;методы. Очевидно, что нужно определить класс Board для доски и&nbsp;по&nbsp;классу для каждого типа фигуры. Но&nbsp;как распределить между ними функциональность и&nbsp;кто будет отвечать за&nbsp;ходы и&nbsp;взятия фигур, пока неясно.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Проектирование «сверху вниз» и «снизу вверх»</strong></h4>
+<div>Здесь можно пойти двумя путями: проектировать и&nbsp;программировать «сверху вниз» или «снизу вверх». Проектирование «сверху вниз» идёт от&nbsp;общего к&nbsp;частному: от&nbsp;интерфейса к&nbsp;деталям реализации. При движении «снизу вверх» сначала проектируются простые независимые классы и&nbsp;функции, а&nbsp;потом, на&nbsp;их&nbsp;основе, создаются более сложные классы и&nbsp;функции.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;начале урока мы&nbsp;написали код для цвета фигур, программируя «снизу вверх». Однако сейчас мы&nbsp;плохо представляем, какой интерфейс должен быть у&nbsp;доски и&nbsp;фигур. Если мы&nbsp;попробуем реализовать эти классы сразу, то&nbsp;есть риск, что при объединении в&nbsp;интерфейс пользователя мы&nbsp;не&nbsp;сумеем совместить их&nbsp;оптимальным образом. Поэтому сначала напишем интерфейс пользователя, чтобы понять, какие интерфейсы нам нужны от&nbsp;доски и&nbsp;фигур:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_board<span style="color: black;">(</span>board<span style="color: black;">)</span>: <span style="color: #808080; font-style: italic;"># Распечатать доску в текстовом виде (см. скриншот)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'     +----+----+----+----+----+----+----+----+'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> row <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">7</span><span style="color: #66cc66;">,</span> -<span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> -<span style="color: #ff4500;">1</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">' '</span><span style="color: #66cc66;">,</span> row<span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'  '</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">for</span> col <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">8</span><span style="color: black;">)</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'|'</span><span style="color: #66cc66;">,</span> board.<span style="color: black;">cell</span><span style="color: black;">(</span>row<span style="color: #66cc66;">,</span> col<span style="color: black;">)</span><span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">' '</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'|'</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'     +----+----+----+----+----+----+----+----+'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'        '</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> col <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">8</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>col<span style="color: #66cc66;">,</span> end<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'    '</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> main<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #808080; font-style: italic;"># Создаём шахматную доску</span>
+    board <span style="color: #66cc66;">=</span> Board<span style="color: black;">(</span><span style="color: black;">)</span>
+    <span style="color: #808080; font-style: italic;"># Цикл ввода команд игроков</span>
+    <span style="color: #ff7700; font-weight: bold;">while</span> <span style="color: #008000;">True</span>:
+        <span style="color: #808080; font-style: italic;"># Выводим положение фигур на доске</span>
+        print_board<span style="color: black;">(</span>board<span style="color: black;">)</span>
+        <span style="color: #808080; font-style: italic;"># Подсказка по командам</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Команды:'</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'    exit                               -- выход'</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'    move &lt;row&gt; &lt;col&gt; &lt;row1&gt; &lt;col1&gt;     -- ход из клетки (row, col)'</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'                                          в клетку (row1, col1)'</span><span style="color: black;">)</span>
+        <span style="color: #808080; font-style: italic;"># Выводим приглашение игроку нужного цвета</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> board.<span style="color: black;">current_player_color</span><span style="color: black;">(</span><span style="color: black;">)</span> <span style="color: #66cc66;">==</span> WHITE:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ход белых:'</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">else</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ход чёрных:'</span><span style="color: black;">)</span>
+        command <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> command <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'exit'</span>:
+            <span style="color: #ff7700; font-weight: bold;">break</span>
+        move_type<span style="color: #66cc66;">,</span> row<span style="color: #66cc66;">,</span> col<span style="color: #66cc66;">,</span> row1<span style="color: #66cc66;">,</span> col1 <span style="color: #66cc66;">=</span> command.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: black;">)</span>
+        row<span style="color: #66cc66;">,</span> col<span style="color: #66cc66;">,</span> row1<span style="color: #66cc66;">,</span> col1 <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>row<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>col<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>row1<span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>col1<span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> board.<span style="color: black;">move_piece</span><span style="color: black;">(</span>row<span style="color: #66cc66;">,</span> col<span style="color: #66cc66;">,</span> row1<span style="color: #66cc66;">,</span> col1<span style="color: black;">)</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ход успешен'</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">else</span>:
+            <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Координаты некорректны! Попробуйте другой ход!'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>Пример работы текстового интерфейса</p>
+<div class="material__content-positioner"><img src="https://yastatic.net/s3/lyceum/content/image/chesstxt.png" width="600" height="auto"></div>
+<div class="material__content-positioner"><img class="material__screenshot" src="https://yastatic.net/s3/lyceum/content/images/first-year/lesson-35/chess-interface.png" width="600" height="auto"></div>
+<p>Теперь понятно, что от&nbsp;доски нам понадобится достаточно простой интерфейс: инициализация без аргументов; возможность определять цвет фигур текущего игрока; метод cell, возвращающий двухбуквенное представление фигуры в&nbsp;клетке; и&nbsp;метод move_piece, который должен перемещать фигуру из&nbsp;одной клетки в&nbsp;другую. При этом метод move_piece должен возвращать истину, если ход сделан, и&nbsp;ложь, если по&nbsp;каким-то причинам ход невозможен.</p>
+<div class="material__content-positioner"><img src="https://yastatic.net/s3/lyceum/content/image/chessscheme.png" width="500" height="auto"></div>
+<div class="material__content-positioner"><img class="material__illustration" src="https://yastatic.net/s3/lyceum/content/images/first-year/lesson-35/chessscheme.svg" width="680" height="auto"></div>
+<p>Схема движения ладьи и&nbsp;пешки. Ладья движется по&nbsp;вертикали или горизонтали на&nbsp;любое количество клеток. Пешка&nbsp;— на&nbsp;одну или две клетки вперёд из&nbsp;начального положения и&nbsp;на&nbsp;одну клетку не&nbsp;из&nbsp;начального положения.</p>
+<p>Давайте реализуем этот класс:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> correct_coords<span style="color: black;">(</span>row<span style="color: #66cc66;">,</span> col<span style="color: black;">)</span>:
+    <span style="color: #483d8b;">'''Функция проверяет, что координаты (row, col) лежат
+    внутри доски'''</span>
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">0</span> <span style="color: #66cc66;">&lt;=</span> row <span style="color: #66cc66;">&lt;</span> <span style="color: #ff4500;">8</span> <span style="color: #ff7700; font-weight: bold;">and</span> <span style="color: #ff4500;">0</span> <span style="color: #66cc66;">&lt;=</span> col <span style="color: #66cc66;">&lt;</span> <span style="color: #ff4500;">8</span>    
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">class</span> Board:
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">=</span> WHITE
+        <span style="color: #008000;">self</span>.<span style="color: black;">field</span> <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+        <span style="color: #ff7700; font-weight: bold;">for</span> row <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">8</span><span style="color: black;">)</span>:
+            <span style="color: #008000;">self</span>.<span style="color: black;">field</span>.<span style="color: black;">append</span><span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #008000;">None</span><span style="color: black;">]</span> * <span style="color: #ff4500;">8</span><span style="color: black;">)</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">field</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">[</span><span style="color: #ff4500;">4</span><span style="color: black;">]</span> <span style="color: #66cc66;">=</span> Pawn<span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> WHITE<span style="color: black;">)<br></span><span style="color: #808080; font-style: italic;">        # Пешка белого цвета в клетке E2.</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> current_player_color<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">color</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> cell<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> row<span style="color: #66cc66;">,</span> col<span style="color: black;">)</span>:
+        <span style="color: #483d8b;">'''Возвращает строку из двух символов. Если в клетке (row, col)
+        находится фигура, символы цвета и фигуры. Если клетка пуста,
+        то два пробела.'''</span>
+        piece <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">field</span><span style="color: black;">[</span>row<span style="color: black;">]</span><span style="color: black;">[</span>col<span style="color: black;">]</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> piece <span style="color: #ff7700; font-weight: bold;">is</span> <span style="color: #008000;">None</span>:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'  '</span>
+        color <span style="color: #66cc66;">=</span> piece.<span style="color: black;">get_color</span><span style="color: black;">(</span><span style="color: black;">)</span>
+        c <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'w'</span> <span style="color: #ff7700; font-weight: bold;">if</span> color <span style="color: #66cc66;">==</span> WHITE <span style="color: #ff7700; font-weight: bold;">else</span> <span style="color: #483d8b;">'b'</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> c + piece.<span style="color: black;">char</span><span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> move_piece<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> row<span style="color: #66cc66;">,</span> col<span style="color: #66cc66;">,</span> row1<span style="color: #66cc66;">,</span> col1<span style="color: black;">)</span>:
+        <span style="color: #483d8b;">'''Переместить фигуру из точки (row, col) в точку (row1, col1).
+        Если перемещение возможно, метод выполнит его и вернёт True.
+        Если нет --- вернёт False'''</span>
+&nbsp;
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #ff7700; font-weight: bold;">not</span> correct_coords<span style="color: black;">(</span>row<span style="color: #66cc66;">,</span> col<span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">or</span> <span style="color: #ff7700; font-weight: bold;">not</span> correct_coords<span style="color: black;">(</span>row1<span style="color: #66cc66;">,</span> col1<span style="color: black;">)</span>:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> row <span style="color: #66cc66;">==</span> row1 <span style="color: #ff7700; font-weight: bold;">and</span> col <span style="color: #66cc66;">==</span> col1:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>  <span style="color: #808080; font-style: italic;"># нельзя пойти в ту же клетку</span>
+        piece <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">field</span><span style="color: black;">[</span>row<span style="color: black;">]</span><span style="color: black;">[</span>col<span style="color: black;">]</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> piece <span style="color: #ff7700; font-weight: bold;">is</span> <span style="color: #008000;">None</span>:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> piece.<span style="color: black;">get_color</span><span style="color: black;">(</span><span style="color: black;">)</span> <span style="color: #66cc66;">!=</span> <span style="color: #008000;">self</span>.<span style="color: black;">color</span>:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #ff7700; font-weight: bold;">not</span> piece.<span style="color: black;">can_move</span><span style="color: black;">(</span>row1<span style="color: #66cc66;">,</span> col1<span style="color: black;">)</span>:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">field</span><span style="color: black;">[</span>row<span style="color: black;">]</span><span style="color: black;">[</span>col<span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">None</span>  <span style="color: #808080; font-style: italic;"># Снять фигуру.</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">field</span><span style="color: black;">[</span>row1<span style="color: black;">]</span><span style="color: black;">[</span>col1<span style="color: black;">]</span> <span style="color: #66cc66;">=</span> piece  <span style="color: #808080; font-style: italic;"># Поставить на новое место.</span>
+        piece.<span style="color: black;">set_position</span><span style="color: black;">(</span>row1<span style="color: #66cc66;">,</span> col1<span style="color: black;">)</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">=</span> opponent<span style="color: black;">(</span><span style="color: #008000;">self</span>.<span style="color: black;">color</span><span style="color: black;">)</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">True</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;этом фрагменте кода мы&nbsp;определили функцию correct_coords, которая нужна для проверки корректности клетки, и&nbsp;класс Board, который отвечает за&nbsp;выбор фигуры и&nbsp;её&nbsp;движение. Также понятно, что от&nbsp;каждого класса фигур нам понадобится инициализатор с&nbsp;аргументом&nbsp;— цветом фигуры, методы current_player_color, can_move и&nbsp;char. Метод current_player_color должен возвращать цвет фигур текущего игрока, can_move&nbsp;— определять, может&nbsp;ли фигура данного класса пойти в&nbsp;клетку с&nbsp;заданными координатами, char&nbsp;— возвращать букву, обозначающую фигуру. У&nbsp;каждого класса фигуры будет своя реализация can_move, поэтому будет задействован полиморфизм. Давайте для примера напишем реализации классов пешки и&nbsp;ладьи:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #808080; font-style: italic;"># Класс Пешка</span>
+<span style="color: #ff7700; font-weight: bold;">class</span> Pawn:
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> row<span style="color: #66cc66;">,</span> col<span style="color: #66cc66;">,</span> color<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">row</span> <span style="color: #66cc66;">=</span> row
+        <span style="color: #008000;">self</span>.<span style="color: black;">col</span> <span style="color: #66cc66;">=</span> col
+        <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">=</span> color
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> set_position<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> row<span style="color: #66cc66;">,</span> col<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">row</span> <span style="color: #66cc66;">=</span> row
+        <span style="color: #008000;">self</span>.<span style="color: black;">col</span> <span style="color: #66cc66;">=</span> col
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> char<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'P'</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> get_color<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">color</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> can_move<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> row<span style="color: #66cc66;">,</span> col<span style="color: black;">)</span>:
+        <span style="color: #808080; font-style: italic;"># Пешка может ходить только по вертикали</span>
+        <span style="color: #808080; font-style: italic;"># "взятие на проходе" не реализовано</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">self</span>.<span style="color: black;">col</span> <span style="color: #66cc66;">!=</span> col:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>
+&nbsp;
+        <span style="color: #808080; font-style: italic;"># Пешка может сделать из начального положения ход на 2 клетки</span>
+        <span style="color: #808080; font-style: italic;"># вперёд, поэтому поместим индекс начального ряда в start_row.</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">==</span> WHITE:
+            direction <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+            start_row <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+        <span style="color: #ff7700; font-weight: bold;">else</span>:
+            direction <span style="color: #66cc66;">=</span> -<span style="color: #ff4500;">1</span>
+            start_row <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">6</span>
+&nbsp;
+        <span style="color: #808080; font-style: italic;"># ход на 1 клетку</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">self</span>.<span style="color: black;">row</span> + direction <span style="color: #66cc66;">==</span> row:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">True</span>
+&nbsp;
+        <span style="color: #808080; font-style: italic;"># ход на 2 клетки из начального положения</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">self</span>.<span style="color: black;">row</span> <span style="color: #66cc66;">==</span> start_row <span style="color: #ff7700; font-weight: bold;">and</span> <span style="color: #008000;">self</span>.<span style="color: black;">row</span> + <span style="color: #ff4500;">2</span> * direction <span style="color: #66cc66;">==</span> row:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">True</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>
+&nbsp;
+<span style="color: #808080; font-style: italic;"># Класс Ладья</span>
+<span style="color: #ff7700; font-weight: bold;">class</span> Rook:
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> row<span style="color: #66cc66;">,</span> col<span style="color: #66cc66;">,</span> color<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">row</span> <span style="color: #66cc66;">=</span> row
+        <span style="color: #008000;">self</span>.<span style="color: black;">col</span> <span style="color: #66cc66;">=</span> col
+        <span style="color: #008000;">self</span>.<span style="color: black;">color</span> <span style="color: #66cc66;">=</span> color
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> set_position<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> row<span style="color: #66cc66;">,</span> col<span style="color: black;">)</span>:
+        <span style="color: #008000;">self</span>.<span style="color: black;">row</span> <span style="color: #66cc66;">=</span> row
+        <span style="color: #008000;">self</span>.<span style="color: black;">col</span> <span style="color: #66cc66;">=</span> col
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> char<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #483d8b;">'R'</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> get_color<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">self</span>.<span style="color: black;">color</span>
+&nbsp;
+    <span style="color: #ff7700; font-weight: bold;">def</span> can_move<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> row<span style="color: #66cc66;">,</span> col<span style="color: black;">)</span>:
+        <span style="color: #808080; font-style: italic;"># Невозможно сделать ход в клетку, которая не лежит в том же ряду</span>
+        <span style="color: #808080; font-style: italic;"># или столбце клеток.</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">self</span>.<span style="color: black;">row</span> <span style="color: #66cc66;">!=</span> row <span style="color: #ff7700; font-weight: bold;">and</span> <span style="color: #008000;">self</span>.<span style="color: black;">col</span> <span style="color: #66cc66;">!=</span> col:
+            <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">True</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Вы&nbsp;наверняка обратили внимание, что написанные нами классы для фигур, имеют очень много общего. Это должно навести нас на&nbsp;мысль, что можно эффективно применить механизм наследования. Попробуйте написать этот код самостоятельно.</p>
+</div></article></section>
+{%endblock%}

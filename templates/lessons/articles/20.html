@@ -1,0 +1,435 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Функции. Возвращение значений из функций</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Связь между математическими функциями и&nbsp;функциями в&nbsp;Python</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Возвращаемые значения</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Множественные точки возврата из&nbsp;функции</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Возврат из глубины функции</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Отладка</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">6</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#6">Что можно возвращать из&nbsp;функции</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">7</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#7">Возврат нескольких значений</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;этом уроке мы&nbsp;обсудим, почему функции называются функциями, чем они похожи и&nbsp;чем отличаются от&nbsp;функций в&nbsp;математике. И&nbsp;главное, мы&nbsp;разберемся с&nbsp;основной целью вызова функций&nbsp;— возвратом во&nbsp;внешнюю программу результата вычисления.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Связь между математическими функциями и&nbsp;функциями в&nbsp;Python</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Функций, которые мы&nbsp;писали до&nbsp;сих пор, выводили значение на&nbsp;экран. Однако значение, выведенное на&nbsp;экран, полезно только для человека. Сама программа никак не&nbsp;может его использовать. Если&nbsp;бы функции могли выводить результаты своей работы только на&nbsp;экран, то&nbsp;их&nbsp;было&nbsp;бы почти невозможно комбинировать.</p>
+<p>Каждая функция может не&nbsp;только выполнять действия, но&nbsp;и&nbsp;выдавать какой-то результат, который потом можно использовать в&nbsp;программе&nbsp;— например записать в&nbsp;переменную. Вы&nbsp;еще не&nbsp;делали таких функций, но&nbsp;уже не&nbsp;раз пользовались ими. Попробуйте вспомнить несколько примеров.</p>
+<p>Если вы&nbsp;посмотрите примеры таких функций, вы&nbsp;увидите среди них много математических... функций.</p>
+<p>Функция в&nbsp;математике&nbsp;— это такое преобразование, которое из&nbsp;одного значения или набора значений делает другое значение. Например, функция квадратного корня делает из&nbsp;числа его корень. Функция f(a,b) = (a+b)^2 делает из&nbsp;двух чисел квадрат их&nbsp;суммы. Фактически единственное важное свойство математической функции заключается в&nbsp;том, что каждому набору аргументов она сопоставляет значение, и&nbsp;каждый раз вычисление функции на&nbsp;одних и&nbsp;тех&nbsp;же аргументах дает один и&nbsp;тот&nbsp;же результат. Сколько&nbsp;бы раз вы&nbsp;ни&nbsp;вычисляли корень из&nbsp;шестнадцати, каждый раз будете получать четыре.</p>
+<p>Заметьте, что математическая функция не&nbsp;обязана работать с&nbsp;числами. Например, в&nbsp;математике можно встретить такую функцию&nbsp;— число перестановок букв в&nbsp;слове. Это функция, которая принимает аргументом строку, а&nbsp;возвращает число. Или функцию пересечения множеств, которая берет в&nbsp;качестве аргументов два множества и&nbsp;возвращает тоже множество.</p>
+<p>Чем функции в&nbsp;программировании похожи и&nbsp;чем отличаются от&nbsp;функций в&nbsp;математике?</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Функция в&nbsp;языке Python&nbsp;— это некоторый алгоритм, который выполняется каждый раз одинаково. Для большинства функций возвращаемое значение, как и&nbsp;в&nbsp;случае математической функции, зависит только от&nbsp;аргументов.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>У&nbsp;функций в&nbsp;Python, как вы&nbsp;знаете, также есть список аргументов: иногда одно значение, иногда несколько, а&nbsp;иногда этот список аргументов и&nbsp;вовсе пустой, как у&nbsp;функции input. У&nbsp;функций также есть возвращаемое значение, это значение всегда ровно одно.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Может показаться, что некоторые функции ничего не&nbsp;возвращают (как функция print), но&nbsp;на&nbsp;самом деле они тоже возвращают значение&nbsp;— None.</div>
+</div>
+<div style="padding-left: 60px;">
+<p>&nbsp;</p>
+<p>В&nbsp;некоторых других языках программирования существуют функции, которые не&nbsp;возвращают значения, их&nbsp;называют «процедуры».</p>
+<p>Отличия заключаются в&nbsp;том, что функция в&nbsp;Python может зависеть не&nbsp;только от&nbsp;аргументов, но&nbsp;и&nbsp;от&nbsp;внешних причин. Что для функции может быть внешними причинами? Например, действия пользователя.</p>
+<p>Функция input помимо пустого списка аргументов получает ввод с&nbsp;клавиатуры пользователя. Некоторые функции читают файлы на&nbsp;жестком диске или в&nbsp;Интернете, а&nbsp;значит, их&nbsp;результат зависит от&nbsp;содержимого файла или веб-страницы. Есть функции, работа которых зависит от&nbsp;текущего времени. Есть функции, зависящие от&nbsp;датчика случайных чисел.</p>
+<p>Кроме того, работа некоторых функций зависит от&nbsp;внешних (глобальных) переменных (об&nbsp;этом мы&nbsp;будем говорить на&nbsp;следующем занятии). Это еще одна особенность функций в&nbsp;Python&nbsp;— они могут изменять что-то снаружи функции: менять глобальные переменные, выводить текст на&nbsp;экран, записывать что-то в&nbsp;файлы.</p>
+<p>Таким образом функции можно разделить на&nbsp;функции с&nbsp;побочными эффектами и&nbsp;без них.</p>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Функции без побочных эффектов</strong></h4>
+<div>Функции без побочных эффектов и&nbsp;не&nbsp;использующие внешних источников данных (их&nbsp;еще называют «чистые функции») ведут себя в&nbsp;точности как математические функции. Их&nbsp;результат зависит только от&nbsp;аргументов, а&nbsp;вызов таких функций никак не&nbsp;влияет на&nbsp;ход остальной программы.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Большая часть известных вам встроенных функций Python ведет себя так: math.sqrt, math.cos, abs, int, str, len, min, max.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Функции с&nbsp;побочными эффектами</strong></h4>
+<div>Функции с&nbsp;побочными эффектами&nbsp;— это, как правило, функции, предназначенные для общения с&nbsp;«внешним миром»: с&nbsp;пользователем, файлами на&nbsp;жестком диске, другими программами или серверами в&nbsp;интернете. Пока что вы&nbsp;знаете две такие функции, встроенные в&nbsp;язык: input и&nbsp;print.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Побочные эффекты часто используются для изменения аргумента&nbsp;— как в&nbsp;методах sort и&nbsp;reverse, которые изменяют данные в&nbsp;списке.</p>
+<p>Любая функция, которая использует input() или print(), тоже имеет побочные эффекты. И&nbsp;любая функция, которая изменяет значения внешних переменных, тоже имеет побочные эффекты. На&nbsp;следующем занятии мы&nbsp;отдельно поговорим о&nbsp;том, как функции с&nbsp;побочными эффектами могут влиять на&nbsp;глобальные переменные, а&nbsp;как делать чистые функции, и&nbsp;как с&nbsp;ними работать, мы&nbsp;начнем говорить сейчас.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Возвращаемые значения</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Для того чтобы функция вернула значение, используется оператор return. Использовать его очень просто. Давайте напишем функцию doubleIt, которая удваивает значение:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> double_it<span style="color: black;">(</span>x<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> x * <span style="color: #ff4500;">2</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Эта функция получила число x&nbsp;в&nbsp;качестве аргумента, умножила его на&nbsp;2&nbsp;и&nbsp;вернула результат в&nbsp;основную программу. Значением, которое функция вернула, можно воспользоваться. Например, мы&nbsp;можем посчитать длину окружности с&nbsp;использованием этой функции:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">radius <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">3</span>
+length <span style="color: #66cc66;">=</span> double_it<span style="color: black;">(</span><span style="color: #ff4500;">3.14</span><span style="color: black;">)</span> * radius</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Когда интерпретатор дойдет до&nbsp;doubleIt(3.14), начнет исполняться код функции. Когда он&nbsp;дойдет до&nbsp;слова return, значение, которое указано после return, будет подставлено в&nbsp;программе вместо вызова функции. Можно сказать, что сразу после того как функция досчитается, вычисление превратится в&nbsp;такое:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">length <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">6.28</span> * radius</pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Заметьте!</strong></h4>
+<div>Функция doubleIt ничего не&nbsp;выводит на&nbsp;экран. Она выполняет вычисления и&nbsp;сообщает их&nbsp;не&nbsp;пользователю, как мы&nbsp;делали раньше, а&nbsp;другой части программы.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Если нам потребуется не&nbsp;просто вернуть удвоенное число, а&nbsp;ещё и&nbsp;вывести его на&nbsp;экран, то&nbsp;лучше не&nbsp;добавлять print внутрь функции. Ведь если вы&nbsp;добавите print в&nbsp;функцию, то&nbsp;уже никак не&nbsp;сможете вызвать эту функцию в&nbsp;«тихом» режиме, чтобы она ничего не&nbsp;печатала. Вместо этого лучше сначала вернуть результат, а&nbsp;потом уже распечатать его во&nbsp;внешней программе. Вот так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>double_it<span style="color: black;">(</span><span style="color: #ff4500;">3.14</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Или, если вам нужно еще как-то использовать вычисленное значение, можно завести специальную переменную, хранящую результат вычисления.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">double_pi <span style="color: #66cc66;">=</span> double_it<span style="color: black;">(</span><span style="color: #ff4500;">3.14</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>double_pi<span style="color: black;">)</span>
+length <span style="color: #66cc66;">=</span> double_pi * radius</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Функция удваивания числа, конечно, совершенно бесполезна.</p>
+<p>А&nbsp;теперь давайте рассмотрим чуть более сложный пример&nbsp;— вычисление суммы элементов списка:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> my_sum<span style="color: black;">(</span>arr<span style="color: black;">)</span>:
+    result <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> element <span style="color: #ff7700; font-weight: bold;">in</span> arr:
+        result +<span style="color: #66cc66;">=</span> element
+    <span style="color: #ff7700; font-weight: bold;">return</span> result
+<span style="color: #ff7700; font-weight: bold;"><br><br>print</span><span style="color: black;">(</span>my_sum<span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Здесь мы&nbsp;используем очень распространенный способ написания функций: создаём вспомогательную переменную, а&nbsp;затем возвращаем её&nbsp;значение.</p>
+<p>Но&nbsp;мы&nbsp;ведь недавно говорили, что локальные переменные живут только внутри функции. Если переменная result исчезнет, то&nbsp;почему результат&nbsp;— число 10&nbsp;— никуда не&nbsp;пропадает?</p>
+<p>Объект (значение) может существовать даже когда нет переменной, в&nbsp;которой он&nbsp;хранится. Когда мы&nbsp;записываем число в&nbsp;result, мы&nbsp;фактически создаём объект числа и&nbsp;даём ему временное имя result. Потом, когда мы&nbsp;пишем return result, мы&nbsp;возвращаем не&nbsp;переменную. Как и&nbsp;в&nbsp;большинстве конструкций языка (кроме, пожалуй, присваивания), вместо переменной подставляется её&nbsp;значение: таким образом, мы&nbsp;возвращаем объект «число 10». У&nbsp;этого объекта нет имени, что не&nbsp;мешает функции print использовать его и&nbsp;напечатать 10&nbsp;на экране. (Подробнее об&nbsp;этом мы&nbsp;поговорим, когда будем рассматривать, как передаются параметры в&nbsp;функции).</p>
+<p>Однако если ни&nbsp;программист, ни&nbsp;программа не&nbsp;имеют возможности пользоваться объектом, то&nbsp;этот объект становится не&nbsp;нужен. После того как функция print отработала, доступ к&nbsp;результату вычисления пропал, ведь мы&nbsp;никуда не&nbsp;сохранили этот результат. На&nbsp;объект «число&nbsp;10» нет ссылок, поэтому интерпретатор может его «выкинуть».</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Это называется «сборка мусора»: Python автоматически избавляется от&nbsp;всех объектов, которые невозможно использовать.</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Множественные точки возврата из&nbsp;функции</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Часто бывают ситуации, когда, в&nbsp;зависимости от&nbsp;входных данных, нужно выполнить различные наборы команд. Например, когда мы&nbsp;считаем модуль, в&nbsp;случае отрицательного числа нужно взять число со&nbsp;знаком минус, а&nbsp;в&nbsp;случае неотрицательного числа (положительное или ноль) мы&nbsp;берем само число.</p>
+<p>Давайте запишем это в&nbsp;виде функции my_abs(x).</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> my_abs<span style="color: black;">(</span>x<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> x <span style="color: #66cc66;">&gt;=</span> <span style="color: #ff4500;">0</span>:
+        result <span style="color: #66cc66;">=</span> x
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        result <span style="color: #66cc66;">=</span> -x
+    <span style="color: #ff7700; font-weight: bold;">return</span> result</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Но&nbsp;если вдуматься, то&nbsp;зачем ждать конца функции, когда мы&nbsp;уже вычислили результат и&nbsp;совершили все необходимые действия? Давайте завершим функцию сразу, ведь return именно для этого создан: он&nbsp;не&nbsp;только возвращает значение функции, но&nbsp;и&nbsp;возвращает нас из&nbsp;функции в&nbsp;основную программу. После вызова оператора return выполнение кода функции заканчивается. Раз так, давайте немного упростим программу. Сначала мы&nbsp;перенесем return к&nbsp;тому месту, где результат получен:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> my_abs<span style="color: black;">(</span>x<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> x <span style="color: #66cc66;">&gt;=</span> <span style="color: #ff4500;">0</span>:
+        result <span style="color: #66cc66;">=</span> x
+        <span style="color: #ff7700; font-weight: bold;">return</span> result
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        result <span style="color: #66cc66;">=</span> -x
+        <span style="color: #ff7700; font-weight: bold;">return</span> result</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А&nbsp;теперь можно заметить, что переменная result лишняя: когда вы&nbsp;подставляете значение result, вместо result вы&nbsp;легко можете подставить сразу результат.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> my_abs<span style="color: black;">(</span>x<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> x <span style="color: #66cc66;">&gt;=</span> <span style="color: #ff4500;">0</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> x
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> -x</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Заметьте, что любую функцию можно написать с&nbsp;одним-единственным оператором return, но&nbsp;часто использовать несколько точек выхода из&nbsp;функции просто удобно.</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Возврат из глубины функции</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Множественные точки возврата из&nbsp;функции позволяют нам упростить обработку и&nbsp;с&nbsp;более сложными структурами, например, вложенными списками. Наша следующая программа будет проверять, есть&nbsp;ли в&nbsp;матрице элемент, отличающийся от&nbsp;искомого не&nbsp;больше, чем на&nbsp;число eps.</p>
+<p>Матрица записывается как список списков. Мы&nbsp;предполагаем, что наша функция будет работать с&nbsp;большими матрицами, поэтому нам не&nbsp;хочется тратить лишнее время на&nbsp;проверку. Мы&nbsp;будем прекращать поиск как только нашли подходящий элемент. Давайте для начала разберемся, как&nbsp;бы мы&nbsp;действовали без множественных операторов return.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> matrix_has_close_value<span style="color: black;">(</span>matrix<span style="color: #66cc66;">,</span> value<span style="color: #66cc66;">,</span> eps<span style="color: black;">)</span>:
+    found <span style="color: #66cc66;">=</span> <span style="color: #008000;">False</span>
+    <span style="color: #ff7700; font-weight: bold;">for</span> row <span style="color: #ff7700; font-weight: bold;">in</span> matrix:
+        <span style="color: #ff7700; font-weight: bold;">for</span> cell <span style="color: #ff7700; font-weight: bold;">in</span> row:
+            <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">abs</span><span style="color: black;">(</span>cell - value<span style="color: black;">)</span> <span style="color: #66cc66;">&lt;=</span> eps:
+                found <span style="color: #66cc66;">=</span> <span style="color: #008000;">True</span>
+                <span style="color: #ff7700; font-weight: bold;">break</span>
+        <span style="color: #ff7700; font-weight: bold;">if</span> found:
+            <span style="color: #ff7700; font-weight: bold;">break</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> found:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">True</span>
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Как видите, нам приходится прилагать некоторые усилия, чтобы выйти из&nbsp;нескольких уровней вложенности. Каждый уровень вложенности&nbsp;— это дополнительное препятствие на&nbsp;пути к&nbsp;завершению функции. Ему мешают не&nbsp;только циклы, как в&nbsp;этом примере, но&nbsp;и&nbsp;условные операторы.</p>
+<p>Перепишем теперь функцию с&nbsp;учетом того, что как только мы&nbsp;нашли элемент, мы&nbsp;уже знаем, что ответ&nbsp;— True (т.е. элемент содержится в&nbsp;матрице). А&nbsp;если мы&nbsp;закончили перебор элементов и&nbsp;так и&nbsp;не&nbsp;нашли ни&nbsp;одного элемента, то&nbsp;ответ False.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> matrix_has_close_value<span style="color: black;">(</span>matrix<span style="color: #66cc66;">,</span> value<span style="color: #66cc66;">,</span> eps<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">for</span> row <span style="color: #ff7700; font-weight: bold;">in</span> matrix:
+        <span style="color: #ff7700; font-weight: bold;">for</span> cell <span style="color: #ff7700; font-weight: bold;">in</span> row:
+            <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">abs</span><span style="color: black;">(</span>cell - value<span style="color: black;">)</span> <span style="color: #66cc66;">&lt;=</span> eps:
+                <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">True</span>
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Хотя return False и&nbsp;не&nbsp;заключен ни&nbsp;в&nbsp;какое условие, выполняется он&nbsp;только когда элемент не&nbsp;найден. Если элемент найден, мы&nbsp;сразу выходим из&nbsp;функции, и&nbsp;до&nbsp;этой строки просто не&nbsp;доходим. Оператор return очень удобен, когда нужно выйти из&nbsp;глубины функции.</p>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Отладка</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте проследим последовательность выполнения команд в&nbsp;отладчике. Запустим следующий код:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> matrix_has_close_value<span style="color: black;">(</span>matrix<span style="color: #66cc66;">,</span> value<span style="color: #66cc66;">,</span> eps<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">for</span> row <span style="color: #ff7700; font-weight: bold;">in</span> matrix:
+        <span style="color: #ff7700; font-weight: bold;">for</span> cell <span style="color: #ff7700; font-weight: bold;">in</span> row:
+            <span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #008000;">abs</span><span style="color: black;">(</span>cell - value<span style="color: black;">)</span> <span style="color: #66cc66;">&lt;=</span> eps:
+                <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">True</span>
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #008000;">False</span>
+​<br>
+table <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">3</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> <span style="color: black;">[</span><span style="color: #ff4500;">4</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">5</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">6</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> <span style="color: black;">[</span><span style="color: #ff4500;">7</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">8</span><span style="color: #66cc66;">, </span><span style="color: #ff4500;">9</span><span style="color: black;">]</span><span style="color: black;">]</span>
+result <span style="color: #66cc66;">=</span> matrix_has_close_value<span style="color: black;">(</span>table<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3.75</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0.5</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>result<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Будем выполнять инструкции по&nbsp;одной с&nbsp;помощью команды step into. Сначала будет определена функция matrix_has_close_value. На&nbsp;этом шаге интерпретатор Python в&nbsp;неё ещё не&nbsp;заходит. Затем мы&nbsp;определяем переменную table, и&nbsp;она появляется на&nbsp;вкладке stack data в&nbsp;разделе глобальных переменных. Затем мы&nbsp;запускаем функцию и&nbsp;попадаем внутрь неё.</p>
+<p>Обратите внимание, появились локальные переменные matrix, value и&nbsp;eps. Причем matrix указывает ровно туда&nbsp;же, куда указывает table (у&nbsp;них одинаковый идентификатор 0x&lt;...&gt;). На&nbsp;прошлых занятиях мы&nbsp;обсуждали, что объект, который был подставлен в&nbsp;аргумент получает новое имя&nbsp;— в&nbsp;нашем случае matrix,&nbsp;— но&nbsp;старое имя тоже остается, потому что переменная table находится в&nbsp;глобальной области видимости.</p>
+<p>Если продолжить выполнение, пройдет несколько итераций цикла, пока мы&nbsp;не&nbsp;дойдем до&nbsp;момента, когда элемент в&nbsp;ячейке (число&nbsp;4) c&nbsp;точностью до&nbsp;eps(=0.5) совпадёт со&nbsp;значением value(=3.75), которое мы&nbsp;ищем. На&nbsp;этом месте мы&nbsp;перейдем на&nbsp;строчку return True и&nbsp;следующим шагом выйдем из&nbsp;функции.</p>
+<p>После того, как мы&nbsp;вышли из&nbsp;функции, в&nbsp;разделе локальных переменных появляется : True. Следующим шагом возвращённое значение будет записано в&nbsp;переменную result, которая появится в&nbsp;списке глобальных. Затем эта переменная будет подставлена в&nbsp;функцию print и&nbsp;напечатана.</p>
+<p>Что мы&nbsp;видим? Во-первых, у&nbsp;нас есть возможность пронаблюдать, что происходит с&nbsp;объектами и&nbsp;переменными. Во-вторых, слово return, действительно, моментально завершает функцию и&nbsp;перемещает нас к&nbsp;строке, в&nbsp;которой мы&nbsp;вызвали функцию. И, конечно, возвращает результат.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Для пошаговой отладки мы&nbsp;пользовались командой step into. Она так называется, поскольку заставляет отладчик зайти в&nbsp;функцию (если это возможно) и&nbsp;показывать мельчайшие детали исполнения кода функции.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Бывает, что заходить в&nbsp;функцию незачем: потому что вы&nbsp;в&nbsp;ней уверены и&nbsp;ничего не&nbsp;собираетесь менять. Или потому что в&nbsp;ней слишком много команд, которые не&nbsp;просмотреть. Или потому что решили отложить её&nbsp;отладку на&nbsp;будущее.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>На&nbsp;этот случай в&nbsp;отладчике предусмотрена команда <strong>step over statement</strong>. При её&nbsp;применении функция всё равно будет вызвана, но&nbsp;отладчик не&nbsp;покажет вам подробности исполнения. Он&nbsp;просто дождется, пока функция завершит свою работу, вернет результат и&nbsp;переведет вас на&nbsp;следующую строчку после вызова функции. Также иногда бывает нужно выйти из&nbsp;функции. Например, когда вы&nbsp;зашли в&nbsp;неё отладчиком случайно или когда вы&nbsp;все в&nbsp;ней уже понимаете. В&nbsp;таких случаях вам поможет команда <strong>step out</strong>. Она продолжает выполнение, пока не&nbsp;встретит return, выполняет его и&nbsp;оказывается за&nbsp;пределами функции.</div>
+</div>
+<div style="padding-left: 60px;">
+<p>&nbsp;</p>
+<p><strong>Задание.</strong> Поэкспериментируйте с&nbsp;отладчиком:</p>
+<ul>
+<li>С&nbsp;помощью пошаговой отладки узнайте, что произойдет, если вместо второго аргумента подставить значение, которого нет в&nbsp;матрице?</li>
+<li>Сравните списки локальных и&nbsp;глобальных переменных до&nbsp;того, как мы&nbsp;входим в&nbsp;функцию. Что происходит со&nbsp;списком глобальных переменных, когда мы&nbsp;входим в&nbsp;функцию? Что происходит со&nbsp;списком локальных переменных?</li>
+<li>Узнайте, как будут изменяться переменные при входе в&nbsp;функцию (следите за&nbsp;идентификаторами объектов), если завести еще одну глобальную переменную с&nbsp;именем matrix?</li>
+<li>Что произойдет, если, находясь в&nbsp;функции, присвоить что-нибудь переменной table?</li>
+<li>А&nbsp;что если, находясь в&nbsp;функции, попробовать изменить какой-нибудь элемент в&nbsp;table?</li>
+<li>Разберитесь с&nbsp;отличиями между step into, step out и&nbsp;step over. В&nbsp;каких ситуациях они работают, в&nbsp;каких не&nbsp;работают?</li>
+</ul>
+<p>Не&nbsp;бойтесь испортить функцию! Изменяйте её&nbsp;как угодно, лишь&nbsp;бы можно было понять, как ведет себя интерпретатор Python в&nbsp;сложных ситуациях.</p>
+</div>
+<p>&nbsp;</p>
+<p><a name="6"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>6. Что можно возвращать из&nbsp;функции</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;функциях, которые не&nbsp;возвращают значение, тоже можно использовать return. Если написать return без аргументов, то&nbsp;функция просто сразу завершит свою работу (без return функция завершает работу, когда выполнит последнюю команду). Как мы&nbsp;уже упоминали, результат возвращает любая функция, даже если в&nbsp;ней нет слова return. Результатом такой функции будет None. Если в&nbsp;функции использован return без аргументов, это фактически эквивалентно return None.</p>
+</div>
+<p><a name="7"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>7. Возврат нескольких значений</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;задаче про корни квадратного уравнения у&nbsp;нас уже возникала необходимость вернуть несколько значений. Вы&nbsp;видели, что это можно сделать, вернув список значений. То&nbsp;же самое можно сделать немного проще: если после return написать несколько значений через запятую, то&nbsp;Python автоматически поместит эти значения в&nbsp;кортеж и&nbsp;вернет этот кортеж.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> get_coordinates<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span>
+<span style="color: #ff7700; font-weight: bold;"><br><br>print</span><span style="color: black;">(</span>get_coordinates<span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; (1, 2)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Команда возврата нескольких значений</p>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span> </pre>
+<p>практически идентична команде возврата кортежа с&nbsp;этими значениями</p>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Вы&nbsp;можете пользоваться любой, как вам больше нравится.</p>
+<p>Мы&nbsp;разобрались, как возвращать значения из&nbsp;функции. Но&nbsp;как программа их&nbsp;получает, когда значений несколько? Оказывается, есть несколько способов. Один вариант вы&nbsp;знаете, можно записать в&nbsp;переменную весь кортеж:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> get_coordinates<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span>
+<br><br>result <span style="color: #66cc66;">=</span> get_coordinates<span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>result<span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; (1, 2)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Можно вместо этого воспользоваться множественным присваиванием, тогда значения автоматически будут распределены по&nbsp;разным переменным:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">x<span style="color: #66cc66;">,</span> y <span style="color: #66cc66;">=</span> get_coordinates<span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>x<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; 1</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>y<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; 2</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, getCoordinates в&nbsp;обоих случаях&nbsp;— это одна и&nbsp;та&nbsp;же функция, которая используется немного по-разному.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Когда в&nbsp;функции используется несколько операторов return, позаботьтесь о&nbsp;том, чтобы каждый из&nbsp;операторов возвращал однотипные наборы значений. Ведь вызывающая функция заранее не&nbsp;знает, какой из&nbsp;операторов return выполнится, а&nbsp;значит, мы&nbsp;не&nbsp;сможем использовать множественное присваивание в&nbsp;полную силу.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;следующей функции (это, конечно, бесполезная функция, она нужна только для иллюстрации) мы&nbsp;не&nbsp;последовали этому совету и&nbsp;возвращаем координаты то&nbsp;на&nbsp;плоскости, то&nbsp;в&nbsp;трехмерном пространстве.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> get_coordinates<span style="color: black;">(</span>index<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> index % <span style="color: #ff4500;">2</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">0</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">1.5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2.5</span>
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        <span style="color: #ff7700; font-weight: bold;">return</span> <span style="color: #ff4500;">1.5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2.5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Теперь вызов&nbsp;x, y = getCoordinates() будет ломаться на&nbsp;нечётных индексах, а&nbsp;x, y, z = getCoordinates() — на&nbsp;чётных индексах. В&nbsp;итоге мы&nbsp;не&nbsp;сможем записать ни&nbsp;один из&nbsp;вариантов так, чтобы он&nbsp;не&nbsp;сломался при каких-нибудь условиях.</p>
+<p>Вы&nbsp;уже видели, как локальные переменные помогают интерпретатору Python не&nbsp;запутаться в&nbsp;именах переменных. Но&nbsp;не&nbsp;всегда бывает просто понять, что за&nbsp;переменная используется в&nbsp;функции: собственная локальная переменная или чужая&nbsp;— из&nbsp;внешней программы. Чтобы разобраться в&nbsp;этих тонкостях, на&nbsp;следующем занятии мы&nbsp;очень подробно обсудим, что такое область видимости переменных.</p>
+</div></article></section>
+{%endblock%}

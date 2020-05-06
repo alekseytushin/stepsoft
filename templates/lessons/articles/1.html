@@ -1,0 +1,400 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Знакомство со средой. Основы переменных и ввода-вывода, первые программы</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Введение</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Знакомство с IDE</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Команда print()</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Тестирующая система</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Команда input()</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">6</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#6">Переменные</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">7</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#7">Трассировка</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>Первый урок посвящен введению в&nbsp;язык Python и&nbsp;знакомству с&nbsp;теми техническими средствами, которые понадобятся для обучения по&nbsp;нашему курсу. Сегодня мы&nbsp;научимся писать программы, которые умеют что-то выводить на&nbsp;экран и&nbsp;считывать информацию с&nbsp;клавиатуры. А&nbsp;также познакомимся с&nbsp;переменными.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Введение</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><strong>Программа</strong>&nbsp;— это список команд, то&nbsp;есть инструкций для компьютера:</p>
+<p>— отобразить что-нибудь на&nbsp;экране,</p>
+<p>— вычислить что-нибудь</p>
+<p>— и&nbsp;т.&nbsp;д.</p>
+<p>В&nbsp;вашем компьютере много разных программ. Программа-браузер показывает вам страницы в&nbsp;интернете, программа-плеер проигрывает музыку, Word позволяет редактировать тексты, игры развлекают вас, вирусы мешают&nbsp;— и&nbsp;всё это программы. Чтобы создать страницу на&nbsp;сайте в&nbsp;интернете (которую получит и&nbsp;покажет ваш браузер)&nbsp;— например, вашу страничку ВКонтакте, или результаты поиска в&nbsp;Яндексе&nbsp;— компьютер, на&nbsp;котором работает этот сайт, часто тоже выполняет какую-то программу.</p>
+<p>Есть разные способы записать программу. Однако наиболее «удобная» для компьютера форма записи в&nbsp;виде машинного кода неудобна для человека. Поэтому для составления программ придумали языки программирования.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Язык программирования</strong></h4>
+<div><strong>Язык программирования</strong>&nbsp;— это набор строгих правил, согласно которым компьютер может «понимать» команды и&nbsp;выполнять&nbsp;их. Текст программы, написанной на&nbsp;любом языке программирования, называется <strong>программным кодом</strong> или просто кодом.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Языки программирования бывают двух основных типов: <strong>компилируемые</strong> и&nbsp;<strong>интерпретируемые</strong>. Если программа написана на&nbsp;компилируемом языке (например, Pascal или&nbsp;C++), то&nbsp;перед выполнением её&nbsp;нужно сначала полностью проверить на&nbsp;некоторые ошибки и&nbsp;перевести в&nbsp;более «понятную» компьютеру форму. Это делает специальная программа&nbsp;— компилятор.</p>
+<p>Если программа написана на&nbsp;интерпретируемом языке (например, Java или Python), то&nbsp;она не&nbsp;переводится целиком в&nbsp;машинный код, а&nbsp;специальная программа&nbsp;— интерпретатор идет по&nbsp;тексту программы, анализирует и&nbsp;выполняет каждую отдельную команду. Такой подход придаёт языку особую гибкость, и&nbsp;простоту в&nbsp;написании программ.</p>
+<p>Язык Python, который мы&nbsp;сейчас начнем изучать, разработал голландский программист Гвидо Ван Руссум в&nbsp;1991&nbsp;году. Не&nbsp;подумайте, что язык назван в&nbsp;честь змеи-питона, Гвидо был большим фанатом британского комедийного сериала «Летающий цирк Монти Пайтона» (англ. Monty Python’s Flying Circus) и&nbsp;именно оттуда пришло название языка. В&nbsp;настоящее время в&nbsp;русском языке для названия языка используют два варианта произношения&nbsp;— «Питон» или «Пайтон».</p>
+<p>Python относится к&nbsp;интерпретируемым языкам программирования, чтобы запустить написанную на&nbsp;Python программу, нужен интерпретатор Python (его можно скачать с&nbsp;сайта <span style="text-decoration: underline;"><a href="https://www.python.org" target="_blank" rel="noopener">python.org</a></span>). Подробнее об&nbsp;установке языка Python смотрите в&nbsp;видеоинструкции к&nbsp;уроку.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Знакомство с IDE</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Команды для интерпретатора можно писать в&nbsp;обычном текстовом редакторе (например, в&nbsp;Блокноте). Но&nbsp;чаще для этого пользуются специальной программой, которая называется <strong>средой разработки</strong> (англ. IDE, Integrated Development Environment). Среда разработки&nbsp;— тоже текстовый редактор, но&nbsp;с&nbsp;дополнительными возможностями. Например, она умеет сама находить на&nbsp;компьютере программу-интерпретатор и&nbsp;запускать одной кнопкой. Также среда разработки форматирует написанный вами код, чтобы его удобно было читать, а&nbsp;иногда даже подсказывает, где вы&nbsp;допустили ошибку.</p>
+<p>На&nbsp;первом этапе мы&nbsp;будем использовать среду разработки Wing IDE. Её&nbsp;можно скачать с&nbsp;<span style="text-decoration: underline;"><a href="http://www.wingware.com/downloads/wingide-101" target="_blank" rel="noopener">сайта разработчика</a></span>, фирмы Wingware. В&nbsp;будущем вам может потребоваться более сложная, но&nbsp;и&nbsp;более богатая возможностями среда разработки. В&nbsp;этом случае мы&nbsp;рекомендуем использовать <span style="text-decoration: underline;"><a href="https://www.jetbrains.com/pycharm-edu/" target="_blank" rel="noopener">PyCharm</a></span>, продукт российской фирмы JetBrains.</p>
+<p>Ну&nbsp;что&nbsp;же, пора приступать к&nbsp;разработке программ. Для начала, запустите среду разработки WingIDE. И&nbsp;давайте проверим настройки кодировок файлов. Эти настройки потребуются для корректной сдачи программ в&nbsp;тестирующую систему.</p>
+<p>— Зайдите в&nbsp;меню «Edit» → «Preferences». Перейдите к&nbsp;категории «Files». Для опции «Default Encoding» выберите значение «Unicode (UTF-8) utf-8».</p>
+<p>— Зайдите в&nbsp;меню «Edit» → «Preferences». Перейдите к&nbsp;категории «Debugger» → «I/O». Для опции «Debug I/O Encoding» выберите значение «Unicode (UTF-8) utf-8».</p>
+<p><strong>Примечание.</strong> На&nbsp;компьютерах с&nbsp;системой Mac OS&nbsp;вместо меню «Edit» необходимо открывать вкладку «Wing 101» или Cmd + «,».</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP8</strong></h4>
+<div>При оформлении программ, мы&nbsp;будем пользоваться PEP8&nbsp;— (Python Enhanced Proposal)&nbsp;— это документ, описывающий общепринятый (рекомендуемый) стиль написания программ на&nbsp;языке Python. Документ создан по&nbsp;рекомендациям Гвидо Ван Руссо и&nbsp;Барри Уорсо, ознакомится с&nbsp;материалами на&nbsp;русском языке можно, например, <span style="text-decoration: underline;"><a href="https://pep8.ru/doc/pep8/" target="_blank" rel="noopener">тут</a></span>. В&nbsp;наших материалах мы&nbsp;будем отмечать рекомендации PEP8 таким значком.</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Команда print()</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>А&nbsp;теперь изучим команду вывода на&nbsp;экран. Для вывода на&nbsp;экран используется команда print().</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Внутри круглых скобок, через запятую мы&nbsp;указываем&nbsp;то, что необходимо вывести на&nbsp;экран. Если это какой-то текст, то&nbsp;указываем его внутри кавычек. Кавычки могут быть как одинарными, так и&nbsp;двойными. Главное, что&nbsp;бы текст начинался и&nbsp;заканчивался кавычками одного типа. Команда print записывается только строчными буквами, другое написание недопустимо, так как в&nbsp;Python строчные и&nbsp;заглавные буквы различны.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Создайте в&nbsp;среде новый файл и&nbsp;напишите в&nbsp;нем команду вывода на&nbsp;экран слова «Привет!». Команда будет выглядеть так:</p>
+</div>
+<div style="padding-left: 60px;">
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет!'</span><span style="color: black;">)</span></pre>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание на цветовую индикацию. Например, в Wing IDE слово print выделено голубым цветом, а&nbsp;слово «Привет»&nbsp;— фиолетовым. В&nbsp;среде Wing IDE используется следующее цветовое выделение синтаксиса: все стандартные команды и&nbsp;функции выделяются синим и&nbsp;голубым цветом, фиолетовым цветом выделяются текстовые данные&nbsp;— строки&nbsp;— заключенные в&nbsp;кавычки.</p>
+<p>&nbsp;</p>
+</div>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP8</strong></h4>
+<div>
+<p>Избегайте использования пробелов cразу перед открывающей скобкой, после которой начинается список аргументов функции.</p>
+<p><strong>Правильно:</strong></p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет!'</span><span style="color: black;">)</span></pre>
+</div>
+<p><strong><del>Неправильно:</del></strong></p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print </span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет!'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Настало время запустить нашу первую программу. Но&nbsp;кнопка запуска&nbsp;<strong>Run</strong> <img src="https://yastatic.net/s3/anytask/content/run.png" alt="" width="31" height="33">&nbsp;пока не&nbsp;доступна. Перед запуском надо сохранить файл на&nbsp;диск.</p>
+<p>Вы&nbsp;будете писать много программ, только за&nbsp;первый год обучения их&nbsp;будет более 500, поэтому для удобства&nbsp;— создавайте для каждого урока свою папку, в&nbsp;которой будете хранить программы этого урока, а&nbsp;сами файлы с&nbsp;программами называйте так, что&nbsp;бы было понятно, о&nbsp;какой задаче идет речь. Назовите данный файл hello и&nbsp;сохраните его. Теперь стала доступна кнопка запуска. Запустите программу.</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Тестирующая система</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Вы&nbsp;только что написали свою первую программу. А&nbsp;сейчас вы&nbsp;сдадите свою первую задачу в&nbsp;тестирующую систему.</p>
+<p>Измените свою программу так, что&nbsp;бы она решала <strong>задачу «Приветствие»</strong>. Запустите и&nbsp;проверьте&nbsp;ее. И&nbsp;если она работает верно&nbsp;— сдавайте задание в&nbsp;тестирующую систему. Не&nbsp;забудьте сохранить новую программу в&nbsp;отдельном файле. Сейчас это кажется не&nbsp;очень важным, но&nbsp;потом, когда программ станет больше, а&nbsp;сами они длиннее и&nbsp;сложнее, привычка систематизировать материалы очень вам поможет. Чтобы не&nbsp;путаться код какой программы в&nbsp;каком файле, именем может служить название задачи в&nbsp;тестирующей системе.</p>
+<p>Написать или запустить неверную программу&nbsp;— не&nbsp;страшно. Что-то не&nbsp;понять&nbsp;— тоже не&nbsp;страшно. Даже опытные программисты иногда ошибаются и&nbsp;что-то не&nbsp;понимают. Поэтому в&nbsp;случае затруднений всегда смело задавайте вопросы и&nbsp;просите преподавателя вам помочь.</p>
+<p>Ваша программа пока умеет только здороваться. Давайте сделаем так, чтобы она выводила две строчки с&nbsp;текстом. В&nbsp;первой строке «Привет, Яндекс!», а&nbsp;на&nbsp;второй&nbsp;— «Приятно познакомиться.» Для этого нам понадобится еще одна команда print. Эту команду нам обязательно надо написать с&nbsp;новой строки. <strong>Каждая новая команда пишется с&nbsp;новой строки!</strong> Сохраните программу с&nbsp;новым именем acquaintance, запустите и&nbsp;проверьте. И&nbsp;если все правильно&nbsp;— сдавайте задачку «Знакомство» в&nbsp;тестирующую систему.</p>
+<p>Когда сдадите задачу, попробуйте внести в&nbsp;свою программу ошибки&nbsp;— добавьте опечатку в&nbsp;слово print, уберите открывающую или закрывающую скобку, придумайте еще что-нибудь необычное. Обратите внимание, что в&nbsp;консоли появляется сообщение, в&nbsp;котором есть слово Error. SyntaxError: invalid syntax часто означает именно забытую кавычку или скобку. Обратите внимание, что если вы&nbsp;добавите опечатку в&nbsp;слово print, то&nbsp;оно становится чёрным: редактор не&nbsp;узнаёт его и&nbsp;не&nbsp;понимает, что это команда.</p>
+<p>Давайте теперь немного изменим нашу последнюю программу. Попробуйте заменить строчку print(’Привет, Яндекс!’) на&nbsp;строку print(’Привет’, ’Яндекс!’). Запустите и&nbsp;посмотрите, что будет выведено на&nbsp;экран. В&nbsp;этот раз мы&nbsp;внутри команды print указали две строки, заключенные в&nbsp;кавычки, но&nbsp;разделили эти строки между собой запятой. Как уже говорилось в&nbsp;начале урока, внутри круглых скобок через запятую указывается&nbsp;то, что нужно вывести на&nbsp;экран. В&nbsp;данном случае на&nbsp;экран выводится две строки. Первая&nbsp;— «Привет», вторая&nbsp;— «Яндекс!». Эти строки пишутся в&nbsp;команде print через запятую, а&nbsp;появляются на&nbsp;экране через пробел. То&nbsp;есть, запятая внутри команды заменятся на&nbsp;пробел при выводе на&nbsp;экран.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP8</strong></h4>
+<div>
+<p>Обратите внимание, что после запятой, согласно стандарту PEP-8, обязательно нужно добавлять пробел.</p>
+<p><strong>Правильно:</strong></p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Яндекс!'</span><span style="color: black;">)</span></pre>
+</div>
+<p><strong><del>Неправильно:</del></strong></p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет'</span><span style="color: #66cc66;">,</span><span style="color: #483d8b;">'Яндекс!'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Выполнив программу, мы&nbsp;видим, что фраза «Привет Яндекс!» не&nbsp;соответствует требуемой. В&nbsp;ней не&nbsp;хватает запятой. Запятая должна быть выведена на&nbsp;экран, а&nbsp;это значит, что она должна оказаться внутри строки, заключенной в&nbsp;кавычки. Исправьте программу и&nbsp;добейтесь правильного вывода. Самостоятельно разбейте фразу «Приятно познакомиться.» на&nbsp;две строки, которые внутри команды print будут записываться через запятую.</p>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Команда input()</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Пока что все наши программы выводили на&nbsp;экран фразы, известные в&nbsp;момент написания программы. Но&nbsp;программы могут работать и&nbsp;с&nbsp;данными, которые станут известны только во&nbsp;время выполнения программ, например, их&nbsp;будет вводить пользователь с&nbsp;клавиатуры. Мы&nbsp;можем реализовать это так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Как тебя зовут?'</span><span style="color: black;">)</span>
+name <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет,'</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Запустите эту программу. Она выводит на&nbsp;экран строчку «Как тебя зовут?» и&nbsp;дальше ждет от&nbsp;пользователя ввода ответа на&nbsp;вопрос, ввода имени.</p>
+<p>Введите имя. Запустите ещё раз. Введите чужое имя.</p>
+<p>Здесь используется команда input().</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Она всегда пишется с&nbsp;круглыми скобками. Команда работает так: когда программа доходит до&nbsp;места, где есть input(), она ждёт, пока пользователь введёт строку с&nbsp;клавиатуры (ввод завершается нажатием клавиши Enter). Введённая строка подставляется на&nbsp;место input().</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>То&nbsp;есть, если вы&nbsp;ввели «Аня», то&nbsp;программа дальше будет работать так, как будто на&nbsp;месте input() было написано ’Аня’.</p>
+<p>Таким образом, input() получает от&nbsp;пользователя какие-то данные и&nbsp;в&nbsp;место вызова подставляет строковое значение, в&nbsp;нашем случае записывает его в&nbsp;качестве значения переменной name. Мы&nbsp;рассмотрим, что значит сохранить в&nbsp;значение переменной, а&nbsp;пока запомните:</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Если нужно, чтобы программа что-то печатала на&nbsp;экране (и&nbsp;это увидел пользователь)&nbsp;— <strong>print</strong>. Если нужно, чтобы пользователь что-то напечатал с&nbsp;клавиатуры (чтобы программа могла использовать эти данные)&nbsp;— <strong>input()</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="6"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>6. Переменные</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Команду name = input() можно считать так&nbsp;— «подожди, пока пользователь введет какую-то строку и&nbsp;помести введенную строку в&nbsp;переменную name».</p>
+<p>Попробуем разобраться, что это значит. Переменные имеют имя и&nbsp;значение.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Имя переменной</strong></h4>
+<div>
+<p><strong>Имя переменной</strong> должно отражать ее&nbsp;назначение и&nbsp;может состоять из&nbsp;латинских букв, цифр и&nbsp;символа подчеркивания.</p>
+<p>Имя не&nbsp;может начинаться с&nbsp;цифры.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP8</strong></h4>
+<div>
+<p>Для именования переменных принято использовать стиль <strong>lower_case_with_underscores</strong> (слова из&nbsp;маленьких букв с&nbsp;подчеркиваниями).</p>
+<p>Избегайте использовать такие символы, которые могут не&nbsp;однозначно трактоваться в&nbsp;различных шрифтах, это буквы о&nbsp;— большая и&nbsp;маленькая и&nbsp;цифра&nbsp;0, буквы l&nbsp;маленькая, I&nbsp;большая и&nbsp;цифра 1. Также нельзя использовать в&nbsp;качестве имени переменной ключевые слова, которые существуют в&nbsp;языке.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;вышеописанном примере переменная содержит в&nbsp;себе имя пользователя, поэтому мы&nbsp;назвали ее&nbsp;name(имя).</p>
+<p>Обратите внимание, что слово name не&nbsp;подсвечено никаким цветом&nbsp;— в&nbsp;Python это слово ничего не&nbsp;обозначает. Оно что-то значит только в&nbsp;этой программе и&nbsp;только потому, что мы&nbsp;употребили оператор присваивания. При этом интерпретатору совершенно неважно, что значит слово name в&nbsp;английском языке, и&nbsp;мы&nbsp;с&nbsp;тем&nbsp;же успехом могли использовать любое другое имя: например, user («пользователь») или просто&nbsp;n, или даже hello. За&nbsp;имена переменных отвечает программист&nbsp;— то&nbsp;есть&nbsp;вы.</p>
+<p>Соблюдайте правило: если в&nbsp;переменной хранится приветствие&nbsp;— пусть она так и&nbsp;называется, если имя&nbsp;— пусть она и&nbsp;называется соответственно.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Значение переменной</strong></h4>
+<div>
+<p><strong>Значение переменной</strong>&nbsp;— это&nbsp;то, что сохраняет в&nbsp;себе переменная.</p>
+<p>В&nbsp;нашем случае это&nbsp;то, что поместил в&nbsp;нее пользователь командой input(). Это текстовое значение&nbsp;— строка. То&nbsp;есть переменная сохраняет в&nbsp;себе строковое значение. Говорят, что переменная строкового типа.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Ещё пример:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Какая твоя любимая еда?'</span><span style="color: black;">)</span>
+meal <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Да.'</span><span style="color: #66cc66;">,</span> meal<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'- это вкусно.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание: интерпретатор ждет, что пользователь что-то введёт с&nbsp;клавиатуры ровно столько раз, сколько команд input() встречается в&nbsp;программе. Каждый input() завершается нажатием Enter на&nbsp;клавиатуре.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Как тебя зовут?'</span><span style="color: black;">)</span>
+name <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Привет,'</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'А какая твоя любимая еда?'</span><span style="color: black;">)</span>
+meal <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Да.'</span><span style="color: #66cc66;">,</span> meal<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'- это вкусно.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Мы&nbsp;задали значение переменной, и&nbsp;что&nbsp;же, оно никогда не&nbsp;меняется? Конечно, в&nbsp;двух разных программах могут быть переменные с&nbsp;одинаковыми названиями, но&nbsp;разными значениями. Но&nbsp;могут&nbsp;ли в&nbsp;пределах одной программы под одним именем быть разные значения?</p>
+<p>Да! Оператор присваивания сообщает переменной то&nbsp;или иное значение независимо от&nbsp;того, была&nbsp;ли эта переменная введена раньше. Вы&nbsp;можете менять значение переменной, записав еще один оператор присваивания. Если у&nbsp;нас имеется переменная, то&nbsp;мы&nbsp;можем делать с&nbsp;её&nbsp;значением всё что угодно&nbsp;— например, присвоить другой переменной:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">hello <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Здравствуйте.'</span>
+hello2 <span style="color: #66cc66;">=</span> hello
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>hello2<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Итак, если вы&nbsp;хотите, чтобы у&nbsp;вас была <strong>переменная с&nbsp;каким-то именем и&nbsp;каким-то значением</strong>, нужно написать на&nbsp;отдельной строчке:</p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #66cc66;">&lt;</span>имя переменной<span style="color: #66cc66;">&gt;</span> <span style="color: #66cc66;">=</span> <span style="color: #66cc66;">&lt;</span>значение переменной<span style="color: #66cc66;">&gt;</span> </pre>
+</div>
+<p><br>Как только эта команда выполнится, в&nbsp;программе появится такая переменная с&nbsp;таким значением. <strong>Помните:</strong> команды выполняются последовательно, в&nbsp;том&nbsp;же порядке, в&nbsp;котором они написаны.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>А теперь <strong>смоделируем небольшой взлом программы</strong>.</p>
+<p>Загрузите файл <span style="text-decoration: underline;"><a href="https://yastatic.net/s3/lyceum/content/resources/guessing_game.py" target="_blank" rel="noopener">guessing_game.py</a></span>. Это тоже программа на&nbsp;Python. Для начала просто запустите&nbsp;её (двойным кликом). Как видите, это игра-угадайка. Шанс угадать невелик, у&nbsp;кого получится&nbsp;— тот везучий. Как&nbsp;бы облегчить выигрыш?</p>
+<p>Теперь откройте эту программу в&nbsp;редакторе. Это делается не&nbsp;двойным кликом, а&nbsp;кликом правой кнопкой и&nbsp;выбором пункта <strong>Edit with Wing IDE</strong> (или редактировать с&nbsp;помощью <strong>Wing IDE</strong>). Смысл некоторых строчек этой программы вы&nbsp;уже знаете. Про другие скоро узнаете или можете догадаться.</p>
+<p>Сейчас мы&nbsp;научимся жульничать в&nbsp;игре путём изменения этой программы. Конечно, можно было&nbsp;бы заменить всю программу единственной строчкой&nbsp;— поздравлением с&nbsp;победой. Но&nbsp;мы&nbsp;будем считать, что менять можно только одну строчку&nbsp;— ту, которая сейчас пуста. Мы&nbsp;можем вписать туда любую команду.</p>
+<p>Мы знаем, что к тому моменту, когда выполнение программы доходит до пустой строчки, в переменной под названием planet лежит название загаданной планеты. Сделайте так, чтобы в этот момент оно выводилось прямо на экран — тогда игроку останется лишь повторить название для победы (это потребуется вам в задаче «Взлом планетной угадайки»).</p>
+</div>
+<p><a name="7"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>7. Трассировка</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><strong>Задача (для разбора)</strong>. Предположим, что у&nbsp;нас есть программа, которая входит в&nbsp;интерфейс сайта «Госуслуги» и&nbsp;служит для смены имени. Как будет работать эта программа, что она выведет при каком-либо пользовательском вводе?</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите фамилию:'</span><span style="color: black;">)</span>
+surname <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите имя:'</span><span style="color: black;">)</span>
+name <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>name<span style="color: #66cc66;">,</span> surname<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите новое имя:'</span><span style="color: black;">)</span>
+new_name <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>name<span style="color: #66cc66;">,</span> surname<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>new_name<span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+name <span style="color: #66cc66;">=</span> new_name
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>new_name<span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>name<span style="color: #66cc66;">,</span> surname<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Давайте немного изменим программу и&nbsp;посмотрим, что теперь получится.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите фамилию:'</span><span style="color: black;">)</span>
+surname <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите имя:'</span><span style="color: black;">)</span>
+name <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>name<span style="color: #66cc66;">,</span> surname<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите новое имя:'</span><span style="color: black;">)</span>
+new_name <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+old_name <span style="color: #66cc66;">=</span> name
+name <span style="color: #66cc66;">=</span> new_name
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>new_name<span style="color: #66cc66;">,</span> old_name<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>name<span style="color: #66cc66;">,</span> surname<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Если вы&nbsp;написали программу, и&nbsp;не&nbsp;уверены, правильно&nbsp;ли вы&nbsp;её&nbsp;написали&nbsp;— разберите, что она делает. Если не&nbsp;уверены, что всё сделали правильно&nbsp;— запустите и&nbsp;проверьте свои рассуждения.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Для удобства можно использовать комментарии, которые позволяют программисту делать для себя пометки в&nbsp;коде или делать часть кода не&nbsp;выполнимой, невидимой для интерпретатора.</p>
+<p>Если вы&nbsp;начнёте строчку со&nbsp;знака решётки #, то&nbsp;интерпретатор Python будет игнорировать всю эту строчку. Программа будет выполняться так, как будто строчки нет. Такая строчка называется <strong>комментарием</strong>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Комментарии нужны в&nbsp;двух случаях:</p>
+<p>1. Когда нужно добавить в&nbsp;программу какую-то пометку для человека, который будет читать эту программу (например, см. третью строчку guessing_game).</p>
+<p>2. Когда нужно убрать какую-то строчку кода, но&nbsp;удалять её&nbsp;не&nbsp;хочется (например, потом&nbsp;её, возможно, понадобится вернуть). Это называется «закомментировать» строчку.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP8</strong></h4>
+<div>
+<p>«Встрочные» комментарии находятся в&nbsp;той&nbsp;же строке, что и&nbsp;инструкция. Они должны <strong>отделяться по&nbsp;крайней мере двумя пробелами</strong> от&nbsp;инструкции и&nbsp;начинаться с&nbsp;символа # и&nbsp;одного пробела.</p>
+<p>Комментарии в&nbsp;строке с&nbsp;кодом не&nbsp;нужны и&nbsp;только отвлекают от&nbsp;чтения, если они объясняют очевидное.</p>
+<p><strong>Правильно:</strong></p>
+<div>
+<pre class="python" style="font-family: monospace;">x <span style="color: #66cc66;">=</span> x + <span style="color: #ff4500;">1</span>  <span style="color: #808080; font-style: italic;"># компенсация границы </span></pre>
+</div>
+<p><strong><del>Неправильно:</del></strong></p>
+<div>
+<pre class="python" style="font-family: monospace;">x <span style="color: #66cc66;">=</span> x + <span style="color: #ff4500;">1</span>  <span style="color: #808080; font-style: italic;"># увеличение на единицу</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Если нужно закомментировать сразу несколько строчек подряд, не&nbsp;делайте это вручную. Выделите эти строчки и&nbsp;выберите <strong>Source → Toggle block comment</strong> (там&nbsp;же можно убрать комментирование).</p>
+<p>Заметьте, что в&nbsp;конце guessing_game на&nbsp;отдельной строчке стоит знакомая команда input(). Зачем она нужна?</p>
+<p>Ответ: когда запускаешь программу двойным кликом, окно с&nbsp;программой закрывается сразу, как только программа заканчивает работу. Если программа что-то выводит на&nbsp;экран в&nbsp;конце работы, то&nbsp;пользователь этого не&nbsp;увидит. А&nbsp;так программа ждёт, пока пользователь нажмёт клавишу Enter. Конечно, он&nbsp;может что-то ввести, но&nbsp;это неважно&nbsp;— мы&nbsp;всё равно никак не&nbsp;используем этот ввод. Попробуйте закомментировать последнюю строчку guessing_game и&nbsp;запустить программу из&nbsp;Проводника двойным кликом.</p>
+<p>Заметьте, что если запустить программу, у&nbsp;которой в&nbsp;конце input(), из&nbsp;редактора <strong>Wing IDE</strong>, то&nbsp;в&nbsp;конце её&nbsp;работы придётся лишний раз нажать <strong>Enter</strong>, хотя в&nbsp;этом и&nbsp;нет необходимости.</p>
+<p>Попробуйте запустить программу hello или любую другую из&nbsp;своих старых программ двойным кликом&nbsp;— сначала в&nbsp;исходном виде, потом с&nbsp;input() в&nbsp;конце.</p>
+</div></article></section>
+{% endblock %}

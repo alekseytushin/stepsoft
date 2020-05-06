@@ -1,0 +1,378 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Множества</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Объекты типа set</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Операции над одним множеством</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Операции над двумя множествами</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Сравнение множеств</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;этом уроке мы&nbsp;обсудим множества Python. Этот тип данных аналогичен математическим множествам, он&nbsp;поддерживает быстрые операции проверки наличия элемента в&nbsp;множестве, добавления и&nbsp;удаления элементов, а&nbsp;также операции объединения, пересечения и&nbsp;вычитания множеств.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Объекты типа set</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;написали уже много программ, работающих с&nbsp;данными, количество которых неизвестно на&nbsp;момент написания программы. Теперь было&nbsp;бы здорово уметь хранить в&nbsp;памяти неизвестное на&nbsp;момент написания программы количество данных. В&nbsp;этом нам помогут так называемые <strong>коллекции</strong>&nbsp;— специальные типы данных, которые «умеют» хранить несколько значений под одним именем. Первая из&nbsp;коллекций, с&nbsp;которой мы&nbsp;познакомимся, называется <strong>множество</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Множество</strong></h4>
+<div>Множество&nbsp;— это составной тип данных, представляющий собой несколько значений (элементов множества) под одним именем. Этот тип называется <strong>set</strong>&nbsp;— не&nbsp;создавайте, пожалуйста, переменные с&nbsp;таким именем! Чтобы задать множество, нужно в&nbsp;фигурных скобках перечислить его элементы.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Здесь создается множество из&nbsp;четырех элементов (названий млекопитающих), которое затем выводится на&nbsp;экран:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">mammals <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'cat'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'dog'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'fox'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'elephant'</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>mammals<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Введите этот код в&nbsp;Python и&nbsp;запустите программу несколько раз. Скорее всего, вы&nbsp;увидите разный порядок перечисления млекопитающих&nbsp;— это происходит потому, что элементы во&nbsp;множестве Python не&nbsp;упорядочены. Это позволяет быстро выполнять операции над множествами, о&nbsp;которых мы&nbsp;скоро поговорим чуть позже.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Для <strong>создания пустых множеств</strong> обязательно вызывать <strong>функцию set</strong>: empty = set()</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Обратите внимание: элементами множества могут быть строки или числа. Возникает вопрос: а&nbsp;может&nbsp;ли множество содержать и&nbsp;строки, и&nbsp;числа? Давайте попробуем:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">mammals_and_numbers <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'cat'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'dog'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'fox'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">12</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'elephant'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>mammals_and_numbers<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Как видим, множество может содержать и&nbsp;строки, и&nbsp;числа, а&nbsp;Python опять выводит элементы множества в&nbsp;случайном порядке. Заметьте, что если поставить в&nbsp;программе оператор вывода множества на&nbsp;экран несколько раз, не&nbsp;изменяя множество, порядок вывода элементов не&nbsp;изменится.</p>
+<p>Может&nbsp;ли элемент входить во&nbsp;множество несколько раз? Это было&nbsp;бы странно, так как совершенно непонятно, как отличить один элемент от&nbsp;другого. Поэтому множество содержит каждый элемент только один раз. Следующий фрагмент кода это демонстрирует:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">birds <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'raven'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'sparrow'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'sparrow'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'dove'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'hawk'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'falcon'</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>birds<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Итак, у множеств есть три ключевые особенности:</p>
+<p>— Порядок элементов во&nbsp;множестве не&nbsp;определён.</p>
+<p>— Элементы множеств&nbsp;— строки и/или числа.</p>
+<p>— Множество не&nbsp;может содержать одинаковых элементов.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Выполнение этих трёх свойств позволяет организовать элементы множества в&nbsp;структуру со&nbsp;сложными взаимосвязями, благодаря которым можно быстро проверять наличие элементов в&nbsp;множестве, объединять множества и&nbsp;так далее. Но&nbsp;пока давайте обсудим эти ограничения.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Операции над одним множеством</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Простейшая операция&nbsp;— <strong>вычисление числа элементов</strong> множества. Для это служит функция <strong>len</strong>. Мы&nbsp;уже встречались с&nbsp;этой функцией раньше, когда определяли длину строки:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">my_set <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'b'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'c'</span><span style="color: black;">}</span>
+n <span style="color: #66cc66;">=</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>my_set<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># =&gt; 3</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Далее можно <strong>вывести элементы множества</strong> с&nbsp;помощью функции print:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">my_set <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'b'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'c'</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>my_set<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># =&gt; {'b', 'c', 'a'}</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;вашем случае порядок может отличаться, так как правило упорядочивания элементов во&nbsp;множестве выбирается случайным образом при запуске интерпретатора Python.</p>
+<p>Очень часто необходимо обойти все элементы множества в&nbsp;цикле. Для этого используется цикл for и&nbsp;оператор&nbsp;in, с&nbsp;помощью которых можно перебрать не&nbsp;только все элементы диапазона (как мы&nbsp;это делали раньше, используя range), но&nbsp;и&nbsp;элементы множества:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">my_set <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'b'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'c'</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> elem <span style="color: #ff7700; font-weight: bold;">in</span> my_set:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>elem<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>такой код выводит:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">b
+a
+c</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Однако, как и&nbsp;в&nbsp;прошлый раз, в&nbsp;вашем случае порядок может отличаться: заранее он&nbsp;неизвестен. Код для работы с&nbsp;множествами нужно писать таким образом, чтобы он&nbsp;правильно работал при любом порядке обхода. Для этого надо знать два правила:</p>
+<p>— Если мы&nbsp;не&nbsp;изменяли множество, то&nbsp;порядок обхода элементов тоже не&nbsp;изменится.</p>
+<p>— После изменения множества порядок элементов может измениться произвольным образом.</p>
+<p>Чтобы <strong>проверить наличие элемента</strong> во&nbsp;множестве, можно воспользоваться уже знакомым оператором&nbsp;in:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">if</span> elem <span style="color: #ff7700; font-weight: bold;">in</span> my_set:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Элемент есть в множестве'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Элемента нет в множестве'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Выражение elem in&nbsp;my_set возвращает True, если элемент есть во&nbsp;множестве, и&nbsp;False, если его нет. Интересно, что эта операция для множеств в&nbsp;Python выполняется за&nbsp;время, не&nbsp;зависящее от&nbsp;мощности множества (количества его элементов).</p>
+<p><strong>Добавление элемента в&nbsp;множество</strong> делается при помощи add:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">new_elem <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'e'</span>
+my_set.<span style="color: black;">add</span><span style="color: black;">(</span>new_elem<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>add&nbsp;— это что-то вроде функции, «приклеенной» к&nbsp;конкретному множеству. Такие «приклеенные функции» называются <strong>методами</strong>.</p>
+<p>Таким образом, если в&nbsp;коде присутствует имя множества, затем точка и&nbsp;еще одно название со&nbsp;скобками, то&nbsp;второе название&nbsp;— имя метода. Если элемент, равный new_elem, уже существует во&nbsp;множестве, то&nbsp;оно не&nbsp;изменится, поскольку не&nbsp;может содержать одинаковых элементов. Ошибки при этом не&nbsp;произойдёт. Небольшой пример:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">my_set <span style="color: #66cc66;">=</span> <span style="color: #008000;">set</span><span style="color: black;">(</span><span style="color: black;">)</span>
+my_set.<span style="color: black;">add</span><span style="color: black;">(</span><span style="color: #483d8b;">'a'</span><span style="color: black;">)</span>
+my_set.<span style="color: black;">add</span><span style="color: black;">(</span><span style="color: #483d8b;">'b'</span><span style="color: black;">)</span>
+my_set.<span style="color: black;">add</span><span style="color: black;">(</span><span style="color: #483d8b;">'a'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>my_set<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Данный код три раза вызовет метод add, «приклеенный» к&nbsp;множеству my_set, а&nbsp;затем выведет либо {’a’, ’b’}, либо {’b’, ’a’}.</p>
+<p>С&nbsp;<strong>удалением элемента</strong> сложнее. Для этого есть сразу три метода: <strong>discard</strong> (удалить заданный элемент, если он&nbsp;есть во&nbsp;множестве, и&nbsp;ничего не&nbsp;делать, если его нет), <strong>remove</strong> (удалить заданный элемент, если он&nbsp;есть, и&nbsp;породить ошибку KeyError, если нет) и&nbsp;<strong>pop</strong>. Метод pop удаляет некоторый элемент из&nbsp;множества и&nbsp;возвращает его как результат. Порядок удаления при этом неизвестен.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">my_set <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'b'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'c'</span><span style="color: black;">}</span>
+&nbsp;
+my_set.<span style="color: black;">discard</span><span style="color: black;">(</span><span style="color: #483d8b;">'a'</span><span style="color: black;">)</span>         <span style="color: #808080; font-style: italic;"># Удалён</span>
+my_set.<span style="color: black;">discard</span><span style="color: black;">(</span><span style="color: #483d8b;">'hello'</span><span style="color: black;">)</span>     <span style="color: #808080; font-style: italic;"># Не удалён, ошибки нет</span>
+my_set.<span style="color: black;">remove</span><span style="color: black;">(</span><span style="color: #483d8b;">'b'</span><span style="color: black;">)</span>          <span style="color: #808080; font-style: italic;"># Удалён</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>my_set<span style="color: black;">)</span>               <span style="color: #808080; font-style: italic;"># В множестве остался один элемент 'c'</span>
+my_set.<span style="color: black;">remove</span><span style="color: black;">(</span><span style="color: #483d8b;">'world'</span><span style="color: black;">)</span>      <span style="color: #808080; font-style: italic;"># Не удалён, ошибка KeyError</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>На&nbsp;первый взгляд, странно, что есть метод remove, который увеличивает количество «падений» вашей программы. Однако, если вы&nbsp;на&nbsp;100 процентов уверены, что элемент должен быть в&nbsp;множестве, то&nbsp;лучше получить ошибку во&nbsp;время отладки и&nbsp;исправить&nbsp;её, чем тратить время на&nbsp;поиски при неправильной работе программы.</p>
+<p>Метод pop удаляет из&nbsp;множества случайный элемент и&nbsp;возвращает его значение:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">my_set <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'b'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'c'</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'до удаления:'</span><span style="color: #66cc66;">,</span> my_set<span style="color: black;">)</span>
+elem <span style="color: #66cc66;">=</span> my_set.<span style="color: black;">pop</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'удалённый элемент:'</span><span style="color: #66cc66;">,</span> elem<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'после удаления:'</span><span style="color: #66cc66;">,</span> my_set<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Результат работы случаен, например, такой код может вывести следующее:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">до удаления: <span style="color: black;">{</span><span style="color: #483d8b;">'b'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'c'</span><span style="color: black;">}</span>
+удалённый элемент: b
+после удаления: <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'c'</span><span style="color: black;">}</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Если попытаться применить pop к&nbsp;пустому множеству, произойдёт ошибка KeyError.</p>
+<p><strong>Очистить множество</strong> от&nbsp;всех элементов можно методом <strong>clear</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">my_set.<span style="color: black;">clear</span><span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Операции над двумя множествами</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Есть четыре операции, которые из&nbsp;двух множеств делают новое множество: объединение, пересечение, разность и&nbsp;симметричная разность.</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/set-union.png" width="328" height="auto"></p>
+<p>Объединение двух множеств включает в&nbsp;себя все элементы, которые есть хотя&nbsp;бы в&nbsp;одном из&nbsp;них. Для этой операции существует метод <strong>union</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">union <span style="color: #66cc66;">=</span> my_set1.<span style="color: black;">union</span><span style="color: black;">(</span>my_set2<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Или можно использовать оператор |:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">union <span style="color: #66cc66;">=</span> my_set1 | my_set2</pre>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<p><img src="https://yastatic.net/s3/lyceum/content/image/set-intersection.png" width="328" height="auto"></p>
+<p>Пересечение двух множеств включает в&nbsp;себя все элементы, которые есть в&nbsp;обоих множествах:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">intersection <span style="color: #66cc66;">=</span> my_set1.<span style="color: black;">intersection</span><span style="color: black;">(</span>my_set2<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Или аналог:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">intersection <span style="color: #66cc66;">=</span> my_set1 &amp; my_set2</pre>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<p><img src="https://yastatic.net/s3/lyceum/content/image/set-difference.png" width="328" height="auto"></p>
+<p>Разность двух множеств включает в&nbsp;себя все элементы, которые есть в&nbsp;первом множестве, но&nbsp;которых нет во&nbsp;втором:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">diff <span style="color: #66cc66;">=</span> my_set1.<span style="color: black;">difference</span><span style="color: black;">(</span>my_set2<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Или аналог:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">diff <span style="color: #66cc66;">=</span> my_set1 - my_set2</pre>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<p><img src="https://yastatic.net/s3/lyceum/content/image/set-symmetric_difference.png" width="334" height="auto"></p>
+<p>Симметричная разность двух множеств включает в&nbsp;себя все элементы, которые есть только в&nbsp;одном из&nbsp;этих множеств:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">symm_diff <span style="color: #66cc66;">=</span> my_set1.<span style="color: black;">symmetric_difference</span><span style="color: black;">(</span>my_set2<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Или аналогичный вариант:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">symm_diff <span style="color: #66cc66;">=</span> my_set1 ^ my_set2</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Люди часто путают обозначения&nbsp;| и&nbsp;&amp;, поэтому рекомендуется вместо них писать s1.union(s2) и&nbsp;s1.intersection(s2). Операции&nbsp;— и ^ перепутать сложнее, их&nbsp;можно записывать прямо так.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">s1 <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'b'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'c'</span><span style="color: black;">}</span>
+s2 <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'c'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'d'</span><span style="color: black;">}</span>
+union <span style="color: #66cc66;">=</span> s1.<span style="color: black;">union</span><span style="color: black;">(</span>s2<span style="color: black;">)</span>                <span style="color: #808080; font-style: italic;"># {'a', 'b', 'c', 'd'}</span>
+intersection <span style="color: #66cc66;">=</span> s1.<span style="color: black;">intersection</span><span style="color: black;">(</span>s2<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># {'a', 'c'}</span>
+diff <span style="color: #66cc66;">=</span> s1 - s2                      <span style="color: #808080; font-style: italic;"># {'b'}</span>
+symm_diff <span style="color: #66cc66;">=</span> s1 ^ s2                 <span style="color: #808080; font-style: italic;"># {'b', 'd'}</span></pre>
+</div>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Сравнение множеств</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Все операторы сравнения множеств, а&nbsp;именно ==, &lt;, &gt;, &lt;=, &gt;=, возвращают True, если сравнение истинно, и&nbsp;False в&nbsp;противном случае.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Множества считаются равными, если они содержат одинаковые наборы элементов. Равенство множеств, как в&nbsp;случае с&nbsp;числами и&nbsp;строками, обозначается оператором ==.</p>
+<p>Неравенство множеств обозначается оператором !=. Он&nbsp;работает противоположно оператору ==.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">if</span> set1 <span style="color: #66cc66;">==</span> set2:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Множества равны'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Множества не равны'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание на&nbsp;то, что у&nbsp;двух равных множеств могут быть разные порядки обхода, например, из-за того, что элементы в&nbsp;каждое из&nbsp;них добавлялись в&nbsp;разном порядке.</p>
+<p>Теперь перейдём к&nbsp;операторам &lt;=, &gt;=. Они означают «является подмножеством» и&nbsp;«является надмножеством».</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Подмножество и надмножество</strong></h4>
+<div>Подмножество&nbsp;— это некоторая выборка элементов множества, которая может быть как меньше множества, так и&nbsp;совпадать с&nbsp;ним, на&nbsp;что указывают символы «&lt;» и «=» в&nbsp;операторе &lt;=. Наоборот, надмножество включает все элементы некоторого множества&nbsp;и, возможно, какие-то ещё.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">s1 <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'b'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'c'</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>s1 <span style="color: #66cc66;">&lt;=</span> s1<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># True</span>
+&nbsp;
+s2 <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'b'</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>s2 <span style="color: #66cc66;">&lt;=</span> s1<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># True</span>
+s3 <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>s3 <span style="color: #66cc66;">&lt;=</span> s1<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># True</span>
+s4 <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'a'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'z'</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>s4 <span style="color: #66cc66;">&lt;=</span> s1<span style="color: black;">)</span>  <span style="color: #808080; font-style: italic;"># False</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Операция&nbsp;s1 &lt; s2&nbsp;означает «s1&nbsp;является подмножеством&nbsp;s2, но&nbsp;целиком не&nbsp;совпадает с&nbsp;ним». Операция s1 &gt; s2&nbsp;означает «s1&nbsp;является надмножеством&nbsp;s2, но&nbsp;целиком не&nbsp;совпадает с&nbsp;ним».</p>
+</div></article></section>
+{%endblock%}

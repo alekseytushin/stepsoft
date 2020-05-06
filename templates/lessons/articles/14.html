@@ -1,0 +1,230 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Методы split и join. Списочные выражения</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Методы split и join</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Списочные выражения</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Использование списочных выражений в аргументах методов split и join. Считывание значений, введённых одной строкой</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;этом уроке рассматриваются два очень популярных метода строк split и&nbsp;join. Во&nbsp;второй части рассматриваются списочные выражения (python list comprehensions [... for ... in ...]), которые в&nbsp;сочетании с&nbsp;методом split позволяют, например, считывать из&nbsp;стандартного потока ввода несколько значений одной строкой.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Методы split и join</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Изучая множества и&nbsp;списки, мы&nbsp;уже неоднократно встречались с&nbsp;методами&nbsp;— функциями, «приклеенными» к&nbsp;объекту (списку или множеству) и&nbsp;изменяющими его содержимое.</p>
+<p>Методы есть не&nbsp;только у&nbsp;списков и&nbsp;множеств, но&nbsp;и&nbsp;у&nbsp;строк. Сегодня мы&nbsp;изучим два очень полезных метода строк: split и&nbsp;join. Они противоположны по&nbsp;смыслу: split разбивает строку по&nbsp;произвольному разделителю на&nbsp;список «слов», а&nbsp;join собирает из&nbsp;списка слов единую строку через заданный разделитель.</p>
+<p>Для того, чтобы вызвать эти методы, необходимо использовать уже знакомый нам синтаксис. После имени переменной, содержащей объект-строку (или просто после строки), через точку пишется имя метода, затем в&nbsp;круглых скобках указываются аргументы. split и&nbsp;join, в&nbsp;отличие, например, от&nbsp;метода списков append или метода множеств add, не&nbsp;изменяют объект, которому принадлежат, а&nbsp;создают <strong>новый</strong> (список или строку, соответственно) и&nbsp;возвращают его, как это делают обычные функции типа len.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>split</strong></h4>
+<div>Метод split можно вызвать вообще без аргументов или с&nbsp;одним аргументом-строкой. В&nbsp;первом случае строка разбивается на&nbsp;части, разделённые любыми символами пустого пространства (набором пробелов, символом табуляции и&nbsp;т.д.). Во&nbsp;втором случае разделителем слов считается строка-аргумент. Из&nbsp;получившихся слов формируется список.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;этом примере все сравнения истинны, т.&nbsp;е. все вызовы функции print выведут True.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">s <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'раз два три'</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>s.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: black;">[</span><span style="color: #483d8b;">'раз'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'два'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'три'</span><span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'     one two  three  '</span>.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: black;">[</span><span style="color: #483d8b;">'one'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'two'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'three'</span><span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'192.168.1.1'</span>.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: #483d8b;">'.'</span><span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: black;">[</span><span style="color: #483d8b;">'192'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'168'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'1'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'1'</span><span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>s.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: #483d8b;">'а'</span><span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: black;">[</span><span style="color: #483d8b;">'р'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'з дв'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">' три'</span><span style="color: black;">]</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'A##B##C'</span>.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: #483d8b;">'##'</span><span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: black;">[</span><span style="color: #483d8b;">'A'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'B'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'C'</span><span style="color: black;">]</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>join</strong></h4>
+<div>join&nbsp;же всегда принимает один аргумент&nbsp;— список слов, которые нужно <strong>склеить</strong>. Разделителем (точнее, «соединителем») служит та&nbsp;самая строка, чей метод join вызывается. Это может быть и&nbsp;пустая строка, и&nbsp;пробел, и&nbsp;символ новой строки, и&nbsp;что угодно ещё. В&nbsp;этих примерах также все сравнения истинны и&nbsp;каждый print выведет True.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">s <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'Тот'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Кого'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Нельзя'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Называть'</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">''</span>.<span style="color: black;">join</span><span style="color: black;">(</span>s<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'ТотКогоНельзяНазывать'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">' '</span>.<span style="color: black;">join</span><span style="color: black;">(</span>s<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Тот Кого Нельзя Называть'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'-'</span>.<span style="color: black;">join</span><span style="color: black;">(</span>s<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Тот-Кого-Нельзя-Называть'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'! '</span>.<span style="color: black;">join</span><span style="color: black;">(</span>s<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Тот! Кого! Нельзя! Называть'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Итак, <strong>split</strong> служит для преобразования строки в&nbsp;список, а&nbsp;<strong>join</strong>&nbsp;— для преобразования списка в&nbsp;строку:</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/image-test/stroke-s-list-a03.svg" width="600" height="auto"></p>
+<p>Обратите внимание, что split и&nbsp;join&nbsp;— это методы <strong>строк</strong>. Попытка вызвать такой метод у&nbsp;объекта, не&nbsp;являющегося строкой, вызовет ошибку! Например, если попытаться написать заведомо бессмысленное с&nbsp;точки зрения интерпретатора Python выражение:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">]</span>.<span style="color: black;">join</span><span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">6</span><span style="color: black;">]</span><span style="color: black;">)</span>
+------------------------------------------------
+<span style="color: #008000;">AttributeError</span>              Traceback <span style="color: black;">(</span>most recent call last<span style="color: black;">)</span>
+<span style="color: #66cc66;">&lt;</span>ipython-input-<span style="color: #ff4500;">3</span>-404b5f4d9169<span style="color: #66cc66;">&gt;</span> <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #66cc66;">&lt;</span>module<span style="color: #66cc66;">&gt;</span><span style="color: black;">(</span><span style="color: black;">)</span>
+----<span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">1</span> <span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">]</span>.<span style="color: black;">join</span><span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">6</span><span style="color: black;">]</span><span style="color: black;">)</span>
+&nbsp;
+<span style="color: #008000;">AttributeError</span>: <span style="color: #483d8b;">'list'</span> <span style="color: #008000;">object</span> has no attribute <span style="color: #483d8b;">'join'</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Как видно, указан тип объекта ([1, 2, 3]&nbsp;— список, list) и&nbsp;имя отсутствующего у&nbsp;него метода&nbsp;— join, который мы&nbsp;пытаемся вызвать.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Списочные выражения</h4>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Списочные выражения</strong></h4>
+<div>Для генерации списков из&nbsp;неповторяющихся элементов в&nbsp;Python имеется удобная синтаксическая конструкция&nbsp;— <strong>списочное выражение</strong> (<strong>list comprehension</strong>). Она позволяет создавать элементы списка в&nbsp;цикле for, не&nbsp;записывая цикл целиком.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Например, если нам необходимо создать список квадратов целых чисел от&nbsp;0&nbsp;до&nbsp;9&nbsp;включительно, мы&nbsp;можем записать следующий код:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">squares <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+    squares.<span style="color: black;">append</span><span style="color: black;">(</span>i**<span style="color: #ff4500;">2</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>squares<span style="color: black;">)</span>
+&nbsp;
+------------------------------------------------
+&nbsp;
+<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">9</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">16</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">25</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">36</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">49</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">64</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">81</span><span style="color: black;">]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>То&nbsp;же самое, но&nbsp;гораздо короче, можно сделать с&nbsp;помощью списочного выражения:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">squares <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>i**<span style="color: #ff4500;">2</span> <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>squares<span style="color: black;">)</span>
+&nbsp;
+------------------------------------------------
+&nbsp;
+<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">9</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">16</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">25</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">36</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">49</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">64</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">81</span><span style="color: black;">]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А&nbsp;если нам необходимы квадраты не&nbsp;всех чисел, а&nbsp;только чётных? Тогда можно добавить условие:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">even_squares <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> i % <span style="color: #ff4500;">2</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">0</span>:
+        even_squares.<span style="color: black;">append</span><span style="color: black;">(</span>i**<span style="color: #ff4500;">2</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>even_squares<span style="color: black;">)</span>
+&nbsp;
+------------------------------------------------
+&nbsp;
+<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">16</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">36</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">64</span><span style="color: black;">]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>То&nbsp;же самое, но&nbsp;короче, с&nbsp;помощью списочного выражения:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">even_squares <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>i**<span style="color: #ff4500;">2</span> <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">if</span> i % <span style="color: #ff4500;">2</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>even_squares<span style="color: black;">)</span>
+&nbsp;
+------------------------------------------------
+&nbsp;
+<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">16</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">36</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">64</span><span style="color: black;">]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>На&nbsp;рисунке показано соответствие между кодом заполнения списка с&nbsp;помощью цикла for и&nbsp;списочным выражением:</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/split-join-2.png" width="600" height="auto"></p>
+<p>В&nbsp;списочном выражении можно пройти по&nbsp;двум или более циклам:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: black;">[</span>i * j <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">for</span> j <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">3</span><span style="color: black;">)</span><span style="color: black;">]</span><span style="color: black;">)</span> 
+&nbsp;
+------------------------------------------------
+&nbsp;
+<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span><span style="color: black;">]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>На&nbsp;самом деле квадратные скобки не&nbsp;являются неотъемлемой частью списочного выражения. Если их&nbsp;не&nbsp;поставить, выражение будет вычисляться «по&nbsp;мере надобности»&nbsp;— когда очередной элемент становится нужен. «Заворачивая» списочное выражение в&nbsp;квадратные скобки, мы&nbsp;тем самым даем инструкцию сразу создать все элементы и&nbsp;составить из&nbsp;них список. Пока что мы&nbsp;в&nbsp;основном будем пользоваться именно такими списочными выражениями&nbsp;— завёрнутыми в&nbsp;квадратные скобки и&nbsp;превращёнными тем самым в&nbsp;список.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Списочные выражения часто используются для инициализации списков. Дело в&nbsp;том, что в&nbsp;Python не&nbsp;принято создавать пустые списки, чтобы потом заполнять их&nbsp;значениями, если можно этого избежать.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Если&nbsp;же все-таки необходимо создать пустой список&nbsp;— скажем, длиной 10&nbsp;— и&nbsp;заполнить его нулями (не&nbsp;может&nbsp;же он&nbsp;быть совсем пустой), то&nbsp;это легко сделать, используя умножение списка на&nbsp;число: <strong>[0]*10</strong>.</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Использование списочных выражений в аргументах методов split и join. Считывание значений, введённых одной строкой</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Списочные выражения часто используют в&nbsp;аргументах методов split и&nbsp;join. Например, комбинация метода split и&nbsp;списочного выражения позволяют нам удобно считать числа, записанные в&nbsp;одну строку:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #008000;">int</span><span style="color: black;">(</span>x<span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">for</span> x <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #483d8b;">'976 929 289 809 7677'</span>.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">]</span>
+evil<span style="color: #66cc66;">,</span> good <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #008000;">int</span><span style="color: black;">(</span>x<span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">for</span> x <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #483d8b;">'666 777'</span>.<span style="color: black;">split</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>evil<span style="color: #66cc66;">,</span> good<span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'<span style="color: #000099; font-weight: bold;">\n</span>'</span><span style="color: black;">)</span>
+&nbsp;
+------------------------------------------------
+&nbsp;
+<span style="color: #ff4500;">666</span>
+<span style="color: #ff4500;">777</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Здесь строка (обычно она не&nbsp;задаётся прямо в&nbsp;выражении, а&nbsp;получается из&nbsp;input()) разделяется на&nbsp;отдельные слова с&nbsp;помощью split. Затем списочное выражение пропускает каждый элемент получившегося списка через функцию int, превращая строку ’976’ в&nbsp;число 976. Можно собрать все получившиеся значения в&nbsp;один список или разложить их&nbsp;по&nbsp;отдельным переменным с&nbsp;помощью множественного присваивания (как во&nbsp;второй строчке примера).</p>
+<p>Рассмотрим также пример использования метода join вместе со&nbsp;списочным выражением. Выведем на&nbsp;одной строке список квадратов натуральных чисел от&nbsp;1&nbsp;до&nbsp;9: 1^2=1, 2^2=4, 3^2=9... Для этого сначала с&nbsp;помощью списочного выражения сформируем список строк вида [’1^2=1’, ’2^2=4’, ’3^2=9’, ...], а&nbsp;затем «склеим» его в&nbsp;одну строку методом join:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">', '</span>.<span style="color: black;">join</span><span style="color: black;">(</span><span style="color: #008000;">str</span><span style="color: black;">(</span>i<span style="color: black;">)</span> + <span style="color: #483d8b;">'^2='</span> + <span style="color: #008000;">str</span><span style="color: black;">(</span>i**<span style="color: #ff4500;">2</span><span style="color: black;">)</span> <span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span> 
+&nbsp;
+------------------------------------------------
+&nbsp;
+<span style="color: #ff4500;">1</span>^<span style="color: #ff4500;">2</span><span style="color: #66cc66;">=</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span>^<span style="color: #ff4500;">2</span><span style="color: #66cc66;">=</span><span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span>^<span style="color: #ff4500;">2</span><span style="color: #66cc66;">=</span><span style="color: #ff4500;">9</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">4</span>^<span style="color: #ff4500;">2</span><span style="color: #66cc66;">=</span><span style="color: #ff4500;">16</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">5</span>^<span style="color: #ff4500;">2</span><span style="color: #66cc66;">=</span><span style="color: #ff4500;">25</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">6</span>^<span style="color: #ff4500;">2</span><span style="color: #66cc66;">=</span><span style="color: #ff4500;">36</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">7</span>^<span style="color: #ff4500;">2</span><span style="color: #66cc66;">=</span><span style="color: #ff4500;">49</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">8</span>^<span style="color: #ff4500;">2</span><span style="color: #66cc66;">=</span><span style="color: #ff4500;">64</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">9</span>^<span style="color: #ff4500;">2</span><span style="color: #66cc66;">=</span><span style="color: #ff4500;">81</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Заметьте, что в&nbsp;аргументе функции join стоит списочное выражение, не&nbsp;обёрнутое в&nbsp;квадратные скобки (это можно сделать, но&nbsp;не&nbsp;обязательно).</p>
+<p>Будьте внимательны! Обычно возведение в&nbsp;степень обозначают «крышечкой» перед степенью, но&nbsp;в&nbsp;Python эта «крышечка» обозначает совсем другое, а&nbsp;возведение в&nbsp;степень выполняется оператором **. В&nbsp;примере «крышечка» используется только как обозначение операции возведения в&nbsp;степень.</p>
+</div></article></section>
+{%endblock%}

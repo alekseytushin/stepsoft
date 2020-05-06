@@ -1,0 +1,408 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+
+<section class="lesson-material__content"><article class="material"><h2>Условный оператор</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Повторение</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Условный оператор (if, else), блоки кода и отступы</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Сложные условия. Логические операции</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Условный оператор. Вложенные структуры. Elif</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Операции над строками</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">6</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#6">Команда in</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>Во&nbsp;втором уроке мы&nbsp;впервые познакомимся с&nbsp;одной из&nbsp;фундаментально важных тем в&nbsp;программировании&nbsp;— условным оператором. Он&nbsp;позволяет организовать ветвление в&nbsp;вашей программе (выполнение одной ветки кода в&nbsp;зависимости от&nbsp;условия).</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Повторение</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>На&nbsp;прошлом уроке мы&nbsp;познакомились с&nbsp;переменными. Переменная имеет имя и&nbsp;значение. Имя переменной может начинаться только с&nbsp;буквы и&nbsp;может включать в&nbsp;себя буквы, цифры и&nbsp;символ подчеркивания. Имя переменной должно отражать ее&nbsp;назначение.</p>
+<p>Чтобы задать переменной значение, необходимо после знака равно (оператора присваивания) указать значение переменной.</p>
+<p>Еще значение переменной можно получить из&nbsp;ввода. Для этого используем команду input(). В&nbsp;этом случае значение переменной задает пользователь.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Условный оператор</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Условный оператор используется, когда некая часть программы должна быть выполнена, только если верно какое-либо условие. Для записи условного оператора используются ключевые слова if&nbsp;и&nbsp;else («если», «иначе»), двоеточие, а&nbsp;также отступ в&nbsp;четыре пробела.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">if</span> условие:
+    Действия<span style="color: #66cc66;">,</span> если условие верно
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    Действия<span style="color: #66cc66;">,</span> если условие неверно</pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP 8</strong></h4>
+<div>Отступ в&nbsp;4&nbsp;пробела принят в&nbsp;сообществе Python (PEP 8). При этом программа может работать и&nbsp;при других вариантах, но&nbsp;читать её&nbsp;будет неудобно. Пробелы&nbsp;— самый предпочтительный метод отступов. Табуляция должна использоваться только для поддержки кода, написанного с&nbsp;отступами с&nbsp;помощью табуляции. Python 3&nbsp;запрещает смешивание табуляции и&nbsp;пробелов в&nbsp;отступах.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Рассмотрим пример:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите пароль:'</span><span style="color: black;">)</span>
+password <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> password <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'qwerty'</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Доступ открыт.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ошибка, доступ закрыт!'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание: в&nbsp;начале условного оператора if&nbsp;выполняется сравнение, а&nbsp;не&nbsp;присваивание. Разница вот в&nbsp;чём:</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Определение</strong></h4>
+<div>Сравнение&nbsp;— это проверка, которая не&nbsp;меняет значение переменной (в&nbsp;сравнении может вообще не&nbsp;быть переменных), а&nbsp;присваивание&nbsp;— команда, которая меняет значение переменной. Для сравнения нужно использовать двойной знак равенства: ==.</div>
+<div>Также заметьте, что после else никогда не&nbsp;пишется никакого условия.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Другой пример:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Представься, о незнакомец!'</span><span style="color: black;">)</span>
+name <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> name <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Цезарь'</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Аве, Цезарь!'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Приветик.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;качестве условия можно использовать и&nbsp;другие операции отношения:</p>
+<p style="padding-left: 30px;"><strong>&lt; меньше</strong></p>
+<p style="padding-left: 30px;"><strong>&gt; больше</strong></p>
+<p style="padding-left: 30px;"><strong>&lt;= меньше или равно</strong></p>
+<p style="padding-left: 30px;"><strong>&gt;= больше или равно</strong></p>
+<p style="padding-left: 30px;"><strong>== равно</strong></p>
+<p style="padding-left: 30px;"><strong>!= не&nbsp;равно</strong></p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP 8</strong></h4>
+<div>Все операции отношения окружаются пробелами с&nbsp;двух сторон.</div>
+<div><strong>Правильно:</strong> if&nbsp;bird == "Тук-тук":</div>
+<div><strong><span style="text-decoration: line-through;">Неправильно</span>: </strong>if&nbsp;bird=="Тук-тук":</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Объекты любой однородной группы можно сравнивать между собой. Подумайте над тем, как можно сравнивать, например, строки.</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Сложное условие. Логические операции</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Иногда в&nbsp;условном операторе нужно задать сложное условие. Для этого можно использовать логические операции and («и»), or&nbsp;(«или») и&nbsp;not («не»).</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Чтобы задать, что два условия должны выполняться одновременно&nbsp;— используем and («и»), если достаточно выполнения одного из&nbsp;двух вариантов (или оба сразу), то&nbsp;используем&nbsp;or («или»), а&nbsp;если нужно убрать какой-то вариант, то&nbsp;используем not («не»).</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Приоритет выполнения операций:</p>
+<p style="padding-left: 30px;"><strong>1. not</strong></p>
+<p style="padding-left: 30px;"><strong>2. and</strong></p>
+<p style="padding-left: 30px;"><strong>3. or</strong></p>
+<p>Если нужно изменить приоритет операций или вы&nbsp;забыли правила&nbsp;— используйте скобки.</p>
+<p>Например, вот так можно проверить, что оба условия выполнены:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Как называются первая и последняя буквы греческого алфавита?'</span><span style="color: black;">)</span>
+greek_letter_1 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+greek_letter_2 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> greek_letter_1 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'альфа'</span> <span style="color: #ff7700; font-weight: bold;">and</span> greek_letter_2 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'омега'</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Верно.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Неверно.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Ниже еще несколько примеров.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Как греки или римляне называли главу своего пантеона — бога грома?'</span><span style="color: black;">)</span>
+ancient_god <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> ancient_god <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Зевс'</span> <span style="color: #ff7700; font-weight: bold;">or</span> ancient_god <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Юпитер'</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Верно.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Неверно.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите имена двух братьев из античных мифов и легенд.'</span><span style="color: black;">)</span>
+brother1 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+brother2 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> brother1 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Ромул'</span> <span style="color: #ff7700; font-weight: bold;">and</span> brother2 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Рем'</span> <span style="color: #ff7700; font-weight: bold;">or</span> brother1 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Кастор' </span><span style="color: #ff7700; font-weight: bold;">and</span> <span style="color: black;">(</span>brother2 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Поллукс'</span> <span style="color: #ff7700; font-weight: bold;">or</span> brother2 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Полидевк'</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Верно.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Неверно.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, что если программу из&nbsp;предыдущего примера вставить в&nbsp;WindIDE, то&nbsp;часть кода условного оператора будет выходить за&nbsp;ограничительную красную черту среды.</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/if.png" width="600" height="auto"></p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP 8</strong></h4>
+<div>
+<p>По&nbsp;стандарту PEP 8 длина строки должна быть ограничена максимум 79&nbsp;символами.</p>
+<p><strong>Предпочтительным способом переноса</strong> длинных строк является использование подразумеваемых продолжений строк Python <strong>внутри круглых, квадратных и&nbsp;фигурных скобок</strong>. Длинные строки могут быть разбиты на&nbsp;несколько строк, обёрнутых в&nbsp;скобки.</p>
+<p>Сделайте правильные отступы для перенесённой строки. Предпочтительнее вставить перенос строки после логического оператора, но&nbsp;не&nbsp;перед ним.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Тогда представленный выше программный код может быть записан так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите имена двух братьев из античных мифов и легенд.'</span><span style="color: black;">)</span>
+brother1 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+brother2 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: black;">(</span>brother1 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Ромул'</span> <span style="color: #ff7700; font-weight: bold;">and</span> brother2 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Рем'</span> <span style="color: #ff7700; font-weight: bold;">or</span> brother1 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Кастор'</span> <span style="color: #ff7700; font-weight: bold;">and</span> 
+   <span style="color: black;">(</span>brother2 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Поллукс'</span> <span style="color: #ff7700; font-weight: bold;">or</span> brother2 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Полидевк'</span><span style="color: black;">)</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Верно.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Неверно.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Рассмотрим еще несколько примеров.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Введите любые два слова, но это не должны быть "белый" и "медведь" разом.'</span><span style="color: black;">)</span>
+word1 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+word2 <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #ff7700; font-weight: bold;">not</span> <span style="color: black;">(</span>word1 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'белый'</span> <span style="color: #ff7700; font-weight: bold;">and</span> word2 <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'медведь'</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Верно.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Неверно.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Вложенные условия</h4>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>В&nbsp;команде if&nbsp;при выполнении условия можно выполнять более одной команды. Для этого все их&nbsp;необходимо выделить отступом. Такая запись называется <strong>блоком кода</strong>. По&nbsp;отступам интерпретатор определяет, какие команды исполнять при выполнении каких условий. Аналогично можно делать и&nbsp;для команды else.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Представься, о незнакомец!'</span><span style="color: black;">)</span>
+name <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> name <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Цезарь'</span> <span style="color: #ff7700; font-weight: bold;">or</span> name <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Caesar'</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Аве, Цезарь!'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Слава императору!'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Приветик.'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Погода сегодня хорошая.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Засим - заканчиваем.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Перед последней строчкой нет отступа&nbsp;— это означает, что она будет выполнена в&nbsp;конце работы программы в&nbsp;любом случае. А&nbsp;вот две предыдущие строчки будут выполнены, только если условие if&nbsp;окажется ложным.</p>
+<p>Блоки кода в&nbsp;Python очень гибко устроены: внутри них можно писать любой другой код, в&nbsp;том числе —условные операторы. Среди команд, которые выполняются, если условие if&nbsp;истинно («внутри&nbsp;if») или ложно («внутри else»), могут быть и&nbsp;другие условные операторы. Тогда команды, которые выполняются внутри этого внутреннего if&nbsp;или else, записываются с&nbsp;дополнительным отступом.</p>
+<p>Изучите пример ниже. elif&nbsp;— это короткая запись для «else: if». Если не&nbsp;пользоваться короткой записью, то&nbsp;if&nbsp;пришлось&nbsp;бы писать на&nbsp;отдельной строчке и&nbsp;с&nbsp;отступом (а&nbsp;всё, что внутри этого if&nbsp;— с&nbsp;дополнительным отступом). Это не&nbsp;очень удобно, и&nbsp;elif избавляет от&nbsp;такой необходимости.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Представься, о незнакомец!'</span><span style="color: black;">)</span>
+name <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> name <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Цезарь'</span> <span style="color: #ff7700; font-weight: bold;">or</span> name <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Caesar'</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Аве, Цезарь!'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'В честь какого бога устроим сегодня празднество?'</span><span style="color: black;">)</span>
+    god <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> god <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Юпитер'</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ура Громовержцу!'</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;">    # если оказалось, что имя бога не 'Юпитер', то проверяем, <br>    # не равно ли оно строке 'Минерва'</span>
+    <span style="color: #ff7700; font-weight: bold;">elif</span> god <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'Минерва'</span>: 
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ура мудрой воительнице!'</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;">    # следующая строка будет выполнена, <br>    # только если имя бога не 'Юпитер' и не 'Минерва'</span>
+    <span style="color: #ff7700; font-weight: bold;">else</span>: 
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Бога по имени'</span><span style="color: #66cc66;">,</span> god<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'мы не знаем, но слово Цезаря - закон.'</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;">    # эта команда будет выполнена независимо от того, <br>    # какое имя бога ввёл пользователь, если только изначально он представился Цезарем</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Слава императору!'</span><span style="color: black;">)</span> 
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Приветик.'</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Погода сегодня хорошая.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Засим - заканчиваем.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А более простой вариант этой программы теперь попробуйте написать самостоятельно.</p>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Операции над строками</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Во&nbsp;всех примерах, которые мы&nbsp;рассматривали, переменные хранили строки. Мы&nbsp;вводили, выводили и&nbsp;хранили строки. Кроме уже описанных действий строки ещё можно складывать.</p>
+<p>Давайте попробуем:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">x <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'10'</span>
+y <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'20'</span>
+z <span style="color: #66cc66;">=</span> x + y
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>z<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP 8</strong></h4>
+<div>И&nbsp;опять немного рекомендаций по&nbsp;оформлению (PEP 8)&nbsp;— ставьте пробелы вокруг знаков операций (*, +, - и&nbsp;т.д.)</div>
+<div><strong>Правильно:</strong> z = x + y</div>
+<div><strong><span style="text-decoration: line-through;">Неправильно</span>:</strong> z = x+y</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;данной программе мы&nbsp;задали переменным x&nbsp;и&nbsp;y&nbsp;значение, переменной z&nbsp;присвоили значение результата сложения x&nbsp;и&nbsp;y.</p>
+<p>Результатом выполнения программы будет строка ′1020′.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Операция сложения для строк выполняет конкатенацию двух строк, то&nbsp;есть склеивает их&nbsp;содержимое вместе.</div>
+<div>Например:</div>
+<div>Операция «При» + «вет» в&nbsp;результате даст строку «Привет».</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Обратите внимание, что запись: x + y = z&nbsp;недопустима. Оператор присваивания ожидает слева переменную, которой надо присвоить значение, а&nbsp;в&nbsp;правой части находится значение или выражение, которое надо сначала вычислить, а&nbsp;затем присвоить.</p>
+<p>Мы&nbsp;могли сократить нашу программу и&nbsp;написать в&nbsp;таком виде:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">x <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'10'</span>
+y <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'20'</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>x + y<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Результат будет такой&nbsp;же. Проверьте. Оператор print() сначала вычислил значение выражения x + y, а&nbsp;потом вывел на&nbsp;экран полученное значение.</p>
+<p>А&nbsp;ещё такой результат можно получить вот таким образом:</p>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'10'</span> + <span style="color: #483d8b;">'20'</span><span style="color: black;">)</span></pre>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Для строк так&nbsp;же можно выполнять умножение. Умножать можно строку на&nbsp;число или число на&nbsp;строку. Эта операция называется <strong>дублированием</strong>. В&nbsp;результате начальная строка будет повторена заданное количество раз.</div>
+<div>Например: 3 * ′20′ то&nbsp;же что и ′20′ * 3, и&nbsp;результат будет ′202020′ и&nbsp;в&nbsp;том, и&nbsp;в&nbsp;другом случае.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Примеры использования:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">x <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'10'</span>
+y <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'20'</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>x * <span style="color: #ff4500;">2</span> + y * <span style="color: #ff4500;">3</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Что будет на&nbsp;экране после запуска такой программы?</p>
+</div>
+<p><a name="6"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>6. Команда in</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Теперь рассмотрим новую команду для работы со&nbsp;строками&nbsp;— команду&nbsp;in.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Команда in&nbsp;позволяет проверить, что одна строка находится внутри другой.</div>
+<div>Например: строка «на» находится внутри строки «сложная задача».</div>
+<div>В&nbsp;таком случае обычно говорят, что одна строка является подстрокой для другой.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">text <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> <span style="color: #483d8b;">'хорош'</span> <span style="color: #ff7700; font-weight: bold;">in</span> text <span style="color: #ff7700; font-weight: bold;">and</span> <span style="color: #483d8b;">'плох'</span> <span style="color: #ff7700; font-weight: bold;">not</span> <span style="color: #ff7700; font-weight: bold;">in</span> text:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Текст имеет положительную эмоциональную окраску.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">elif</span> <span style="color: #483d8b;">'плох'</span> <span style="color: #ff7700; font-weight: bold;">in</span> text <span style="color: #ff7700; font-weight: bold;">and</span> <span style="color: #483d8b;">'хорош'</span> <span style="color: #ff7700; font-weight: bold;">not</span> <span style="color: #ff7700; font-weight: bold;">in</span> text:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Текст имеет отрицательную эмоциональную окраску.'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">else</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Текст имеет нейтральную или смешанную эмоциональную окраску.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Первое условие окажется истинным, например, для строк «всё хорошо» и&nbsp;«какой хороший день», но&nbsp;не&nbsp;для «ВсЁ ХоРоШо» и&nbsp;не&nbsp;для «что-то хорошо, а&nbsp;что-то и&nbsp;плохо». Аналогично, второе условие окажется истинным для строк «всё плохо», «плохое настроение» и&nbsp;т.&nbsp;д.</p>
+</div></article></section>
+{% endblock %}

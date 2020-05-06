@@ -1,0 +1,228 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Кортежи. Преобразование коллекций</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Кортежи</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Присваивание кортежей</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Сортировка пузырьком</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Преобразования между коллекциями</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;уроке вводится ещё один контейнер&nbsp;— кортеж (tuple). Более подробно рассматривается операция присваивания кортежей (знакомая нам по&nbsp;конструкции&nbsp;a, b = b, a) и&nbsp;применение этой операции в&nbsp;реализации классического алгоритма&nbsp;— сортировки пузырьком.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Кортежи</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;уже знаем такие коллекции, как списки, множества и&nbsp;строки. Сегодня мы&nbsp;рассмотрим ещё один один тип данных, являющийся коллекцией, который называется <strong>tuple</strong> (читается «тюпл» или «тьюпл», а&nbsp;переводится как «кортеж»).</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Кортежи очень похожи на&nbsp;списки (они тоже являются индексированной коллекцией), только вместо квадратных в&nbsp;них используются круглые скобки (причём эти круглые скобки часто можно пропускать):</p>
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #808080; font-style: italic;"># кортеж из двух элементов; тип элементов может быть любой</span>
+card <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #483d8b;">'7'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'пик'</span><span style="color: black;">)</span>                 <br><span style="color: #808080; font-style: italic;"># пустой кортеж (из 0 элементов)</span>
+empty <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: black;">)</span>                          <br><span style="color: #808080; font-style: italic;"># кортеж из 1 элемента - запятая нужна, <br># чтобы отличить от обычных скобок</span>
+t <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #ff4500;">18</span><span style="color: #66cc66;">,</span><span style="color: black;">)</span>                           <br><span style="color: #808080; font-style: italic;"># длина, значение отдельного элемента, сложение - как у списков</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">len</span><span style="color: black;">(</span>card<span style="color: black;">)</span><span style="color: #66cc66;">,</span> card<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> card + t<span style="color: black;">)</span> </pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><br>Кортежи можно сравнивать между собой:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># False</span>
+<span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span> <span style="color: #66cc66;">&lt;</span> <span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">)</span>     <span style="color: #808080; font-style: italic;"># True</span>
+<span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span> <span style="color: #66cc66;">&lt;</span> <span style="color: black;">(</span><span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span><span style="color: black;">)</span>       <span style="color: #808080; font-style: italic;"># True</span>
+<span style="color: black;">(</span><span style="color: #483d8b;">'7'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'червей'</span><span style="color: black;">)</span> <span style="color: #66cc66;">&lt;</span> <span style="color: black;">(</span><span style="color: #483d8b;">'7'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'треф'</span><span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># False</span>
+<span style="color: black;"><br></span> <span style="color: #808080; font-style: italic;"># А вот так сравнивать нельзя: элементы кортежей разных типов</span>
+<span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: black;">)</span> <span style="color: #66cc66;">&lt;</span> <span style="color: black;">(</span><span style="color: #483d8b;">'7'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'пик')</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание: операции == и != применимы к&nbsp;любым кортежам, независимо от&nbsp;типов элементов. А&nbsp;вот операции &lt;, &gt;, &lt;=, &gt;= применимы только в&nbsp;том случае, когда соответствующие элементы кортежей имеют один тип. Поэтому сравнивать (’7′, ’червей’) и (’7′, ’треф’) можно, а&nbsp;вот кортежи (1, 2) и (’7′, ’пик’) сравнивать нельзя&nbsp;— интерпретатор Python выдаст ошибку. При этом сравнение происходит последовательно элемент за&nbsp;элементом, а&nbsp;если элементы равны&nbsp;— просматривается следующий элемент.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Важнейшее техническое отличие кортежей от&nbsp;списков&nbsp;— неизменяемость. Как и&nbsp;к&nbsp;строке, к&nbsp;кортежу нельзя добавить элемент методом append, а&nbsp;существующий элемент нельзя изменить, обратившись к&nbsp;нему по&nbsp;индексу. Это выглядит недостатком, но&nbsp;в&nbsp;дальнейшем мы&nbsp;поймём, что у&nbsp;кортежей есть и&nbsp;преимущества.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Есть и&nbsp;семантическое (то&nbsp;есть смысловое) отличие. Если списки предназначены скорее для объединения неопределённого количества однородных сущностей, то&nbsp;кортеж&nbsp;— это быстрый способ объединить под одним именем несколько разнородных объектов, имеющих различный смысл.</p>
+<p>Так, в&nbsp;примере выше кортеж card состоит из&nbsp;двух элементов, означающих достоинство карты и&nbsp;её&nbsp;масть.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Присваивание кортежей</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Кортежи можно присваивать друг другу. Именно благодаря этому работает красивая особенность Python&nbsp;— уже знакомая нам конструкция вида&nbsp;a, b = b, a.</p>
+<p>Как известно, по&nbsp;левую сторону от&nbsp;знака присваивания = должно стоять имя переменной либо имя списка с&nbsp;индексом (или несколькими индексами). Они указывают, куда можно «положить» значение, записанное справа от&nbsp;знака присваивания. Однако слева от&nbsp;знака присваивания можно записать ещё и&nbsp;кортеж из&nbsp;таких обозначений (грубо говоря, имён переменных), а&nbsp;справа&nbsp;— кортеж из&nbsp;значений, которые следует в&nbsp;них поместить. Значения справа указываются в&nbsp;том&nbsp;же порядке, что и&nbsp;переменные слева (здесь скобки вокруг кортежа не&nbsp;обязательны):</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">n<span style="color: #66cc66;">,</span> s <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">10</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'hello'</span>
+<span style="color: #808080; font-style: italic;"># то же самое, что</span>
+n <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">10</span>
+s <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'hello'</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;примере выше мы&nbsp;изготовили кортеж, стоящий справа от =, прямо на&nbsp;этой&nbsp;же строчке. Но&nbsp;можно заготовить его и&nbsp;заранее:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">cards <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">(</span><span style="color: #483d8b;">'7'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'пик'</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #483d8b;">'Д'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'треф'</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: black;">(</span><span style="color: #483d8b;">'Т'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'пик'</span><span style="color: black;">)</span><span style="color: black;">]</span>
+value<span style="color: #66cc66;">,</span> suit <span style="color: #66cc66;">=</span> cards<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Достоинство карты:'</span><span style="color: #66cc66;">,</span> value<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Масть карты:'</span><span style="color: #66cc66;">,</span> suit<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Самое приятное: сначала вычисляются все значения справа, и&nbsp;лишь затем они кладутся в&nbsp;левую часть оператора присваивания. Поэтому и&nbsp;можно, например, поменять местами значения переменных a&nbsp;и&nbsp;b, написав: a, b = b, a.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a<span style="color: #66cc66;">,</span> b <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span>  <span style="color: #808080; font-style: italic;"># теперь a == 1 and b == 2</span>
+a<span style="color: #66cc66;">,</span> b <span style="color: #66cc66;">=</span> b<span style="color: #66cc66;">,</span> a  <span style="color: #808080; font-style: italic;"># теперь a == 2 and b == 1</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Пример ниже выведет «1 2 3». Убедитесь, что вы&nbsp;понимаете, почему так.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #808080; font-style: italic;"># кручу-верчу</span>
+a<span style="color: #66cc66;">,</span> b<span style="color: #66cc66;">,</span> с <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1</span>
+b<span style="color: #66cc66;">,</span> a<span style="color: #66cc66;">,</span> c <span style="color: #66cc66;">=</span> c<span style="color: #66cc66;">,</span> a<span style="color: #66cc66;">,</span> b
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>b<span style="color: #66cc66;">,</span> c<span style="color: #66cc66;">,</span> a<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>С&nbsp;использованием кортежей многие алгоритмы приобретают волшебную краткость. Например, вычисление чисел Фибоначчи:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">n <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+f1<span style="color: #66cc66;">,</span> f2 <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>n<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>f2<span style="color: black;">)</span>
+    f1<span style="color: #66cc66;">,</span> f2 <span style="color: #66cc66;">=</span> f2<span style="color: #66cc66;">,</span> f1 + f2</pre>
+</div>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Сортировка пузырьком</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Итак, у&nbsp;нас есть удобный способом поменять местами значения двух переменных. Теперь рассмотрим алгоритм, в&nbsp;котором эта операция играет важную роль.</p>
+<p>Часто бывает нужно, чтобы данные не&nbsp;просто содержались в&nbsp;списке, а&nbsp;были отсортированы (например, по&nbsp;возрастанию), то&nbsp;есть чтобы каждый следующий элемент списка был не&nbsp;меньше предыдущего. В&nbsp;качестве данных могут выступать числа или строки. Скажем, отсортированный список [4,1,9,3,1] примет вид [1,1,3,4,9]. Конечно, для этого есть стандартные функции и&nbsp;методы&nbsp;— но&nbsp;как они работают?</p>
+<p>Классический алгоритм сортировки&nbsp;— <strong>сортировка пузырьком</strong> (по&nbsp;науке&nbsp;— сортировка обменом). Она называется так потому, что элементы последовательно «всплывают» (отправляются в&nbsp;конец списка)&nbsp;— как пузырьки воздуха в&nbsp;воде. Сначала всплывает самый большой элемент, за&nbsp;ним&nbsp;— следующий по&nbsp;старшинству и&nbsp;т.&nbsp;д. Для этого мы&nbsp;сравниваем по&nbsp;очереди все соседние пары&nbsp;и, при необходимости, меняем элементы местами, ставя больший элемент на&nbsp;более старшее место.</p>
+<p>Идею наглядно объясняет <a href="https://youtu.be/lyZQPjUT5B4" target="_blank" rel="noopener"><span style="text-decoration: underline;">венгерский народный танец</span>.</a></p>
+<p>А&nbsp;полный код программы, которая считывает, сортирует и&nbsp;выводит список, выглядит, например, так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">n <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>    <span style="color: #808080; font-style: italic;"># количество элементов</span>
+a <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>n<span style="color: black;">)</span>:  <span style="color: #808080; font-style: italic;"># считываем элементы списка</span>
+    a.<span style="color: black;">append</span><span style="color: black;">(</span><span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># Сортировка пузырьком:</span>
+<span style="color: #ff7700; font-weight: bold;">for</span> i <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>n - <span style="color: #ff4500;">1</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">for</span> j <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span>n - <span style="color: #ff4500;">1</span> - i<span style="color: black;">)</span>:
+        <span style="color: #ff7700; font-weight: bold;">if</span> a<span style="color: black;">[</span>j<span style="color: black;">]</span> <span style="color: #66cc66;">&gt;</span> a<span style="color: black;">[</span>j + <span style="color: #ff4500;">1</span><span style="color: black;">]</span>:
+            a<span style="color: black;">[</span>j<span style="color: black;">]</span><span style="color: #66cc66;">,</span> a<span style="color: black;">[</span>j + <span style="color: #ff4500;">1</span><span style="color: black;">]</span> <span style="color: #66cc66;">=</span> a<span style="color: black;">[</span>j + <span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span> a<span style="color: black;">[</span>j<span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>a<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Преобразования между коллекциями</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Итак, на&nbsp;данный момент мы&nbsp;уже знаем четыре вида коллекций: строки, списки, множества и&nbsp;кортежи.</p>
+<p>У&nbsp;вас может возникнуть вопрос&nbsp;— возможно&nbsp;ли из&nbsp;одной коллекции сделать другую? Например, преобразовать строку в&nbsp;список или во&nbsp;множество? Конечно да, для этого можно использовать функции list, set и&nbsp;tuple. Если в&nbsp;качестве аргумента передать этим функциям какую-либо коллекцию, новая коллекция будет создана на&nbsp;её&nbsp;основе.</p>
+<p>Зачем нужно преобразование коллекций?</p>
+<p>Преобразование строки в&nbsp;список позволяет получить список символов. В&nbsp;некоторых задачах это может быть полезно, например, если мы&nbsp;хотим изменить один символ строки:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">s <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'симпотичный'</span>   <span style="color: #808080; font-style: italic;"># Написали с ошибкой</span>
+a <span style="color: #66cc66;">=</span> <span style="color: #008000;">list</span><span style="color: black;">(</span>s<span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># a == ['с', 'и', 'м', 'п', 'о', 'т', 'и,' 'ч', 'н', 'ы', 'й']</span>
+a<span style="color: black;">[</span><span style="color: #ff4500;">4</span><span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'а'</span>  <span style="color: #808080; font-style: italic;"># a == ['с', 'и', 'м', 'п', 'а', 'т', 'и,' 'ч', 'н', 'ы', 'й']</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>С&nbsp;этой&nbsp;же целью может потребоваться преобразование кортежа в&nbsp;список:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #808080; font-style: italic;"># В кортеже (писатель, дата рождения) допущена ошибка</span>
+writer <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: #483d8b;">'Лев Толстой'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1827</span><span style="color: black;">)</span>  
+a <span style="color: #66cc66;">=</span> <span style="color: #008000;">list</span><span style="color: black;">(</span>writer<span style="color: black;">)</span>                <span style="color: #808080; font-style: italic;"># a == ['Лев Толстой', 1827]</span>
+a<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1828</span>                     <span style="color: #808080; font-style: italic;"># a == ['Лев Толстой', 1828]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Преобразование списка или строки во&nbsp;множество позволяет получить очень интересные результаты. Как вы&nbsp;помните, все элементы множества должны быть уникальны, поэтому при преобразовании списка во&nbsp;множество каждый элемент останется только в&nbsp;одном экземпляре. Таким образом, можно очень легко определить количество уникальных элементов в&nbsp;списке:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Количество уникальных элементов в списке: '</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">len</span><span style="color: black;">(</span><span style="color: #008000;">set</span><span style="color: black;">(</span>a<span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Преобразование множества в&nbsp;список тоже возможно, но&nbsp;при этом нужно учитывать, что элементы множества не&nbsp;упорядочены и&nbsp;при преобразовании множества в&nbsp;список порядок элементов в&nbsp;нём предсказать заранее не&nbsp;всегда возможно:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">names <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: #483d8b;">'Иван'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Петр'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Сергей'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'Алексей'</span><span style="color: black;">}</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">list</span><span style="color: black;">(</span>names<span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># Возможные варианты вывода на экран - <br># ['Сергей', 'Алексей', 'Иван', 'Петр'], </span>
+<span style="color: #808080; font-style: italic;"># ['Сергей', 'Петр', 'Иван', 'Алексей'], <br># ['Алексей', 'Иван', 'Петр', 'Сергей'] и так далее.</span></pre>
+</div>
+</div></article></section>
+{%endblock%}

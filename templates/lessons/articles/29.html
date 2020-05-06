@@ -1,0 +1,289 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Библиотеки Python. Часть №&nbsp;4&nbsp;(морфология)</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Библиотека pymorph2</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Морфологический анализ</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Работа с&nbsp;тегами</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Постановка слов в&nbsp;начальную форму</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Согласование с&nbsp;числительными</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">6</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#6">Итоги</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>Мы&nbsp;уже говорили, что в&nbsp;Python имеется множество библиотек, реализующих абстракции для различных предметных областей. Поэтому мы&nbsp;занимаемся в&nbsp;основном верхним «этажом» логики. В&nbsp;этом уроке мы&nbsp;разберём библиотеку, позволяющую работать с&nbsp;текстами.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Библиотека pymorphy2</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Вы&nbsp;уже знаете стандартные строковые функции и&nbsp;пользовались ими. Мы&nbsp;умеем работать со&nbsp;строками посимвольно, а&nbsp;также знаем как представляется текстовая информация. Давайте перейдем на&nbsp;уровень выше. Строка и&nbsp;текст в&nbsp;общем случае состоят не&nbsp;из&nbsp;набора букв, а&nbsp;из&nbsp;слов, и&nbsp;иногда нужно работать именно со&nbsp;словами, а&nbsp;не&nbsp;просто с&nbsp;последовательностями байтов.</p>
+<p>Возьмём для примера склонение существительных с&nbsp;числительными. Например, на&nbsp;форуме надо написать, что в&nbsp;теме «21&nbsp;комментар<strong>ий</strong>», но&nbsp;«24&nbsp;комментар<strong>ия</strong>». То&nbsp;же самое нужно делать и&nbsp;для других слов: например, «новость», «пользователь». Иногда на&nbsp;сайтах обходят эту проблему и&nbsp;вставляют машинное «комментариев: 21».</p>
+<p>Давайте посмотрим, какие средства работы со&nbsp;словами есть в&nbsp;Python, и&nbsp;познакомимся с&nbsp;библиотекой <strong>pymorphy2</strong> (морфология).</p>
+<p>Если эта библиотека отсутствует в&nbsp;вашем Python, то&nbsp;надо ее&nbsp;установить с&nbsp;помощью утилиты <strong>pip</strong>.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">pip install pymorphy2</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Словари распространяются отдельными пакетами. Для русского языка используется <strong>pymorphy2-dicts-ru</strong>.</p>
+<p>Они обновляются время от&nbsp;времени, чтобы обновить словари, используйте команду</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">pip install -U pymorphy2-dicts-ru</pre>
+</div>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Морфологический анализ</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;pymorphy2 для морфологического анализа слов есть класс <strong>MorphAnalyzer</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Морфологический анализ</strong></h4>
+<div>
+<p>Морфологический анализ&nbsp;— это определение характеристик слова на&nbsp;основе того, как это слово пишется. При морфологическом анализе не&nbsp;учитываются соседние слова.</p>
+<p>Для любого слова библиотека делает несколько предположений, что оно может означать, а&nbsp;также обозначает свою уверенность в&nbsp;этом предположении.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Метод <strong>MorphAnalyzer.parse()</strong> возвращает один или несколько объектов типа <strong>Parse</strong> с&nbsp;информацией о&nbsp;том, как слово может быть разобрано.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">import</span> pymorphy2
+morph <span style="color: #66cc66;">=</span> pymorphy2.<span style="color: black;">MorphAnalyzer</span><span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+morph.<span style="color: black;">parse</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ваня'</span><span style="color: black;">)</span>
+&nbsp;
+------------------------------------------
+&nbsp;
+<span style="color: black;">[</span>Parse<span style="color: black;">(</span>word<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'ваня'</span><span style="color: #66cc66;">,</span> tag<span style="color: #66cc66;">=</span>OpencorporaTag<span style="color: black;">(</span><span style="color: #483d8b;">'NOUN,anim,masc,
+Name sing,nomn'</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> normal_form<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'ваня'</span><span style="color: #66cc66;">,</span> score<span style="color: #66cc66;">=</span><span style="color: #ff4500;">1.0</span><span style="color: #66cc66;">,</span> 
+methods_stack<span style="color: #66cc66;">=</span><span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #66cc66;">&lt;</span>DictionaryAnalyzer<span style="color: #66cc66;">&gt;,</span> <span style="color: #483d8b;">'ваня'</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">407</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;данном случае предположение одно с&nbsp;уверенностью score=1.0. Итак, мы&nbsp;имеем дело с&nbsp;существительным <strong>NOUN</strong>, именем собственным, одушевлённым, мужского рода.</p>
+<p>Конечно&nbsp;же предположений может быть несколько:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">morph.<span style="color: black;">parse</span><span style="color: black;">(</span><span style="color: #483d8b;">'пила'</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; [Parse(word='пила',<br># tag=OpencorporaTag('NOUN,inan,femn sing,nomn'),<br># normal_form='пила', score=0.428571, <br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'пила', 55, 0),)),</span>
+<span style="color: #808080; font-style: italic;"><br># =&gt; Parse(word='пила',<br># tag=OpencorporaTag('VERB,impf,tran femn,sing,past,indc'),<br># normal_form='пить', score=0.285714,<br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'пила', 444, 8),)),</span>
+<span style="color: #808080; font-style: italic;"><br># =&gt; Parse(word='пила',<br># tag=OpencorporaTag('NOUN,anim,masc,Name sing,gent'),<br># normal_form='пил', score=0.142857,<br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'пила', 1124, 1),)),</span><span style="color: #808080; font-style: italic;"><br><br># =&gt; Parse(word='пила',<br># tag=OpencorporaTag('NOUN,anim,masc,Name sing,accs'),<br># normal_form='пил', score=0.142857,<br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'пила', 1124, 3),))]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>У&nbsp;каждого разбора есть тег:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">p <span style="color: #66cc66;">=</span> morph.<span style="color: black;">parse</span><span style="color: black;">(</span><span style="color: #483d8b;">'пила'</span><span style="color: black;">)</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>p<span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; Parse(word='пила',<br># tag=OpencorporaTag('VERB,impf,tran femn,sing,past,indc'),<br># normal_form='пить', score=0.285714,<br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'пила', 444, 8),))</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Тег</strong></h4>
+<div>
+<p>Тег&nbsp;— это набор граммем, характеризующих данное слово.</p>
+<p>Например, тег "VERB,impf,tran femn,sing,past,indc" означает, что слово&nbsp;— глагол (VERB) несовершенного вида (impf), переходный (tran), женского рода (femn), единственного числа (sing), прошедшего времени (past), изъявительного наклонения (indc).</p>
+<p>Полный список граммем (грамматических единиц) можно посмотреть <a style="text-decoration: underline;" href="http://opencorpora.org/dict.php?act=gram" target="_blank" rel="noopener">тут</a> и <a style="text-decoration: underline;" href="https://pymorphy2.readthedocs.io/en/latest/user/grammemes.html#grammeme-docs" target="_blank" rel="noopener">тут</a>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Работа с тегами</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Для того, чтоб проверить, есть&nbsp;ли в&nbsp;данном теге отдельная граммема (или все граммемы из&nbsp;указанного множества), используйте оператор&nbsp;<strong>in</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #483d8b;">'NOUN'</span> <span style="color: #ff7700; font-weight: bold;">in</span> p.<span style="color: black;">tag</span> <span style="color: #808080; font-style: italic;"># =&gt; False</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Кроме того, у&nbsp;каждого тега есть атрибуты, через которые можно получить часть речи, число и&nbsp;другие характеристики:</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Например, для глагола теги бывают:</strong></h4>
+<div>
+<pre class="python" style="font-family: monospace;">p.<span style="color: black;">tag</span>.<span style="color: black;">POS</span>           <span style="color: #808080; font-style: italic;"># часть речи</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">animacy</span>       <span style="color: #808080; font-style: italic;"># одушевленность</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">aspect</span>        <span style="color: #808080; font-style: italic;"># вид: совершенный или несовершенный</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">case</span>          <span style="color: #808080; font-style: italic;"># падеж</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">gender</span>        <span style="color: #808080; font-style: italic;"># род (мужской, женский, средний)</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">involvement</span>   <span style="color: #808080; font-style: italic;"># включенность говорящего в действие</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">mood</span>          <span style="color: #808080; font-style: italic;"># наклонение (повелительное, изъявительное)</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">number</span>        <span style="color: #808080; font-style: italic;"># число (единственное, множественное)</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">person</span>        <span style="color: #808080; font-style: italic;"># лицо (1, 2, 3)</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">tense</span>         <span style="color: #808080; font-style: italic;"># время (настоящее, прошедшее, будущее)</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">transitivity</span>  <span style="color: #808080; font-style: italic;"># переходность (переходный, непереходный)</span>
+p.<span style="color: black;">tag</span>.<span style="color: black;">voice</span>         <span style="color: #808080; font-style: italic;"># залог (действительный, страдательный)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Итак, мы&nbsp;можем разбирать большие тексты на&nbsp;части и&nbsp;узнавать информацию о&nbsp;словах, например, искать глаголы, подсчитывать имена и&nbsp;т.д.</p>
+<p>Для склонения существительных можно использовать метод <strong>inflect</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">word <span style="color: #66cc66;">=</span> morph.<span style="color: black;">parse</span><span style="color: black;">(</span><span style="color: #483d8b;">'случай'</span><span style="color: black;">)</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+word.<span style="color: black;">inflect</span><span style="color: black;">(</span><span style="color: black;">{</span><span style="color: #483d8b;">'gent'</span><span style="color: black;">}</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; Parse(word='случая',<br># tag=OpencorporaTag('NOUN,inan,masc sing,gent'),<br># normal_form='случай', score=1.0,<br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'случая', 175, 1),))</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>И&nbsp;во&nbsp;множественном числе:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">word.<span style="color: black;">inflect</span><span style="color: black;">(</span><span style="color: black;">{</span><span style="color: #483d8b;">'gent'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'plur'</span><span style="color: black;">}</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; Parse(word='случаев',<br># tag=OpencorporaTag('NOUN,inan,masc plur,gent'),<br># normal_form='случай', score=1.0,<br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'случаев', 175, 7),))</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Вернёмся к&nbsp;параметру <strong>score</strong>.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">morph.<span style="color: black;">parse</span><span style="color: black;">(</span><span style="color: #483d8b;">'пила'</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># =&gt; [Parse(word='пила',<br># tag=OpencorporaTag('NOUN,inan,femn sing,nomn'),<br># normal_form='пила', score=0.428571,<br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'пила', 55, 0),)),</span>
+<span style="color: #808080; font-style: italic;"><br># =&gt; Parse(word='пила',<br># tag=OpencorporaTag('VERB,impf,tran femn,sing,past,indc'),<br># normal_form='пить', score=0.285714,<br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'пила', 444, 8),)),</span>
+<span style="color: #808080; font-style: italic;"><br># =&gt; Parse(word='пила',<br># tag=OpencorporaTag('NOUN,anim,masc,Name sing,gent'),<br># normal_form='пил', score=0.142857,<br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'пила', 1124, 1),)),</span>
+<span style="color: #808080; font-style: italic;"><br># =&gt; Parse(word='пила',<br># tag=OpencorporaTag('NOUN,anim,masc,Name sing,accs'),<br># normal_form='пил', score=0.142857,<br># methods_stack=((&lt;DictionaryAnalyzer&gt;, 'пила', 1124, 3),))]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Мы&nbsp;видим, что предложенные четыре варианта разбора имеют параметр <strong>score</strong>, который говорит нам о&nbsp;том, какой вариант предпочтительнее. Pymorphy2 использует статистические методы и&nbsp;ориентируется на&nbsp;данные проекта <a style="text-decoration: underline;" href="http://opencorpora.org" target="_blank" rel="noopener">OpenCorpora</a> для вычисления значения параметра <strong>score</strong>. Мы&nbsp;не&nbsp;будем останавливаться на&nbsp;данном моменте подробно. Интересующиеся могут прочитать о&nbsp;внутренней кухне на&nbsp;странице документации по&nbsp;Pymorphy2. Скажем только, что эти вычисления не&nbsp;всегда точны.</p>
+<p>Разборы сортируются по&nbsp;убыванию <strong>score</strong>, поэтому везде в&nbsp;примерах берется первый вариант разбора из&nbsp;возможных (например, morph.parse('пила')[0]).</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Постановка слов в&nbsp;начальную форму</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Нормальную (начальную) форму слова можно получить через атрибуты <strong>Parse.normal_form</strong> и&nbsp;<strong>Parse.normalized</strong>. Например, для глаголов в&nbsp;нем будет храниться инфинитив. Таким образом, можно привести любую форму глагола к&nbsp;единому виду.</p>
+<p>Но&nbsp;что считается за&nbsp;нормальную форму у&nbsp;других слов? Например, возьмём слово «изучающим». Иногда мы&nbsp;захотим нормализовать его в&nbsp;«изучать», иногда&nbsp;— в&nbsp;«изучающий», иногда&nbsp;— в&nbsp;«изучающая».</p>
+<p>Посмотрим на&nbsp;примере, что сделает pymorphy2:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">morph.<span style="color: black;">parse</span><span style="color: black;">(</span><span style="color: #483d8b;">'изучающим'</span><span style="color: black;">)</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>.<span style="color: black;">normal_form</span>
+<span style="color: #808080; font-style: italic;"># =&gt; 'изучать'</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>pymorphy2 сейчас использует алгоритм нахождения нормальной формы, который работает наиболее быстро (берётся первая форма в&nbsp;лексеме)&nbsp;— именно поэтому, например, все причастия сейчас нормализуются в&nbsp;инфинитивы. Это можно считать деталью реализации.</p>
+<p>Если требуется нормализовать слова иначе, можно воспользоваться методом <strong>Parse.inflect()</strong>:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">morph.<span style="color: black;">parse</span><span style="color: black;">(</span><span style="color: #483d8b;">'изучающим'</span><span style="color: black;">)</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>.<span style="color: black;">inflect</span><span style="color: black;">(</span><span style="color: black;">{</span><span style="color: #483d8b;">'sing'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'nomn'</span><span style="color: black;">}</span><span style="color: black;">)</span>.<span style="color: black;">word</span>
+<span style="color: #808080; font-style: italic;"># =&gt; 'изучающий'</span></pre>
+</div>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Согласование с&nbsp;числительными</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Помимо разбора слов, библиотека может их&nbsp;изменять, например, сопоставлять с&nbsp;числами. Давайте посмотрим, как можно решить задачу с&nbsp;подсчетом и&nbsp;выводом количества комментариев на&nbsp;форуме:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">comment <span style="color: #66cc66;">=</span> morph.<span style="color: black;">parse</span><span style="color: black;">(</span><span style="color: #483d8b;">'комментарий'</span><span style="color: black;">)</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+comment.<span style="color: black;">make_agree_with_number</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: black;">)</span>.<span style="color: black;">word</span> <span style="color: #808080; font-style: italic;"># =&gt; 'комментарий'</span>
+comment.<span style="color: black;">make_agree_with_number</span><span style="color: black;">(</span><span style="color: #ff4500;">2</span><span style="color: black;">)</span>.<span style="color: black;">word</span> <span style="color: #808080; font-style: italic;"># =&gt; 'комментария'</span>
+comment.<span style="color: black;">make_agree_with_number</span><span style="color: black;">(</span><span style="color: #ff4500;">7</span><span style="color: black;">)</span>.<span style="color: black;">word</span> <span style="color: #808080; font-style: italic;"># =&gt; 'комментариев'</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Интересно, что библиотека пытается работать даже со&nbsp;словами, которых не&nbsp;знает, обращаясь к&nbsp;<em>оракулу</em>:</p>
+<pre class="python" style="font-family: monospace;">word <span style="color: #66cc66;">=</span> morph.<span style="color: black;">parse</span><span style="color: black;">(</span><span style="color: #483d8b;">'Мегатрон'</span><span style="color: black;">)</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+word.<span style="color: black;">make_agree_with_number</span><span style="color: black;">(</span><span style="color: #ff4500;">7</span><span style="color: black;">)</span>.<span style="color: black;">word</span> <span style="color: #808080; font-style: italic;"># =&gt; 'мегатронов'</span>
+word.<span style="color: black;">make_agree_with_number</span><span style="color: black;">(</span><span style="color: #ff4500;">2</span><span style="color: black;">)</span>.<span style="color: black;">word</span> <span style="color: #808080; font-style: italic;"># =&gt; 'мегатрона'</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="6"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>6. Итоги</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;выяснили, что работа со&nbsp;словами в&nbsp;Python довольно проста. Сторонние библиотеки позволяют упростить работу с&nbsp;морфологией языков.</p>
+<p>Мы&nbsp;не&nbsp;рассматривали средства и&nbsp;библиотеки для извлечения знаний и&nbsp;фактов из&nbsp;текстов на&nbsp;естественных языках. Например, по&nbsp;тексту новости (цитируется портал lenta.ru):</p>
+<p><em>Россиянка Дарья Виролайнен досрочно стала обладательницей Большого Хрустального глобуса, вручаемого победительнице общего зачета Кубка Международного союза биатлонистов (IBU). Об&nbsp;этом сообщается на&nbsp;OpenCorpora IBU.</em></p>
+<p><em>На&nbsp;всех этапах Виролайнен набрала 684&nbsp;очка, ее&nbsp;соотечественница Анна Никулина, идущая второй,&nbsp;— 526&nbsp;баллов. На&nbsp;последнем этапе Кубка IBU в&nbsp;Эстонии россиянка не&nbsp;выступит: она вызвана в&nbsp;основной состав сборной России на&nbsp;этап Кубка мира. Тем не&nbsp;менее, Никулина не&nbsp;сумеет догнать&nbsp;ее.</em></p>
+<p><em>Также Виролайнен стала обладательницей Малого Хрустального глобуса в&nbsp;зачете гонок преследования.</em></p>
+<p><em>На&nbsp;чемпионате мира по&nbsp;биатлону, прошедшем с&nbsp;8&nbsp;по&nbsp;19&nbsp;февраля в&nbsp;австрийском Хохфильцене, спортсменка была в&nbsp;составе сборной России, однако не&nbsp;провела ни&nbsp;одной гонки.</em></p>
+<p>Можно узнать, что речь идёт о&nbsp;конкретном человеке, странах и&nbsp;датах, что тут упоминается вид спорта и&nbsp;т.&nbsp;д. Со&nbsp;временем вы&nbsp;усвоите и&nbsp;эти возможности библиотек Python.</p>
+</div></article></section>
+{%endblock%}

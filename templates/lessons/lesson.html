@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <div class="container-fluid content-block content-block-1 px-0">
+            <div class="row container mx-auto px-0">
+            <div class="list-group">
+            {% for i in names %}
+                {% if loop.index > 5 and not current_user.check_sub() %}
+                <a class="list-group-item disabled" style="color: grey; background-color: #fafafa;">{{ i }}</a>
+                {%else%}
+                <a href='{{addrs[loop.index0]}}' class="list-group-item list-group-item-action" >{{ i }}</a>
+                {%endif%}
+            {% endfor %}
+            </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container-fluid content-block content-block-1 px-0">
+            <div class="row container mx-auto px-0k">
+                <h1>Авторизуйтесь, чтобы начать</h1>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

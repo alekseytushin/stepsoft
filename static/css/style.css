@@ -1,0 +1,112 @@
+html{
+    overflow-x: hidden;
+}
+body{
+    font-size: 16px
+}
+
+nav{
+    background-color: inherit;
+    z-index: 3;
+}
+
+.img-content-left{
+    width: 400px;
+    position: relative;
+    left: -2000px;
+}
+.img-transform-left{
+    width: 400px;
+    position: relative;
+    left: 0;
+    transition: left 0.6s;
+}
+.img-content-right{
+    width: 400px;
+    position: relative;
+    right: -2000px;
+}
+.img-transform-right{
+    width: 400px;
+    position: relative;
+    right: 0;
+    transition: right 0.6s;
+}
+
+.sign-btn{
+    z-index: 3;
+}
+
+.sign-block{
+    position: absolute;
+    display: inline;
+    left: 1940px;
+    height: 0;
+    z-index: 2;
+}
+
+.sign-open{
+    padding-top: 100px;
+    position: absolute;
+    top: 0;
+    left: 500px;
+    min-height: 900px;
+    height: 1000px;
+    z-index: 2;
+    transition: left 1s;
+}
+
+.sign-open-full{
+    padding-top: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 900px;
+    height: 1000px;
+    z-index: 2;
+    transition: left 1s;
+}
+
+.ide{
+    position: absolute;
+    display: inline;
+    left: 1940px;
+    height: 0;
+    z-index: 2;
+    transition: left 0.5s;
+}
+
+.ide-open{
+    padding-top: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 900px;
+    height: 1000px;
+    z-index: 2;
+    transition: left 0.5s;
+}
+
+#main{
+    z-index: 1;
+}
+
+.content-block{
+    padding-top: 70px;
+    min-height: 900px;
+}
+.content-block-1{
+    background-color: #fcfcfc;
+}
+.content-block-2{
+    background-color: #2069bd;
+}
+.content-block-3{
+    background-color: #8ed44b;
+}
+.content-block-4{
+    background-color: #ead141;
+}
+.content-block-5{
+    background-color: #8ed44b;
+}

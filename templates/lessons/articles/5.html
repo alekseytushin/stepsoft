@@ -1,0 +1,195 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Отладчик</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Типы ошибок</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Отладка</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Точка остановки</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;уроке рассматривается работа с&nbsp;отладчиком на&nbsp;примере программы, которую нужно исправить. Затем даются группы задач, алгоритмы решения которых требуют рассмотрения многих случаев. Также в&nbsp;этом уроке вы&nbsp;не&nbsp;будете видеть тесты у&nbsp;задач, точно как&nbsp;же, как и&nbsp;на&nbsp;контрольных, и&nbsp;самостоятельных работах. Вам придется самим выяснять на&nbsp;каких входных данных не&nbsp;работает ваша программа. Внимательно читайте условие.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Типы ошибок</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Вероятно вы&nbsp;уже обратили внимание, что при написании программ у&nbsp;вас возникали хоть и&nbsp;разные ошибки, но&nbsp;у&nbsp;многих из&nbsp;них было что-то общее. На&nbsp;самом деле существуют три основных типа ошибок, которые нужно научиться различать, так вы&nbsp;сможете без труда их&nbsp;исправить.</p>
+<p><strong>Синтаксическая ошибка</strong>&nbsp;— происходит, когда встречается код, который не&nbsp;соответствует правилам языка Python. Например: отсутствие кавычек вокруг строковой переменной, невыставленное двоеточие или отсутствие отступов после оператора if. Интерпретатор останавливается и&nbsp;сообщает об&nbsp;ошибке без дальнейшего выполнения программы.</p>
+<p><strong>Ошибка исполнения</strong>&nbsp;— как следует из&nbsp;названия, случается во&nbsp;время исполнения программы. Например, когда ваша переменная ожидает работу с&nbsp;целыми числами, а&nbsp;оказывается строкой. Из-за несоответствия типов интерпретатор останавливается на&nbsp;ошибке.</p>
+<p><strong>Логическая ошибка (смысловая)</strong>&nbsp;— происходит, когда программа ведет себя не&nbsp;так, как было задумано. Например, порядок действий в&nbsp;вычисляемом выражении задан неправильно или неверно были расставлены отступы во&nbsp;вложенных операторах условия и&nbsp;т.д. Интерпретатор запускает программу и&nbsp;не&nbsp;сообщает об&nbsp;ошибке. Но&nbsp;все работает не&nbsp;так, как хотелось&nbsp;бы.</p>
+<p>С&nbsp;исправлением первых двух типов ошибок справится достаточно просто, поскольку интерпретатор сообщает, где ошибка произошла, а&nbsp;в&nbsp;среде разработки чаще всего указывается строка, на&nbsp;которой эта ошибка возникла. А&nbsp;для логических ошибок требуется детальное изучение кода, чтобы найти такие ошибки разработан специальный механизм отладки.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Отладка</h4>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Отладка</strong></h4>
+<div>Процесс изучения и&nbsp;исправления ошибок в&nbsp;работе программы, их&nbsp;часто называются багами (от&nbsp;англ. bug&nbsp;— жук), называется <strong>отладкой</strong>, по-английски&nbsp;— <strong>debugging</strong>, одно из&nbsp;значений&nbsp;— удаление насекомых с&nbsp;растений. По&nbsp;одной из&nbsp;версий именно так приходилось чинить компьютеры на&nbsp;заре компьютерной эпохи.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Программист всегда тестирует программу, занимается трассировкой&nbsp;и, конечно, размышляет над кодом, но&nbsp;иногда этого недостаточно. Часто (особенно когда программа длинная и&nbsp;сложная) невозможно обойтись без дополнительной информации. Какое значение имеет такая-то переменная в&nbsp;такой-то момент работы программы? В&nbsp;таком-то месте выполняется if&nbsp;или else? Выполняется&nbsp;ли тело такого-то цикла, и&nbsp;если&nbsp;да, то&nbsp;сколько раз?</p>
+<p>Для ответа на&nbsp;такие вопросы существуют специальные инструменты отладки (<strong>отладчики</strong>). Они позволяют проходить программу пошагово и&nbsp;следить при этом за&nbsp;значениями переменных.</p>
+<p>Средства отладки есть в&nbsp;стандартной библиотеке функций Python, но&nbsp;обычно удобнее пользоваться возможностями среды программирования. Рассмотрим возможности отладчика Wing IDE на&nbsp;примере программы из&nbsp;прошлого урока.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">total <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Вводите цены; для остановки введите -1.'</span><span style="color: black;">)</span>
+price <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> price <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">0</span>:
+    total <span style="color: #66cc66;">=</span> total + price  <span style="color: #808080; font-style: italic;"># можно заменить на аналогичное  total += price</span>
+    price <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Общая стоимость равна'</span><span style="color: #66cc66;">,</span> total<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Возьмем вот эту программу. Запустим&nbsp;её, убедимся, что она работает. Попробуем пройти по&nbsp;ней в&nbsp;режиме отладки.</p>
+<p>Средства отладки расположены в&nbsp;меню Debug, а&nbsp;также выведены иконками (после кнопки запуска) в&nbsp;панели меню. Еще их&nbsp;можно запускать горячими клавишами.</p>
+<p><img src="https://yastatic.net/s3/lyceum/content/image/debug-1.png" width="417" height="auto"></p>
+<p>В&nbsp;меню <strong>Debug</strong> есть такие команды (обратите также внимание на&nbsp;горячие клавиши, указанные справа):</p>
+<p>— Start&nbsp;/ Continue и&nbsp;Stop Debugging. Кнопки Debug и&nbsp;Stop выполняют те&nbsp;же функции. Первая команда запускает выполнение программы до&nbsp;ближайшего breakpoint’а, вторая полностью прерывает процесс отладки.</p>
+<p>— Step Into, Step Over, Step Out, Step Out to&nbsp;Here. Управление пошаговым прохождением программы. Мы&nbsp;пока будем использовать только Step Over. Остальные пункты связаны с&nbsp;заходом внутрь функций и&nbsp;выходом из&nbsp;них, но&nbsp;мы&nbsp;свои функции пока не&nbsp;пишем, а&nbsp;заходить внутрь стандартных нам не&nbsp;нужно. Пункт Step Over (как и&nbsp;одноимённая кнопка) доступен, когда программа запущена, но&nbsp;остановлена по&nbsp;breakpoint’у. Нажатие этой кнопки выполняет команду, записанную на&nbsp;текущей строчке, переходит на&nbsp;следующую и&nbsp;останавливается, ожидая ещё одного Step Over либо Continue.</p>
+<p>— Из&nbsp;следующих пунктов нам пока понадобятся только Add Breakpoint и&nbsp;Remove All Breakpoints. Add Breakpoint, как и&nbsp;кнопка Break, добавляет точку остановки на&nbsp;ту&nbsp;строчку программы, где находится курсор.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Если вы&nbsp;не&nbsp;видите подписей под кнопками, их&nbsp;можно включить: Edit → Preferences... → User Interface → Toolbar → Toolbar Style → Icon and Text Below.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>— Запустим отладку, выбрав из&nbsp;меню команду Step Into (или одноименную кнопку или воспользуемся горячей клавишей F7). После запуска этой команды&nbsp;— вместо окна <strong>Python Shell</strong> стало активно окно <strong>Debug I/O</strong>. В&nbsp;этом окне будет происходит ввод/вывод данных при отладке. Первая строка программы выделилась розовым цветом и&nbsp;у&nbsp;номера строки появилась розовая стрелка. Таким образом будет выделяться строка, которая будет выполнена при следующем шаге отладки. На&nbsp;текущий момент мы&nbsp;только запустили отладчик, первую строку программы он&nbsp;еще не&nbsp;выполнил, а&nbsp;только собирается выполнить. В&nbsp;левом нижнем окне переключитесь с&nbsp;активного окна <strong>Search</strong> на&nbsp;окно <strong>Stack Data</strong>. В&nbsp;этом окне мы&nbsp;сможем просматривать значения переменных.</p>
+<p>— Теперь выполним первую команду программы (total = 0). Для этого выберите команду <strong>Step Over</strong>. После выполнения этой команды&nbsp;— первая строка программы выполнилась. Посмотрите в&nbsp;окно <strong>Stack Data</strong>. Там в&nbsp;разделе <strong>Local</strong> появилась переменная total, которой присвоено значение&nbsp;0.</p>
+<p>— Теперь будем выполнять строчку price = float(input()) в&nbsp;которой требуется вводить данные. Выполните команду <strong>Step Over</strong>. Перейдите в&nbsp;окно <strong>Debug I/O</strong> и&nbsp;введите любое число (например, 45). Ввод завершите клавишей Enter. Пока программа ждала от&nbsp;нас ввода данных&nbsp;— окно <strong>Stack Data</strong> было неактивно и&nbsp;в&nbsp;окне редактора не&nbsp;было розовой подсветки исполняемой строки. После ввода данных и&nbsp;нажатия Enter окно <strong>Stack Data</strong> стало снова активным, в&nbsp;нем появилась переменная price с&nbsp;заданным нами значением. Значение переменной total пока не&nbsp;изменилось.</p>
+<p>— Выполним очередной шаг отладки (<strong>Step Over</strong>) и увидим, что значение переменной total изменилось и стало равно значению переменной price.</p>
+<p>Теперь самостоятельно продолжите отладку программы выполняя команду <strong>Step Over</strong>, когда необходимо вводя значения и&nbsp;смотря как меняются значения переменных в&nbsp;окне <strong>Stack Data</strong>.</p>
+<p>Вы&nbsp;только что выполнили свою первую отладку программы!</p>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Точка остановки</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>А&nbsp;теперь при помощи отладчика поищем ошибки в&nbsp;другой программе. Рассмотрим вот такую программу под названием bank:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Добро пожаловать в интернет-банк!'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'У нас фантастические процентные ставки!'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Для вкладов до 10 тысяч ₽ включительно прибыль составит 10%,'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'для вкладов на сумму до 100 тысяч включительно - 20%,'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'для более 100 тысяч - 30%!'</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'На какую сумму желаете сделать вклад?'</span><span style="color: black;">)</span>
+money <span style="color: #66cc66;">=</span> <span style="color: #008000;">float</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> money <span style="color: #66cc66;">&lt;=</span> <span style="color: #ff4500;">10000</span>:
+    money *<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1.1</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> money <span style="color: #66cc66;">&lt;=</span> <span style="color: #ff4500;">100000</span>:
+    money *<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1.2</span>
+<span style="color: #ff7700; font-weight: bold;">if</span> money <span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">100000</span>:
+    money *<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1.3</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Вы получаете'</span><span style="color: #66cc66;">,</span> money<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'₽, поздравляем!'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Эта программа верно выводит 1 300 000, если ввести 1 000 000, и&nbsp;верно выводит 24 000, если ввести 20 000. Но&nbsp;если ввести 1 000, то&nbsp;программа выведет 1 320 вместо 1 100, а&nbsp;если ввести 100 000, то&nbsp;она выведет 156 000 вместо 120 000!</p>
+<p>Выясним причины такого поведения при помощи инструментов отладки из&nbsp;меню Debug. Посмотрим, какие команды выполняются и&nbsp;как меняется значение переменной money.</p>
+<p>Но, если мы&nbsp;посмотрим на&nbsp;программу&nbsp;— то&nbsp;начальные строчки нет смысла отлаживать пошагово&nbsp;— в&nbsp;них выполняется вывод на&nbsp;экран. Есть смысл делать отладку только с&nbsp;момента получения значения money.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Если в&nbsp;строку, с&nbsp;которой начинать выполнять пошаговую отладку поставить специальную метку&nbsp;— <strong>точку остановки (breakpoint)</strong>&nbsp;— тогда при пошаговом выполнении можно выполнить все команды до&nbsp;breakpoint’а в&nbsp;обычном режиме, а&nbsp;не&nbsp;пошагово.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Итак, отлаживаем программу bank.</p>
+<p>— С&nbsp;помощью команды <strong>Add Breakpoint</strong> добавим точку остановки (breakpoint) на&nbsp;строчке&nbsp;8, поместив туда курсор. Обратите внимание: тот&nbsp;же пункт меню теперь называется Remove Breakpoint (но&nbsp;только пока курсор на&nbsp;этой строчке кода), а&nbsp;перед строчкой появилась красная точка. Это индикатор breakpoint’а. Можно убрать breakpoint, щёлкнув мышкой по&nbsp;красной точке, или установить его, щёлкнув по&nbsp;этому месту на&nbsp;этой или на&nbsp;другой строчке.</p>
+<p>— Запустим программу, но&nbsp;не&nbsp;кнопкой Run, а&nbsp;кнопкой <strong>Debug</strong>. В&nbsp;окне Debug I/O выведется текст из&nbsp;всех функций print и&nbsp;будет мигать курсор, ожидая ввода данных. Введём сумму&nbsp;— например, 1000. В&nbsp;этот момент программа доходит до&nbsp;строчки, на&nbsp;которой установлен breakpoint, и&nbsp;временно прерывает работу, отметив красным строку, на&nbsp;которой остановилась. В&nbsp;нижнем левом углу во&nbsp;вкладке Stack Data можно увидеть список переменных и&nbsp;их&nbsp;значения. Большинство&nbsp;— специальные системные, но&nbsp;в&nbsp;конце списка есть и&nbsp;переменная money.</p>
+<p>— Если теперь выбрать в&nbsp;меню <strong>Start&nbsp;/ Continue</strong>, программа продолжит работу до&nbsp;следующего breakpoint’а (которые можно ставить и&nbsp;снимать прямо во&nbsp;время отладки) или до&nbsp;конца. Но&nbsp;нам нужно пройти по&nbsp;программе построчно, чтобы понять, какие команды выполняются и&nbsp;чему при этом равно значение money. Чтобы продолжить выполнение программы, выберем команду <strong>Step Over</strong>.</p>
+<p>— Продолжаем нажимать <strong>Step Over</strong>. Обратите внимание: когда программа выполнила строчку&nbsp;9, значение money изменилось на&nbsp;1100&nbsp;— это верный итоговый ответ.</p>
+<p>— Но&nbsp;что&nbsp;же дальше? После строчки&nbsp;10, на&nbsp;которой программа проверяет условие if’а, выполняется строчка&nbsp;11, после которой значение money увеличивается до&nbsp;неправильного! Неудивительно: ведь условие и&nbsp;правда истинно. Но&nbsp;программа явно должна работать по-другому.</p>
+<p>На&nbsp;прошлом уроке мы&nbsp;смотрели как работает цикл на&nbsp;примере трассировочных таблиц. А&nbsp;теперь давайте посмотрим в&nbsp;режиме отладке, как будет работать программа, при вводе последовательности 12, 3, 32, 14, 0.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">count <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+number <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">while</span> number <span style="color: #66cc66;">!=</span> <span style="color: #ff4500;">0</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> number % <span style="color: #ff4500;">10</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">2</span> <span style="color: #ff7700; font-weight: bold;">and</span> number % <span style="color: #ff4500;">4</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">0</span>:
+        count +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+    number <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Количество искомых чисел:'</span><span style="color: #66cc66;">,</span> count<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Пройдитесь по&nbsp;программе отладчиком вводя указанные значения. Согласитесь, что так отлаживать программы проще, чем делая это вручную, на&nbsp;бумаге.</p>
+<p>А&nbsp;теперь, выберите разные значения для переменных a&nbsp;и&nbsp;b&nbsp;и&nbsp;пройдитесь отладчиком по&nbsp;данному коду:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+b <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span> 
+<span style="color: #ff7700; font-weight: bold;">while</span> a <span style="color: #66cc66;">!=</span> b:
+    <span style="color: #ff7700; font-weight: bold;">if</span> a <span style="color: #66cc66;">&gt;</span> b:
+        a -<span style="color: #66cc66;">=</span> b
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        b -<span style="color: #66cc66;">=</span> a
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>a<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Посмотрите, как будут меняться переменные. Определите, что будет выводить на&nbsp;экран, при выбранных вами значениях. Что находит данная программа для двух чисел?</p>
+<p>Рассмотрим еще одну задачу: в&nbsp;программу поступают значения с&nbsp;температурного датчика. Ввод значений прекращается сигналом остановки (число&nbsp;0).</p>
+<p>Вот код этой программы:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+k <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+t <span style="color: #66cc66;">=</span> a
+<span style="color: #ff7700; font-weight: bold;">while</span> a <span style="color: #66cc66;">!=</span> <span style="color: #ff4500;">0</span>:
+   <span style="color: #ff7700; font-weight: bold;">if</span> a <span style="color: #66cc66;">&gt;</span> t:
+      t <span style="color: #66cc66;">=</span> a
+      k <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+   <span style="color: #ff7700; font-weight: bold;">if</span> a <span style="color: #66cc66;">==</span> t:
+      k +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span>
+   a <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>k<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Ваша задача&nbsp;— определить что находит и&nbsp;выводит данная программа, относительно вводимых значений температуры?</p>
+<p>Помните, что ваши программы-игры (Псевдонимы, Лабиринт, Бот-говорилка) рассчитаны на людей. Пользователь должен понимать, что и когда нужно вводить.</p>
+</div></article></section>
+{% endblock %}

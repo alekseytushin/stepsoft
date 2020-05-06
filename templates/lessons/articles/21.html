@@ -1,0 +1,574 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Области видимости переменных</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Локальные и&nbsp;глобальные переменные</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Области видимости</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Использование глобальных переменных</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Аргументы функций как локальные переменные</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;уроке речь пойдёт про области видимости переменных. Занятие будет посвящено в&nbsp;первую очередь переменным, и&nbsp;лишь во&nbsp;вторую&nbsp;— функциям. Эти знания нечасто нужны для написания кода, но&nbsp;совершенно необходимы для понимания того, как программа работает. Это поможет вам не&nbsp;гадать, как ведет себя программа, и&nbsp;значительно сократит время, которое вы&nbsp;тратите на&nbsp;отладку.</em></div>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Локальные и&nbsp;глобальные переменные</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Разбиение программы на&nbsp;функции позволяет сильно упростить программу. С&nbsp;помощью них реализуется принцип модульности, обеспечивающий изоляцию частей программы. Так программисту необходимо оперировать только небольшим набором переменных, а&nbsp;не&nbsp;всеми сразу.</p>
+<p>Для того, чтобы использовать только необходимые данные придуманы области видимости, которые скрывают от&nbsp;одной части программы переменные, используемые в&nbsp;другой части программы. Хотя это делается автоматически, крайне важно понимать, как интерпретатор это делает, иначе неизбежны ошибки. Кроме того, изредка вам будет нужно «обойти» эти ограничения и&nbsp;сделать переменную доступную всем частям программы, и&nbsp;на&nbsp;такой случай вам придется познакомиться с&nbsp;глобальными переменными.</p>
+<p>На&nbsp;прошлых занятиях мы&nbsp;уже неоднократно использовали аргументы функций. Пользоваться ими вроде&nbsp;бы просто, но&nbsp;за&nbsp;кажущейся простотой скрывается много тонкостей:</p>
+<ul>
+<li>с&nbsp;какими переменными может работать функция?</li>
+<li>что если в&nbsp;двух функциях переменные называются одинаково?</li>
+<li>может&nbsp;ли функция изменить значение аргумента?</li>
+</ul>
+<p>Есть и&nbsp;много других вопросов. На&nbsp;этом занятии мы&nbsp;постараемся ответить на&nbsp;них.</p>
+<p>Вернемся к&nbsp;уже рассмотренной на&nbsp;прошлом занятии функции, которая должна выводить на&nbsp;экран содержимое списка, печатая каждый элемент на&nbsp;своей строчке. Посмотрим на&nbsp;переданный аргумент функции.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_array<span style="color: black;">(</span><span style="color: #dc143c;">array</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">for</span> element <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #dc143c;">array</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>element<span style="color: black;">)</span>
+&nbsp;<br>
+print_array<span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #483d8b;">'Hello'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'world'</span><span style="color: black;">]</span><span style="color: black;">)</span>
+print_array<span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #ff4500;">123</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">456</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">789</span><span style="color: black;">]</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Hello
+world
+123
+456
+789</pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Переменная array будет <strong>локальной</strong>. Она существует только во&nbsp;время выполнения (иногда говорят «жизни») функции. Можно сказать, что имя аргумента функции&nbsp;— это <strong>временное имя</strong> для переданного в&nbsp;функцию значения.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;создали список [’Hello’, ’world’] и&nbsp;передали его в&nbsp;функцию. Список существует независимо от&nbsp;того, есть&nbsp;ли у&nbsp;него имя, или нет, но&nbsp;если у&nbsp;объекта нет имени, мы&nbsp;не&nbsp;можем с&nbsp;ним работать. Поэтому у&nbsp;переданного списка временно появляется имя&nbsp;— в&nbsp;тот самый момент, когда функция начинает работу. Когда функция прекращает работу, это имя исчезает.</p>
+<p>В&nbsp;вышеописанной программе array не&nbsp;существует вне функции.</p>
+<p>Что интересно, у&nbsp;каждого объекта в&nbsp;программе может быть несколько имен. Например, слегка модифицируем программу:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_array<span style="color: black;">(</span><span style="color: #dc143c;">array</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">for</span> element <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #dc143c;">array</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>element<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+words <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'Hello'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'world'</span><span style="color: black;">]</span>
+print_array<span style="color: black;">(</span>words<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Hello
+world</pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Теперь у&nbsp;списка есть имя words. Но&nbsp;в&nbsp;момент выполнения функции у&nbsp;этого списка существует сразу два имени: words (имя из&nbsp;«внешнего мира», из&nbsp;<strong>глобальной области видимости</strong>) и&nbsp;array&nbsp;— локальное имя. В&nbsp;функции можно использовать любое из&nbsp;них, но&nbsp;внешнее&nbsp;— крайне не&nbsp;рекомендуется.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте перепишем программу, используя внешнее имя, и&nbsp;разберемся, почему так делать не&nbsp;стоит:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_array<span style="color: black;">(</span><span style="color: #dc143c;">array</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">for</span> element <span style="color: #ff7700; font-weight: bold;">in</span> words:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>element<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+words <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'Hello'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'world'</span><span style="color: black;">]</span>
+print_array<span style="color: black;">(</span>words<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Hello
+world</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Пока всё работает аналогично предыдущему примеру. А&nbsp;теперь выполним такую команду:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">print_array<span style="color: black;">(</span><span style="color: black;">[</span><span style="color: #483d8b;">'abc'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'def'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'ghi'</span><span style="color: black;">]</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Hello
+world</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;рассчитывали, что будут распечатаны три строки: abc, def и&nbsp;ghi, но&nbsp;вместо этого снова распечатались Hello и&nbsp;world, которые находятся в&nbsp;списке words. Если ваша функция написана так, то&nbsp;чтобы поменять её&nbsp;поведение, придётся не&nbsp;просто передать ей&nbsp;список, а&nbsp;перезаписать используемую переменную: words = [’abc’, ’def’, ’ghi’]</p>
+<p>Еще один минус: раньше вы&nbsp;могли прочитать три строки функции print_array и&nbsp;точно понять, как она будет работать. Теперь вам необходимо прочитать всю программу (а&nbsp;в&nbsp;большой программе могут быть тысячи строк), чтобы разобраться, как ведет себя эта функция&nbsp;— а&nbsp;всё потому что она теперь не&nbsp;самодостаточна, а&nbsp;зависит от&nbsp;внешней переменной.</p>
+<p>Всё, что вы&nbsp;сейчас узнали про использование внешних переменных в&nbsp;функции, необходимо в&nbsp;первую очередь для поиска ошибок. Если программа ведёт себя странно, проверьте, не&nbsp;используете&nbsp;ли вы&nbsp;где-то внешние (глобальные) переменные.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Повторим: использовать в&nbsp;своих программах эту возможность языка стоит как можно реже.</strong></h4>
+<div>К&nbsp;внешним переменным прибегать допустимо, если переменная&nbsp;— константа. Константы обычно пишутся большими буквами, чтобы не&nbsp;перепутать их&nbsp;с&nbsp;обычными переменными.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте напишем функцию, которая по&nbsp;номеру печатает соответствующий цвет радуги:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">ENGLISH_RAINBOW_COLORS <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>
+    <span style="color: #483d8b;">'red'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'orange'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'yellow'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'green'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'indigo'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'violet'</span>
+<span style="color: black;">]</span>
+RUSSIAN_RAINBOW_COLORS <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>
+    <span style="color: #483d8b;">'красный'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'оранжевый'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'желтый'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'зеленый'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'голубой'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'синий'</span><span style="color: #66cc66;">,</span>
+    <span style="color: #483d8b;">'фиолетовый'</span>
+<span style="color: black;">]</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> rainbow_color<span style="color: black;">(</span>index<span style="color: #66cc66;">,</span> russian_or_english<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">if</span> russian_or_english <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'russian'</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>RUSSIAN_RAINBOW_COLORS<span style="color: black;">[</span>index<span style="color: black;">]</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">elif</span> russian_or_english <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'english'</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>ENGLISH_RAINBOW_COLORS<span style="color: black;">[</span>index<span style="color: black;">]</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Неверный язык'</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+rainbow_color<span style="color: black;">(</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'russian'</span><span style="color: black;">)</span>
+rainbow_color<span style="color: black;">(</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'english'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">желтый
+yellow</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Эта функция будет работать нормально: предполагается, конечно, что в&nbsp;ходе работы программы никому не&nbsp;понадобится менять константы (на&nbsp;то&nbsp;они и&nbsp;константы).</p>
+<p>Заметьте, что мы&nbsp;не&nbsp;передаем эти константы в&nbsp;функцию как аргументы, а&nbsp;просто пользуемся ими. Они есть в&nbsp;нашем распоряжении, потому что определены на&nbsp;самом верхнем уровне.</p>
+<p>Однако, если константы надо использовать лишь в&nbsp;одной конкретной функции, то&nbsp;лучше внести их&nbsp;в&nbsp;эту функцию. Тогда их&nbsp;точно никто не&nbsp;испортит.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> rainbow_color<span style="color: black;">(</span>index<span style="color: #66cc66;">,</span> russian_or_english<span style="color: black;">)</span>:
+    ENGLISH_RAINBOW_COLORS <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'red'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'orange'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'yellow'</span><span style="color: #66cc66;">,<br></span><span style="color: #483d8b;">                              'green'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'blue'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'indigo'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'violet'</span><span style="color: black;">]</span>
+    RUSSIAN_RAINBOW_COLORS <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: #483d8b;">'красный'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'оранжевый'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'желтый'</span><span style="color: #66cc66;">,<br></span><span style="color: #483d8b;">                              'зеленый'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'голубой'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'синий'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'фиолетовый'</span><span style="color: black;">]</span>
+    <span style="color: #ff7700; font-weight: bold;">if</span> russian_or_english <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'russian'</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>RUSSIAN_RAINBOW_COLORS<span style="color: black;">[</span>index<span style="color: black;">]</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">elif</span> russian_or_english <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'english'</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>ENGLISH_RAINBOW_COLORS<span style="color: black;">[</span>index<span style="color: black;">]</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">else</span>:
+        <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Неверный язык'</span><span style="color: black;">)</span>
+&nbsp;<br>
+rainbow_color<span style="color: black;">(</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'russian'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">желтый</pre>
+</div>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Области видимости</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Давайте поговорим про область видимости переменных немного подробнее.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Сформулируем общее правило, касающееся видимости переменных:</strong></h4>
+<div>
+<ol>
+<li>Внутри функции видны все переменные этой функции (локальные переменные и&nbsp;аргументы функции).</li>
+<li>Также внутри функции видны переменные, которые определены снаружи этой функции.</li>
+<li>Снаружи не&nbsp;видны никакие переменные, которые определены внутри функции.</li>
+</ol>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Принцип такой&nbsp;же, как в&nbsp;машине с&nbsp;тонированными стеклами: изнутри видны все наружные объекты (и&nbsp;внутренние, конечно&nbsp;же), а&nbsp;вот снаружи посмотреть в&nbsp;машину не&nbsp;получается.</p>
+<p>Но&nbsp;вот вопрос: что&nbsp;же произойдет, если имена переменных в&nbsp;функции и&nbsp;во&nbsp;внешней программе совпадут?</p>
+<p>Оказывается, возможны два разных варианта.</p>
+<p>Первый вариант мы&nbsp;уже видели: это ситуация, когда внутри функции используется внешняя переменная, и&nbsp;это ровно та&nbsp;же внешняя переменная, что была снаружи. В&nbsp;следующем примере&nbsp;— это переменная&nbsp;PI.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_circle_length<span style="color: black;">(</span>radius<span style="color: black;">)</span>:
+    perimeter <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">2</span> * PI * radius
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Длина окружности: '</span><span style="color: #66cc66;">,</span> perimeter<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+PI <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">3.14</span>
+print_circle_length<span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Длина окружности: 62.800000000000004</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>Второй вариант&nbsp;— это ситуация, когда внутри функции используется переменная с&nbsp;тем&nbsp;же именем, что и&nbsp;в&nbsp;основной программе, но&nbsp;перед использованием ей&nbsp;присваивается новое значение.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">area <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Красная площадь'</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> print_square_area<span style="color: black;">(</span>length<span style="color: #66cc66;">,</span> width<span style="color: black;">)</span>:
+    area <span style="color: #66cc66;">=</span> length * width
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Площадь площади: '</span><span style="color: #66cc66;">,</span> area<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Место встречи: '</span><span style="color: #66cc66;">,</span> area<span style="color: black;">)</span>
+print_square_area<span style="color: black;">(</span><span style="color: #ff4500;">330</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">75</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Повторяю, место встречи: '</span><span style="color: #66cc66;">,</span> area<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Место встречи: Красная площадь
+Площадь площади: 24750
+Повторяю, место встречи: Красная площадь</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>Если попытаться мысленно выполнить программу, кажется, что функция должна испортить внешнюю переменную area, записав в&nbsp;неё вместо строки «Красная площадь» число, равное площади прямоугольника со&nbsp;сторонами length и&nbsp;area. Но&nbsp;этого не&nbsp;происходит. Когда после выполнения функции мы&nbsp;повторяем печать, то&nbsp;оказывается, что переменная area все так&nbsp;же содержит строку «Красная площадь», хотя внутри функции там определенно было число.</p>
+<p>Что&nbsp;же произошло?</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Оказывается, что area внутри функции и&nbsp;снаружи&nbsp;— это две совершенно разные переменные. Если внутри функции переменной что-то присваивается (в&nbsp;любом месте функции), то&nbsp;интерпретатор не&nbsp;позволит вам работать с&nbsp;внешней переменной. Вместо этого он&nbsp;создает новую переменную с&nbsp;тем&nbsp;же именем и&nbsp;присваивает значение уже&nbsp;ей. При этом к&nbsp;внешней переменной вы&nbsp;обратиться уже не&nbsp;можете: внутри функции она потеряла своё имя.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Как иногда говорят, внутренняя переменная с тем же именем её <strong>перекрыла или затенила</strong> (на английском языке это называется variable shadowing). На рисунке представлена визуализация описанного принципа.</p>
+<div class="material__content-positioner"><img class="material__illustration" src="https://yastatic.net/s3/lyceum/content/image/variable%20shadowing.png" width="600" height="auto"></div>
+<div class="material__content-positioner"><img class="material__illustration" src="https://yastatic.net/s3/lyceum/content/images/first-year/lesson-20/variable-shadowing.svg" width="680" height="auto"></div>
+<p>Это сделано для того, чтобы обезопасить вас от&nbsp;ошибок. Если&nbsp;бы функция могла менять внешние переменные, то&nbsp;в&nbsp;программе происходило&nbsp;бы много странных и&nbsp;непонятных вещей.</p>
+<p>Например, представьте, что вы&nbsp;написали функцию, которая вычисляет площадь и&nbsp;записывает что-то в&nbsp;переменную area. При этом в&nbsp;основной программе переменной area у&nbsp;вас не&nbsp;было, поэтому всё работало хорошо. Потом вы&nbsp;в&nbsp;какой-то момент ввели переменную area&nbsp;— теперь функция, которая работала хорошо и&nbsp;безопасно, стала менять значение area во&nbsp;внешней программе. Вам&nbsp;бы пришлось долго искать в&nbsp;программе ошибку, из-за которой вы&nbsp;встречаетесь на&nbsp;площади 24750.</p>
+<p>Именно поэтому области видимости так важны. Они позволяют изолировать небольшой кусочек программы, в&nbsp;котором ваши изменения на&nbsp;что-то влияют. Благодаря областям видимости не&nbsp;окажется так, что вы&nbsp;поменяли строку в&nbsp;одной функции, а&nbsp;сломалась другая.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Для того, чтобы не&nbsp;вносить в&nbsp;программу лишние глобальные переменные, часто весь код со&nbsp;внешнего уровня программы (т.е. всё, что не&nbsp;находится внутри функции) переносят в&nbsp;отдельную функцию main. После этого остается только вызвать&nbsp;её. Все переменные, которые были глобальными, таким образом, становятся локальными для функции main и&nbsp;не&nbsp;загрязняют область видимости других функций.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> print_square_area<span style="color: black;">(</span>length<span style="color: #66cc66;">,</span> width<span style="color: black;">)</span>:
+    area <span style="color: #66cc66;">=</span> length * width
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Площадь площади: '</span><span style="color: #66cc66;">,</span> area<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> main<span style="color: black;">(</span><span style="color: black;">)</span>:
+    area <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Красная площадь'</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Место встречи: '</span><span style="color: #66cc66;">,</span> area<span style="color: black;">)</span>
+    print_square_area<span style="color: black;">(</span><span style="color: #ff4500;">330</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">75</span><span style="color: black;">)</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Повторяю, место встречи: '</span><span style="color: #66cc66;">,</span> area<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+main<span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Место встречи: Красная площадь
+Площадь площади: 24750
+Повторяю, место встречи: Красная площадь</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Снова посмотрим на&nbsp;визуализацию принципа выделения функции main:</p>
+<div class="material__content-positioner"><img src="https://yastatic.net/s3/lyceum/content/image/yandex_lyceum_separate_scopes.png" width="500" height="auto"></div>
+<div class="material__content-positioner"><img class="material__illustration" src="https://yastatic.net/s3/lyceum/content/images/first-year/lesson-20/separate-scopes.svg" width="680" height="auto"></div>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Использование глобальных переменных</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Впрочем, если у&nbsp;вас есть глобальная переменная и&nbsp;вам зачем-то очень нужно повлиять на&nbsp;эту внешнюю переменную, это можно сделать.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Для изменения глобальной переменной, перед тем как присваивать внутри функции этой переменной какое-то значение, нужно указать, что она глобальная, т.е. относится к&nbsp;внешней области видимости.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Например, напишем функцию, которая при вызове будет обновлять счетчик, считающий, сколько раз вызвана эта функция.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">ask_number <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> ask_again<span style="color: black;">(</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">global</span> ask_number
+    ask_number <span style="color: #66cc66;">=</span> ask_number + <span style="color: #ff4500;">1</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ты спрашиваешь меня уже в '</span><span style="color: #66cc66;">,</span> ask_number<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'-й раз'</span><span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">''</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+ask_again<span style="color: black;">(</span><span style="color: black;">)</span>
+ask_again<span style="color: black;">(</span><span style="color: black;">)</span>
+ask_again<span style="color: black;">(</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Ты спрашиваешь меня уже в 1-й раз
+Ты спрашиваешь меня уже в 2-й раз
+Ты спрашиваешь меня уже в 3-й раз</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>Хотя переменной ask_number и&nbsp;присваивается значение, она является внешней переменной за&nbsp;счет строчки global ask_number.</p>
+<p>Мы&nbsp;уже не&nbsp;раз говорили, но&nbsp;повторим еще раз: про глобальные переменные нужно помнить и&nbsp;знать, но&nbsp;использовать их&nbsp;в&nbsp;своих программах крайне не&nbsp;рекомендуется.</p>
+<p>Менять внутри функции значение внешней переменной еще хуже, чем использовать внешние переменные, не&nbsp;изменяя&nbsp;их. Старайтесь писать функции, которые минимально зависят от&nbsp;всего, что происходит снаружи.</p>
+<p>Но&nbsp;давайте теперь немного поэкспериментируем с&nbsp;нашей программой. Уберем строку, которая делала переменную глобальной. Когда мы&nbsp;запустим программу, интерпретатор выдаст ошибку:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">ask_number <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> ask_again<span style="color: black;">(</span><span style="color: black;">)</span>:
+    ask_number <span style="color: #66cc66;">=</span> ask_number + <span style="color: #ff4500;">1</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ты спрашиваешь меня уже в '</span><span style="color: #66cc66;">,</span> ask_number<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'-й раз'</span><span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">''</span><span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+ask_again<span style="color: black;">(</span><span style="color: black;">)</span>
+ask_again<span style="color: black;">(</span><span style="color: black;">)</span>
+ask_again<span style="color: black;">(</span><span style="color: black;">)</span>
+-----------------------------------------------------
+UnboundLocalError             Traceback <span style="color: black;">(</span>most recent call last<span style="color: black;">)</span>
+<span style="color: #66cc66;">&lt;</span>ipython-input-<span style="color: #ff4500;">15</span>-1733b3dfd088<span style="color: #66cc66;">&gt;</span> <span style="color: #ff7700; font-weight: bold;">in</span> <span style="color: #66cc66;">&lt;</span>module<span style="color: #66cc66;">&gt;</span><span style="color: black;">(</span><span style="color: black;">)</span>
+      <span style="color: #ff4500;">7</span> 
+      <span style="color: #ff4500;">8</span> 
+----<span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">9</span> ask_again<span style="color: black;">(</span><span style="color: black;">)</span>
+     <span style="color: #ff4500;">10</span> ask_again<span style="color: black;">(</span><span style="color: black;">)</span>
+     <span style="color: #ff4500;">11</span> ask_again<span style="color: black;">(</span><span style="color: black;">)</span>
+&nbsp;
+<span style="color: #66cc66;">&lt;</span>ipython-input-<span style="color: #ff4500;">15</span>-1733b3dfd088<span style="color: #66cc66;">&gt;</span> <span style="color: #ff7700; font-weight: bold;">in</span> ask_again<span style="color: black;">(</span><span style="color: black;">)</span>
+      <span style="color: #ff4500;">3</span> 
+      <span style="color: #ff4500;">4</span> <span style="color: #ff7700; font-weight: bold;">def</span> ask_again<span style="color: black;">(</span><span style="color: black;">)</span>:
+----<span style="color: #66cc66;">&gt;</span> <span style="color: #ff4500;">5</span>     ask_number <span style="color: #66cc66;">=</span> ask_number + <span style="color: #ff4500;">1</span>
+      <span style="color: #ff4500;">6</span>     <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Ты спрашиваешь меня уже в '</span><span style="color: #66cc66;">,</span> ask_number<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'-й раз'</span><span style="color: #66cc66;">,</span> sep<span style="color: #66cc66;">=</span><span style="color: #483d8b;">''</span><span style="color: black;">)</span>
+      <span style="color: #ff4500;">7</span> 
+&nbsp;
+UnboundLocalError: local variable <span style="color: #483d8b;">'ask_number'</span> referenced before assignment</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>В&nbsp;переводе на&nbsp;русский язык это означает, что вы&nbsp;ссылаетесь на&nbsp;локальную переменную ask_number, прежде чем ей&nbsp;присвоено значение. Это происходит потому, что присваивание сделало переменную локальной.</p>
+<p>Но&nbsp;в&nbsp;конструкции ask_number = ask_number + 1&nbsp;cначала выполняется правая часть, в&nbsp;которой мы&nbsp;пытаемся эту локальную переменную использовать.</p>
+<p>Однако использовать её&nbsp;пока нельзя, так как она к&nbsp;этому моменту еще не&nbsp;существует. Как вы&nbsp;должны помнить, локальные переменные создаются в&nbsp;момент присваивания, и&nbsp;до&nbsp;этого использовать их&nbsp;нельзя.</p>
+<p>Одна из&nbsp;немногих причин использовать глобальные переменные&nbsp;— возможность сохранить какие-то данные между вызовами функции. Функция не&nbsp;может ничего сохранить «на&nbsp;будущее» в&nbsp;локальных переменных поскольку они исчезнут после того как интерпретатор вернется из&nbsp;функции. Зато, если функция при первом вызове сохранит что-либо в&nbsp;глобальную переменную, то&nbsp;при следующих вызовах эти данные будут доступны для чтения (и&nbsp;для изменения). Но&nbsp;не&nbsp;забудьте, что глобальная переменная может быть изменена не&nbsp;только из&nbsp;этой функции, но&nbsp;и&nbsp;в&nbsp;любом другом месте программы, так что вы&nbsp;должны внимательно следить за&nbsp;тем, чтобы значение вашей переменной не&nbsp;испортилось между вызовами функции.</p>
+</div>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Аргументы функций как локальные переменные</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Внимательный читатель мог заметить, что мы&nbsp;не&nbsp;рассмотрели еще один случай (а&nbsp;можно сказать, даже два) использования переменных с&nbsp;одинаковыми именами.</p>
+<p>Это случай, когда имя локальной переменной совпадает с&nbsp;именем аргумента функции и&nbsp;случай, когда имя внешней переменной совпадает с&nbsp;именем аргумента.</p>
+<p>Первая программа:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">def</span> greet<span style="color: black;">(</span>name<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Привет,"</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+    name <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'товарищ'</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Здравствуй,"</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+greet<span style="color: black;">(</span><span style="color: #483d8b;">'Вася'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Привет, Вася
+Здравствуй, товарищ</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>Вторая программа:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">name <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Петя'</span>
+&nbsp;
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">def</span> greet<span style="color: black;">(</span>name<span style="color: black;">)</span>:
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">"Привет,"</span><span style="color: #66cc66;">,</span> name<span style="color: black;">)</span>
+&nbsp;
+&nbsp;
+greet<span style="color: black;">(</span><span style="color: #483d8b;">'Вася'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">Привет, Вася</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p>Работу обеих программ очень легко объяснить. Они выполняются именно так, потому что аргумент функции&nbsp;— по&nbsp;сути обыкновенная локальная переменная. В&nbsp;момент вызова функции происходит присваивание значения «Вася» этой локальной переменной. А&nbsp;дальше программист волен её&nbsp;использовать и&nbsp;изменять, как ему вздумается.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Аргумент функции всегда является локальной переменной, а&nbsp;значит будет иметь приоритет над внешней переменной с&nbsp;тем&nbsp;же именем.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Рассмотрим еще одну задачу «Физическое моделирование». Физики часто используют компьютерное моделирование, чтобы понять, как протекает физический процесс. Для этого они описывают физическую систему несколькими переменными, которые изменяются во&nbsp;времени по&nbsp;некоторому закону. Мы&nbsp;будем моделировать очень простую систему: движение камня, который бросили под углом 45°&nbsp;к горизонту. На&nbsp;камень вдоль оси&nbsp;Y действует только сила тяжести. Конечно, из&nbsp;механики вам известно, что движение будет по&nbsp;параболе, но&nbsp;мы&nbsp;смоделируем этот процесс напрямую из&nbsp;законов движения по&nbsp;методу Эйлера. Мы&nbsp;знаем, что на&nbsp;камень действует ускорение свободного падения вдоль вертикальной оси.</p>
+<p>a<sub>x</sub> = 0; a<sub>y</sub> = −g = −9.81&nbsp;м/с<sup>2</sup>;</p>
+<p>Ускорение остается постоянным в&nbsp;течение все времени, пока камень не&nbsp;столкнется с&nbsp;землей. Оно будет изменять скорость. За&nbsp;время&nbsp;Δt скорости изменятся на&nbsp;величины:</p>
+<p>Δv<sub>x</sub> = a<sub>x</sub>Δt; Δv<sub>y</sub> = a<sub>y</sub>Δt</p>
+<p>Давайте теперь предположим, что за&nbsp;небольшой промежуток времени&nbsp;Δt скорости не&nbsp;успевают измениться. Тогда на&nbsp;этом коротеньком промежутке тело двигается равномерно прямолинейно, а&nbsp;координаты изменятся на&nbsp;величины: Δx&nbsp;= v<sub>x</sub>Δt; Δy&nbsp;= v<sub>y</sub>Δt</p>
+<p>Получается, что мы&nbsp;разбили движение на&nbsp;отрезки, которые тело проходит с&nbsp;постоянной скоростью и&nbsp;по&nbsp;прямой. Но&nbsp;если отрезки сделать очень маленькими, то&nbsp;окажется, что на&nbsp;каждом отрезке камень действительно не&nbsp;успевает сильно изменить ни&nbsp;скорость, ни&nbsp;направление. В&nbsp;итоге отрезки выстраиваются в&nbsp;траекторию, которая очень близка к&nbsp;тому, как тело будет двигаться на&nbsp;самом деле.</p>
+<p>Чтобы окончательно решить задачу нам остается указать координаты и&nbsp;скорости в&nbsp;начальный момент. Мы&nbsp;зададим координаты нулевыми, а&nbsp;проекции скорости вдоль осей x&nbsp;и&nbsp;y&nbsp;— равными 10&nbsp;м/с (бросок под углом&nbsp;45°).</p>
+<p>Пересчитывать скорости и&nbsp;координаты мы&nbsp;будем каждые 0.05&nbsp;с. Чтобы получить еще более плавное движение можно взять интервал времени поменьше. Вот простенькая программа для вычисления траектории камня:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">dt <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0.05</span>  <span style="color: #808080; font-style: italic;"># Шаг по времени</span>
+ax<span style="color: #66cc66;">,</span> ay <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> -<span style="color: #ff4500;">9.81</span>  <span style="color: #808080; font-style: italic;"># Ускорения вдоль осей</span>
+x<span style="color: #66cc66;">,</span> y <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">0</span>  <span style="color: #808080; font-style: italic;"># Начальные координаты</span>
+vx<span style="color: #66cc66;">,</span> vy <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">10</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span>  <span style="color: #808080; font-style: italic;"># Начальные скорости</span>
+&nbsp;
+<span style="color: #ff7700; font-weight: bold;">while</span> y <span style="color: #66cc66;">&gt;=</span> <span style="color: #ff4500;">0</span>:
+    <span style="color: #808080; font-style: italic;"># Обновляем скорости</span>
+    vx +<span style="color: #66cc66;">=</span> ax * dt
+    vy +<span style="color: #66cc66;">=</span> ay * dt
+    <span style="color: #808080; font-style: italic;"># Обновляем координаты</span>
+    x +<span style="color: #66cc66;">=</span> vx * dt
+    y +<span style="color: #66cc66;">=</span> vy * dt
+    <span style="color: #808080; font-style: italic;"># Точки траектории печатаем округленными до 3 знака</span>
+    <span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">round</span><span style="color: black;">(</span>x<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">round</span><span style="color: black;">(</span>y<span style="color: #66cc66;">,</span> <span style="color: #ff4500;">3</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">0.5 0.475
+1.0 0.926
+1.5 1.353
+2.0 1.755
+2.5 2.132
+3.0 2.485
+3.5 2.813
+4.0 3.117
+4.5 3.396
+5.0 3.651
+5.5 3.881
+6.0 4.087
+6.5 4.268
+7.0 4.425
+7.5 4.557
+8.0 4.665
+8.5 4.748
+9.0 4.806
+9.5 4.84
+10.0 4.85
+10.5 4.835
+11.0 4.795
+11.5 4.731
+12.0 4.642
+12.5 4.529
+13.0 4.392
+13.5 4.23
+14.0 4.043
+14.5 3.832
+15.0 3.596
+15.5 3.336
+16.0 3.051
+16.5 2.741
+17.0 2.408
+17.5 2.049
+18.0 1.666
+18.5 1.259
+19.0 0.827
+19.5 0.37
+20.0 -0.111</pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br><strong>Ваша задача</strong>&nbsp;— завести отдельную функцию updateCoordinates(), которая будет обновлять значения координат и&nbsp;скоростей.</p>
+<p>Перепишите эту программу в&nbsp;трех разных вариантах:</p>
+<p>В&nbsp;первом варианте x&nbsp;и&nbsp;y, vx&nbsp;и&nbsp;vy&nbsp;должны быть отдельными переменными, как это сделано сейчас. Однако они должны обновляться внутри функции.</p>
+<p>Во&nbsp;втором варианте координаты и&nbsp;скорости должны быть записаны в&nbsp;два списка, а&nbsp;функция должна обновлять эти списки:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">coords <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>x<span style="color: #66cc66;">,</span> y<span style="color: black;">]</span>
+velocities <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>vx<span style="color: #66cc66;">,</span> vy<span style="color: black;">]</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Напомним, что кортежи отличаются от&nbsp;списков тем, что они неизменяемы.</p>
+<p>В&nbsp;третьем варианте x&nbsp;и&nbsp;y, vx&nbsp;и&nbsp;vy&nbsp;должны быть записаны в&nbsp;два кортежа, а&nbsp;функция должна обновлять эти кортежи:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">coords <span style="color: #66cc66;">=</span> <span style="color: black;">(</span>x<span style="color: #66cc66;">,</span> y<span style="color: black;">)</span>
+velocities <span style="color: #66cc66;">=</span> <span style="color: black;">(</span>vx<span style="color: #66cc66;">,</span> vy<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Объясните, чем третий вариант принципиально отличается от&nbsp;первых двух.</p>
+</div></article></section>
+{%endblock%}

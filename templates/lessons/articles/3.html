@@ -1,0 +1,415 @@
+{% extends 'lessons/temporary1.html' %}
+
+{% block article %}
+<section class="lesson-material__content"><article class="material"><h2>Простые встроенные функции</h2>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4 style="padding-left: 60px;"><strong>План урока</strong></h4>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">1</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#1">Типы данных. Числовые типы</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">2</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#2">Операции над числами. Целочисленное деление</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">3</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#3">Приоритет операций</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">4</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#4">Простейшие функции</a></span></div>
+</div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; display: table-cell; vertical-align: top; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 1px solid #4d4d4d; vertical-align: middle; border-radius: 50%; color: #4d4d4d !important; width: 40px; height: 40px; text-align: center; font-size: 18px; line-height: 40px; overflow: hidden; white-space: nowrap;">5</div>
+</div>
+<div style="box-sizing: content-box; margin: 0px; padding: 0px 0px 0px 25px; border: 0px; display: table-cell; vertical-align: middle; height: 40px;">
+<div style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-size: 20px; color: #4d4d4d;"><span style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: 500;"><a style="box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; color: #4d4d4d !important;" href="#5">Обмен значениями</a></span></div>
+</div>
+</div>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<div style="background-color: #f5f2f0; padding: 60px;">
+<h4><strong>Аннотация</strong></h4>
+<div><em>В&nbsp;этом уроке мы&nbsp;познакомимся с&nbsp;типами данных, научимся работать с&nbsp;числами и&nbsp;узнаем о&nbsp;простейших функциях.</em></div>
+</div>
+<div>&nbsp;</div>
+<div style="padding-left: 60px;">
+<p><strong>Повторение</strong></p>
+<p>На&nbsp;прошлом уроке мы&nbsp;рассмотрели условный оператор, который позволяет выполнять различные ветки кода, в&nbsp;зависимости от&nbsp;заданных условий. Научились составлять сложные условия при помощи операций not, and и&nbsp;or.</p>
+</div>
+<p><a name="1"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>1. Типы данных. Числовые типы</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Пока единственным типом данных, с&nbsp;которым мы&nbsp;работали, были строки. Теперь нам предстоит рассмотреть целые и&nbsp;вещественные числа. У&nbsp;каждого элемента данных, который встречается в&nbsp;программе, есть свой тип. (В&nbsp;случае Python более правильный термин&nbsp;— «класс объекта», но&nbsp;об&nbsp;этом мы&nbsp;будем говорить гораздо позже.)</p>
+<p>Например, «привет» — это строка, а&nbsp;вот 15.3&nbsp;— это число (дробное). Даже если данные не&nbsp;записаны прямо в&nbsp;программе, а&nbsp;получаются откуда-то ещё, у&nbsp;них есть совершенно определённый тип. Например, на&nbsp;место input() всегда подставляется строка, а&nbsp;2 + 2&nbsp;даст именно число&nbsp;4, а&nbsp;не&nbsp;строку «4».</p>
+<p>Пользователь может ввести с&nbsp;клавиатуры какие-то цифры, но&nbsp;в&nbsp;результате input() вернёт строку, состоящую из&nbsp;этих цифр. Если мы&nbsp;попытаемся, например, прибавить к&nbsp;этой строке&nbsp;1, то&nbsp;получим ошибку.</p>
+<p>Давайте попробуем это сделать:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>a + <span style="color: #ff4500;">1</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Сохраните и&nbsp;запустите программу.</p>
+<p>Введите любое число и&nbsp;посмотрите, что получится.</p>
+<p>Ошибка возникнет потому, что в&nbsp;переменную а&nbsp;у&nbsp;нас попадает строка, а&nbsp;в&nbsp;функции print мы&nbsp;пытаемся эту строку из&nbsp;переменной а&nbsp;и&nbsp;число 1. Исправьте программу так, чтобы она работала.</p>
+<p>А&nbsp;если нам надо работать с&nbsp;числами? Мы&nbsp;пока будем рассматривать целые и&nbsp;вещественные числа.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Когда речь идет о&nbsp;числовых данных&nbsp;— они записываются <strong>без кавычек</strong>. <br>А&nbsp;для вещественных чисел&nbsp;— для разделения целой и&nbsp;дробной части используют <strong>точку</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><br>На&nbsp;прошлом занятии мы&nbsp;складывали две строки:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'10'</span> + <span style="color: #483d8b;">'20'</span><span style="color: black;">)</span> </pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>И&nbsp;получали результат&nbsp;— строку «1020».</p>
+<p>Давайте попробуем в&nbsp;этом примере убрать кавычки. В&nbsp;таком случае речь пойдёт уже не&nbsp;о&nbsp;строках, а&nbsp;о&nbsp;двух целых числах.</p>
+<p>И&nbsp;результатом функции print(10 + 20) будет целое число&nbsp;30.</p>
+<p>А&nbsp;если мы&nbsp;попробуем сложить два вещественных числа print(10.0 + 20.0), то&nbsp;результатом будет вещественное число 30.0.</p>
+<p>Попробуйте предположить что будет, если сложить вещественное число и&nbsp;целое число print(10.0 + 20). Почему?</p>
+<p>Мы&nbsp;выполняли сложение двух чисел внутри функции print, но&nbsp;мы&nbsp;можем переменным давать нужные значение и&nbsp;выполнять действия над переменными.</p>
+<p>Давайте напишем программу, которая задаст нужные значения двум переменным (10&nbsp;и&nbsp;20), потом вычислит их&nbsp;сумму, положит это значение в&nbsp;третью переменную и&nbsp;выведет на&nbsp;экран полученный результат. Допишите начальные строки, чтобы программа решала поставленную задачу:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">...
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>summ<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Обратите внимание, что если в&nbsp;качестве имени переменной для суммы взять <strong>sum</strong>, то&nbsp;оно выделяется цветом. Это означает, что такое имя знакомо среде и&nbsp;принадлежит какой-то функции, в&nbsp;качестве имени переменной его лучше не&nbsp;использовать.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Как складывать два числа мы&nbsp;научились. Еще числа можно вычитать, умножать, делить, возводить в&nbsp;степень, получать целую часть от&nbsp;деления и&nbsp;остаток от&nbsp;деления нацело. Давайте разберём эти операции на&nbsp;примерах.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">30</span> - <span style="color: #ff4500;">10</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">30.0</span> - <span style="color: #ff4500;">10</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">3</span> * <span style="color: #ff4500;">3</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>С&nbsp;вычитанием и&nbsp;умножением все понятно, они аналогичны сложению.</p>
+<p>Возведение в&nbsp;степень обозначается двумя звёздочками **, которые должны записываться без разделителей.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">9 </span>** <span style="color: #ff4500;">2</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, что результат деления&nbsp;— всегда вещественный, даже если мы&nbsp;делим два целых числа, которые делятся нацело.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span> / <span style="color: #ff4500;">2</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Попробуйте поделить на&nbsp;0. Посмотрите, как будет выглядеть ошибка деления на&nbsp;0.</p>
+</div>
+<p><a name="2"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>2. Операции над числами. Целочисленное деление</h4>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Для реализации целочисленного деления существуют два действия&nbsp;— деление нацело и&nbsp;остаток от&nbsp;деления нацело. Получение целой части от&nbsp;деления обозначается как удвоенный знак деления //, а&nbsp;остатка от&nbsp;деления нацело&nbsp;— %.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p><br>Давайте подробнее разберём эти операции. Что будет выведено в&nbsp;результате этих действий?</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span> // <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span> % <span style="color: #ff4500;">3</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span> // <span style="color: #ff4500;">5</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span> % <span style="color: #ff4500;">5</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span> // <span style="color: #ff4500;">11</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span> % <span style="color: #ff4500;">11</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Допустим, вам известны результаты a // b, a&nbsp;%&nbsp;b&nbsp;и&nbsp;число&nbsp;b, напишите формулу, как найти число&nbsp;a?</p>
+<p>Давайте проверим вашу формулу:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">10</span>
+b <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">3</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>….А сюда напишем формулу…<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание на&nbsp;порядок выполнения действий в&nbsp;вашей формуле. Целочисленное деление имеет тот&nbsp;же приоритет, что и&nbsp;обычное деление, значит, будет выполнятся раньше, чем вычитание и&nbsp;сложение. Для изменения приоритета выполнения операций используются скобки, все также, как и&nbsp;в&nbsp;математике.</p>
+<p>А теперь, немного разобравшись с этими операциями, попробуйте предположить, что выведется на экран после выполнения следующего куска кода:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span> // <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff4500;">10</span> % <span style="color: #ff4500;">3</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>-<span style="color: #ff4500;">10</span> // <span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span> -<span style="color: #ff4500;">10</span> % <span style="color: #ff4500;">3</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Определите, что будет выведено на&nbsp;экран?</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">4</span>
+b <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">15</span>
+c <span style="color: #66cc66;">=</span> b / <span style="color: #ff4500;">5</span> * <span style="color: #ff4500;">3</span> - a
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>c<span style="color: black;">)</span></pre>
+</div>
+</div>
+<p><a name="3"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>3. Приоритет операций</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;уже с&nbsp;вами изучили несколько типов операторов в&nbsp;языке Python:</p>
+<p>— операторы присваивания (=, +=, -=, *= и&nbsp;т.д.)</p>
+<p>— операторы сравнения (==, !=, &gt;, &lt;, &gt;=, &lt;=)</p>
+<p>— арифметические операторы (+, -, *, //, %, **)</p>
+<p>— логические операторы (and, or, not)</p>
+<p>Есть и&nbsp;другие, мы&nbsp;с&nbsp;ними познакомимся позднее. Все эти операторы могут использоваться совместно в&nbsp;довольно сложных конструкциях, поэтому нужно помнить о&nbsp;приоритете операций, и&nbsp;в&nbsp;случае необходимости менять его при помощи скобок.</p>
+<p>Итак, приоритет выполнения операторов в&nbsp;Python от&nbsp;наивысшего (выполняется первым) до&nbsp;наинизшего:</p>
+<p>1. Возведение в&nbsp;степень (**)</p>
+<p>2. Унарный минус (-). Используется для получения, например, противоположного числа.</p>
+<p>3. Умножение, деление (* / % //)</p>
+<p>4. Сложение и&nbsp;вычитание (+ -)</p>
+<p>5. Операторы сравнения (&lt;= &lt; &gt; &gt;=)</p>
+<p>6. Операторы равенства (== !=)</p>
+<p>7. Операторы присваивания (=)</p>
+<p>8. Логические операторы (not or and)</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>PEP 8</strong></h4>
+<div>
+<p>Если используются операторы с&nbsp;разными приоритетами, попробуйте добавить пробелы вокруг операторов с&nbsp;самым низким приоритетом. Руководствуйтесь своими собственными суждениями, но&nbsp;никогда не&nbsp;используйте более одного пробела и&nbsp;всегда используйте одинаковое количество пробелов по&nbsp;обе стороны бинарного оператора.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><a name="4"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>4. Простейшие функции</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>С&nbsp;действиями над числами определились, осталось разобраться, как получать числа из&nbsp;ввода. Здесь нам поможет важное новое понятие&nbsp;— <strong>функция</strong>. В&nbsp;математике функция из&nbsp;одного числа (или даже нескольких) делает другое.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Функция</strong></h4>
+<div>В&nbsp;программировании (и&nbsp;в&nbsp;Python в&nbsp;частности): <strong>функция</strong>&nbsp;— это сущность, которая из&nbsp;одного (или даже нескольких) значений делает другое. При этом она может ещё и&nbsp;выполнять какие-то действия. Например, есть функция модуля у = |x|, аналогично в&nbsp;Python есть функция y = abs(x). Но&nbsp;функции в&nbsp;Python необязательно принимают только числа.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Для того, чтобы вводить числа с&nbsp;клавиатуры и&nbsp;далее работать с&nbsp;ними, нам необходимо найти функцию, которая из&nbsp;строки делает число. И&nbsp;такие функции есть!</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Тип данных целых чисел в&nbsp;Python называется <strong>int</strong>, дробных чисел&nbsp;— <strong>float</strong>.</p>
+<p>Одноимённые функции принимают в&nbsp;качестве аргумента строку и&nbsp;возвращают число, если в&nbsp;этой строке было записано число (иначе выдают ошибку):</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+b <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>a<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>b + <span style="color: #ff4500;">1</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Или можно написать даже так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>что будет означать&nbsp;— получи строку из&nbsp;ввода, сделай из&nbsp;неё целое число и&nbsp;результат помести в&nbsp;переменную&nbsp;а.</p>
+<p>И&nbsp;тогда предыдущая программа может быть записана в&nbsp;виде:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>a + <span style="color: #ff4500;">1</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Но&nbsp;можно сократить код еще, написав вот так:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span> + <span style="color: #ff4500;">1</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Функция int может быть применена и&nbsp;для получения целого числа из&nbsp;вещественного&nbsp;— в&nbsp;таком случае, дробная часть будет отброшена (без округления).</p>
+<p>Например,</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #ff4500;">20.5</span> + <span style="color: #ff4500;">34.1</span><span style="color: black;">)</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>выдаст на&nbsp;экран число&nbsp;54, хотя если сложить эти числа и&nbsp;не&nbsp;отправлять их&nbsp;в&nbsp;фунцкию int, результат будет 54.6.</p>
+<p>В&nbsp;Python cуществует огромное количество различных функций, мы&nbsp;будем знакомиться с&nbsp;ними постепенно. Так, например, для строки можно так&nbsp;же определить её&nbsp;длину.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>
+<p>Длина строки&nbsp;— это количество символов в&nbsp;строке.</p>
+<p>Для определения длины строки используется стандартная функция Python <strong>len()</strong>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>На&nbsp;примере функции len разберемся с&nbsp;основными понятиями, связанными с&nbsp;использованием функций. Изучите код:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">word <span style="color: #66cc66;">=</span> <span style="color: #008000;">input</span><span style="color: black;">(</span><span style="color: black;">)</span>
+length <span style="color: #66cc66;">=</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>word<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Вы ввели слово длиной'</span><span style="color: #66cc66;">,</span> length<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'букв.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Когда мы&nbsp;в&nbsp;программе используем функцию, это называется <strong>«вызов функции»</strong>. Вызов функции устроен так: пишем имя функции&nbsp;— len, а&nbsp;затем в&nbsp;скобках те&nbsp;данные, которые мы&nbsp;передаём этой функции, чтобы она что-то с&nbsp;ними сделала. Такие данные называются <strong>аргументами</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>В&nbsp;нашем примере данные в&nbsp;скобках должны быть строкой. Мы&nbsp;выбрали в&nbsp;качестве данных значение переменной word, которое пользователь до&nbsp;этого ввёл с&nbsp;клавиатуры. То&nbsp;есть значение переменной word выступает здесь в&nbsp;роли аргумента. А&nbsp;функция len выдаёт длину этой строки. Если пользователь ввёл, например, «привет», то&nbsp;в&nbsp;word оказывается равно «привет», и&nbsp;на&nbsp;место len(word) подставляется длина строки «привет», то&nbsp;есть&nbsp;6.</p>
+<p>Обратите внимание: каждый раз, когда мы&nbsp;пишем имя переменной (кроме самого первого раза&nbsp;— в&nbsp;операторе присваивания слева от&nbsp;знака =), вместо этого имени интерпретатор подставляет значение переменной.</p>
+</div>
+<p>&nbsp;</p>
+<div style="background-color: #ffeba0; padding: 60px;">
+<h4><strong>Важно</strong></h4>
+<div>Точно так&nbsp;же на&nbsp;место вызова функции (то&nbsp;есть имени функции и&nbsp;её&nbsp;аргументов в&nbsp;скобках) подставляется результат её&nbsp;работы&nbsp;— это называется <strong>возвращаемое значение функции</strong>.</div>
+</div>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Таким образом, функция len возвращает длину своего аргумента. input&nbsp;— тоже функция (отсюда скобки), она не&nbsp;принимает никаких аргументов, зато считывает строку с&nbsp;клавиатуры и&nbsp;возвращает&nbsp;её.</p>
+<p>print&nbsp;— тоже функция, она не&nbsp;возвращает никакого осмысленного значения, зато выводит свои аргументы на&nbsp;экран. Эта функция может принимать не&nbsp;один аргумент, а&nbsp;сколько угодно. Несколько аргументов одной функции следует разделять запятыми.</p>
+<p>На&nbsp;самом деле, функция сама по&nbsp;себе&nbsp;— это фактически небольшая программа, но&nbsp;об&nbsp;этом позже.</p>
+<p>Функции безразлично происхождение значений, которые ей&nbsp;передали в&nbsp;качестве аргумента. Это может быть значение переменной, результат работы другой функции или записанное прямо в&nbsp;коде значение:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #483d8b;">'Это слово длиной'</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">len</span><span style="color: black;">(</span><span style="color: #483d8b;">'абракадабра'</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'букв.'</span><span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Обратите внимание, что в&nbsp;предыдущем примере значение переменной word вообще никак не&nbsp;изменилось от&nbsp;вызова функции len. C&nbsp;другой стороны, вызов функции может стоять где угодно, не&nbsp;обязательно сразу класть возвращаемое значение в&nbsp;переменную.</p>
+<p>Как есть функция int, которая пытается сделать из&nbsp;того, что ей&nbsp;передали, целое число, так&nbsp;же есть и&nbsp;функция str, которая возвращает строку из&nbsp;тех данных, что в&nbsp;нее передали.</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;"><span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">str</span><span style="color: black;">(</span><span style="color: #ff4500;">10</span><span style="color: black;">)</span> + <span style="color: #008000;">str</span><span style="color: black;">(</span><span style="color: #ff4500;">20</span><span style="color: black;">)</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># выведет ‘1020’ </span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span><span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #483d8b;">'10'</span><span style="color: black;">)</span> + <span style="color: #008000;">int</span><span style="color: black;">(</span><span style="color: #483d8b;">'20'</span><span style="color: black;">)</span><span style="color: black;">)</span> <span style="color: #808080; font-style: italic;"># выведет 30</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Каждый раз, когда вы&nbsp;пишете программу, важно понимать, какой тип имеет каждое значение и&nbsp;каждая переменная.</p>
+</div>
+<p><a name="5"></a></p>
+<div style="margin-bottom: 60px;">&nbsp;</div>
+<h4>5. Обмен значениями переменных</h4>
+<p>&nbsp;</p>
+<div style="padding-left: 60px;">
+<p>Мы&nbsp;изучили операции с&nbsp;различными типами данных.</p>
+<p>Давайте попробуем написать программу, которая поменяет местами содержимое переменных а&nbsp;и&nbsp;b. Пусть есть такой код:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">3</span>
+b <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">5</span>
+...
+...
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>a<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>b<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Что надо вписать в&nbsp;пропущенные места, чтобы в&nbsp;а&nbsp;лежало&nbsp;5, а&nbsp;в&nbsp;b&nbsp;лежало 3? При этом, числами 3&nbsp;и&nbsp;5&nbsp;пользоваться нельзя.</p>
+<p>Как один из&nbsp;вариантов&nbsp;— можно использовать дополнительную переменную:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">3</span>
+b <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">5</span>
+с <span style="color: #66cc66;">=</span> a
+a <span style="color: #66cc66;">=</span> b
+b <span style="color: #66cc66;">=</span> c
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>a<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>b<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>А&nbsp;теперь попробуйте написать вариант без дополнительной переменной, через сумму двух чисел.</p>
+<p>Но&nbsp;нам с&nbsp;вами очень повезло, что мы&nbsp;изучаем язык Python, потому что он&nbsp;и&nbsp;поддерживает более простой вариант записи:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">3</span>
+b <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">5</span>
+a<span style="color: #66cc66;">,</span> b <span style="color: #66cc66;">=</span> b<span style="color: #66cc66;">,</span> a
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>a<span style="color: black;">)</span>
+<span style="color: #ff7700; font-weight: bold;">print</span><span style="color: black;">(</span>b<span style="color: black;">)</span></pre>
+</div>
+</div>
+<div style="padding-left: 60px;">
+<p><br>Значения переменных, которые расположены справа от&nbsp;знака «присвоить», в&nbsp;указанном порядке помещаются в&nbsp;переменные слева, в&nbsp;порядке их&nbsp;указания.</p>
+<p>Так, используя множественное присваивание, можно задавать нескольким переменным одно значение:</p>
+</div>
+<div style="padding-left: 60px;">
+<div>
+<pre class="python" style="font-family: monospace;">a <span style="color: #66cc66;">=</span> b <span style="color: #66cc66;">=</span> c <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">5</span></pre>
+</div>
+</div></article></section>
+{% endblock %}
